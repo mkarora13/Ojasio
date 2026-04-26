@@ -12,20 +12,33 @@ export const Contact: React.FC = () => {
   const [email, setEmail] = useState('');
   const [medicalHistory, setMedicalHistory] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    const subject = `New Assessment Inquiry from ${name}`;
-    const body = `Name: ${name}
-WhatsApp: ${whatsapp}
-Email: ${email}
-Primary Goal: ${primaryGoal === 'Other' ? otherGoal : primaryGoal}
+    try {
+      await fetch("https://formsubmit.co/ajax/dishaarora3085@gmail.com", {
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            name,
+            whatsapp,
+            email,
+            goal: primaryGoal === 'Other' ? otherGoal : primaryGoal,
+            medical_history: medicalHistory,
+            _subject: `New Assessment Inquiry from ${name}`
+        })
+      });
+    } catch (error) {
+      console.error(error);
+    }
 
-Medical History & Condition Details:
-${medicalHistory}`;
-
-    window.location.href = `mailto:dishaarora3085@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
+    setIsSubmitting(false);
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
@@ -141,8 +154,8 @@ ${medicalHistory}`;
                 </div>
 
                 <div className="pt-4">
-                  <Button type="submit" fullWidth size="lg" className="text-sm tracking-widest uppercase">
-                    Submit Assessment
+                  <Button type="submit" fullWidth size="lg" className="text-sm tracking-widest uppercase" disabled={isSubmitting}>
+                    {isSubmitting ? "Submitting..." : "Submit Assessment"}
                   </Button>
                 </div>
               </form>
