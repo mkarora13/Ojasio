@@ -7,15 +7,34 @@ export const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [primaryGoal, setPrimaryGoal] = useState('Weight Loss');
   const [otherGoal, setOtherGoal] = useState('');
+  const [name, setName] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [email, setEmail] = useState('');
+  const [medicalHistory, setMedicalHistory] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
+    
+    const subject = `New Assessment Inquiry from ${name}`;
+    const body = `Name: ${name}
+WhatsApp: ${whatsapp}
+Email: ${email}
+Primary Goal: ${primaryGoal === 'Other' ? otherGoal : primaryGoal}
+
+Medical History & Condition Details:
+${medicalHistory}`;
+
+    window.location.href = `mailto:dishaarora3085@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
       setPrimaryGoal('Weight Loss');
       setOtherGoal('');
+      setName('');
+      setWhatsapp('');
+      setEmail('');
+      setMedicalHistory('');
     }, 5000);
   };
 
@@ -60,18 +79,18 @@ export const Contact: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-green-deep mb-2">Full Name</label>
-                    <input required type="text" className={inputClass} placeholder="Enter your name" />
+                    <input required type="text" className={inputClass} placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-green-deep mb-2">WhatsApp Number</label>
-                    <input required type="tel" className={inputClass} placeholder="+123 456 7890" />
+                    <input required type="tel" className={inputClass} placeholder="+123 456 7890" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-green-deep mb-2">Email Address</label>
-                    <input required type="email" className={inputClass} placeholder="you@example.com" />
+                    <input required type="email" className={inputClass} placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                 </div>
 
@@ -118,7 +137,7 @@ export const Contact: React.FC = () => {
 
                 <div>
                    <label className="block text-sm font-medium text-green-deep mb-2">Medical History & Condition Details</label>
-                   <textarea rows={4} className={inputClass} placeholder="Please describe any medical conditions, current medications, or specific dietary restrictions..."></textarea>
+                   <textarea rows={4} className={inputClass} placeholder="Please describe any medical conditions, current medications, or specific dietary restrictions..." value={medicalHistory} onChange={(e) => setMedicalHistory(e.target.value)}></textarea>
                 </div>
 
                 <div className="pt-4">
