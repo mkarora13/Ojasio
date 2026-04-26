@@ -13,11 +13,12 @@ export const Contact: React.FC = () => {
   const [medicalHistory, setMedicalHistory] = useState('');
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showOtp, setShowOtp] = useState(false);
+  const [otp, setOtp] = useState('');
+  const [otpError, setOtpError] = useState('');
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
+  const submitForm = async () => {
     try {
       await fetch("https://formsubmit.co/ajax/dishaarora3085@gmail.com", {
         method: "POST",
@@ -37,9 +38,10 @@ export const Contact: React.FC = () => {
     } catch (error) {
       console.error(error);
     }
-
+    
     setIsSubmitting(false);
     setIsSubmitted(true);
+    setShowOtp(false);
     setTimeout(() => {
       setIsSubmitted(false);
       setPrimaryGoal('Weight Loss');
@@ -48,7 +50,64 @@ export const Contact: React.FC = () => {
       setWhatsapp('');
       setEmail('');
       setMedicalHistory('');
+      setIsEmailVerified(false);
     }, 5000);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+    
+    setIsSubmitting(true);
+    setOtpError('');
+    
+    if (!isEmailVerified) {
+        try {
+            const res = await fetch('/api/send-otp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            const data = await res.json();
+            if (data.success) {
+                setShowOtp(true);
+            } else {
+                setOtpError(data.error || "Failed to send OTP. Please check backend config.");
+            }
+        } catch (error) {
+            console.error("Error asking for OTP:", error);
+            setOtpError("Failed to connect to the server.");
+        }
+        setIsSubmitting(false);
+        return;
+    }
+
+    // If already verified, go ahead and submit
+    await submitForm();
+  };
+
+  const handleVerifyOtp = async () => {
+    if (!otp) return setOtpError("Please enter the OTP");
+    setIsSubmitting(true);
+    setOtpError('');
+    try {
+        const res = await fetch('/api/verify-otp', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, otp })
+        });
+        const data = await res.json();
+        if (data.success) {
+            setIsEmailVerified(true);
+            await submitForm();
+        } else {
+            setOtpError(data.error || "Invalid OTP");
+            setIsSubmitting(false);
+        }
+    } catch(err) {
+        setOtpError("Failed to verify OTP.");
+        setIsSubmitting(false);
+    }
   };
 
   const inputClass = "w-full p-4 bg-ivory/50 border border-beige rounded-none focus:outline-none focus:ring-1 focus:ring-gold focus:border-gold transition-colors font-light text-green-deep placeholder:text-green-deep/40";
@@ -92,18 +151,18 @@ export const Contact: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-green-deep mb-2">Full Name</label>
-                    <input required type="text" className={inputClass} placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
+                    <input required type="text" className={inputClass} placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} disabled={showOtp} />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-green-deep mb-2">WhatsApp Number</label>
-                    <input required type="tel" className={inputClass} placeholder="+123 456 7890" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
+                    <input required type="tel" className={inputClass} placeholder="+123 456 7890" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} disabled={showOtp} />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-green-deep mb-2">Email Address</label>
-                    <input required type="email" className={inputClass} placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input required type="email" className={inputClass} placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} disabled={showOtp} />
                   </div>
                 </div>
 
@@ -113,6 +172,7 @@ export const Contact: React.FC = () => {
                     className={inputClass}
                     value={primaryGoal}
                     onChange={(e) => setPrimaryGoal(e.target.value)}
+                    disabled={showOtp}
                   >
                     <option>Weight Loss</option>
                     <option>Weight Gain</option>
@@ -144,20 +204,56 @@ export const Contact: React.FC = () => {
                       placeholder="Specify your primary goal..." 
                       value={otherGoal}
                       onChange={(e) => setOtherGoal(e.target.value)}
+                      disabled={showOtp}
                     />
                   </motion.div>
                 )}
 
                 <div>
                    <label className="block text-sm font-medium text-green-deep mb-2">Medical History & Condition Details</label>
-                   <textarea rows={4} className={inputClass} placeholder="Please describe any medical conditions, current medications, or specific dietary restrictions..." value={medicalHistory} onChange={(e) => setMedicalHistory(e.target.value)}></textarea>
+                   <textarea rows={4} className={inputClass} placeholder="Please describe any medical conditions, current medications, or specific dietary restrictions..." value={medicalHistory} onChange={(e) => setMedicalHistory(e.target.value)} disabled={showOtp}></textarea>
                 </div>
 
-                <div className="pt-4">
-                  <Button type="submit" fullWidth size="lg" className="text-sm tracking-widest uppercase" disabled={isSubmitting}>
-                    {isSubmitting ? "Submitting..." : "Submit Assessment"}
-                  </Button>
-                </div>
+                {showOtp && (
+                  <motion.div
+                     initial={{ opacity: 0, y: -10 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     className="bg-green-soft/10 p-6 border border-green-soft rounded-lg space-y-4"
+                  >
+                     <h4 className="text-xl font-display text-green-deep">Verify Your Email</h4>
+                     <p className="text-sm font-light text-green-deep/80">
+                         We've sent a 6-digit verification code to <strong>{email}</strong>. Please enter the code below to submit your assessment.
+                     </p>
+                     <div>
+                       <input 
+                          type="text" 
+                          maxLength={6}
+                          placeholder="Your 6-digit OTP" 
+                          className={`${inputClass} text-center tracking-[0.5em] font-semibold text-lg`} 
+                          value={otp} 
+                          onChange={(e) => setOtp(e.target.value)}
+                       />
+                     </div>
+                     {otpError && <p className="text-red-500 text-sm font-semibold">{otpError}</p>}
+                     <div className="flex space-x-3 pt-2">
+                        <Button type="button" fullWidth onClick={handleVerifyOtp} disabled={isSubmitting || otp.length !== 6}>
+                           {isSubmitting ? "Verifying..." : "Verify & Submit"}
+                        </Button>
+                        <Button type="button" fullWidth variant="secondary" onClick={() => setShowOtp(false)} disabled={isSubmitting}>
+                           Cancel
+                        </Button>
+                     </div>
+                  </motion.div>
+                )}
+
+                {!showOtp && (
+                    <div className="pt-4">
+                      {otpError && <p className="text-red-500 text-sm font-semibold mb-4 text-center">{otpError}</p>}
+                      <Button type="submit" fullWidth size="lg" className="text-sm tracking-widest uppercase" disabled={isSubmitting}>
+                        {isSubmitting ? "Processing..." : "Submit Assessment"}
+                      </Button>
+                    </div>
+                )}
               </form>
             )}
           </motion.div>
