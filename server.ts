@@ -1,27 +1,12 @@
 import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
-import { Resend } from 'resend';
-
-// Store OTPs in memory for this example (use Redis/Database in production)
-const otpStore = new Map<string, { code: string, expiresAt: number }>();
 
 async function startServer() {
   const app = express();
   const PORT = 3000;
 
   app.use(express.json());
-
-  // API Routes
-  app.post("/api/send-otp", async (req, res) => {
-    const handler = (await import('./api/send-otp.js')).default;
-    await handler(req as any, res as any);
-  });
-
-  app.post("/api/verify-otp", async (req, res) => {
-    const handler = (await import('./api/verify-otp.js')).default;
-    await handler(req as any, res as any);
-  });
 
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
