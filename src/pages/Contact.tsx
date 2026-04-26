@@ -17,6 +17,8 @@ export const Contact: React.FC = () => {
   const [otp, setOtp] = useState('');
   const [otpError, setOtpError] = useState('');
   const [isEmailVerified, setIsEmailVerified] = useState(false);
+  const [otpHash, setOtpHash] = useState('');
+  const [otpExpiresAt, setOtpExpiresAt] = useState<number | null>(null);
 
   const submitForm = async () => {
     try {
@@ -68,15 +70,22 @@ export const Contact: React.FC = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email })
             });
+
             const data = await res.json();
+            if (!res.ok) {
+                 throw new Error(data.error || `HTTP ${res.status}`);
+            }
+
             if (data.success) {
+                setOtpHash(data.hash);
+                setOtpExpiresAt(data.expiresAt);
                 setShowOtp(true);
             } else {
-                setOtpError(data.error || "Failed to send OTP. Please check backend config.");
+                setOtpError(data.error || "Failed to send OTP.");
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error("Error asking for OTP:", error);
-            setOtpError("Failed to connect to the server.");
+            setOtpError(error.message || "Failed to connect to the server.");
         }
         setIsSubmitting(false);
         return;
@@ -94,9 +103,14 @@ export const Contact: React.FC = () => {
         const res = await fetch('/api/verify-otp', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, otp })
+            body: JSON.stringify({ email, otp, hash: otpHash, expiresAt: otpExpiresAt })
         });
+        
         const data = await res.json();
+        if (!res.ok) {
+             throw new Error(data.error || `HTTP ${res.status}`);
+        }
+
         if (data.success) {
             setIsEmailVerified(true);
             await submitForm();
@@ -104,8 +118,8 @@ export const Contact: React.FC = () => {
             setOtpError(data.error || "Invalid OTP");
             setIsSubmitting(false);
         }
-    } catch(err) {
-        setOtpError("Failed to verify OTP.");
+    } catch(err: any) {
+        setOtpError(err.message || "Failed to verify OTP.");
         setIsSubmitting(false);
     }
   };
