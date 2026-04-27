@@ -13,7 +13,6 @@ export const Contact: React.FC = () => {
   const [medicalHistory, setMedicalHistory] = useState('');
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [countryCode, setCountryCode] = useState('+1');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,7 +29,7 @@ export const Contact: React.FC = () => {
         },
         body: JSON.stringify({
             name,
-            whatsapp: `${countryCode} ${whatsapp}`,
+            whatsapp,
             email,
             goal: primaryGoal === 'Other' ? otherGoal : primaryGoal,
             medical_history: medicalHistory,
@@ -51,7 +50,6 @@ export const Contact: React.FC = () => {
       setWhatsapp('');
       setEmail('');
       setMedicalHistory('');
-      setCountryCode('+1');
     }, 5000);
   };
 
@@ -100,20 +98,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-green-deep mb-2">WhatsApp Number</label>
-                    <div className="flex">
-                      <select className={`${inputClass} border-r-0 w-28 pr-2 pl-2`} value={countryCode} onChange={(e) => setCountryCode(e.target.value)}>
-                        <option value="+1">+1 (US/CA)</option>
-                        <option value="+44">+44 (UK)</option>
-                        <option value="+91">+91 (IN)</option>
-                        <option value="+61">+61 (AU)</option>
-                        <option value="+971">+971 (AE)</option>
-                        <option value="+65">+65 (SG)</option>
-                        <option value="+49">+49 (DE)</option>
-                        <option value="+33">+33 (FR)</option>
-                        <option value="+81">+81 (JP)</option>
-                      </select>
-                      <input required type="tel" className={`${inputClass} flex-1`} placeholder="123 456 7890" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
-                    </div>
+                    <input required type="tel" className={inputClass} placeholder="+123 456 7890" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
                   </div>
                 </div>
 
