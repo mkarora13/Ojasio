@@ -8,6 +8,9 @@ export const Reviews: React.FC = () => {
   const navigate = useNavigate();
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
   const [reviewText, setReviewText] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,9 +58,12 @@ export const Reviews: React.FC = () => {
             "Accept": "application/json"
         },
         body: JSON.stringify({
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
             rating: `${rating} Stars`,
             review: reviewText,
-            _subject: `New Ojasio Review Submitted (${rating} Stars)`
+            _subject: `New Ojasio Review Submitted (${rating} Stars by ${firstName} ${lastName})`
         })
       });
     } catch (error) {
@@ -69,6 +75,9 @@ export const Reviews: React.FC = () => {
     setTimeout(() => {
       setSubmitted(false);
       setRating(0);
+      setFirstName('');
+      setLastName('');
+      setEmail('');
       setReviewText('');
     }, 5000);
   };
@@ -193,7 +202,44 @@ export const Reviews: React.FC = () => {
             </div>
 
             <form className="space-y-10" onSubmit={handleSubmitReview}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold uppercase tracking-wider text-green-deep mb-2">First Name</label>
+                  <input 
+                    required 
+                    type="text" 
+                    className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
+                    placeholder="Enter your first name" 
+                    value={firstName} 
+                    onChange={(e) => setFirstName(e.target.value)} 
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold uppercase tracking-wider text-green-deep mb-2">Last Name</label>
+                  <input 
+                    required 
+                    type="text" 
+                    className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
+                    placeholder="Enter your last name" 
+                    value={lastName} 
+                    onChange={(e) => setLastName(e.target.value)} 
+                  />
+                </div>
+              </div>
+
               <div>
+                <label className="block text-sm font-semibold uppercase tracking-wider text-green-deep mb-2">Email Address</label>
+                <input 
+                  required 
+                  type="email" 
+                  className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
+                  placeholder="Enter your email address" 
+                  value={email} 
+                  onChange={(e) => setEmail(e.target.value)} 
+                />
+              </div>
+
+              <div className="border-t border-beige pt-8">
                 <label className="block text-sm font-semibold uppercase tracking-wider text-green-deep mb-4 text-center">
                   Rate your experience with us
                 </label>
