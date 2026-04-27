@@ -8,7 +8,9 @@ export const Reviews: React.FC = () => {
   const navigate = useNavigate();
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
+  const [reviewText, setReviewText] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
@@ -37,6 +39,38 @@ export const Reviews: React.FC = () => {
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const handleSubmitReview = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (rating === 0 || isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    try {
+      await fetch("https://formsubmit.co/ajax/dishaarora3085@gmail.com", {
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            rating: `${rating} Stars`,
+            review: reviewText,
+            _subject: `New Ojasio Review Submitted (${rating} Stars)`
+        })
+      });
+    } catch (error) {
+      console.error(error);
+    }
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setRating(0);
+      setReviewText('');
+    }, 5000);
   };
 
   return (
@@ -158,7 +192,7 @@ export const Reviews: React.FC = () => {
               </p>
             </div>
 
-            <form className="space-y-10" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+            <form className="space-y-10" onSubmit={handleSubmitReview}>
               <div>
                 <label className="block text-sm font-semibold uppercase tracking-wider text-green-deep mb-4 text-center">
                   Rate your experience with us
@@ -187,11 +221,13 @@ export const Reviews: React.FC = () => {
                   rows={4}
                   className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 resize-none bg-ivory/50"
                   placeholder="Tell us what you loved..."
+                  value={reviewText}
+                  onChange={(e) => setReviewText(e.target.value)}
                 ></textarea>
               </div>
 
-              <Button type="submit" disabled={rating === 0} className="w-full py-5 text-sm tracking-widest font-bold bg-green-deep text-ivory hover:bg-gold transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-                SUBMIT REVIEW
+              <Button type="submit" disabled={rating === 0 || isSubmitting} className="w-full py-5 text-sm tracking-widest font-bold bg-green-deep text-ivory hover:bg-gold transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                {isSubmitting ? "SUBMITTING..." : "SUBMIT REVIEW"}
               </Button>
             </form>
           </>
