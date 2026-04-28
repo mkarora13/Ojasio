@@ -86,9 +86,9 @@ export const Reviews: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    }, 10000);
     return () => clearInterval(timer);
-  }, []);
+  }, [testimonials.length]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
@@ -175,74 +175,91 @@ export const Reviews: React.FC = () => {
       </section>
 
       {/* Testimonials Slideshow */}
-      <div className="max-w-5xl mx-auto px-4 mb-32 relative">
-        <div className="relative flex flex-col justify-center">
-           <AnimatePresence mode="wait">
-              <motion.div
-                 key={currentIndex}
-                 initial={{ opacity: 0, y: 15, filter: "blur(5px)" }}
-                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                 exit={{ opacity: 0, y: -15, filter: "blur(5px)" }}
-                 transition={{ duration: 0.6, ease: "easeInOut" }}
-                 className="w-full px-2 sm:px-12"
-              >
-                 <div className="bg-white p-10 md:p-16 lg:p-20 rounded-none sm:rounded-[2rem] border-y sm:border border-gold/30 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden group flex flex-col items-center text-center">
-                    <MessageSquareQuote className="absolute -top-4 -left-4 md:-top-8 md:-left-8 text-gold/10 h-32 w-32 md:h-48 md:w-48 transform -scale-x-100 z-0" />
-                    
-                    <div className="relative z-10 flex flex-col items-center w-full">
-                      <div className="flex items-center justify-center w-full space-x-4 mb-10">
-                        <div className="h-[1px] w-8 md:w-16 bg-gold/50"></div>
-                        <span className="text-gold font-display text-sm md:text-lg font-medium tracking-[0.15em] uppercase text-center">
-                           {testimonials[currentIndex].topic}
-                        </span>
-                        <div className="h-[1px] w-8 md:w-16 bg-gold/50"></div>
-                      </div>
-                      
-                      <p className="text-xl md:text-2xl lg:text-3xl text-green-deep/90 font-light italic mb-10 max-w-4xl leading-relaxed md:leading-normal font-display">
-                        "{testimonials[currentIndex].text}"
-                      </p>
-                      
-                      <div className="flex text-gold space-x-1 mb-10">
-                        {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="currentColor" />)}
-                      </div>
-
-                      <div className="flex flex-col items-center justify-center">
-                         <div className="h-0.5 w-10 bg-gold/50 mb-5"></div>
-                         <p className="font-display font-medium text-xl md:text-2xl text-green-deep mb-2">{testimonials[currentIndex].name}</p>
-                         <p className="text-sm font-sans text-green-deep/70 mb-2">{testimonials[currentIndex].age}, {testimonials[currentIndex].profession}</p>
-                         <p className="text-xs font-sans tracking-[0.2em] uppercase text-gold font-medium">{testimonials[currentIndex].location}</p>
-                      </div>
-                    </div>
-                 </div>
-              </motion.div>
-           </AnimatePresence>
-        </div>
-        
-        {/* Navigation Controls */}
-        <div className="flex flex-col md:flex-row justify-center items-center mt-16 gap-6 md:gap-10">
-          <div className="flex items-center gap-6 z-20">
+      <div className="max-w-5xl mx-auto px-4 mb-24 relative mt-20">
+        <div className="relative flex items-center justify-center w-full">
+            {/* Desktop Left Button */}
             <button 
               onClick={prevSlide} 
-              className="p-4 rounded-full border border-gold/40 text-gold hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none hover:shadow-lg hover:-translate-x-1 bg-white"
+              className="hidden md:flex absolute -left-4 md:-left-12 lg:-left-16 z-20 p-3 rounded-full border border-gold/40 text-gold bg-white hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none shadow-lg hover:-translate-x-1"
             >
                <ChevronLeft size={24} />
             </button>
-            <div className="flex gap-3">
-              {testimonials.map((_, idx) => (
-                <button 
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-500 ${currentIndex === idx ? 'bg-gold w-10' : 'bg-gold/30 hover:bg-gold/60'}`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
+
+            <div className="w-full relative px-0">
+               <AnimatePresence mode="wait">
+                  <motion.div
+                     key={currentIndex}
+                     initial={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
+                     animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                     exit={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
+                     transition={{ duration: 0.5, ease: "easeOut" }}
+                     className="w-full py-2"
+                  >
+                     <div className="bg-white px-8 py-10 md:p-12 lg:px-16 lg:py-14 rounded-[2rem] border border-gold/20 shadow-xl relative overflow-hidden flex flex-col items-center text-center group">
+                        <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-white to-green-deep/5 opacity-50 z-0 pointer-events-none" />
+                        <MessageSquareQuote className="absolute -top-4 -left-4 md:-top-6 md:-left-6 text-gold/10 h-24 w-24 md:h-32 md:w-32 transform -scale-x-100 z-0" />
+                        
+                        <div className="relative z-10 flex flex-col items-center w-full">
+                          <div className="flex flex-col items-center justify-center mb-8 w-full relative">
+                             <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-gold/40 to-transparent -translate-y-1/2 z-0"></div>
+                             <span className="bg-gradient-to-r from-green-deep to-green-deep/90 text-gold px-6 py-2 rounded-full font-display text-xs md:text-sm font-semibold tracking-[0.2em] uppercase shadow-[0_2px_10px_rgba(0,0,0,0.05)] border border-gold/30 z-10">
+                                {testimonials[currentIndex].topic}
+                             </span>
+                          </div>
+                          
+                          <p className="text-lg md:text-xl lg:text-2xl text-green-deep/90 font-light italic mb-8 max-w-3xl leading-relaxed md:leading-[1.7] font-display">
+                            "{testimonials[currentIndex].text}"
+                          </p>
+                          
+                          <div className="flex text-gold space-x-1 mb-8">
+                            {[...Array(5)].map((_, i) => <Star key={i} size={18} fill="currentColor" />)}
+                          </div>
+
+                          <div className="flex flex-col items-center justify-center border-t border-gold/20 pt-6 w-full max-w-[200px]">
+                             <p className="font-display font-medium text-xl text-green-deep mb-1">{testimonials[currentIndex].name}</p>
+                             <p className="text-xs md:text-sm font-sans text-green-deep/70 mb-1">{testimonials[currentIndex].age}, {testimonials[currentIndex].profession}</p>
+                             <p className="text-[10px] sm:text-xs font-sans tracking-[0.2em] uppercase text-gold font-medium">{testimonials[currentIndex].location}</p>
+                          </div>
+                        </div>
+                     </div>
+                  </motion.div>
+               </AnimatePresence>
             </div>
+
+            {/* Desktop Right Button */}
             <button 
               onClick={nextSlide} 
-              className="p-4 rounded-full border border-gold/40 text-gold hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none hover:shadow-lg hover:translate-x-1 bg-white"
+              className="hidden md:flex absolute -right-4 md:-right-12 lg:-right-16 z-20 p-3 rounded-full border border-gold/40 text-gold bg-white hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none shadow-lg hover:translate-x-1"
             >
                <ChevronRight size={24} />
             </button>
+        </div>
+        
+        {/* Mobile Navigation Controls & Desktop Dots */}
+        <div className="flex flex-col justify-center items-center mt-8 w-full relative z-20">
+          <div className="flex md:hidden items-center justify-center gap-8 mb-6">
+            <button 
+              onClick={prevSlide} 
+              className="p-3 rounded-full border border-gold/40 text-gold bg-white hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none shadow-md"
+            >
+               <ChevronLeft size={20} />
+            </button>
+            <button 
+              onClick={nextSlide} 
+              className="p-3 rounded-full border border-gold/40 text-gold bg-white hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none shadow-md"
+            >
+               <ChevronRight size={20} />
+            </button>
+          </div>
+          <div className="flex gap-2.5">
+            {testimonials.map((_, idx) => (
+              <button 
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`w-2 h-2 rounded-full transition-all duration-500 shadow-sm ${currentIndex === idx ? 'bg-gold w-8' : 'bg-gold/30 hover:bg-gold/60'}`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
