@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="font-sans font-bold text-[10px] tracking-widest uppercase mb-6 text-gold">Connect</h3>
             <div className="flex space-x-4 mb-6">
-              <a href="https://www.instagram.com/dishaarora.ca/" target="_blank" rel="noopener noreferrer" className="p-2 border border-green-deep/20 rounded-full hover:bg-gold hover:text-white hover:border-gold transition-all">
+              <a href="https://www.instagram.com/ojasio/" target="_blank" rel="noopener noreferrer" className="p-2 border border-green-deep/20 rounded-full hover:bg-gold hover:text-white hover:border-gold transition-all">
                 <Instagram size={16} />
               </a>
               <a href="https://www.linkedin.com/in/dishaarora3085/" target="_blank" rel="noopener noreferrer" className="p-2 border border-green-deep/20 rounded-full hover:bg-gold hover:text-white hover:border-gold transition-all">
