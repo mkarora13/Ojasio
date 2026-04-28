@@ -17,16 +17,70 @@ export const Reviews: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials = [
-    { text: "Lost 8 kg in 3 months with Ojasio. The process felt effortless because the food was tailored to my lifestyle. My energy levels are incredible.", author: "Priya S.", location: "Mumbai, India" },
-    { text: "My sugar levels improved significantly. Disha's scientific approach gave me my life back when I thought nothing else would work.", author: "Rajiv K.", location: "Delhi, India" },
-    { text: "Best personalised diet plan I've ever followed. No starving, pure nutrition. Highly recommended for busy professionals!", author: "Sarah Jenkins", location: "London, UK" },
-    { text: "Finally put on healthy muscle weight without relying on artificial gainers. truly exceptional knowledge and guidance.", author: "Marcus Thompson", location: "New York, USA" },
-    { text: "Managing PCOS used to be a nightmare. Within 6 months, my cycle is regular and I have so much more energy.", author: "Elena Rossi", location: "Milan, Italy" },
-    { text: "The attention to detail and continuous support make Ojasio worth every penny. It's a true luxury wellness experience.", author: "Samir T.", location: "Dubai, UAE" },
-    { text: "I have tried countless generic diet plans. Ojasio is the first one that understood my cultural food preferences and adapted seamlessly.", author: "Aisha M.", location: "Toronto, Canada" },
-    { text: "Post-partum weight loss seemed impossible. Disha created a plan that nourished me and my baby while safely getting me back in shape.", author: "Neha Gupta", location: "Bangalore, India" },
-    { text: "My cholesterol is down, and I'm off my meds! The holistic approach at Ojasio is life-saving and incredibly empowering.", author: "David Chen", location: "Singapore" },
-    { text: "A truly transformative experience. I don't feel like I'm on a diet; I feel like I've learned how to eat for the rest of my life.", author: "Jessica H.", location: "Sydney, Australia" }
+    {
+      name: "Meera Desai",
+      age: 34,
+      profession: "Working Mother",
+      location: "Chicago, USA",
+      topic: "Weight Loss Transformation",
+      text: "I struggled with post-pregnancy weight and intense sugar cravings that made traditional dieting impossible with a full-time job. Disha designed a flexible plan incorporating my favorite Indian meals. I never felt starved. The portions were satisfying, and the cravings naturally faded. I've lost 12 kg and 4 inches around my waist in 5 months. I finally fit into my old clothes and have the energy to keep up with my toddler without crashing at 3 PM. My confidence is completely back."
+    },
+    {
+      name: "Sofia Martinez",
+      age: 27,
+      profession: "Graduate Student",
+      location: "Barcelona, Spain",
+      topic: "PCOS Management",
+      text: "I was plagued by irregular cycles, acne, and stubborn weight gain from undiagnosed PCOS. Ojasio didn't just give me a diet; they educated me on how certain foods triggered my symptoms. The holistic plan was easy on my student budget and tight schedule. My cycle regulated within 3 months, my skin cleared up, and I safely lost 5 kg. I feel like I finally have control over my body again. The constant exhaustion is gone, and I feel vibrant and focused."
+    },
+    {
+      name: "Rajesh Sharma",
+      age: 52,
+      profession: "Corporate Executive",
+      location: "Mumbai, India",
+      topic: "Diabetes Control",
+      text: "Diagnosed with Type 2 diabetes, dealing with high stress, and having zero time for extensive workouts, I thought I had to give up all my comfort foods. The Ojasio team showed me how to balance my plates and manage my eating timings around my endless meetings. My HbA1c dropped from 8.2 to 6.1, and my medicine dosage has been halved. My doctor was amazed. I feel lighter, my brain fog has lifted, and I'm no longer anxious about my health's future."
+    },
+    {
+      name: "David Okafor",
+      age: 45,
+      profession: "Entrepreneur",
+      location: "London, UK",
+      topic: "Blood Pressure Management",
+      text: "I had high blood pressure from chronic stress and poor eating habits on the go. The Ojasio plan was practical. It wasn't about eating kale salads every day; it was about smart choices I could make even in restaurants. My BP normalized to 120/80 consistently over 6 months, and I lost 8 kg of visceral fat. I sleep soundly now, and the constant midday fatigue has vanished. I truly feel revitalized and younger."
+    },
+    {
+      name: "Chloe Evans",
+      age: 31,
+      profession: "Graphic Designer",
+      location: "Sydney, Australia",
+      topic: "Lifestyle Improvement",
+      text: "I suffered from severe bloating, poor sleep, and a sedentary lifestyle leading to constant sluggishness. Ojasio focused on my gut health and daily routine. The small tweaks to my morning habits and hydration made a world of difference without needing a gym. My digestion issues are completely resolved, and my sleep quality is drastically better. I wake up feeling refreshed instead of hitting snooze, and have sustained energy to truly enjoy my weekends."
+    },
+    {
+      name: "Aisha & Yusuf Khan",
+      age: 38,
+      profession: "Homemaker & Parent",
+      location: "Dubai, UAE",
+      topic: "Child Nutrition Management",
+      text: "Yusuf was a picky eater, constantly falling sick, and lacked growth milestones. Dinner time used to be a battlefield. Disha guided me on how to present nutrient-dense foods creatively so he'd actually enjoy them. Our journey has been incredible. Yusuf gained healthy weight, his immunity improved, and he now eats a variety of vegetables. As a mom, the relief of seeing my child thrive and eat happily without forcing him is immeasurable."
+    },
+    {
+      name: "Kenji Sato",
+      age: 24,
+      profession: "Software Engineer",
+      location: "Tokyo, Japan",
+      topic: "Weight Gain",
+      text: "I was underweight, had poor stamina, and struggled to build muscle despite eating a lot of junk food. I realized I wasn't eating the right calories. Ojasio created a high-protein, calorie-dense plan that didn't make me feel bloated or sluggish. I gained 7 kg of lean muscle mass in 4 months. I finally feel strong and confident in my clothes. My posture has improved, and I have the stamina to play sports after work."
+    },
+    {
+      name: "Elena Rustova",
+      age: 29,
+      profession: "Yoga Instructor",
+      location: "Vancouver, Canada",
+      topic: "Fitness + Workout Guidance",
+      text: "I had hit a plateau in my fitness and felt completely depleted after teaching my classes. Even as a fitness professional, I needed guidance. The sports nutrition approach filled the gaps in my diet I had ignored for years. I saw a noticeable improvement in stamina and muscle recovery, and my body fat dropped by 4%. I feel incredibly resilient. The constant soreness is gone, and I have the fuel to give my 100% to my students."
+    }
   ];
 
   useEffect(() => {
@@ -122,7 +176,7 @@ export const Reviews: React.FC = () => {
 
       {/* Testimonials Slideshow */}
       <div className="max-w-5xl mx-auto px-4 mb-32 relative">
-        <div className="relative min-h-[450px] md:min-h-[400px] flex items-center justify-center">
+        <div className="relative min-h-[450px] md:min-h-[500px] flex items-center justify-center">
            <AnimatePresence mode="wait">
               <motion.div
                  key={currentIndex}
@@ -132,21 +186,26 @@ export const Reviews: React.FC = () => {
                  transition={{ duration: 0.6, ease: "easeInOut" }}
                  className="absolute w-full px-2 sm:px-12"
               >
-                 <div className="bg-white p-10 md:p-16 lg:p-20 rounded-[2.5rem] shadow-2xl shadow-green-deep/5 border border-gold/10 text-center relative overflow-hidden group">
+                 <div className="bg-white p-10 md:p-16 lg:p-20 rounded-[2.5rem] shadow-2xl shadow-green-deep/5 border border-gold/10 relative overflow-hidden group flex flex-col items-center text-center">
                     <MessageSquareQuote className="absolute top-6 left-6 md:top-10 md:left-10 text-beige/40 h-16 w-16 md:h-24 md:w-24 transform -scale-x-100 z-0" />
                     
                     <div className="relative z-10 flex flex-col items-center">
-                      <div className="flex justify-center text-gold mb-8 space-x-1">
-                        {[...Array(5)].map((_, i) => <Star key={i} size={24} fill="currentColor" />)}
+                      <div className="inline-block px-4 py-1.5 bg-green-soft text-green-deep text-xs font-bold uppercase tracking-widest rounded-full mb-8 relative">
+                         {testimonials[currentIndex].topic}
                       </div>
                       
-                      <p className="text-xl md:text-3xl lg:text-4xl text-green-deep/90 font-light italic mb-12 leading-relaxed md:leading-normal font-display">
+                      <p className="text-xl md:text-2xl lg:text-3xl text-green-deep/90 font-light italic mb-10 max-w-4xl leading-relaxed md:leading-normal font-display">
                         "{testimonials[currentIndex].text}"
                       </p>
                       
+                      <div className="flex text-gold space-x-1 mb-8">
+                        {[...Array(5)].map((_, i) => <Star key={i} size={24} fill="currentColor" />)}
+                      </div>
+
                       <div className="flex flex-col items-center justify-center">
                          <div className="h-0.5 w-12 bg-gold mb-4"></div>
-                         <p className="font-display font-bold text-xl md:text-2xl text-green-deep mb-1">{testimonials[currentIndex].author}</p>
+                         <p className="font-display font-bold text-xl md:text-2xl text-green-deep mb-1">{testimonials[currentIndex].name}</p>
+                         <p className="text-sm font-sans text-green-deep/70 mb-1">{testimonials[currentIndex].age}, {testimonials[currentIndex].profession}</p>
                          <p className="text-xs md:text-sm font-sans tracking-[0.2em] uppercase text-gold font-semibold">{testimonials[currentIndex].location}</p>
                       </div>
                     </div>
