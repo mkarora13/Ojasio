@@ -176,37 +176,41 @@ export const Reviews: React.FC = () => {
 
       {/* Testimonials Slideshow */}
       <div className="max-w-5xl mx-auto px-4 mb-32 relative">
-        <div className="relative min-h-[450px] md:min-h-[500px] flex items-center justify-center">
+        <div className="relative flex flex-col justify-center">
            <AnimatePresence mode="wait">
               <motion.div
                  key={currentIndex}
-                 initial={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
-                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                 exit={{ opacity: 0, scale: 0.95, filter: "blur(4px)" }}
+                 initial={{ opacity: 0, y: 15, filter: "blur(5px)" }}
+                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                 exit={{ opacity: 0, y: -15, filter: "blur(5px)" }}
                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                 className="absolute w-full px-2 sm:px-12"
+                 className="w-full px-2 sm:px-12"
               >
-                 <div className="bg-white p-10 md:p-16 lg:p-20 rounded-[2.5rem] shadow-2xl shadow-green-deep/5 border border-gold/10 relative overflow-hidden group flex flex-col items-center text-center">
-                    <MessageSquareQuote className="absolute top-6 left-6 md:top-10 md:left-10 text-beige/40 h-16 w-16 md:h-24 md:w-24 transform -scale-x-100 z-0" />
+                 <div className="bg-white p-10 md:p-16 lg:p-20 rounded-none sm:rounded-[2rem] border-y sm:border border-gold/30 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden group flex flex-col items-center text-center">
+                    <MessageSquareQuote className="absolute -top-4 -left-4 md:-top-8 md:-left-8 text-gold/10 h-32 w-32 md:h-48 md:w-48 transform -scale-x-100 z-0" />
                     
-                    <div className="relative z-10 flex flex-col items-center">
-                      <div className="inline-block px-4 py-1.5 bg-green-soft text-green-deep text-xs font-bold uppercase tracking-widest rounded-full mb-8 relative">
-                         {testimonials[currentIndex].topic}
+                    <div className="relative z-10 flex flex-col items-center w-full">
+                      <div className="flex items-center justify-center w-full space-x-4 mb-10">
+                        <div className="h-[1px] w-8 md:w-16 bg-gold/50"></div>
+                        <span className="text-gold font-display text-sm md:text-lg font-medium tracking-[0.15em] uppercase text-center">
+                           {testimonials[currentIndex].topic}
+                        </span>
+                        <div className="h-[1px] w-8 md:w-16 bg-gold/50"></div>
                       </div>
                       
                       <p className="text-xl md:text-2xl lg:text-3xl text-green-deep/90 font-light italic mb-10 max-w-4xl leading-relaxed md:leading-normal font-display">
                         "{testimonials[currentIndex].text}"
                       </p>
                       
-                      <div className="flex text-gold space-x-1 mb-8">
-                        {[...Array(5)].map((_, i) => <Star key={i} size={24} fill="currentColor" />)}
+                      <div className="flex text-gold space-x-1 mb-10">
+                        {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="currentColor" />)}
                       </div>
 
                       <div className="flex flex-col items-center justify-center">
-                         <div className="h-0.5 w-12 bg-gold mb-4"></div>
-                         <p className="font-display font-bold text-xl md:text-2xl text-green-deep mb-1">{testimonials[currentIndex].name}</p>
-                         <p className="text-sm font-sans text-green-deep/70 mb-1">{testimonials[currentIndex].age}, {testimonials[currentIndex].profession}</p>
-                         <p className="text-xs md:text-sm font-sans tracking-[0.2em] uppercase text-gold font-semibold">{testimonials[currentIndex].location}</p>
+                         <div className="h-0.5 w-10 bg-gold/50 mb-5"></div>
+                         <p className="font-display font-medium text-xl md:text-2xl text-green-deep mb-2">{testimonials[currentIndex].name}</p>
+                         <p className="text-sm font-sans text-green-deep/70 mb-2">{testimonials[currentIndex].age}, {testimonials[currentIndex].profession}</p>
+                         <p className="text-xs font-sans tracking-[0.2em] uppercase text-gold font-medium">{testimonials[currentIndex].location}</p>
                       </div>
                     </div>
                  </div>
@@ -215,11 +219,11 @@ export const Reviews: React.FC = () => {
         </div>
         
         {/* Navigation Controls */}
-        <div className="flex flex-col md:flex-row justify-center items-center mt-12 gap-6 md:gap-10">
-          <div className="flex items-center gap-6">
+        <div className="flex flex-col md:flex-row justify-center items-center mt-16 gap-6 md:gap-10">
+          <div className="flex items-center gap-6 z-20">
             <button 
               onClick={prevSlide} 
-              className="p-4 rounded-full border border-gold/30 text-gold hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none hover:shadow-lg hover:-translate-x-1"
+              className="p-4 rounded-full border border-gold/40 text-gold hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none hover:shadow-lg hover:-translate-x-1 bg-white"
             >
                <ChevronLeft size={24} />
             </button>
@@ -235,7 +239,7 @@ export const Reviews: React.FC = () => {
             </div>
             <button 
               onClick={nextSlide} 
-              className="p-4 rounded-full border border-gold/30 text-gold hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none hover:shadow-lg hover:translate-x-1"
+              className="p-4 rounded-full border border-gold/40 text-gold hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none hover:shadow-lg hover:translate-x-1 bg-white"
             >
                <ChevronRight size={24} />
             </button>
