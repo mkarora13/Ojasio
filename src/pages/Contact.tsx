@@ -193,7 +193,7 @@ export const Contact: React.FC = () => {
                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@ojasio.com" target="_blank" rel="noopener noreferrer" className="block w-full">
                  <Button variant="secondary" fullWidth size="lg" className="flex items-center space-x-3 py-5 bg-white text-green-deep border-none hover:bg-gold hover:text-white transition-colors">
                    <Send size={24} />
-                   <span className="text-lg">Email Us (Gmail)</span>
+                   <span className="text-lg">Email Us</span>
                  </Button>
                </a>
 
