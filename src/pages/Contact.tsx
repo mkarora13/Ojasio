@@ -93,7 +93,7 @@ export const Contact: React.FC = () => {
               <form action="https://formsubmit.co/hello@ojasio.com" method="POST" className="space-y-6">
                 <input type="hidden" name="_next" value={window.location.href} />
                 <input type="hidden" name="_subject" value="New Assessment Inquiry" />
-                <input type="hidden" name="_captcha" value="true" />
+                <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>

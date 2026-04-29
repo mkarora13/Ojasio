@@ -40,7 +40,18 @@ export const Footer: React.FC = () => {
           
           <div>
             <h3 className="font-sans font-bold text-[10px] tracking-widest uppercase mb-6 text-gold">Connect</h3>
-            <div className="flex space-x-4 mb-6">
+            <div className="mb-8 space-y-2">
+              <p className="font-sans text-xs text-green-deep/60">
+                For any queries, reach us at:
+              </p>
+              <a 
+                href="mailto:hello@ojasio.com" 
+                className="font-sans text-xs text-green-deep/80 hover:text-gold transition-colors inline-block font-medium"
+              >
+                hello@ojasio.com
+              </a>
+            </div>
+            <div className="flex space-x-4 mb-8">
               <a href="https://www.instagram.com/ojasio/" target="_blank" rel="noopener noreferrer" className="p-2 border border-green-deep/20 rounded-full hover:bg-gold hover:text-white hover:border-gold transition-all">
                 <Instagram size={16} />
               </a>
