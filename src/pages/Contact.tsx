@@ -90,28 +90,33 @@ export const Contact: React.FC = () => {
                 <p className="text-green-deep/70">Our team will reach out to you within 24 hours.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action="https://formsubmit.co/hello@ojasio.com" method="POST" className="space-y-6">
+                <input type="hidden" name="_next" value={window.location.href} />
+                <input type="hidden" name="_subject" value="New Assessment Inquiry" />
+                <input type="hidden" name="_captcha" value="true" />
+                <input type="hidden" name="_template" value="table" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-green-deep mb-2">Full Name</label>
-                    <input required type="text" className={inputClass} placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
+                    <input required type="text" name="name" className={inputClass} placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-green-deep mb-2">WhatsApp Number</label>
-                    <input required type="tel" className={inputClass} placeholder="+123 456 7890" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
+                    <input required type="tel" name="whatsapp" className={inputClass} placeholder="+123 456 7890" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-green-deep mb-2">Email Address</label>
-                    <input required type="email" className={inputClass} placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input required type="email" name="email" className={inputClass} placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-green-deep mb-2">Primary Goal</label>
                   <select 
+                    name="goal"
                     className={inputClass}
                     value={primaryGoal}
                     onChange={(e) => setPrimaryGoal(e.target.value)}
@@ -142,6 +147,7 @@ export const Contact: React.FC = () => {
                     <input 
                       required 
                       type="text" 
+                      name="other_goal"
                       className={inputClass} 
                       placeholder="Specify your primary goal..." 
                       value={otherGoal}
@@ -152,12 +158,12 @@ export const Contact: React.FC = () => {
 
                 <div>
                    <label className="block text-sm font-medium text-green-deep mb-2">Medical History & Condition Details</label>
-                   <textarea rows={4} className={inputClass} placeholder="Please describe any medical conditions, current medications, or specific dietary restrictions..." value={medicalHistory} onChange={(e) => setMedicalHistory(e.target.value)}></textarea>
+                   <textarea name="medical_history" rows={4} className={inputClass} placeholder="Please describe any medical conditions, current medications, or specific dietary restrictions..." value={medicalHistory} onChange={(e) => setMedicalHistory(e.target.value)}></textarea>
                 </div>
 
                 <div className="pt-4">
-                  <Button type="submit" fullWidth size="lg" className="text-sm tracking-widest uppercase" disabled={isSubmitting}>
-                    {isSubmitting ? "Processing..." : "Submit Assessment"}
+                  <Button type="submit" fullWidth size="lg" className="text-sm tracking-widest uppercase">
+                    Submit Assessment
                   </Button>
                 </div>
               </form>

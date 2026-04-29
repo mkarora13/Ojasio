@@ -283,13 +283,20 @@ export const Reviews: React.FC = () => {
               </p>
             </div>
 
-            <form className="space-y-10" onSubmit={handleSubmitReview}>
+            <form className="space-y-10" action="https://formsubmit.co/hello@ojasio.com" method="POST">
+              <input type="hidden" name="_next" value={window.location.href} />
+              <input type="hidden" name="_subject" value={`New Review from ${firstName} ${lastName}`} />
+              <input type="hidden" name="_captcha" value="true" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="rating" value={`${rating} Stars`} />
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold uppercase tracking-wider text-green-deep mb-2">First Name</label>
                   <input 
                     required 
                     type="text" 
+                    name="first_name"
                     className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
                     placeholder="Enter your first name" 
                     value={firstName} 
@@ -301,6 +308,7 @@ export const Reviews: React.FC = () => {
                   <input 
                     required 
                     type="text" 
+                    name="last_name"
                     className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
                     placeholder="Enter your last name" 
                     value={lastName} 
@@ -314,6 +322,7 @@ export const Reviews: React.FC = () => {
                 <input 
                   required 
                   type="email" 
+                  name="email"
                   className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
                   placeholder="Enter your email address" 
                   value={email} 
@@ -346,6 +355,7 @@ export const Reviews: React.FC = () => {
                   Your Review (Optional)
                 </label>
                 <textarea 
+                  name="review"
                   rows={4}
                   className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 resize-none bg-ivory/50"
                   placeholder="Tell us what you loved..."
@@ -354,8 +364,8 @@ export const Reviews: React.FC = () => {
                 ></textarea>
               </div>
 
-              <Button type="submit" disabled={rating === 0 || isSubmitting} className="w-full py-5 text-sm tracking-widest font-bold bg-green-deep text-ivory hover:bg-gold transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-                {isSubmitting ? "SUBMITTING..." : "SUBMIT REVIEW"}
+              <Button type="submit" disabled={rating === 0} className="w-full py-5 text-sm tracking-widest font-bold bg-green-deep text-ivory hover:bg-gold transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                SUBMIT REVIEW
               </Button>
             </form>
           </>
