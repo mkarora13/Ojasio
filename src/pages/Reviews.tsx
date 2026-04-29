@@ -105,7 +105,7 @@ export const Reviews: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      await fetch("https://formsubmit.co/ajax/dishaarora3085@gmail.com", {
+      await fetch("https://formsubmit.co/ajax/hello@ojasio.com", {
         method: "POST",
         headers: { 
             "Content-Type": "application/json",
