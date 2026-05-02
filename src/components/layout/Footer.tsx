@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Instagram, Linkedin, Mail } from 'lucide-react';
+import QRCode from 'react-qr-code';
 
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-beige text-green-deep border-t border-gold/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           <div className="md:col-span-2">
             <span className="font-display text-2xl font-bold tracking-tighter text-green-deep mb-4 flex items-center gap-3">
               <img 
@@ -62,6 +63,19 @@ export const Footer: React.FC = () => {
                 <Mail size={16} />
               </a>
             </div>
+          </div>
+
+          <div className="flex flex-col items-start md:items-center">
+            <h3 className="font-sans font-bold text-[10px] tracking-widest uppercase mb-6 text-gold text-center">Scan to Visit</h3>
+            <a href="/ojasio-qr.png" download="Ojasio_QRCode.png" className="bg-white p-3 rounded-xl shadow-sm border border-gold/20 flex flex-col items-center justify-center hover:shadow-md transition-all">
+              <QRCode 
+                value="https://ojasio.com" 
+                size={80} 
+                className="text-green-deep"
+                fgColor="#1C3F3A" // green-deep colour
+              />
+            </a>
+            <p className="mt-3 text-[9px] font-sans text-green-deep/60 uppercase tracking-widest text-center">Tap to Download</p>
           </div>
         </div>
         
