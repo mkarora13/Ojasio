@@ -1,0 +1,1282 @@
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download } from 'lucide-react';
+import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
+
+import { jsPDF } from 'jspdf';
+
+// Content Data Structure
+
+const DIET_PLANS: Record<string, any> = {
+  "Indian Vegetarian": {
+    country: "Indian Vegetarian",
+    why: "An Indian vegetarian diet plan for PCOS leverages traditional, anti-inflammatory spices like turmeric, methi, and cinnamon. Complex carbohydrates are paired with protein and fiber to blunt blood sugar response and keep insulin flat.",
+    days: {
+      1: { breakfast: "2 Besan (gram flour) or Moong Dal Chillas stuffed with grated paneer and spinach + mint chutney", lunch: "1 Bowl of Jowar roti with mixed vegetables + 1 bowl dal + cucumber raita", dinner: "Light lauki (bottle gourd) soup + Sautéed tofu/paneer with bell peppers", snack: "Warm water with overnight soaked methi (fenugreek) seeds / 1 small bowl of fresh papaya or a green apple / 1 cup of Spearmint Tea + roasted makhana (fox nuts)" },
+      2: { breakfast: "Savoury oats upma with plenty of peas, carrots, and peanuts", lunch: "1 portion Quinoa pulao + Rajma (kidney beans) + side salad", dinner: "Palak paneer (light gravy) with 1 bajra (pearl millet) roti", snack: "Warm cinnamon water / Handful of soaked almonds and 2 walnuts / Green tea + roasted chickpeas" },
+      3: { breakfast: "Sprouted moong dal chat with diced tomatoes, cucumber, and lemon juice", lunch: "Brown rice + Chana dal + Bhindi (okra) masala", dinner: "Clear vegetable soup + grilled paneer salad with olive oil dressing", snack: "Warm water with turmeric / 1 whole orange or sweet lime / Spearmint Tea + 1 tbsp flaxseeds/pumpkin seeds" },
+      4: { breakfast: "Poha (flattened rice) made with peas, peanuts, and half a grated carrot", lunch: "2 Ragi (finger millet) rotis + Baingan Bharta (mashed eggplant) + plain curd", dinner: "Moong dal khichdi (more dal, less rice) with a dollop of ghee", snack: "Overnight soaked methi water / Half cup pomegranate seeds / Herbal tea + handful of roasted peanuts" },
+      5: { breakfast: "Vegetable dalia (broken wheat) with a side of plain yogurt", lunch: "1 bowl cooked millets (foxtail or barnyard) + mixed vegetable sambar", dinner: "Stir-fried broccoli and bell peppers with tofu/paneer", snack: "Warm cinnamon water / Small bowl of watermelon / Spearmint Tea + roasted edamame or chana" },
+      6: { breakfast: "Paneer bhurji (scrambled Indian cottage cheese) with 1 multigrain toast", lunch: "2 Jowar rotis + Ghiya (bottle gourd) sabzi + small bowl of sprouts", dinner: "Pumpkin soup + portion of roasted vegetables", snack: "Warm water with lemon / A cup of buttermilk (chaas) with cumin powder / Green tea + cucumber sticks with hummus" },
+      7: { breakfast: "Buckwheat (kuttu) pancakes or dosas with coconut chutney", lunch: "Brown rice + Black chana curry + a generous portion of cabbage salad", dinner: "Zucchini noodles (zoodles) or lightly sautéed vegetables with a protein source", snack: "Methi seed water / 1 sliced apple with a little almond butter / Spearmint Tea + a small piece of dark chocolate" }
+    }
+  },
+  "Canada": {
+    country: "Canada",
+    why: "Balanced meals with high fiber, protein, and healthy fats help regulate insulin and reduce inflammation. Focuses on slow-digesting complex carbs and deeply satiating plant proteins.",
+    days: {
+      1: { breakfast: "Oatmeal with chia seeds and blueberries", lunch: "Quinoa salad with chickpeas and veggies", dinner: "Grilled tofu with roasted vegetables", snack: "Greek yogurt with flaxseeds" },
+      2: { breakfast: "Avocado toast on whole grain bread", lunch: "Lentil soup with side salad", dinner: "Baked salmon with broccoli", snack: "Apple with almond butter" },
+      3: { breakfast: "Smoothie with spinach, banana, and peanut butter", lunch: "Brown rice with black beans and veggies", dinner: "Stir-fried tofu with bell peppers", snack: "Mixed nuts" },
+      4: { breakfast: "Scrambled eggs or paneer with veggies", lunch: "Whole wheat wrap with hummus and salad", dinner: "Grilled chicken or tofu with quinoa", snack: "Cottage cheese with berries" },
+      5: { breakfast: "Overnight oats with seeds", lunch: "Chickpea salad bowl", dinner: "Vegetable soup with whole grain toast", snack: "Carrot sticks with hummus" },
+      6: { breakfast: "Protein smoothie", lunch: "Brown rice sushi-style bowl", dinner: "Baked tofu with greens", snack: "Walnuts" },
+      7: { breakfast: "Whole grain pancakes (no sugar)", lunch: "Lentil and veggie bowl", dinner: "Light vegetable stew", snack: "Dark chocolate (small piece)" }
+    }
+  },
+  "USA": {
+    country: "USA",
+    why: "Focus on protein-rich and low glycemic foods helps stabilize blood sugar and reduce cravings. High fiber from raw leafy greens provides volume eating.",
+    days: {
+      1: { breakfast: "Greek yogurt with granola and berries", lunch: "Grilled chicken salad", dinner: "Salmon with sweet potato", snack: "Almonds" },
+      2: { breakfast: "Protein smoothie", lunch: "Quinoa bowl with veggies", dinner: "Stir-fried tofu", snack: "Apple slices" },
+      3: { breakfast: "Avocado toast", lunch: "Lentil soup", dinner: "Grilled chicken with greens", snack: "Peanut butter with celery" },
+      4: { breakfast: "Oatmeal with nuts", lunch: "Brown rice bowl", dinner: "Baked fish or tofu", snack: "Yogurt" },
+      5: { breakfast: "Egg scramble", lunch: "Chickpea salad", dinner: "Vegetable stir fry", snack: "Mixed seeds" },
+      6: { breakfast: "Smoothie bowl", lunch: "Whole grain sandwich", dinner: "Grilled protein + veggies", snack: "Walnuts" },
+      7: { breakfast: "Pancakes (healthy version)", lunch: "Soup + salad", dinner: "Light quinoa bowl", snack: "Dark chocolate" }
+    }
+  },
+  "UK": {
+    country: "UK",
+    why: "Traditional whole foods and fiber-rich meals support gut health and hormone balance. Warm, cooked foods are gentler on digestion.",
+    days: {
+      1: { breakfast: "Porridge with berries", lunch: "Lentil soup", dinner: "Grilled fish with veggies", snack: "Nuts" },
+      2: { breakfast: "Whole grain toast + avocado", lunch: "Chickpea salad", dinner: "Stir-fried vegetables", snack: "Apple" },
+      3: { breakfast: "Yogurt with seeds", lunch: "Brown rice bowl", dinner: "Baked tofu", snack: "Carrots + hummus" },
+      4: { breakfast: "Smoothie", lunch: "Whole wheat wrap", dinner: "Vegetable stew", snack: "Almonds" },
+      5: { breakfast: "Oats with flaxseeds", lunch: "Soup + salad", dinner: "Grilled paneer", snack: "Yogurt" },
+      6: { breakfast: "Eggs or tofu scramble", lunch: "Quinoa salad", dinner: "Roasted vegetables", snack: "Seeds" },
+      7: { breakfast: "Pancakes (healthy)", lunch: "Lentil bowl", dinner: "Light soup", snack: "Dark chocolate" }
+    }
+  },
+  "Australia": {
+    country: "Australia",
+    why: "Fresh, clean eating with minimal processed food reduces inflammation and improves insulin response. Exceptional healthy fats provide the needed cholesterol backbone.",
+    days: {
+      1: { breakfast: "Avocado toast", lunch: "Chicken salad", dinner: "Grilled fish + veggies", snack: "Nuts" },
+      2: { breakfast: "Smoothie", lunch: "Quinoa bowl", dinner: "Stir fry", snack: "Fruit" },
+      3: { breakfast: "Yogurt bowl", lunch: "Lentil salad", dinner: "Baked tofu", snack: "Seeds" },
+      4: { breakfast: "Oats", lunch: "Whole grain wrap", dinner: "Grilled veggies", snack: "Almonds" },
+      5: { breakfast: "Eggs or paneer", lunch: "Chickpea bowl", dinner: "Soup", snack: "Apple" },
+      6: { breakfast: "Smoothie bowl", lunch: "Salad bowl", dinner: "Protein + veggies", snack: "Walnuts" },
+      7: { breakfast: "Pancakes", lunch: "Soup", dinner: "Light quinoa", snack: "Dark chocolate" }
+    }
+  },
+  "Spain": {
+    country: "Spain",
+    why: "Mediterranean-style diet rich in healthy fats and fiber helps regulate hormones and improve metabolism. One of the most anti-inflammatory diets.",
+    days: {
+      1: { breakfast: "Whole grain toast with olive oil", lunch: "Chickpea salad", dinner: "Grilled vegetables", snack: "Nuts" },
+      2: { breakfast: "Yogurt with fruits", lunch: "Lentil stew", dinner: "Fish with salad", snack: "Seeds" },
+      3: { breakfast: "Smoothie", lunch: "Brown rice with veggies", dinner: "Tofu stir fry", snack: "Apple" },
+      4: { breakfast: "Oats", lunch: "Salad with olive oil", dinner: "Vegetable soup", snack: "Almonds" },
+      5: { breakfast: "Toast + avocado", lunch: "Chickpea bowl", dinner: "Grilled paneer", snack: "Yogurt" },
+      6: { breakfast: "Smoothie bowl", lunch: "Lentil soup", dinner: "Roasted vegetables", snack: "Walnuts" },
+      7: { breakfast: "Healthy pancakes", lunch: "Salad", dinner: "Light stew", snack: "Dark chocolate" }
+    }
+  },
+  "Japan": {
+    country: "Japan",
+    why: "Light, portion-controlled meals with fermented foods improve gut health and hormonal balance. Fermented foods deeply nourish the gut microbiome.",
+    days: {
+      1: { breakfast: "Miso soup + rice", lunch: "Sushi bowl", dinner: "Grilled fish/tofu", snack: "Edamame" },
+      2: { breakfast: "Rice + vegetables", lunch: "Bento-style meal", dinner: "Soup + tofu", snack: "Green tea + nuts" },
+      3: { breakfast: "Smoothie", lunch: "Rice + lentils", dinner: "Stir fry", snack: "Seeds" },
+      4: { breakfast: "Oats (modern variation)", lunch: "Salad bowl", dinner: "Light soup", snack: "Apple" },
+      5: { breakfast: "Tofu scramble", lunch: "Rice bowl", dinner: "Vegetables", snack: "Edamame" },
+      6: { breakfast: "Smoothie bowl", lunch: "Bento", dinner: "Soup", snack: "Nuts" },
+      7: { breakfast: "Light rice meal", lunch: "Salad", dinner: "Light broth", snack: "Dark chocolate" }
+    }
+  }
+};
+
+const downloadDietPlanPDF = (countryCode: string) => {
+  const planInfo = DIET_PLANS[countryCode];
+  if (!planInfo) return;
+
+  const doc = new jsPDF();
+  let y = 20;
+
+  doc.setFontSize(22);
+  doc.setTextColor(26, 47, 43);
+  doc.text(`${planInfo.country} - 7 Day PCOS Diet Plan`, 20, y);
+  y += 15;
+
+  doc.setFontSize(12);
+  for (let i = 1; i <= 7; i++) {
+    if (y > 260) {
+      doc.addPage();
+      y = 20;
+    }
+    const day = planInfo.days[i];
+    if (!day) continue;
+    
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(26, 47, 43);
+    doc.text(`Day ${i}`, 20, y);
+    y += 8;
+    
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(50, 50, 50);
+    
+    const lines = [
+      `Breakfast: ${day.breakfast}`,
+      `Lunch: ${day.lunch}`,
+      `Dinner: ${day.dinner}`,
+      `Snack: ${day.snack}`
+    ];
+    
+    lines.forEach(line => {
+      const splitLines = doc.splitTextToSize(line, 170);
+      doc.text(splitLines, 20, y);
+      y += 6 * splitLines.length;
+    });
+    y += 5;
+  }
+
+  if (y > 230) {
+    doc.addPage();
+    y = 20;
+  }
+  
+  y += 10;
+  doc.setFontSize(14);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(26, 47, 43);
+  doc.text("Why This Works for PCOS", 20, y);
+  y += 8;
+  
+  doc.setFontSize(11);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(50, 50, 50);
+  const whySplit = doc.splitTextToSize(planInfo.why, 170);
+  doc.text(whySplit, 20, y);
+  
+  doc.save(`${planInfo.country.toLowerCase().replace(/ /g, '-')}-pcos-diet-plan.pdf`);
+};
+
+const PCOS_REVIEWS = [
+  {
+    quote: "I was told I might never conceive naturally. My cycles were completely absent. Adapting this holistic plan formulated by Disha Arora and trusting the process gave me my life and my body back.",
+    name: "Fatima Al-Rashidi, 27",
+    location: "DUBAI, UAE",
+    metrics: [
+      { label: "Weight Loss", value: "-9 kg" },
+      { label: "Menstrual Cycle", value: "Restored" },
+      { label: "Journey Duration", value: "6 Months" },
+      { label: "Outcome", value: "Natural Pregnancy" }
+    ]
+  },
+  {
+    quote: "The Indian vegetarian plan was a game-changer. Disha Arora understood my cultural eating habits and adjusted the plan without eliminating the foods I love. My insulin resistance is completely reversed.",
+    name: "Priya S., 32",
+    location: "MUMBAI, INDIA",
+    metrics: [
+      { label: "Insulin", value: "Normal" },
+      { label: "Energy", value: "+80%" },
+      { label: "Duration", value: "4 Months" },
+      { label: "Outcome", value: "Reversed Prediabetes" }
+    ]
+  },
+  {
+    quote: "I tried everything from keto to intense cardio. The global PCOS variations allowed me to eat a Mediterranean style diet while managing my symptoms. Truly life-changing approach.",
+    name: "Elena M., 29",
+    location: "MADRID, SPAIN",
+    metrics: [
+      { label: "Acne", value: "100% Cleared" },
+      { label: "Weight Loss", value: "-12 kg" },
+      { label: "Mood", value: "Stabilized" },
+      { label: "Outcome", value: "Hormonal Harmony" }
+    ]
+  },
+  {
+    quote: "Having struggled with PCOS fatigue for a decade, finding Disha Arora's structured plan was a blessing. I followed her high-protein bowl strategy and finally saw the scale move down.",
+    name: "Sarah Jenkins, 35",
+    location: "TORONTO, CANADA",
+    metrics: [
+      { label: "Fat Loss", value: "-15 kg" },
+      { label: "Cycles", value: "Regular" },
+      { label: "Fatigue", value: "Gone" },
+      { label: "Outcome", value: "Sustained Vitality" }
+    ]
+  },
+  {
+    quote: "What impressed me most was how Disha Arora incorporated everyday Indian ingredients to create such a powerful healing protocol. I didn't feel like I was on a diet, yet the results were phenomenal.",
+    name: "Neha Gupta, 28",
+    location: "DELHI, INDIA",
+    metrics: [
+      { label: "Weight Loss", value: "-7 kg" },
+      { label: "Hair Fall", value: "Stopped" },
+      { label: "Duration", value: "3 Months" },
+      { label: "Outcome", value: "Symptom Free" }
+    ]
+  },
+  {
+    quote: "Living in the UK, I struggled to find a plan that worked in winter. The warm comfort variations in the global plan healed my gut and cleared my skin. It's the most sustainable approach I've found.",
+    name: "Emma W., 31",
+    location: "LONDON, UK",
+    metrics: [
+      { label: "Skin", value: "Glowing" },
+      { label: "Bloating", value: "Resolved" },
+      { label: "Duration", value: "5 Months" },
+      { label: "Outcome", value: "Optimised Digestion" }
+    ]
+  }
+];
+
+const WEIGHT_LOSS_REVIEWS = [
+  {
+    quote: "I struggled with crash diets for years. They always left me hungry and frustrated. After adopting the plan, I lost 7 kg in 3 months by just eating properly.",
+    name: "Riya",
+    location: "DELHI",
+    age: 26,
+    metrics: [
+      { label: "Results", value: "Lost 7 kg" },
+      { label: "Time", value: "3 Months" }
+    ]
+  },
+  {
+    quote: "Constant fatigue and weight gain was destroying my confidence. Disha Arora's guidance changed everything. I lost 6 kg, improved my energy, and finally feel like myself again.",
+    name: "Aarti",
+    location: "MUMBAI",
+    age: 29,
+    metrics: [
+      { label: "Results", value: "Lost 6 kg" },
+      { label: "Benefit", value: "More Energy" }
+    ]
+  },
+  {
+    quote: "My late-night eating habits were completely ruining my progress. With structured meals, I lost 8 kg and stopped craving junk food entirely.",
+    name: "Aman",
+    location: "CANADA",
+    age: 32,
+    metrics: [
+      { label: "Results", value: "Lost 8 kg" },
+      { label: "Benefit", value: "No Cravings" }
+    ]
+  },
+  {
+    quote: "PCOS and stubborn fat made losing weight feel impossible. Disha Arora's structured plan helped me reduce weight significantly and eliminated my severe bloating.",
+    name: "Sneha",
+    location: "DELHI",
+    age: 34,
+    metrics: [
+      { label: "Results", value: "Weight Reduced" },
+      { label: "Benefit", value: "No Bloating" }
+    ]
+  },
+  {
+    quote: "I had tried multiple extreme diets and nothing worked long-term. Following this method, I finally lost 9 kg sustainably without feeling deprived for a single day.",
+    name: "Sarah",
+    location: "UK",
+    age: 30,
+    metrics: [
+      { label: "Results", value: "Lost 9 kg" },
+      { label: "Benefit", value: "Sustainable" }
+    ]
+  },
+  {
+    quote: "Emotional eating issues held me back for years. The personalized nutrition plan from Disha Arora not only helped me lose 5 kg but profoundly improved my mindset towards food.",
+    name: "Pooja",
+    location: "GURGAON",
+    age: 27,
+    metrics: [
+      { label: "Results", value: "Lost 5 kg" },
+      { label: "Benefit", value: "Better Mindset" }
+    ]
+  },
+  {
+    quote: "Having a sedentary desk job made it hard to stay active. I lost 10 kg with a balanced diet plan plus walking. It was incredibly simple and effective.",
+    name: "James",
+    location: "USA",
+    age: 35,
+    metrics: [
+      { label: "Results", value: "Lost 10 kg" },
+      { label: "Action", value: "Diet + Walking" }
+    ]
+  },
+  {
+    quote: "Hormonal imbalance was making me feel awful. After correcting my diet, I lost 6 kg and significantly improved my cycles. Truly grateful.",
+    name: "Priya",
+    location: "AUSTRALIA",
+    age: 31,
+    metrics: [
+      { label: "Results", value: "Lost 6 kg" },
+      { label: "Benefit", value: "Better Cycles" }
+    ]
+  },
+  {
+    quote: "I was stuck on a weight plateau for years and thought my metabolism was broken. Disha Arora's guidance finally helped me lose 8 kg with balanced eating.",
+    name: "Meera",
+    location: "INDIA",
+    age: 33,
+    metrics: [
+      { label: "Results", value: "Lost 8 kg" },
+      { label: "Benefit", value: "Broke Plateau" }
+    ]
+  }
+];
+
+const ReviewsSlider = ({ reviews }: { reviews: any[] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % reviews.length);
+    }, 10000);
+    return () => clearInterval(timer);
+  }, [reviews.length]);
+
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % reviews.length);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+
+  const review = reviews[currentIndex];
+
+  return (
+    <div className="mt-20 bg-[#1A1A1A] p-10 md:p-14 rounded-[2rem] text-white relative overflow-hidden shadow-2xl not-prose">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#EAC881]/10 rounded-full blur-[80px]"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#1A2F2B]/50 rounded-full blur-[80px]"></div>
+      
+      <div className="relative z-10">
+        <div className="flex items-center justify-between mb-10">
+          <div className="flex items-center gap-4">
+            <span className="text-xs uppercase tracking-[0.3em] text-[#EAC881] font-bold">✦ Real Client Stories</span>
+            <span className="hidden sm:block w-12 h-[1px] bg-[#EAC881]/40"></span>
+          </div>
+          <div className="flex gap-3">
+            <button onClick={prevSlide} className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+              <ChevronRight size={18} className="transform rotate-180" />
+            </button>
+            <button onClick={nextSlide} className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors">
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
+        
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={currentIndex}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.5 }}
+            className="grid md:grid-cols-2 gap-16 items-center"
+          >
+            <div>
+              <p className="text-xl md:text-2xl font-light italic leading-relaxed text-white mb-10 font-serif">
+                "{review.quote}"
+              </p>
+              <div className="flex items-center gap-6">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#EAC881] to-[#1A2F2B] p-[2px] shrink-0">
+                  <div className="w-full h-full bg-[#1A1A1A] rounded-full flex items-center justify-center text-[#EAC881] font-display text-2xl">
+                    {review.name.charAt(0)}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-display text-2xl text-white">{review.name}{review.age ? `, ${review.age}` : ''}</h4>
+                  <p className="text-[#EAC881]/80 font-sans text-[11px] tracking-widest mt-1 uppercase">{review.location}</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
+              <h5 className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-8 font-semibold">The Transformation</h5>
+              <div className="space-y-6">
+                {review.metrics.map((metric: any, i: number) => (
+                  <div key={i} className={`flex items-center justify-between ${i < review.metrics.length - 1 ? 'border-b border-white/10 pb-4' : 'pt-2'}`}>
+                    <span className="text-white font-light">{metric.label}</span>
+                    <span className="text-lg lg:text-xl font-display text-[#EAC881] text-right">{metric.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+};
+
+const BLOG_POSTS = [
+  {
+    id: "pcos-diet-plan",
+    featured: true,
+    title: "The Ultimate 7-Day PCOS Diet Plan: Indian & Global Nutrition Guide",
+    subtitle: "For Hormonal Balance & Healing From Within",
+    category: "PCOS & Hormones",
+    readTime: "9 Min Read",
+    date: "May 03, 2026",
+    author: "BY DISHA ARORA | NUTRITIONIST | NUTRITIONIST MANAGER",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200",
+    excerpt: "Discover a premium, science-backed 7-day Indian vegetarian diet plan for PCOS along with global eating variations. Learn how to manage weight, balance hormones naturally, and feel energetic.",
+    content: (
+      <>
+        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+          <p className="lead text-xl italic text-[#1A2F2B]/70 mb-10 border-l-4 border-[#EAC881] pl-8 leading-relaxed">
+            "85% of women with PCOS have insulin resistance. An anti-inflammatory, low-glycaemic diet is the single most effective non-pharmacological intervention."
+          </p>
+
+          <p>
+            Weight gain that feels impossible to lose. Unpredictable periods causing constant stress. Fatigue that drains your energy by 3 PM. If you are battling Polycystic Ovary Syndrome (PCOS), these struggles aren't just inconvenient—they deeply impact how you feel in your own body every single day. Women all across the world face this silently, but finding balance is possible. 
+          </p>
+
+          <h2 className="text-2xl mt-16 mb-6">Why Diet Is The Real Medicine</h2>
+          <p>
+            You’ve likely been told to "just lose weight." But PCOS isn't about willpower. It’s an endocrine disorder intricately tied to <strong>insulin resistance</strong>, hormonal imbalance, and chronic inflammation. When your cells resist insulin, your body pumps out more of it, which triggers your ovaries to overproduce testosterone. Over time, this leads to weight gain around your midsection, adult acne, hair thinning, and skipped periods.
+          </p>
+          <p>
+            Healing begins not with starvation diets, but with strategic, deeply nourishing food that acts as medicine for your cells.
+          </p>
+
+          <img src="https://images.pexels.com/photos/37409098/pexels-photo-37409098.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Preparing healthy food" className="w-full rounded-2xl my-12 object-cover aspect-[21/9] shadow-lg" />
+
+          <h2 className="text-2xl mt-16 mb-8 text-[#1A2F2B]">The 7-Day Indian Vegetarian PCOS Diet Plan</h2>
+          
+          <p>
+            An Indian vegetarian diet plan for PCOS is uniquely powerful because it leverages traditional, anti-inflammatory spices like turmeric, methi, and cinnamon. While many believe an Indian diet is inherently high in carbs and unsuitable for hormonal balance, a thoughtfully structured plan emphasizes whole food complex carbohydrates like millets (jowar, bajra, ragi), protein-rich dals, and antioxidant-rich vegetables. 
+          </p>
+          <p>
+            The secret is in the sequencing and pairings: always pairing a carbohydrate with a fiber and protein source to blunt any blood sugar response. Instead of restricting your favorite cultural meals, this protocol aims to optimize them to keep your insulin flat, reducing androgen dominance and supporting natural ovulation.
+          </p>
+
+          <div className="bg-[#FAF9F6] p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#EAC881]/30 my-10 flex flex-col md:flex-row md:items-center justify-between gap-8 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-[#EAC881]/10 rounded-full blur-[40px] group-hover:bg-[#EAC881]/20 transition-all duration-700"></div>
+            <div className="relative z-10 max-w-xl">
+               <h4 className="font-display text-xl text-[#1A2F2B] mb-4">Complete 7-Day Indian Protocol</h4>
+               <p className="text-sm font-light m-0 text-[#1A2F2B]/80 mb-6"><strong>What's inside:</strong> Comprehensive daily meal sequencing (Waking up to Dinner), smart insulin-balancing tips, and a full grocery shopping list tailored for the Indian kitchen.</p>
+               <ul className="text-sm font-light space-y-3 mb-0">
+                  <li className="flex items-center gap-2 m-0 p-0 before:hidden"><CheckCircle2 size={16} className="text-[#EAC881] shrink-0" /> Balanced macros using everyday ingredients</li>
+                  <li className="flex items-center gap-2 m-0 p-0 before:hidden"><CheckCircle2 size={16} className="text-[#EAC881] shrink-0" /> Includes traditional spices & herbs</li>
+                  <li className="flex items-center gap-2 m-0 p-0 before:hidden"><CheckCircle2 size={16} className="text-[#EAC881] shrink-0" /> Specifically designed for insulin resistance</li>
+                </ul>
+            </div>
+            <button 
+              onClick={() => downloadDietPlanPDF("Indian Vegetarian")}
+              className="relative z-10 shrink-0 flex items-center justify-center gap-3 bg-[#1A2F2B] text-white px-8 py-5 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-all duration-300 shadow-[0_10px_30px_rgba(26,47,43,0.15)] hover:shadow-[0_15px_40px_rgba(234,200,129,0.3)] hover:-translate-y-1"
+            >
+              <Download size={18} /> Download PDF
+            </button>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Natural Home Remedies for Hormonal Healing</h2>
+          <p>
+            Nature provides profound therapeutic compounds that act directly on your endocrine system. Incorporating these natural remedies daily can make a significant difference:
+          </p>
+          <ul className="space-y-4">
+            <li><strong>Cinnamon Water:</strong> Cinnamon acts as a powerful insulin sensitizer. It mimics insulin, lowering blood sugar levels effectively and improving fasting glucose.</li>
+            <li><strong>Methi (Fenugreek) Seeds:</strong> Soaking fenugreek seeds overnight and drinking the water helps slow the absorption of sugar in the stomach and stimulates insulin.</li>
+            <li><strong>Spearmint Tea:</strong> Clinically proven to have anti-androgenic properties. Drinking two cups a day significantly lowers free testosterone levels, reducing facial hair growth (hirsutism) and acne.</li>
+            <li><strong>Flaxseeds:</strong> Rich in lignans, which bind to excess aggressive estrogens in the gut and safely excrete them from the body.</li>
+            <li><strong>Turmeric:</strong> A potent anti-inflammatory. Since PCOS is an inflammatory state, turmeric (with black pepper for absorption) soothes cellular inflammation.</li>
+          </ul>
+
+          <h2 className="text-2xl mt-16 mb-8 text-[#1A2F2B]">Global PCOS Diet Variations</h2>
+          <p className="mb-10 text-xl font-light italic">PCOS is a global reality. Managing it should fit your local cuisine and lifestyle. Here’s how women around the world eat for hormonal balance.</p>
+
+          <div className="space-y-8 my-8">
+            <div className="bg-[#FAF9F6] p-8 rounded-2xl shadow-sm border border-[#EAC881]/20 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+              <div>
+                <h4 className="font-display text-xl text-[#1A2F2B] mb-4">🇨🇦 Canada (High-Protein Bowls)</h4>
+                <p className="text-sm font-light m-0"><strong>Style:</strong> Hearty, protein-forward to stay warm and satisfied.</p>
+                <ul className="text-sm font-light mt-4 mb-0">
+                  <li><strong>Sample Meal:</strong> Steel-cut oats with chia seeds for breakfast; Quinoa, avocado, and black bean bowls for lunch.</li>
+                  <li><strong>Why it works:</strong> Focuses on slow-digesting complex carbs and deeply satiating plant proteins to keep insulin flat all day.</li>
+                </ul>
+              </div>
+              <button 
+                onClick={() => downloadDietPlanPDF("Canada")}
+                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <Download size={14} /> Download PDF
+              </button>
+            </div>
+            
+            <div className="bg-[#FAF9F6] p-8 rounded-2xl shadow-sm border border-[#EAC881]/20 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+              <div>
+                <h4 className="font-display text-xl text-[#1A2F2B] mb-4">🇺🇸 USA (Balanced Plates)</h4>
+                <p className="text-sm font-light m-0"><strong>Style:</strong> Quick, fresh, and lean.</p>
+                <ul className="text-sm font-light mt-4 mb-0">
+                  <li><strong>Sample Meal:</strong> Green smoothies with spinach and hemp protein; large mixed greens salads with lean chicken or tofu and olive oil vinaigrette.</li>
+                  <li><strong>Why it works:</strong> High fiber from raw leafy greens provides volume eating, while lean proteins maintain muscle mass without spiking blood sugar.</li>
+                </ul>
+              </div>
+              <button 
+                onClick={() => downloadDietPlanPDF("USA")}
+                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <Download size={14} /> Download PDF
+              </button>
+            </div>
+
+            <div className="bg-[#FAF9F6] p-8 rounded-2xl shadow-sm border border-[#EAC881]/20 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+              <div>
+                <h4 className="font-display text-xl text-[#1A2F2B] mb-4">🇬🇧 UK (Warm Comfort)</h4>
+                <p className="text-sm font-light m-0"><strong>Style:</strong> Wholesome, root-vegetable heavy, and warming.</p>
+                <ul className="text-sm font-light mt-4 mb-0">
+                  <li><strong>Sample Meal:</strong> Lentil and root vegetable soups; roasted broccoli and carrots with baked salmon or tempeh.</li>
+                  <li><strong>Why it works:</strong> Warm, cooked foods are gentler on digestion, while salmon provides crucial Omega-3s to fight systemic inflammation.</li>
+                </ul>
+              </div>
+              <button 
+                onClick={() => downloadDietPlanPDF("UK")}
+                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <Download size={14} /> Download PDF
+              </button>
+            </div>
+
+            <div className="bg-[#FAF9F6] p-8 rounded-2xl shadow-sm border border-[#EAC881]/20 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+              <div>
+                <h4 className="font-display text-xl text-[#1A2F2B] mb-4">🇦🇺 Australia (Fresh & Coastal)</h4>
+                <p className="text-sm font-light m-0"><strong>Style:</strong> Bright, fresh produce and light seafood.</p>
+                <ul className="text-sm font-light mt-4 mb-0">
+                  <li><strong>Sample Meal:</strong> Smashed avocado on sourdough (fermented, slow-carb) with poached eggs; grilled barramundi with a large fresh salad.</li>
+                  <li><strong>Why it works:</strong> Exceptional healthy fats (avocado, eggs, fish) provide the cholesterol backbone needed to synthesize healthy sex hormones safely.</li>
+                </ul>
+              </div>
+              <button 
+                onClick={() => downloadDietPlanPDF("Australia")}
+                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <Download size={14} /> Download PDF
+              </button>
+            </div>
+
+            <div className="bg-[#FAF9F6] p-8 rounded-2xl shadow-sm border border-[#EAC881]/20 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+              <div>
+                <h4 className="font-display text-xl text-[#1A2F2B] mb-4">🇪🇸 Spain (Mediterranean Style)</h4>
+                <p className="text-sm font-light m-0"><strong>Style:</strong> Rich in antioxidants and healthy oils.</p>
+                <ul className="text-sm font-light mt-4 mb-0">
+                  <li><strong>Sample Meal:</strong> Tomato gazpacho; large plates of grilled vegetables drizzled heavily in extra virgin olive oil; walnuts and almonds as snacks.</li>
+                  <li><strong>Why it works:</strong> The Mediterranean diet is clinically proven to be one of the most anti-inflammatory diets in the world, perfect for PCOS management.</li>
+                </ul>
+              </div>
+              <button 
+                onClick={() => downloadDietPlanPDF("Spain")}
+                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <Download size={14} /> Download PDF
+              </button>
+            </div>
+
+            <div className="bg-[#FAF9F6] p-8 rounded-2xl shadow-sm border border-[#EAC881]/20 flex flex-col md:flex-row md:items-center justify-between gap-6 group">
+              <div>
+                <h4 className="font-display text-xl text-[#1A2F2B] mb-4">🇯🇵 Japan (Clean & Fermented)</h4>
+                <p className="text-sm font-light m-0"><strong>Style:</strong> Small portions, fermented, and algae-rich.</p>
+                <ul className="text-sm font-light mt-4 mb-0">
+                  <li><strong>Sample Meal:</strong> Miso soup; a small portion of rice with natto (fermented soybeans) and grilled fish; seaweed salads.</li>
+                  <li><strong>Why it works:</strong> Fermented foods (like miso and natto) deeply nourish the gut microbiome, which is essential for proper estrogen clearance and metabolism.</li>
+                </ul>
+              </div>
+              <button 
+                onClick={() => downloadDietPlanPDF("Japan")}
+                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <Download size={14} /> Download PDF
+              </button>
+            </div>
+          </div>
+
+
+          <h2 className="text-2xl mt-16 mb-6">What to Eat vs. What to Avoid</h2>
+          <div className="grid md:grid-cols-2 gap-8 my-8 not-prose">
+            <div className="bg-white p-8 rounded-2xl border-t-4 border-green-600 shadow-lg">
+              <h4 className="font-bold text-[#1A2F2B] mb-6 text-xl uppercase tracking-widest text-center">✔ What to Eat</h4>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3 text-[#1A2F2B]/80 font-light"><CheckCircle2 size={20} className="text-green-600 shrink-0" /> <strong>Fiber-Rich Veggies:</strong> Broccoli, spinach, kale</li>
+                <li className="flex items-center gap-3 text-[#1A2F2B]/80 font-light"><CheckCircle2 size={20} className="text-green-600 shrink-0" /> <strong>Lean Proteins:</strong> Paneer, eggs, lentils, tofu</li>
+                <li className="flex items-center gap-3 text-[#1A2F2B]/80 font-light"><CheckCircle2 size={20} className="text-green-600 shrink-0" /> <strong>Healthy Fats:</strong> Walnuts, almonds, olive oil, avocado</li>
+                <li className="flex items-center gap-3 text-[#1A2F2B]/80 font-light"><CheckCircle2 size={20} className="text-green-600 shrink-0" /> <strong>Anti-Inflammatory:</strong> Turmeric, ginger, berries</li>
+              </ul>
+            </div>
+            <div className="bg-white p-8 rounded-2xl border-t-4 border-red-500 shadow-lg">
+              <h4 className="font-bold text-[#1A2F2B] mb-6 text-xl uppercase tracking-widest text-center">✖ What to Avoid</h4>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3 text-[#1A2F2B]/80 font-light"><X size={20} className="text-red-500 shrink-0" /> <strong>Refined Sugars:</strong> Sweets, sodas, packaged juices</li>
+                <li className="flex items-center gap-3 text-[#1A2F2B]/80 font-light"><X size={20} className="text-red-500 shrink-0" /> <strong>Maida (Refined Flour):</strong> White bread, pastas, biscuits</li>
+                <li className="flex items-center gap-3 text-[#1A2F2B]/80 font-light"><X size={20} className="text-red-500 shrink-0" /> <strong>Processed Foods:</strong> Chips, ready-to-eat meals</li>
+                <li className="flex items-center gap-3 text-[#1A2F2B]/80 font-light"><X size={20} className="text-red-500 shrink-0" /> <strong>Excess Dairy:</strong> Especially if acne-prone</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Expert Lifestyle Tips for Hormonal Harmony</h2>
+          <ul className="space-y-6">
+            <li><strong>Sleep is Non-Negotiable:</strong> Lack of sleep increases insulin resistance by 30% the next day. Aim for 7-8 hours of quality sleep.</li>
+            <li><strong>Stress Management:</strong> High cortisol stops ovulation. Practice yoga, meditation, or simple deep breathing exercises daily.</li>
+            <li><strong>Movement:</strong> Don't over-exercise (which spikes cortisol). Prioritize strength training and 10k steps over exhausting cardio sessions.</li>
+            <li><strong>Consistency:</strong> Hormones take 3 to 6 months to cycle and shift. Do not expect magic in 10 days. Stay consistent.</li>
+          </ul>
+
+        </div>
+
+        {/* Real Client Story */}
+        <ReviewsSlider reviews={PCOS_REVIEWS} />
+      </>
+    )
+  },
+  {
+    id: "lose-weight-without-starving",
+    featured: false,
+    title: "How to Lose Weight Without Starving: A Sustainable, Science-Backed Approach to Fat Loss",
+    subtitle: "The Ultimate Guide to Sustainable Fat Loss",
+    category: "Weight Loss",
+    readTime: "8 Min Read",
+    date: "April 02, 2026",
+    author: "BY DISHA ARORA | NUTRITIONIST | NUTRITIONIST MANAGER",
+    image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop",
+    excerpt: "Learn how to lose weight without starving using a sustainable diet plan, home remedies, yoga, and workouts. Healthy fat loss made simple and effective.",
+    content: (
+      <>
+        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+          <p className="lead text-xl italic text-[#1A2F2B]/70 mb-10 border-l-4 border-[#EAC881] pl-8 leading-relaxed">
+            If you’ve ever tried to lose weight, chances are you’ve been told one thing repeatedly: Eat less. Skip meals. Cut carbs. Avoid everything you love.
+          </p>
+
+          <p>
+            And for a few days, it works. You see the scale drop… until suddenly: You feel tired. Irritated. Hungry all the time. And eventually, the weight comes back.
+          </p>
+
+          <p>
+            Here’s the truth most diets don’t tell you: <strong>You don’t need to starve to lose weight.</strong> In fact, starvation is the biggest reason people fail. Sustainable fat loss is not about eating less — it’s about <strong>eating right</strong>.
+          </p>
+
+          <h2 className="text-2xl mt-16 mb-6">Why Starving Doesn’t Work (Simple Science)</h2>
+          <p>
+            Your body is incredibly smart. When you drastically reduce your food intake, your metabolism slows down to conserve energy.
+          </p>
+          <ul>
+            <li><strong>Hunger Hormones Spikes:</strong> Ghrelin levels increase, causing intense food obsession.</li>
+            <li><strong>Fat Storage:</strong> Your body holds onto fat to protect against "famine."</li>
+            <li><strong>Energy Crash:</strong> You feel constant fatigue and mood swings.</li>
+          </ul>
+          <p>
+            This creates a vicious cycle: Eat less → feel hungry → binge → gain weight. The solution is to eat foods that keep you full, energized, and balanced.
+          </p>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 my-12">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1000" alt="Workout" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
+            <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&q=80&w=1000" alt="Cooking Ingredients" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000" alt="Yoga Lifestyle" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
+            <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=1000" alt="Running" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">What to Eat for Healthy Weight Loss</h2>
+          <p>Instead of focusing on restriction, focus on <strong>nourishment</strong>.</p>
+          
+          <div className="space-y-6 my-8">
+            <div className="bg-[#FAF9F6] p-6 rounded-xl border border-[#EAC881]/20">
+              <h4 className="text-xl font-display text-[#1A2F2B] mb-2">1. High Protein Foods</h4>
+              <p className="text-sm">✔ Keeps you full longer ✔ Reduces cravings</p>
+              <p className="text-sm font-light mt-2"><strong>Include:</strong> Paneer, Tofu, Lentils (dal), Greek yogurt, Eggs (optional).</p>
+            </div>
+            <div className="bg-[#FAF9F6] p-6 rounded-xl border border-[#EAC881]/20">
+              <h4 className="text-xl font-display text-[#1A2F2B] mb-2">2. Fiber-Rich Foods</h4>
+              <p className="text-sm">✔ Slows digestion ✔ Controls blood sugar</p>
+              <p className="text-sm font-light mt-2"><strong>Include:</strong> Oats, Vegetables (broccoli, spinach, carrots), Fruits (apple, papaya).</p>
+            </div>
+            <div className="bg-[#FAF9F6] p-6 rounded-xl border border-[#EAC881]/20">
+              <h4 className="text-xl font-display text-[#1A2F2B] mb-2">3. Healthy Fats</h4>
+              <p className="text-sm">✔ Supports hormones ✔ Keeps you satisfied</p>
+              <p className="text-sm font-light mt-2"><strong>Include:</strong> Nuts (almonds, walnuts), Seeds (flaxseeds, chia), Olive oil.</p>
+            </div>
+            <div className="bg-[#FAF9F6] p-6 rounded-xl border border-[#EAC881]/20">
+              <h4 className="text-xl font-display text-[#1A2F2B] mb-2">4. Complex Carbohydrates</h4>
+              <p className="text-sm">✔ Provides steady energy ✔ Prevents sugar spikes</p>
+              <p className="text-sm font-light mt-2"><strong>Include:</strong> Brown rice, Quinoa, Millets (jowar, bajra).</p>
+            </div>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Sample Day Diet Plan (Balanced & Filling)</h2>
+          <div className="bg-white rounded-2xl shadow-md border border-[#1A2F2B]/10 p-8 my-8">
+            <ul className="space-y-4 not-prose list-none p-0 m-0">
+              <li className="flex gap-4 items-start border-b border-[#1A2F2B]/10 pb-4">
+                <span className="text-[#EAC881] font-bold w-32 shrink-0">Morning</span>
+                <span className="font-light text-[#1A2F2B]/80">Warm water with lemon + soaked almonds</span>
+              </li>
+              <li className="flex gap-4 items-start border-b border-[#1A2F2B]/10 pb-4 pt-2">
+                <span className="text-[#EAC881] font-bold w-32 shrink-0">Breakfast</span>
+                <span className="font-light text-[#1A2F2B]/80">Vegetable oats + seeds</span>
+              </li>
+              <li className="flex gap-4 items-start border-b border-[#1A2F2B]/10 pb-4 pt-2">
+                <span className="text-[#EAC881] font-bold w-32 shrink-0">Mid-Morning</span>
+                <span className="font-light text-[#1A2F2B]/80">Fruit bowl</span>
+              </li>
+              <li className="flex gap-4 items-start border-b border-[#1A2F2B]/10 pb-4 pt-2">
+                <span className="text-[#EAC881] font-bold w-32 shrink-0">Lunch</span>
+                <span className="font-light text-[#1A2F2B]/80">2 rotis + dal + sabzi + salad</span>
+              </li>
+              <li className="flex gap-4 items-start border-b border-[#1A2F2B]/10 pb-4 pt-2">
+                <span className="text-[#EAC881] font-bold w-32 shrink-0">Evening Snack</span>
+                <span className="font-light text-[#1A2F2B]/80">Roasted makhana + green tea</span>
+              </li>
+              <li className="flex gap-4 items-start pt-2">
+                <span className="text-[#EAC881] font-bold w-32 shrink-0">Dinner</span>
+                <span className="font-light text-[#1A2F2B]/80">Light vegetable soup + paneer/tofu</span>
+              </li>
+            </ul>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">What to Avoid (For Faster Results)</h2>
+          <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
+            <div className="flex-1 bg-red-50 p-6 rounded-2xl border-l-4 border-red-500 shadow-sm transition-shadow hover:shadow-md">
+              <h4 className="font-bold text-red-700 mb-4 text-lg">Avoid These:</h4>
+              <ul className="space-y-3 text-[#1A2F2B]/80 font-light">
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> Sugary drinks and sodas</li>
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> White bread and maida products</li>
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> Deep fried and greasy food</li>
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> Ultra-processed packaged snacks</li>
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> Excess caffeine (especially on empty stomach)</li>
+              </ul>
+            </div>
+            <div className="flex-1 bg-[#1A2F2B] p-6 rounded-2xl text-white shadow-sm transition-shadow hover:shadow-md">
+              <h4 className="font-bold text-[#EAC881] mb-4 text-lg">Why?</h4>
+              <p className="font-light text-white/80 mb-4">These foods:</p>
+              <ul className="space-y-3 text-white/80 font-light">
+                <li className="flex items-center gap-2">Spike insulin levels rapidly</li>
+                <li className="flex items-center gap-2">Increase stubborn fat storage</li>
+                <li className="flex items-center gap-2">Cause huge mid-day sugar crashes and cravings</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">What to Do (For Lasting Success)</h2>
+          <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
+            <div className="flex-1 bg-green-50 p-6 rounded-2xl border-l-4 border-green-500 shadow-sm transition-shadow hover:shadow-md">
+              <h4 className="font-bold text-green-700 mb-4 text-lg">Make Sure To:</h4>
+              <ul className="space-y-3 text-[#1A2F2B]/80 font-light">
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> Eat protein with every single meal</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> Drink at least 2.5–3 liters of water</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> Aim for 8,000–10,000 steps daily</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> Sleep for 7–8 hours every night</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> Chew your food slowly and properly</li>
+              </ul>
+            </div>
+            <div className="flex-1 bg-[#EAC881]/10 p-6 rounded-2xl text-[#1A2F2B] border border-[#EAC881]/20 shadow-sm transition-shadow hover:shadow-md">
+              <h4 className="font-bold text-[#1A2F2B] mb-4 text-lg">Why?</h4>
+              <p className="font-light text-[#1A2F2B]/80 mb-4">These core habits provide structure and:</p>
+              <ul className="space-y-3 text-[#1A2F2B]/80 font-light">
+                <li className="flex items-center gap-2">Keep your metabolism naturally fired up</li>
+                <li className="flex items-center gap-2">Promote healthy digestion and reduce bloating</li>
+                <li className="flex items-center gap-2">Stabilize blood sugar to dramatically reduce cravings</li>
+                <li className="flex items-center gap-2">Signal your brain properly when you are actually full</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Natural Home Remedies for Weight Loss</h2>
+          <p>Simple daily habits can make a big difference in enhancing your body's natural metabolic processes:</p>
+          <ul className="space-y-2">
+            <li><strong>Jeera Water:</strong> Boosts digestion and reduces bloating. Drink in the morning.</li>
+            <li><strong>Lemon Water:</strong> Improves metabolism gently when taken on an empty stomach.</li>
+            <li><strong>Cinnamon Water:</strong> Helps control sugar cravings and stablize blood sugar.</li>
+            <li><strong>Warm Water:</strong> Sip throughout the day to improve digestion and flush toxins.</li>
+          </ul>
+
+          <h2 className="text-2xl mt-16 mb-6">Movement That Helps You Lose Weight Naturally</h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 my-8 not-prose">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
+              <h4 className="font-bold text-[#1A2F2B] mb-4 text-lg flex items-center gap-2">🧘‍♀️ Yoga (Beginner)</h4>
+              <ul className="space-y-2 text-[#1A2F2B]/80 font-light mb-4">
+                <li>• Surya Namaskar (5–10 rounds)</li>
+                <li>• Bhujangasana</li>
+                <li>• Kapalbhati (5 minutes)</li>
+              </ul>
+              <p className="text-sm font-semibold text-[#EAC881]">✔ Improves metabolism ✔ Reduces stress</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
+              <h4 className="font-bold text-[#1A2F2B] mb-4 text-lg flex items-center gap-2">🏃 Workout Plan</h4>
+              <ul className="space-y-2 text-[#1A2F2B]/80 font-light mb-4">
+                <li>• Walking: 30–45 minutes daily</li>
+                <li>• Strength training: 3 times a week</li>
+                <li>• Home workouts: squats, pushups</li>
+              </ul>
+              <p className="text-sm font-semibold text-[#EAC881]">✔ Burns fat ✔ Builds lean muscle</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#EAC881]/20 md:col-span-2">
+              <h4 className="font-bold text-[#1A2F2B] mb-4 text-lg flex items-center gap-2">🏊 Swimming (If Available)</h4>
+              <p className="text-[#1A2F2B]/80 font-light mb-4">Aim for 2–3 times per week. Swimming provides a high-calorie burn with zero impact on your joints.</p>
+              <p className="text-sm font-semibold text-[#EAC881]">✔ Full body workout ✔ Burns high calories</p>
+            </div>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Daily Habits That Accelerate Fat Loss</h2>
+          <ul>
+            <li><strong>Sleep:</strong> 7–8 hours every night.</li>
+            <li><strong>Hydration:</strong> Drink 2.5–3 liters of water.</li>
+            <li><strong>Stress:</strong> Meditate and manage stressors actively.</li>
+            <li><strong>Timing:</strong> Eat your meals on consistent times.</li>
+          </ul>
+
+          <h2 className="text-2xl mt-16 mb-6">Final Thoughts</h2>
+          <p>Weight loss doesn’t need to be painful. You don’t need to starve, avoid everything you love, or follow extreme diets. You just need the <strong>right food</strong>, the <strong>right habits</strong>, and <strong>consistency</strong>.</p>
+        </div>
+
+        {/* Real Client Story */}
+        <ReviewsSlider reviews={WEIGHT_LOSS_REVIEWS} />
+      </>
+    )
+  },
+  {
+    id: "best-foods-for-hormonal-balance",
+    featured: false,
+    title: "Best Foods for Hormonal Balance",
+    subtitle: "A Clinical Nutritionist's Guide to Healing",
+    category: "Gut Health & Wellness",
+    readTime: "5 Min Read",
+    date: "April 18, 2026",
+    author: "BY DISHA ARORA | NUTRITIONIST | NUTRITIONIST MANAGER",
+    image: "https://images.unsplash.com/photo-1515023115689-589c33041d3c?auto=format&fit=crop&q=80&w=800",
+    excerpt: "Your hormones dictate everything from your mood to your metabolism. Explore the best foods to include in your daily routine to balance them naturally.",
+    content: (
+      <>
+        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+          <p className="lead text-xl italic text-[#1A2F2B]/70 mb-8 border-l-4 border-[#EAC881] pl-6">
+            Hormones are the chemical messengers that dictate nearly every physiological process in your body. From your mood and metabolism to your sleep cycle and digestion—when your hormones are out of sync, your entire system feels chaotic. 
+          </p>
+
+          <h2 className="text-2xl mt-12 mb-6">The Gut-Hormone Connection</h2>
+          <p>
+            Your body produces hormones using the raw materials you eat. Moreover, your gut microbiome directly impacts how estrogen is metabolized and cleared. A specific subset of gut bacteria, known as the <em>estrobolome</em>, is responsible for this. When your gut is inflamed or imbalanced, excess estrogen is reabsorbed into the bloodstream instead of being excreted, leading to estrogen dominance (heavy periods, intense PMS, mood swings).
+          </p>
+
+          <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?q=80&w=2006&auto=format&fit=crop" alt="Healthy seeds and nuts" className="w-full rounded-2xl my-8 object-cover aspect-[21/9] shadow-lg" />
+
+          <h2 className="text-2xl mt-12 mb-6">Top Foods for Endocrine Support</h2>
+          
+          <div className="space-y-8 my-8">
+            <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
+              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">1. Cruciferous Vegetables</h4>
+              <p className="text-sm font-light m-0 text-[#1A2F2B]/80">Broccoli, cauliflower, cabbage, and Brussels sprouts contain Diindolylmethane (DIM). DIM is crucial for the liver to properly process and detoxify excess aggressive estrogens, shifting the balance to protective, weaker estrogens.</p>
+            </div>
+            
+            <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
+              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">2. Healthy Fats (Cholesterol)</h4>
+              <p className="text-sm font-light m-0 text-[#1A2F2B]/80">Cholesterol is the literal molecular backbone from which steroid hormones (estrogen, progesterone, testosterone) are synthesized. Without adequate fats from avocados, walnuts, ghee, and olive oil, hormone production stalls entirely.</p>
+            </div>
+
+            <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
+              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">3. Adaptogenic Herbs</h4>
+              <p className="text-sm font-light m-0 text-[#1A2F2B]/80">Ashwagandha, Tulsi (Holy Basil), and Maca act on the HPA-axis to regulate cortisol (the stress hormone). When cortisol is chronically high, your body "steals" progesterone to make more cortisol, dropping your progesterone levels significantly.</p>
+            </div>
+          </div>
+
+          <h2 className="text-2xl mt-12 mb-6">Structuring Your Daily Plate</h2>
+          <p>
+            To keep hormones humming beautifully all day, aim for this structure on your plate at every meal:
+          </p>
+          <ul>
+            <li><strong>1/2 Plate:</strong> Colorful, non-starchy vegetables (cruciferous greens, zucchini, bell peppers).</li>
+            <li><strong>1/4 Plate:</strong> High-quality protein (lentils, organic chicken, salmon, tofu, eggs).</li>
+            <li><strong>1/4 Plate:</strong> Slow-burning complex carbs (sweet potato, quinoa, wild rice).</li>
+            <li><strong>1-2 Tbsp:</strong> Anti-inflammatory fats (olive oil, avocado, hemp seeds).</li>
+          </ul>
+        </div>
+
+        {/* Real Client Stories */}
+        <div className="mt-16 bg-[#1A1A1A] p-8 md:p-12 rounded-[2rem] text-white relative overflow-hidden shadow-2xl">
+          <div className="absolute top-[20%] right-[10%] w-64 h-64 bg-[#EAC881]/10 rounded-full blur-[80px]"></div>
+          <div className="relative z-10">
+            <div className="flex items-center gap-4 mb-10">
+              <span className="text-xs uppercase tracking-[0.3em] text-[#EAC881] font-bold">✦ Real Client Stories</span>
+              <span className="hidden sm:block w-12 h-[1px] bg-[#EAC881]/40"></span>
+            </div>
+            
+            <div className="space-y-12">
+              <div className="grid md:grid-cols-3 gap-12 border-b border-white/10 pb-12">
+                <div className="md:col-span-2">
+                  <p className="text-xl md:text-2xl font-light italic leading-relaxed text-white mb-8 font-serif">
+                    "After coming off years of birth control, my body was a wreck. Jawline acne, horrible PMS, and hair thinning. We used food to detox my liver and heal my gut. Within 4 cycles, my acne cleared and my periods are smooth and painless."
+                  </p>
+                  <div className="flex items-center gap-4">
+                     <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#EAC881] to-[#1A2F2B] p-[2px] shrink-0">
+                      <div className="w-full h-full bg-[#1A1A1A] rounded-full flex items-center justify-center text-[#EAC881] font-display text-xl">
+                        S
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-display text-2xl text-white">Sarah M., 31</h4>
+                      <p className="text-[#EAC881]/80 font-sans text-xs tracking-widest mt-1 uppercase">NEW YORK, US</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-md self-center">
+                  <h5 className="text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-6 font-semibold">The Impact</h5>
+                  <div className="space-y-4">
+                    <div className="flex items-end justify-between border-b border-white/10 pb-4">
+                      <span className="text-white font-light text-sm">Acne Cleared</span>
+                      <span className="text-2xl font-display text-[#EAC881]">100%</span>
+                    </div>
+                    <div className="flex items-end justify-between pt-2">
+                      <span className="text-white font-light text-sm">Cycles Normalized</span>
+                      <span className="text-2xl font-display text-[#EAC881]">4</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-12">
+                <div className="md:col-span-2">
+                  <p className="text-xl md:text-2xl font-light italic leading-relaxed text-white mb-8 font-serif">
+                    "My doctor told me 'you're just getting older' despite exhaustion, weight gain despite exercise, and poor thyroid levels. Within 6 weeks of the hormonal eating protocol, my energy restored and my thyroid numbers shocked my GP."
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#EAC881] to-[#1A2F2B] p-[2px] shrink-0">
+                      <div className="w-full h-full bg-[#1A1A1A] rounded-full flex items-center justify-center text-[#EAC881] font-display text-xl">
+                        P
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-display text-2xl text-white">Priya Chandrasekaran, 38</h4>
+                      <p className="text-[#EAC881]/80 font-sans text-xs tracking-widest mt-1 uppercase">TORONTO, CANADA</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-md self-center">
+                  <h5 className="text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-6 font-semibold">The Impact</h5>
+                  <div className="space-y-4">
+                    <div className="flex items-end justify-between border-b border-white/10 pb-4">
+                       <span className="text-white font-light text-sm">Loss in 6W</span>
+                      <span className="text-2xl font-display text-[#EAC881]">-6 kg</span>
+                    </div>
+                    <div className="flex items-end justify-between pt-2">
+                       <span className="text-white font-light text-sm">Thyroid Levels</span>
+                      <span className="text-2xl font-display text-[#EAC881]">Normal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    )
+  }
+];
+
+const CATEGORIES = ["All", "PCOS & Hormones", "Weight Loss", "Gut Health & Wellness", "Lifestyle"];
+
+export const Blog: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedPost, setSelectedPost] = useState<typeof BLOG_POSTS[0] | null>(null);
+
+  // Disable body scroll when modal is open
+  useEffect(() => {
+    if (selectedPost) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [selectedPost]);
+
+  const filteredPosts = BLOG_POSTS.filter(post => 
+    activeCategory === "All" || post.category === activeCategory
+  );
+
+  const featuredPost = filteredPosts.find(p => p.featured) || filteredPosts[0];
+  const regularPosts = filteredPosts.filter(p => !p.featured && p.id !== featuredPost?.id);
+
+  return (
+    <div className="bg-[#FAF9F6] min-h-screen text-[#1A2F2B] font-sans selection:bg-[#EAC881]/30">
+      
+      {/* HEADER HERO SECTION */}
+      <section className="relative pt-32 pb-16 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col items-center text-center">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EAC881]/10 rounded-full blur-[120px] -z-10 translate-x-1/3 -translate-y-1/4"></div>
+        <div className="absolute top-40 left-0 w-[300px] h-[300px] bg-[#1A2F2B]/5 rounded-full blur-[100px] -z-10 -translate-x-1/3"></div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-3xl"
+        >
+          <span className="text-[#EAC881] text-[10px] font-bold uppercase tracking-[0.3em] block mb-6">Editorial</span>
+          <h1 className="text-4xl md:text-5xl font-display text-[#1A2F2B] leading-[1.1] mb-6">
+            The Wellness <span className="italic font-serif text-[#1A2F2B]/80">Journal</span>
+          </h1>
+          <p className="text-lg md:text-xl text-[#1A2F2B]/60 font-light leading-relaxed max-w-2xl mx-auto">
+            Clinical insights, science-backed nutrition, and transformative protocols for a deeply nourished life.
+          </p>
+        </motion.div>
+
+        {/* Category Pills */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-3 mt-12"
+        >
+          {CATEGORIES.map(category => (
+            <button
+              key={category}
+              onClick={() => {
+                setActiveCategory(category);
+                setSelectedPost(null);
+                window.scrollTo({ top: window.innerHeight * 0.5, behavior: 'smooth' });
+              }}
+              className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-300 ${
+                activeCategory === category 
+                  ? 'bg-[#1A2F2B] text-white shadow-lg' 
+                  : 'bg-white text-[#1A2F2B]/70 hover:bg-[#EAC881]/20 hover:text-[#1A2F2B] border border-[#1A2F2B]/10'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </motion.div>
+      </section>
+
+      <main className="px-6 lg:px-12 max-w-7xl mx-auto pb-24">
+        
+        <AnimatePresence mode="popLayout">
+        {/* FEATURED POST (LARGE LAYOUT) */}
+        {featuredPost && (
+          <motion.article 
+            key={`featured-${featuredPost.id}`}
+            layout
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.5 }}
+            className="mb-20 group cursor-pointer"
+            onClick={() => setSelectedPost(featuredPost)}
+          >
+            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-20px_rgba(26,47,43,0.1)] border border-[#EAC881]/20 flex flex-col lg:flex-row transition-transform duration-500 hover:-translate-y-2">
+              <div className="lg:w-3/5 overflow-hidden relative">
+                <div className="absolute inset-0 bg-[#1A2F2B]/10 z-10 mix-blend-overlay"></div>
+                <img 
+                  src={featuredPost.image} 
+                  alt={featuredPost.title} 
+                  className="w-full h-full object-cover min-h-[400px] lg:min-h-[500px] transition-transform duration-1000 group-hover:scale-105"
+                />
+              </div>
+              <div className="lg:w-2/5 p-8 lg:p-14 flex flex-col justify-center">
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="bg-[#EAC881]/20 text-[#1A2F2B] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Featured</span>
+                  <span className="text-[#1A2F2B]/50 text-xs font-semibold tracking-widest uppercase">{featuredPost.category}</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] leading-tight mb-4 group-hover:text-[#EAC881] transition-colors duration-500">
+                  {featuredPost.title}
+                </h2>
+                <p className="font-serif italic text-xl text-[#1A2F2B]/70 mb-6">{featuredPost.subtitle}</p>
+                <p className="text-[#1A2F2B]/70 font-light leading-relaxed mb-10 text-base md:text-lg">
+                  {featuredPost.excerpt}
+                </p>
+                
+                <div className="mt-auto flex items-center justify-between border-t border-[#1A2F2B]/10 pt-6">
+                  <div className="flex items-center gap-2 text-xs text-[#1A2F2B]/50 font-semibold tracking-widest uppercase">
+                    <Clock size={14} />
+                    <span>{featuredPost.readTime}</span>
+                  </div>
+                  <button className="flex items-center gap-2 text-sm font-semibold tracking-widest uppercase text-[#1A2F2B] group-hover:text-[#EAC881] transition-colors">
+                    Read Article <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.article>
+        )}
+
+        {/* 2-COLUMN GRID POSTS */}
+        {regularPosts.length > 0 && (
+          <motion.div key="regular-posts-grid" layout className="grid md:grid-cols-2 gap-10 lg:gap-14">
+            <AnimatePresence mode="popLayout">
+            {regularPosts.map((post, idx) => (
+              <motion.article 
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.5 }}
+                key={post.id}
+                className="group cursor-pointer flex flex-col h-full"
+                onClick={() => setSelectedPost(post)}
+              >
+                <div className="rounded-[2rem] overflow-hidden mb-8 relative aspect-[4/3] shadow-[0_10px_30px_-15px_rgba(26,47,43,0.2)] border border-[#1A2F2B]/5">
+                  <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#1A2F2B]">
+                    {post.category}
+                  </div>
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F2B]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                </div>
+                
+                <div className="flex flex-col flex-grow px-2">
+                  <h3 className="text-2xl md:text-3xl font-display text-[#1A2F2B] leading-tight mb-4 group-hover:text-[#EAC881] transition-colors duration-300">
+                    {post.title}
+                  </h3>
+                  <p className="text-[#1A2F2B]/60 font-light leading-relaxed mb-8 flex-grow">
+                    {post.excerpt}
+                  </p>
+                  
+                  <div className="mt-auto flex items-center justify-between border-t border-[#1A2F2B]/10 pt-5">
+                    <div className="flex items-center gap-2 text-[10px] text-[#1A2F2B]/50 font-semibold tracking-widest uppercase">
+                      <Clock size={12} />
+                      <span>{post.readTime}</span>
+                    </div>
+                    <button className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-[#1A2F2B] group-hover:text-[#EAC881] transition-colors">
+                      Read Article <ChevronRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+            </AnimatePresence>
+          </motion.div>
+        )}
+        </AnimatePresence>
+      </main>
+
+      {/* LEAD CAPTURE / NEWSLETTER */}
+      <section className="bg-[#1A2F2B] py-24 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#EAC881] via-transparent to-transparent"></div>
+        <div className="max-w-3xl mx-auto text-center relative z-10">
+          <Mail className="mx-auto text-[#EAC881] mb-6" size={40} strokeWidth={1} />
+          <h2 className="text-4xl md:text-5xl font-display text-white mb-6">Expert Nutrition, Delivered.</h2>
+          <p className="text-white/70 font-light text-lg md:text-xl mb-10 max-w-xl mx-auto">
+            Join our private newsletter for clinical insights, hormone-balancing recipes, and evidence-based wellness protocols. 
+          </p>
+          <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
+            <input 
+              type="email" 
+              placeholder="Your email address..." 
+              required
+              className="flex-grow bg-white/5 border border-white/20 rounded-xl px-6 py-4 text-white placeholder-white/40 focus:outline-none focus:border-[#EAC881] transition-colors font-light"
+            />
+            <button 
+              type="submit"
+              className="bg-[#EAC881] text-[#1A2F2B] px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(234,200,129,0.3)] whitespace-nowrap"
+            >
+              Get Free Action Plan
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* FULL-SCREEN BLOG READING MODAL OVERLAY */}
+      <AnimatePresence>
+        {selectedPost && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-[100] bg-white overflow-y-auto"
+          >
+            {/* Modal Header Actions */}
+            <div className="sticky top-0 left-0 right-0 h-20 bg-white/80 backdrop-blur-md z-50 border-b border-[#1A2F2B]/5 px-6 lg:px-12 flex items-center justify-between">
+              <button 
+                onClick={() => setSelectedPost(null)}
+                className="flex items-center gap-2 text-[#1A2F2B] hover:text-[#EAC881] transition-colors font-sans text-xs font-bold uppercase tracking-widest"
+              >
+                <ArrowRight size={16} className="transform rotate-180" /> Back to Journal
+              </button>
+              
+              <div className="flex gap-4">
+                 <button className="hidden md:flex text-[#1A2F2B] hover:text-[#EAC881] transition-colors">
+                   <Star size={20} strokeWidth={1.5} />
+                 </button>
+                 <button 
+                  onClick={() => setSelectedPost(null)}
+                  className="w-10 h-10 rounded-full bg-[#1A2F2B]/5 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all"
+                 >
+                   <X size={20} />
+                 </button>
+              </div>
+            </div>
+
+            {/* Modal Hero Banner */}
+            <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh]">
+              <img 
+                src={selectedPost.image} 
+                alt={selectedPost.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F2B] via-[#1A2F2B]/40 to-transparent"></div>
+              
+              <div className="absolute inset-0 flex flex-col justify-end px-6 lg:px-12 pb-12 lg:pb-20 max-w-5xl mx-auto w-full">
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                >
+                  <span className="bg-[#EAC881] text-[#1A2F2B] px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block mb-6 shadow-lg">
+                    {selectedPost.category}
+                  </span>
+                  <h1 className="text-4xl md:text-5xl lg:text-7xl font-display text-white leading-[1.1] mb-6">
+                    {selectedPost.title}
+                  </h1>
+                  {selectedPost.subtitle && (
+                    <p className="font-serif italic text-2xl lg:text-3xl text-white/80 mb-8 max-w-3xl">
+                      {selectedPost.subtitle}
+                    </p>
+                  )}
+                  
+                  <div className="flex items-center gap-6 text-white/60 font-sans text-xs uppercase tracking-widest font-semibold">
+                    <div className="flex items-center gap-2">
+                       <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150" alt="Author" className="w-8 h-8 rounded-full object-cover border border-[#EAC881]/30" />
+                       <span className="text-white">By {selectedPost.author}</span>
+                    </div>
+                    <div className="flex items-center gap-2 hidden sm:flex">
+                      <Calendar size={14} />
+                      <span>{selectedPost.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock size={14} />
+                      <span>{selectedPost.readTime}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Modal Body Content */}
+            <div className="bg-[#FAF9F6] relative">
+              <WhatsAppFloatingButton />
+              <div className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5, duration: 0.6 }}
+                >
+                  {selectedPost.content}
+                </motion.div>
+
+                {/* Article Footer CTA inside Modal */}
+                <div className="mt-20 pt-16 border-t border-[#1A2F2B]/10 text-center">
+                   <h4 className="font-display text-3xl text-[#1A2F2B] mb-4">Start your own healing journey.</h4>
+                   <p className="text-[#1A2F2B]/60 mb-8 max-w-md mx-auto font-light">
+                     Speak with our clinical nutritionists today and get a protocol engineered specifically for your body.
+                   </p>
+                   <button onClick={() => window.open('https://wa.me/919990356350', '_blank')} className="bg-[#1A2F2B] text-white px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-all duration-300 shadow-[0_10px_30px_rgba(26,47,43,0.2)]">
+                     Book Your Free 20 Minutes Consultation
+                   </button>
+                </div>
+              </div>
+            </div>
+
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+    </div>
+  );
+};

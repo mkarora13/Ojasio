@@ -5,7 +5,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center justify-end">
+    <div className="fixed bottom-6 right-6 z-[9999] flex items-center justify-end">
       <AnimatePresence>
         {isHovered && (
           <motion.div
