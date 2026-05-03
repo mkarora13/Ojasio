@@ -23,7 +23,7 @@ export const Disha: React.FC = () => {
             </h1>
             <h2 className="text-3xl text-gold font-display mb-8">
               <span className="block">Disha Arora</span>
-              <span className="block text-sm font-sans tracking-widest text-green-deep/70 mt-1 uppercase">(NUTRITIONIST, ACTIVE CSNM MEMBER)</span>
+              <span className="block text-sm font-sans tracking-widest text-green-deep/70 mt-1 uppercase">(NUTRITION MANAGER, NUTRITIONIST, ACTIVE CSNM MEMBER)</span>
               <span className="block text-xl text-green-deep/80 font-serif italic mt-2">Founder, Ojasio</span>
             </h2>
             
@@ -64,7 +64,7 @@ export const Disha: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-green-deep/80 to-transparent flex flex-col justify-end p-8 text-ivory">
                <div className="font-display text-3xl tracking-wide">
                  <span className="block">Disha Arora</span>
-                 <span className="block text-xs font-sans tracking-widest text-ivory/80 mt-1 uppercase">(NUTRITIONIST, ACTIVE CSNM MEMBER)</span>
+                 <span className="block text-xs font-sans tracking-widest text-ivory/80 mt-1 uppercase">(NUTRITION MANAGER, NUTRITIONIST, ACTIVE CSNM MEMBER)</span>
                </div>
                <div className="flex flex-col mt-1">
                  <span className="text-gold-light italic text-lg">Founder, Ojasio</span>
