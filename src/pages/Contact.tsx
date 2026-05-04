@@ -186,7 +186,7 @@ export const Contact: React.FC = () => {
                <a href="https://wa.me/919990356350" target="_blank" rel="noopener noreferrer" className="block w-full mb-4">
                  <Button variant="whatsapp" fullWidth size="lg" className="flex items-center space-x-3 py-5">
                    <Phone size={24} />
-                   <span className="text-lg">Book on WhatsApp</span>
+                   <span className="text-lg">Book your 20 minutes free consultation</span>
                  </Button>
                </a>
 

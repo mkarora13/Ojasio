@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download } from 'lucide-react';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
+import { ReviewsSlider } from '../components/ui/ReviewsSlider';
+import * as ReviewData from '../data/reviewsData';
 
 import { jsPDF } from 'jspdf';
 
@@ -330,7 +332,7 @@ const WEIGHT_LOSS_REVIEWS = [
   }
 ];
 
-const ReviewsSlider = ({ reviews }: { reviews: any[] }) => {
+const LocalReviewsSlider = ({ reviews }: { reviews: any[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -419,8 +421,9 @@ const BLOG_POSTS = [
     category: "PCOS & Hormones",
     readTime: "9 Min Read",
     date: "May 03, 2026",
-    author: "BY DISHA ARORA | NUTRITIONIST | NUTRITIONIST MANAGER",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200",
+    author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
+    image: "https://images.pexels.com/photos/37409098/pexels-photo-37409098.png",
+    coverImage: "https://images.pexels.com/photos/4394022/pexels-photo-4394022.jpeg",
     excerpt: "Discover a premium, science-backed 7-day Indian vegetarian diet plan for PCOS along with global eating variations. Learn how to manage weight, balance hormones naturally, and feel energetic.",
     content: (
       <>
@@ -441,7 +444,7 @@ const BLOG_POSTS = [
             Healing begins not with starvation diets, but with strategic, deeply nourishing food that acts as medicine for your cells.
           </p>
 
-          <img src="https://images.pexels.com/photos/37409098/pexels-photo-37409098.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Preparing healthy food" className="w-full rounded-2xl my-12 object-cover aspect-[21/9] shadow-lg" />
+          <img src="https://images.pexels.com/photos/5622182/pexels-photo-5622182.jpeg" alt="Preparing healthy food" className="w-full rounded-2xl my-12 object-cover aspect-[21/9] shadow-lg" />
 
           <h2 className="text-2xl mt-16 mb-8 text-[#1A2F2B]">The 7-Day Indian Vegetarian PCOS Diet Plan</h2>
           
@@ -624,7 +627,7 @@ const BLOG_POSTS = [
         </div>
 
         {/* Real Client Story */}
-        <ReviewsSlider reviews={PCOS_REVIEWS} />
+        <ReviewsSlider reviews={ReviewData.PCOS_REVIEWS} />
       </>
     )
   },
@@ -636,8 +639,9 @@ const BLOG_POSTS = [
     category: "Weight Loss",
     readTime: "8 Min Read",
     date: "April 02, 2026",
-    author: "BY DISHA ARORA | NUTRITIONIST | NUTRITIONIST MANAGER",
+    author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop",
+    coverImage: "https://images.pexels.com/photos/8436499/pexels-photo-8436499.jpeg",
     excerpt: "Learn how to lose weight without starving using a sustainable diet plan, home remedies, yoga, and workouts. Healthy fat loss made simple and effective.",
     content: (
       <>
@@ -670,7 +674,7 @@ const BLOG_POSTS = [
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 my-12">
             <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1000" alt="Workout" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
             <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&q=80&w=1000" alt="Cooking Ingredients" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1000" alt="Yoga Lifestyle" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
+            <img src="https://images.pexels.com/photos/6246497/pexels-photo-6246497.jpeg" alt="Yoga Lifestyle" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
             <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=1000" alt="Running" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
           </div>
 
@@ -827,7 +831,7 @@ const BLOG_POSTS = [
         </div>
 
         {/* Real Client Story */}
-        <ReviewsSlider reviews={WEIGHT_LOSS_REVIEWS} />
+        <ReviewsSlider reviews={ReviewData.WEIGHT_LOSS_REVIEWS} />
       </>
     )
   },
@@ -839,130 +843,116 @@ const BLOG_POSTS = [
     category: "Gut Health & Wellness",
     readTime: "5 Min Read",
     date: "April 18, 2026",
-    author: "BY DISHA ARORA | NUTRITIONIST | NUTRITIONIST MANAGER",
+    author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.unsplash.com/photo-1515023115689-589c33041d3c?auto=format&fit=crop&q=80&w=800",
     excerpt: "Your hormones dictate everything from your mood to your metabolism. Explore the best foods to include in your daily routine to balance them naturally.",
     content: (
       <>
         <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
-          <p className="lead text-xl italic text-[#1A2F2B]/70 mb-8 border-l-4 border-[#EAC881] pl-6">
-            Hormones are the chemical messengers that dictate nearly every physiological process in your body. From your mood and metabolism to your sleep cycle and digestion—when your hormones are out of sync, your entire system feels chaotic. 
-          </p>
-
-          <h2 className="text-2xl mt-12 mb-6">The Gut-Hormone Connection</h2>
+          
+          <h2 className="text-3xl mt-12 mb-6">What is Hormonal Imbalance?</h2>
           <p>
-            Your body produces hormones using the raw materials you eat. Moreover, your gut microbiome directly impacts how estrogen is metabolized and cleared. A specific subset of gut bacteria, known as the <em>estrobolome</em>, is responsible for this. When your gut is inflamed or imbalanced, excess estrogen is reabsorbed into the bloodstream instead of being excreted, leading to estrogen dominance (heavy periods, intense PMS, mood swings).
+            Think of hormones as your body’s chemical messengers. They travel through your bloodstream, telling your organs and tissues what to do and when to do it. From your metabolism and heart rate to your mood, sleep, and reproductive cycles—hormones control it all. 
+            When you experience a hormonal imbalance, it means you have too much or too little of a certain hormone. Even tiny shifts in this delicate ecosystem can cause widespread disruption, turning what should be a perfectly synchronized orchestra into chaos.
           </p>
 
-          <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?q=80&w=2006&auto=format&fit=crop" alt="Healthy seeds and nuts" className="w-full rounded-2xl my-8 object-cover aspect-[21/9] shadow-lg" />
+          <img src="https://images.pexels.com/photos/5214957/pexels-photo-5214957.jpeg" alt="Hormonal balance and wellness" className="w-full rounded-2xl my-8 object-cover aspect-[21/9] shadow-lg" />
+          <p className="text-xs text-center text-[#1A2F2B]/50 -mt-4 mb-8">Balancing your hormones naturally through proper nutrition and lifestyle.</p>
 
-          <h2 className="text-2xl mt-12 mb-6">Top Foods for Endocrine Support</h2>
+          <h2 className="text-3xl mt-12 mb-6">Signs and Symptoms to Watch For</h2>
+          <p>
+            How do you know if your hormones are out of sync? Your body is incredibly communicative, but often we dismiss its warning signs as "normal" aging or stress. Common symptoms include:
+          </p>
+          <ul className="space-y-4 my-8 pl-4 border-l-2 border-[#EAC881] list-none">
+            <li><strong>Unexplained Weight Gain:</strong> Specifically stubborn visceral fat around the abdomen, often signaling high cortisol or insulin resistance.</li>
+            <li><strong>Adult Acne:</strong> Deep, cystic breakouts along the jawline typically point to elevated androgens or estrogen dominance.</li>
+            <li><strong>Severe Mood Swings & Anxiety:</strong> Feeling overwhelmed, irritable, or dealing with intense PMS symptoms due to dropping progesterone levels.</li>
+            <li><strong>Irregular Periods & Fatigue:</strong> Chronic exhaustion no matter how much you sleep, coupled with unpredictable or missing menstrual cycles.</li>
+          </ul>
+
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1600" alt="Healthy balanced lifestyle" className="w-full rounded-2xl my-8 object-cover aspect-[21/9] shadow-lg" />
+          <p className="text-xs text-center text-[#1A2F2B]/50 -mt-4 mb-8">Understanding your body's signals is the first step toward profound healing.</p>
+
+          <h2 className="text-3xl mt-12 mb-6">The Best Foods for Hormonal Balance</h2>
           
           <div className="space-y-8 my-8">
             <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
-              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">1. Cruciferous Vegetables</h4>
-              <p className="text-sm font-light m-0 text-[#1A2F2B]/80">Broccoli, cauliflower, cabbage, and Brussels sprouts contain Diindolylmethane (DIM). DIM is crucial for the liver to properly process and detoxify excess aggressive estrogens, shifting the balance to protective, weaker estrogens.</p>
+              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">1. Healthy Fats</h4>
+              <p className="text-sm font-light m-0 text-[#1A2F2B]/80"><strong>What to Eat:</strong> Avocados, wild-caught salmon, chia seeds, flaxseeds, and organic ghee.</p>
+              <p className="text-sm font-light mt-2 text-[#1A2F2B]/80"><strong>Why it works:</strong> Your body literally cannot synthesize hormones without cholesterol and healthy fats. Fat is the molecular building block for estrogen, progesterone, and testosterone. Furthermore, Omega-3 fatty acids actively lower systemic inflammation and cellular stress.</p>
             </div>
             
             <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
-              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">2. Healthy Fats (Cholesterol)</h4>
-              <p className="text-sm font-light m-0 text-[#1A2F2B]/80">Cholesterol is the literal molecular backbone from which steroid hormones (estrogen, progesterone, testosterone) are synthesized. Without adequate fats from avocados, walnuts, ghee, and olive oil, hormone production stalls entirely.</p>
+              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">2. Fiber-Rich Foods</h4>
+              <p className="text-sm font-light m-0 text-[#1A2F2B]/80"><strong>What to Eat:</strong> Dark leafy greens, broccoli, oats, lentils, and berries.</p>
+              <p className="text-sm font-light mt-2 text-[#1A2F2B]/80"><strong>Why it works:</strong> Fiber feeds the estrobolome—a specific set of bacteria in your gut responsible for metabolizing and eliminating excess estrogen. Without fiber, excess estrogen gets reabsorbed into your bloodstream, leading to estrogen dominance.</p>
             </div>
 
             <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
-              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">3. Adaptogenic Herbs</h4>
-              <p className="text-sm font-light m-0 text-[#1A2F2B]/80">Ashwagandha, Tulsi (Holy Basil), and Maca act on the HPA-axis to regulate cortisol (the stress hormone). When cortisol is chronically high, your body "steals" progesterone to make more cortisol, dropping your progesterone levels significantly.</p>
+              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">3. Quality Protein Sources</h4>
+              <p className="text-sm font-light m-0 text-[#1A2F2B]/80"><strong>What to Eat:</strong> Organic eggs, grass-fed poultry, lentils, quinoa, and almonds.</p>
+              <p className="text-sm font-light mt-2 text-[#1A2F2B]/80"><strong>Why it works:</strong> Dietary protein provides essential amino acids needed to produce peptide hormones, such as insulin and growth hormone. Starting your morning with 20-30g of high-quality protein dramatically flattens your blood sugar curve for the remainder of the day.</p>
+            </div>
+
+            <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
+              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">4. Anti-Inflammatory Foods</h4>
+              <p className="text-sm font-light m-0 text-[#1A2F2B]/80"><strong>What to Eat:</strong> Turmeric, ginger, extra virgin olive oil, green tea, and dark chocolate.</p>
+              <p className="text-sm font-light mt-2 text-[#1A2F2B]/80"><strong>Why it works:</strong> Systemic inflammation triggers the adrenal glands to pump out cortisol. When cortisol is chronically elevated, it signals your liver to dump glucose, driving insulin resistance. Anti-inflammatory foods cool down this stress response at a cellular level.</p>
+            </div>
+
+            <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
+              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">5. Herbs and Adaptogens</h4>
+              <p className="text-sm font-light m-0 text-[#1A2F2B]/80"><strong>What to Eat:</strong> Ashwagandha, Maca root, Holy Basil (Tulsi), and Spearmint.</p>
+              <p className="text-sm font-light mt-2 text-[#1A2F2B]/80"><strong>Why it works:</strong> Adaptogens physically regulate your HPA axis (Hypothalamic-Pituitary-Adrenal axis). They help lower excess cortisol and protect your body from the physical wear-and-tear of modern stress, naturally preserving your progesterone levels.</p>
             </div>
           </div>
 
-          <h2 className="text-2xl mt-12 mb-6">Structuring Your Daily Plate</h2>
-          <p>
-            To keep hormones humming beautifully all day, aim for this structure on your plate at every meal:
-          </p>
-          <ul>
-            <li><strong>1/2 Plate:</strong> Colorful, non-starchy vegetables (cruciferous greens, zucchini, bell peppers).</li>
-            <li><strong>1/4 Plate:</strong> High-quality protein (lentils, organic chicken, salmon, tofu, eggs).</li>
-            <li><strong>1/4 Plate:</strong> Slow-burning complex carbs (sweet potato, quinoa, wild rice).</li>
-            <li><strong>1-2 Tbsp:</strong> Anti-inflammatory fats (olive oil, avocado, hemp seeds).</li>
+          <img src="https://images.pexels.com/photos/30089164/pexels-photo-30089164.jpeg" alt="Nutritional ingredients" className="w-full rounded-2xl my-8 object-cover aspect-[21/9] shadow-lg" />
+
+          <h2 className="text-3xl mt-12 mb-6">Foods to Strictly Avoid</h2>
+          <p>If you're serious about healing your endocrine system, you must significantly limit:</p>
+          <ul className="space-y-4 my-8">
+            <li><strong>Refined Sugar & Simple Carbs:</strong> These cause violent spikes in insulin, leading to insulin resistance, which prompts your ovaries to create excess testosterone (the primary driver of PCOS).</li>
+            <li><strong>Processed Seed Oils:</strong> Canola, soybean, and sunflower oils oxidize easily in the body, creating massive systemic inflammation and cellular damage.</li>
+            <li><strong>Excess Caffeine & Alcohol:</strong> Drinking coffee on an empty stomach spikes cortisol by up to 30%. Alcohol severely taxes the liver, crippling its ability to filter and detoxify old hormones out of your system.</li>
           </ul>
-        </div>
 
-        {/* Real Client Stories */}
-        <div className="mt-16 bg-[#1A1A1A] p-8 md:p-12 rounded-[2rem] text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute top-[20%] right-[10%] w-64 h-64 bg-[#EAC881]/10 rounded-full blur-[80px]"></div>
-          <div className="relative z-10">
-            <div className="flex items-center gap-4 mb-10">
-              <span className="text-xs uppercase tracking-[0.3em] text-[#EAC881] font-bold">✦ Real Client Stories</span>
-              <span className="hidden sm:block w-12 h-[1px] bg-[#EAC881]/40"></span>
+          <h2 className="text-3xl mt-12 mb-6">Daily Routine Tips for Healing</h2>
+          <p>
+            Food is only half the equation. Your environment and daily habits dictate your internal biochemistry just as much as your plate does.
+          </p>
+          <ul className="space-y-4 my-8 pl-4 border-l-2 border-[#EAC881] list-none">
+            <li><strong>Meal Timing:</strong> Stop eating 3 hours before bed to allow your insulin levels to drop, permitting maximum release of Human Growth Hormone (HGH) overnight.</li>
+            <li><strong>Sleep Hygiene:</strong> 90% of your hormonal repair happens during deep REM sleep. Keep your room pitch dark and avoid blue light 90 minutes before sleep.</li>
+            <li><strong>Hydration:</strong> Drink warm lemon water upon waking to stimulate hepatic (liver) function, accelerating the detoxification of excess hormones.</li>
+            <li><strong>Stress Management:</strong> Practice slow, guided diaphragmatic breathing for 5 minutes daily. This physically shifts your nervous system out of "fight or flight" (sympathetic) and into "rest and digest" (parasympathetic).</li>
+          </ul>
+
+          <h2 className="text-3xl mt-12 mb-6">Do's and Don'ts</h2>
+          <div className="grid md:grid-cols-2 gap-8 my-8">
+            <div className="bg-green-50 p-6 rounded-2xl border border-green-200">
+              <h4 className="text-green-800 font-bold mb-4">DO's</h4>
+              <ul className="space-y-2 text-sm text-green-900 list-inside">
+                <li>• Eat protein within 60 minutes of waking.</li>
+                <li>• Walk for 15 minutes after your heaviest meal.</li>
+                <li>• Cycle your seeds (flax/pumpkin phase 1, sunflower/sesame phase 2).</li>
+                <li>• Prioritize strength training over excessive chronic cardio.</li>
+              </ul>
             </div>
-            
-            <div className="space-y-12">
-              <div className="grid md:grid-cols-3 gap-12 border-b border-white/10 pb-12">
-                <div className="md:col-span-2">
-                  <p className="text-xl md:text-2xl font-light italic leading-relaxed text-white mb-8 font-serif">
-                    "After coming off years of birth control, my body was a wreck. Jawline acne, horrible PMS, and hair thinning. We used food to detox my liver and heal my gut. Within 4 cycles, my acne cleared and my periods are smooth and painless."
-                  </p>
-                  <div className="flex items-center gap-4">
-                     <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#EAC881] to-[#1A2F2B] p-[2px] shrink-0">
-                      <div className="w-full h-full bg-[#1A1A1A] rounded-full flex items-center justify-center text-[#EAC881] font-display text-xl">
-                        S
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-display text-2xl text-white">Sarah M., 31</h4>
-                      <p className="text-[#EAC881]/80 font-sans text-xs tracking-widest mt-1 uppercase">NEW YORK, US</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-md self-center">
-                  <h5 className="text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-6 font-semibold">The Impact</h5>
-                  <div className="space-y-4">
-                    <div className="flex items-end justify-between border-b border-white/10 pb-4">
-                      <span className="text-white font-light text-sm">Acne Cleared</span>
-                      <span className="text-2xl font-display text-[#EAC881]">100%</span>
-                    </div>
-                    <div className="flex items-end justify-between pt-2">
-                      <span className="text-white font-light text-sm">Cycles Normalized</span>
-                      <span className="text-2xl font-display text-[#EAC881]">4</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-12">
-                <div className="md:col-span-2">
-                  <p className="text-xl md:text-2xl font-light italic leading-relaxed text-white mb-8 font-serif">
-                    "My doctor told me 'you're just getting older' despite exhaustion, weight gain despite exercise, and poor thyroid levels. Within 6 weeks of the hormonal eating protocol, my energy restored and my thyroid numbers shocked my GP."
-                  </p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#EAC881] to-[#1A2F2B] p-[2px] shrink-0">
-                      <div className="w-full h-full bg-[#1A1A1A] rounded-full flex items-center justify-center text-[#EAC881] font-display text-xl">
-                        P
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-display text-2xl text-white">Priya Chandrasekaran, 38</h4>
-                      <p className="text-[#EAC881]/80 font-sans text-xs tracking-widest mt-1 uppercase">TORONTO, CANADA</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-md self-center">
-                  <h5 className="text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-6 font-semibold">The Impact</h5>
-                  <div className="space-y-4">
-                    <div className="flex items-end justify-between border-b border-white/10 pb-4">
-                       <span className="text-white font-light text-sm">Loss in 6W</span>
-                      <span className="text-2xl font-display text-[#EAC881]">-6 kg</span>
-                    </div>
-                    <div className="flex items-end justify-between pt-2">
-                       <span className="text-white font-light text-sm">Thyroid Levels</span>
-                      <span className="text-2xl font-display text-[#EAC881]">Normal</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="bg-red-50 p-6 rounded-2xl border border-red-200">
+              <h4 className="text-red-800 font-bold mb-4">DON'Ts</h4>
+              <ul className="space-y-2 text-sm text-red-900 list-inside">
+                <li>• Don't drink coffee on an empty stomach.</li>
+                <li>• Don't drastically slash your healthy fat intake.</li>
+                <li>• Don't ignore chronic, low-grade stress.</li>
+                <li>• Don't eat large meals late at night.</li>
+              </ul>
             </div>
           </div>
+
         </div>
+        
+        <ReviewsSlider reviews={ReviewData.HORMONAL_BALANCE_REVIEWS} />
       </>
     )
   }
@@ -1154,20 +1144,18 @@ export const Blog: React.FC = () => {
           <p className="text-white/70 font-light text-lg md:text-xl mb-10 max-w-xl mx-auto">
             Join our private newsletter for clinical insights, hormone-balancing recipes, and evidence-based wellness protocols. 
           </p>
-          <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto" onSubmit={(e) => e.preventDefault()}>
-            <input 
-              type="email" 
-              placeholder="Your email address..." 
-              required
-              className="flex-grow bg-white/5 border border-white/20 rounded-xl px-6 py-4 text-white placeholder-white/40 focus:outline-none focus:border-[#EAC881] transition-colors font-light"
-            />
-            <button 
-              type="submit"
-              className="bg-[#EAC881] text-[#1A2F2B] px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(234,200,129,0.3)] whitespace-nowrap"
-            >
-              Get Free Action Plan
-            </button>
-          </form>
+          <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto justify-center">
+            <a href="https://wa.me/919990356350" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <button className="w-full bg-[#25D366] text-white px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-[#128C7E] transition-all duration-300 shadow-[0_0_20px_rgba(37,211,102,0.3)] whitespace-nowrap flex items-center justify-center gap-2">
+                Book your free 20 minutes consultation
+              </button>
+            </a>
+            <a href="mailto:hello@ojasio.com" className="w-full sm:w-auto mt-4 sm:mt-0">
+               <button className="w-full bg-[#EAC881] text-[#1A2F2B] px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(234,200,129,0.3)] whitespace-nowrap flex items-center justify-center gap-2">
+                 Email Us
+               </button>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -1206,7 +1194,7 @@ export const Blog: React.FC = () => {
             {/* Modal Hero Banner */}
             <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh]">
               <img 
-                src={selectedPost.image} 
+                src={selectedPost.coverImage || selectedPost.image} 
                 alt={selectedPost.title}
                 className="w-full h-full object-cover"
               />
@@ -1232,7 +1220,7 @@ export const Blog: React.FC = () => {
                   
                   <div className="flex items-center gap-6 text-white/60 font-sans text-xs uppercase tracking-widest font-semibold">
                     <div className="flex items-center gap-2">
-                       <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150" alt="Author" className="w-8 h-8 rounded-full object-cover border border-[#EAC881]/30" />
+                       <img src="https://images.pexels.com/photos/37274943/pexels-photo-37274943.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Author" className="w-8 h-8 rounded-full object-cover border border-[#EAC881]/30" />
                        <span className="text-white">By {selectedPost.author}</span>
                     </div>
                     <div className="flex items-center gap-2 hidden sm:flex">
