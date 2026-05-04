@@ -27,7 +27,7 @@ export const Disha: React.FC = () => {
               <span className="block text-xl text-green-deep/80 font-serif italic mt-2">Founder, Ojasio</span>
             </h2>
             
-            <div className="space-y-6 text-sm font-sans text-green-deep/70 font-light leading-relaxed">
+            <div className="space-y-6 text-base font-sans text-green-deep/80 font-light leading-relaxed">
               <p>
                 Disha Arora’s journey in nutrition, diet management, and wellness is built on over a decade of continuous learning, hands-on experience, and a deep commitment to transforming lives through food and lifestyle.
               </p>

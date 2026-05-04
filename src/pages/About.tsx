@@ -116,7 +116,7 @@ export const About: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="flex flex-col relative"
               >
-                <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-[#C4A052] mb-6 flex items-center gap-4">
+                <h3 className="text-base font-bold uppercase tracking-[0.25em] text-[#C4A052] mb-6 flex items-center gap-4">
                   <span className="w-8 h-px bg-[#C4A052]"></span>
                   Our Mission
                 </h3>
@@ -136,7 +136,7 @@ export const About: React.FC = () => {
                 className="flex flex-col relative"
               >
                 <div className="absolute -left-8 lg:-left-12 top-0 bottom-0 w-px bg-[#EAC881]/30 hidden md:block"></div>
-                <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-[#C4A052] mb-6 flex items-center gap-4">
+                <h3 className="text-base font-bold uppercase tracking-[0.25em] text-[#C4A052] mb-6 flex items-center gap-4">
                   <span className="w-8 h-px bg-[#C4A052]"></span>
                   Our Vision
                 </h3>

@@ -133,27 +133,50 @@ export const Home: React.FC = () => {
 
       {/* Trust Section */}
       <section className="py-24 bg-beige relative overflow-hidden border-y border-gold/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
+            className="flex flex-col justify-center"
           >
-            <h2 className="text-4xl font-display text-green-deep mb-8 border-l-2 border-gold pl-4">Why Choose Ojasio?</h2>
-            <ul className="space-y-8">
+            <div className="mb-12">
+              <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#C4A052] mb-4 block">The Ojasio Advantage</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-[#1A2F2B] leading-tight mb-6">
+                Why Discerning Individuals Choose Ojasio
+              </h2>
+              <p className="text-lg text-[#1A2F2B]/70 font-light leading-relaxed">
+                Elevate your health journey with an approach that respects your body's innate intelligence.
+              </p>
+            </div>
+            
+            <div className="space-y-10">
               {[
-                { title: 'Personalised Plans', desc: 'No generic formulas, just plans tailored to your unique biology.' },
-                { title: 'Science & Holistic Balance', desc: 'We combine modern biochemical insights with holistic wellness.' },
-                { title: 'Global Client Base', desc: 'Trusted by individuals adapting to diverse lifestyles across the world.' },
-                { title: 'Real Results', desc: 'Sustainable outcomes focused on long-term vitality, not short-term fixes.' }
+                { 
+                  title: 'Deeply Personalised Protocols', 
+                  desc: 'There are no generic templates here. Every therapeutic diet plan is meticulously tailored to your unique biology, medical history, and lifestyle constraints for maximum clinical efficacy.' 
+                },
+                { 
+                  title: 'Advanced Scientific Integration', 
+                  desc: 'We seamlessly blend modern functional medicine, evidence-based nutrition, and biochemical realities with holistic wellness wisdom to address the root cause of metabolic and hormonal disorders.' 
+                },
+                { 
+                  title: 'Global Adaptability & Lifestyle Fit', 
+                  desc: 'Whether you reside in Toronto, Dubai, or Mumbai, our dynamic nutritional strategies are designed to adapt seamlessly to diverse cultural cuisines, travel schedules, and demanding international careers.' 
+                },
+                { 
+                  title: 'Sustainable, Lifelong Transformation', 
+                  desc: 'We strictly avoid starvation routines or short-term fixes. Our coaching guarantees sustainable weight loss, insulin sensitivity, and long-lasting vitality that you can maintain effortlessly.' 
+                }
               ].map((item, idx) => (
-                <li key={idx} className="flex flex-col border-b border-gold/10 pb-4">
-                  <span className="text-sm font-sans font-bold uppercase tracking-widest text-gold mb-1">{item.title}</span>
-                  <span className="text-green-deep/70 font-sans text-sm leading-relaxed">{item.desc}</span>
-                </li>
+                <div key={idx} className="relative pl-8 border-l border-[#C4A052]/30 group hover:border-[#C4A052] transition-colors duration-500">
+                  <div className="absolute left-[-5px] top-2.5 w-2 h-2 rounded-full bg-[#C4A052] shadow-[0_0_10px_rgba(196,160,82,0.8)] group-hover:scale-150 transition-transform duration-500"></div>
+                  <h3 className="text-xl md:text-2xl font-display text-[#1A2F2B] mb-3">{item.title}</h3>
+                  <p className="text-base md:text-lg font-light text-[#1A2F2B]/80 leading-relaxed font-serif italic">{item.desc}</p>
+                </div>
               ))}
-            </ul>
+            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
