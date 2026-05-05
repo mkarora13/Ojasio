@@ -48,7 +48,7 @@ export const Disha: React.FC = () => {
              initial={{ opacity: 0, scale: 0.95 }}
              animate={{ opacity: 1, scale: 1 }}
              transition={{ duration: 0.9, delay: 0.1 }}
-             className="order-1 lg:order-2 w-full max-w-lg mx-auto lg:ml-auto mb-8 lg:mb-0 rounded-[2rem] overflow-hidden shadow-2xl relative border border-gold/20 sticky top-24"
+             className="order-1 lg:order-2 w-full max-w-lg mx-auto lg:ml-auto mb-8 lg:mb-0 rounded-[2rem] overflow-hidden shadow-2xl relative border border-gold/20"
           >
             <img 
               src="https://images.pexels.com/photos/37435132/pexels-photo-37435132.jpeg?auto=compress&cs=tinysrgb&w=800" 
