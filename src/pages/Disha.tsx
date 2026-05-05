@@ -8,26 +8,26 @@ export const Disha: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full bg-ivory pt-10 pb-24">
-      <div className="max-w-6xl mx-auto px-4">
+    <div className="w-full bg-ivory pt-12 md:pt-20 pb-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        {/* Premium Hero Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-24">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="order-2 lg:order-1"
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1 pt-4"
           >
-            <h1 className="text-5xl font-display text-green-deep mb-4">
+            <h1 className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-gold mb-10 block">
               Meet Your Nutrition Expert
             </h1>
-            <h2 className="text-3xl text-gold font-display mb-8">
-              <span className="block">Disha Arora</span>
-              <span className="block text-sm font-sans tracking-widest text-green-deep/70 mt-1 uppercase">Nutritionist | Nutrition Manager | Active CSNM Member</span>
-              <span className="block text-xl text-green-deep/80 font-serif italic mt-2">Founder, Ojasio</span>
-            </h2>
             
-            <div className="space-y-6 text-base font-sans text-green-deep/80 font-light leading-relaxed">
+            <p className="text-3xl md:text-4xl lg:text-5xl font-display text-green-deep leading-[1.15] mb-10 border-l-2 border-gold pl-6">
+              "We don't just change your diet; we profoundly reconnect you to your body's natural state of vitality, health, and effortless well-being."
+            </p>
+
+            <div className="space-y-6 text-base md:text-lg font-sans text-green-deep/80 font-light leading-relaxed">
               <p>
                 Disha Arora’s journey in nutrition, diet management, and wellness is built on over a decade of continuous learning, hands-on experience, and a deep commitment to transforming lives through food and lifestyle.
               </p>
@@ -35,40 +35,36 @@ export const Disha: React.FC = () => {
                 With a strong academic foundation in Food & Nutrition Management from Georgian College, Canada, she combines global education with practical, real-world application. Over the years, she has worked across diverse environments including clinics, corporate setups, diet centers, and customer-focused wellness platforms, allowing her to understand the unique health challenges faced by individuals from different backgrounds.
               </p>
               <p>
-                Her experience goes beyond theoretical knowledge. Disha has worked closely with clients dealing with weight management, diabetes, PCOS, and overall lifestyle disorders, helping them achieve sustainable and realistic results through personalised nutrition strategies. Her ability to adapt to different client needs, cultures, and routines makes her approach both flexible and highly effective.
+                Her experience goes beyond theoretical knowledge. Disha has worked closely with clients dealing with weight management, diabetes, PCOS, and overall lifestyle disorders, helping them achieve sustainable and realistic results through personalised nutrition strategies.
               </p>
               <p>
-                Throughout her journey, she has also contributed to wellness awareness by conducting seminars and engaging with thousands of individuals globally, educating them on the importance of balanced nutrition and healthy living.
-              </p>
-              <p>
-                What sets Disha apart is her client-centric approach. She believes that every individual is different, and therefore every diet plan should be personalised, practical, and easy to follow. Her focus is not just on short-term results but on creating long-term lifestyle changes that lead to lasting health and well-being.
-              </p>
-              <p>
-                With a blend of international exposure, practical expertise, and a passion for holistic wellness, Disha Arora continues to help individuals take control of their health and build a better, healthier future.
+                What sets Disha apart is her client-centric approach. She believes that every individual is different, and therefore every diet plan should be personalised, practical, and easy to follow. With a blend of international exposure, practical expertise, and a passion for holistic wellness, Disha Arora continues to help individuals take control of their health and build a better, healthier future.
               </p>
             </div>
           </motion.div>
-          
+
+          {/* Large Hero-Style Image */}
           <motion.div
              initial={{ opacity: 0, scale: 0.95 }}
              animate={{ opacity: 1, scale: 1 }}
-             transition={{ duration: 0.7 }}
-             className="order-1 lg:order-2 relative aspect-[4/5] max-h-[600px] rounded-t-full rounded-b-3xl overflow-hidden shadow-2xl border-4 border-white mx-auto w-full max-w-md"
+             transition={{ duration: 0.9, delay: 0.1 }}
+             className="order-1 lg:order-2 w-full max-w-lg mx-auto lg:ml-auto mb-8 lg:mb-0 rounded-[2rem] overflow-hidden shadow-2xl relative border border-gold/20 sticky top-24"
           >
             <img 
-              src="https://images.pexels.com/photos/37274943/pexels-photo-37274943.jpeg?auto=compress&cs=tinysrgb&w=800" 
-              alt="Disha Arora" 
-              className="absolute inset-0 w-full h-full object-cover"
+              src="https://images.pexels.com/photos/37435132/pexels-photo-37435132.jpeg?auto=compress&cs=tinysrgb&w=800" 
+              alt="Disha Arora, Nutrition Expert" 
+              className="w-full h-auto block hover:scale-[1.02] transition-transform duration-1000"
             />
-            {/* Elegant overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-green-deep/80 to-transparent flex flex-col justify-end p-8 text-ivory">
-               <div className="font-display text-3xl tracking-wide">
-                 <span className="block">Disha Arora</span>
-                 <span className="block text-xs font-sans tracking-widest text-ivory/80 mt-1 uppercase">Nutritionist | Nutrition Manager | Active CSNM Member</span>
-               </div>
-               <div className="flex flex-col mt-1">
-                 <span className="text-gold-light italic text-lg">Founder, Ojasio</span>
-               </div>
+            {/* Elegant vignette overlay */}
+            <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-green-deep via-green-deep/80 to-transparent pointer-events-none" />
+            
+            <div className="absolute bottom-8 left-0 right-0 z-10 px-6 text-center flex flex-col items-center">
+               <h2 className="text-4xl md:text-5xl text-ivory font-display mb-3 tracking-wide">Disha Arora</h2>
+               <div className="w-12 h-[1px] bg-gold mb-4" />
+               <p className="text-[10px] md:text-xs tracking-[0.25em] text-ivory/90 uppercase font-sans font-semibold leading-relaxed mb-3">
+                 Nutritionist | Nutrition Manager<br/>Active CSNM Member
+               </p>
+               <p className="text-xl md:text-2xl font-serif italic text-gold font-medium">Founder, Ojasio</p>
             </div>
           </motion.div>
         </div>

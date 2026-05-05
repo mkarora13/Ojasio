@@ -133,66 +133,50 @@ export const Home: React.FC = () => {
 
       {/* Trust Section */}
       <section className="py-24 bg-beige relative overflow-hidden border-y border-gold/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="flex flex-col justify-center"
           >
-            <div className="mb-14">
-              <span className="text-sm md:text-base font-bold uppercase tracking-[0.25em] text-[#C4A052] mb-4 block">The Ojasio Advantage</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-[#1A2F2B] leading-tight mb-6">
+            <div className="mb-12 md:mb-16 text-center">
+              <span className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-gold mb-6 block">The Ojasio Advantage</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-green-deep leading-[1.15] mb-8">
                 Why Discerning Individuals Choose Ojasio
               </h2>
-              <p className="text-lg md:text-2xl text-[#1A2F2B]/80 font-light leading-relaxed font-serif italic max-w-2xl">
-                Elevate your health journey with a science-backed, deeply personalized approach that respects your body's innate intelligence and demands for luxury wellness.
+              <p className="text-lg md:text-xl text-green-deep/80 font-light leading-relaxed font-sans max-w-3xl mx-auto">
+                Elevate your health with our expert-led, science-backed approach. We design elegant, practical personalized nutrition strategies that respect your body’s unique biochemistry and fit seamlessly into your high-profile life.
               </p>
             </div>
             
-            <div className="space-y-12">
+            <div className="space-y-10 md:space-y-12">
               {[
                 { 
-                  title: 'Deeply Personalised Nutrition Protocols', 
-                  desc: 'There are no generic templates here. Every therapeutic diet plan is meticulously tailored to your unique biology, medical history, and lifestyle constraints for maximum clinical efficacy and sustainable weight loss.' 
+                  title: 'Personalized Nutrition for Sustainable Weight Loss', 
+                  desc: 'Experience absolute metabolic health and natural fat burning. We craft deeply tailored weight loss plans that optimize insulin sensitivity—delivering sustainable, long-lasting transformation without starvation or restriction.' 
                 },
                 { 
-                  title: 'Advanced Scientific Integration', 
-                  desc: 'We seamlessly blend modern functional medicine, evidence-based nutrition, and biochemical realities with holistic wellness wisdom to address the root cause of metabolic disorders and PCOS naturally.' 
+                  title: 'Expert Holistic Care for PCOS Management', 
+                  desc: 'True wellness begins at the root cause. We seamlessly blend functional medicine with holistic nutrition to naturally manage PCOS, reverse hormonal imbalances, and restore your vibrant, everyday health.' 
                 },
                 { 
-                  title: 'Global Adaptability & Premium Lifestyle Fit', 
-                  desc: 'Whether you reside in Toronto, Dubai, or Mumbai, our dynamic nutritional strategies are designed to adapt seamlessly to diverse cultural cuisines, luxury travel schedules, and demanding international careers.' 
+                  title: 'Tailored Diets for Busy Working Professionals', 
+                  desc: 'A demanding career should never compromise your wellbeing. Our dynamic nutrition plans adapt flawlessly to demanding international schedules, business travel, and the fast-paced corporate lifestyle.' 
                 },
                 { 
-                  title: 'Sustainable, Lifelong Wellness Transformation', 
-                  desc: 'We strictly avoid starvation routines or short-term fixes. Our expert health coaching guarantees sustainable fat loss, optimized insulin sensitivity, and long-lasting vitality that you can maintain effortlessly.' 
+                  title: 'Premium Yet Accessible Healthy Eating', 
+                  desc: 'Elevated luxury meets everyday reality. We create sophisticated, therapeutic diet plans using affordable, easily accessible local ingredients, making your profound health journey simple and effortlessly maintained.' 
                 }
               ].map((item, idx) => (
-                <div key={idx} className="relative pl-10 border-l-2 border-[#C4A052]/30 group hover:border-[#C4A052] transition-colors duration-500">
-                  <div className="absolute left-[-9px] top-2.5 w-4 h-4 rounded-full bg-[#C4A052] shadow-[0_0_15px_rgba(196,160,82,0.6)] group-hover:scale-125 group-hover:shadow-[0_0_20px_rgba(196,160,82,0.9)] transition-all duration-500 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-display text-[#1A2F2B] mb-4 group-hover:text-[#C4A052] transition-colors duration-300">{item.title}</h3>
-                  <p className="text-lg md:text-xl font-light text-[#1A2F2B]/80 leading-relaxed">{item.desc}</p>
+                <div key={idx} className="relative pl-8 md:pl-10 border-l border-gold/30 group hover:border-gold transition-colors duration-500">
+                  <div className="absolute left-[-5px] top-2.5 w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(196,160,82,0.8)] group-hover:scale-150 transition-transform duration-500"></div>
+                  <h3 className="text-xl md:text-2xl font-display font-medium text-green-deep mb-3 leading-tight tracking-tight group-hover:text-gold transition-colors duration-300">{item.title}</h3>
+                  <p className="text-base md:text-lg font-light text-green-deep/80 leading-relaxed font-sans">{item.desc}</p>
                 </div>
               ))}
             </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="relative h-[600px] bg-ivory border border-gold/20 p-4"
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=1200" 
-              alt="Healthy vibrant bowl" 
-              className="w-full h-full object-cover grayscale-[20%]"
-            />
-            <div className="absolute inset-0 bg-green-deep/10 pointer-events-none" />
           </motion.div>
         </div>
       </section>

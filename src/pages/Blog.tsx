@@ -173,7 +173,7 @@ const downloadDietPlanPDF = (countryCode: string) => {
 const PCOS_REVIEWS = [
   {
     quote: "I was told I might never conceive naturally. My cycles were completely absent. Adapting this holistic plan formulated by Disha Arora and trusting the process gave me my life and my body back.",
-    name: "Fatima Al-Rashidi, 27",
+    name: "Zainab Q., 27",
     location: "DUBAI, UAE",
     metrics: [
       { label: "Weight Loss", value: "-9 kg" },
@@ -184,7 +184,7 @@ const PCOS_REVIEWS = [
   },
   {
     quote: "The Indian vegetarian plan was a game-changer. Disha Arora understood my cultural eating habits and adjusted the plan without eliminating the foods I love. My insulin resistance is completely reversed.",
-    name: "Priya S., 32",
+    name: "Shruti B., 32",
     location: "MUMBAI, INDIA",
     metrics: [
       { label: "Insulin", value: "Normal" },
@@ -195,7 +195,7 @@ const PCOS_REVIEWS = [
   },
   {
     quote: "I tried everything from keto to intense cardio. The global PCOS variations allowed me to eat a Mediterranean style diet while managing my symptoms. Truly life-changing approach.",
-    name: "Elena M., 29",
+    name: "Maria V., 29",
     location: "MADRID, SPAIN",
     metrics: [
       { label: "Acne", value: "100% Cleared" },
@@ -206,7 +206,7 @@ const PCOS_REVIEWS = [
   },
   {
     quote: "Having struggled with PCOS fatigue for a decade, finding Disha Arora's structured plan was a blessing. I followed her high-protein bowl strategy and finally saw the scale move down.",
-    name: "Sarah Jenkins, 35",
+    name: "Natasha P., 35",
     location: "TORONTO, CANADA",
     metrics: [
       { label: "Fat Loss", value: "-15 kg" },
@@ -217,7 +217,7 @@ const PCOS_REVIEWS = [
   },
   {
     quote: "What impressed me most was how Disha Arora incorporated everyday Indian ingredients to create such a powerful healing protocol. I didn't feel like I was on a diet, yet the results were phenomenal.",
-    name: "Neha Gupta, 28",
+    name: "Geeta K., 28",
     location: "DELHI, INDIA",
     metrics: [
       { label: "Weight Loss", value: "-7 kg" },
@@ -228,7 +228,7 @@ const PCOS_REVIEWS = [
   },
   {
     quote: "Living in the UK, I struggled to find a plan that worked in winter. The warm comfort variations in the global plan healed my gut and cleared my skin. It's the most sustainable approach I've found.",
-    name: "Emma W., 31",
+    name: "Chloe D., 31",
     location: "LONDON, UK",
     metrics: [
       { label: "Skin", value: "Glowing" },
@@ -242,7 +242,7 @@ const PCOS_REVIEWS = [
 const WEIGHT_LOSS_REVIEWS = [
   {
     quote: "I struggled with crash diets for years. They always left me hungry and frustrated. After adopting the plan, I lost 7 kg in 3 months by just eating properly.",
-    name: "Riya",
+    name: "Simran",
     location: "DELHI",
     age: 26,
     metrics: [
@@ -252,7 +252,7 @@ const WEIGHT_LOSS_REVIEWS = [
   },
   {
     quote: "Constant fatigue and weight gain was destroying my confidence. Disha Arora's guidance changed everything. I lost 6 kg, improved my energy, and finally feel like myself again.",
-    name: "Aarti",
+    name: "Bhavana",
     location: "MUMBAI",
     age: 29,
     metrics: [
@@ -262,7 +262,7 @@ const WEIGHT_LOSS_REVIEWS = [
   },
   {
     quote: "My late-night eating habits were completely ruining my progress. With structured meals, I lost 8 kg and stopped craving junk food entirely.",
-    name: "Aman",
+    name: "Vikram",
     location: "CANADA",
     age: 32,
     metrics: [
@@ -272,7 +272,7 @@ const WEIGHT_LOSS_REVIEWS = [
   },
   {
     quote: "PCOS and stubborn fat made losing weight feel impossible. Disha Arora's structured plan helped me reduce weight significantly and eliminated my severe bloating.",
-    name: "Sneha",
+    name: "Anjali",
     location: "DELHI",
     age: 34,
     metrics: [
@@ -282,7 +282,7 @@ const WEIGHT_LOSS_REVIEWS = [
   },
   {
     quote: "I had tried multiple extreme diets and nothing worked long-term. Following this method, I finally lost 9 kg sustainably without feeling deprived for a single day.",
-    name: "Sarah",
+    name: "Leah",
     location: "UK",
     age: 30,
     metrics: [
@@ -292,7 +292,7 @@ const WEIGHT_LOSS_REVIEWS = [
   },
   {
     quote: "Emotional eating issues held me back for years. The personalized nutrition plan from Disha Arora not only helped me lose 5 kg but profoundly improved my mindset towards food.",
-    name: "Pooja",
+    name: "Ritu",
     location: "GURGAON",
     age: 27,
     metrics: [
@@ -302,7 +302,7 @@ const WEIGHT_LOSS_REVIEWS = [
   },
   {
     quote: "Having a sedentary desk job made it hard to stay active. I lost 10 kg with a balanced diet plan plus walking. It was incredibly simple and effective.",
-    name: "James",
+    name: "Michael",
     location: "USA",
     age: 35,
     metrics: [
@@ -312,7 +312,7 @@ const WEIGHT_LOSS_REVIEWS = [
   },
   {
     quote: "Hormonal imbalance was making me feel awful. After correcting my diet, I lost 6 kg and significantly improved my cycles. Truly grateful.",
-    name: "Priya",
+    name: "Sanjana",
     location: "AUSTRALIA",
     age: 31,
     metrics: [
@@ -322,7 +322,7 @@ const WEIGHT_LOSS_REVIEWS = [
   },
   {
     quote: "I was stuck on a weight plateau for years and thought my metabolism was broken. Disha Arora's guidance finally helped me lose 8 kg with balanced eating.",
-    name: "Meera",
+    name: "Radhika",
     location: "INDIA",
     age: 33,
     metrics: [
@@ -671,11 +671,11 @@ const BLOG_POSTS = [
             This creates a vicious cycle: Eat less → feel hungry → binge → gain weight. The solution is to eat foods that keep you full, energized, and balanced.
           </p>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 my-12">
-            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1000" alt="Workout" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
-            <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&q=80&w=1000" alt="Cooking Ingredients" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
-            <img src="https://images.pexels.com/photos/6246497/pexels-photo-6246497.jpeg" alt="Yoga Lifestyle" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
-            <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=1000" alt="Running" className="w-full h-full object-cover rounded-2xl aspect-square shadow-md hover:shadow-xl transition-shadow" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 my-16 not-prose">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1000" alt="Workout" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
+            <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&q=80&w=1000" alt="Cooking Ingredients" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
+            <img src="https://images.pexels.com/photos/6246497/pexels-photo-6246497.jpeg?auto=format&fit=crop&q=80&w=1000" alt="Yoga Lifestyle" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
+            <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=1000" alt="Running" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
           </div>
 
           <h2 className="text-2xl mt-16 mb-6">What to Eat for Healthy Weight Loss</h2>
@@ -844,8 +844,8 @@ const BLOG_POSTS = [
     readTime: "5 Min Read",
     date: "April 18, 2026",
     author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
-    image: "https://images.unsplash.com/photo-1515023115689-589c33041d3c?auto=format&fit=crop&q=80&w=800",
-    coverImage: "https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=format&fit=crop&q=80&w=2000",
+    image: "https://images.pexels.com/photos/6632286/pexels-photo-6632286.jpeg?auto=compress&cs=tinysrgb&w=800",
+    coverImage: "https://images.pexels.com/photos/6632286/pexels-photo-6632286.jpeg?auto=compress&cs=tinysrgb&w=2000",
     excerpt: "Your hormones dictate everything from your mood to your metabolism. Explore the best foods to include in your daily routine to balance them naturally.",
     content: (
       <>
@@ -969,8 +969,8 @@ const BLOG_POSTS = [
     subtitle: "Realistic, actionable wellness for the real world.",
     category: "Lifestyle",
     readTime: "12 Min Read",
-    date: "August 12, 2026",
-    author: "Disha Arora | Nutritionist",
+    date: "February 12, 2024",
+    author: "BY DISHA ARORA | NUTRITIONIST | NUTRITION MANAGER | ACTIVE CSNM MEMBER",
     image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
     coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=2000",
     excerpt: "Learn how to maintain a healthy lifestyle despite corporate jobs, night shifts, limited budgets, and lack of time. Practical, realistic, and actionable guidance for the modern worker.",
@@ -1143,40 +1143,6 @@ const BLOG_POSTS = [
                   <li className="flex justify-between pb-2"><strong>7:30 AM:</strong> <span>Very light carb snack</span></li>
                 </ul>
              </div>
-          </div>
-
-          <h2 className="text-2xl mt-16 mb-6">Client Transformation Stories</h2>
-          
-          <div className="space-y-6 my-10 not-prose">
-            <div className="flex flex-col md:flex-row gap-6 items-start bg-white p-6 rounded-2xl border border-[#1A2F2B]/5 shadow-sm transition-shadow hover:shadow-md">
-              <div className="w-16 h-16 rounded-full bg-[#EAC881]/20 flex items-center justify-center text-[#1A2F2B] font-display text-2xl shrink-0">R</div>
-              <div>
-                <h4 className="font-bold text-lg m-0 mb-1">Rahul S., 34</h4>
-                <p className="text-[10px] text-[#EAC881] font-bold uppercase tracking-widest mb-3">IT Professional, Bangalore</p>
-                <p className="italic text-[#1A2F2B]/70 mb-3 text-sm">"I was sitting 11 hours a day and ordering Swiggy every night. My cholesterol spiked and my energy was zero."</p>
-                <p className="text-sm font-light"><strong>The Result:</strong> Using the practical guide, Rahul swapped junk for affordable local foods and used the 50/10 movement rule. He lost 8kg in 4 months and his cholesterol is back to normal range.</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-6 items-start bg-white p-6 rounded-2xl border border-[#1A2F2B]/5 shadow-sm transition-shadow hover:shadow-md">
-              <div className="w-16 h-16 rounded-full bg-[#EAC881]/20 flex items-center justify-center text-[#1A2F2B] font-display text-2xl shrink-0">A</div>
-              <div>
-                <h4 className="font-bold text-lg m-0 mb-1">Anita K., 28</h4>
-                <p className="text-[10px] text-[#EAC881] font-bold uppercase tracking-widest mb-3">Nurse (Night Shifts), London</p>
-                <p className="italic text-[#1A2F2B]/70 mb-3 text-sm">"Working night shifts destroyed my hormones. I gained weight and couldn't sleep during the day."</p>
-                <p className="text-sm font-light"><strong>The Result:</strong> By following the night shift digestion protocol, Anita stopped eating heavy meals at 3 AM. Her bloating disappeared, she sleeps 7 solid hours during the day, and smoothly dropped 5kg.</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-6 items-start bg-white p-6 rounded-2xl border border-[#1A2F2B]/5 shadow-sm transition-shadow hover:shadow-md">
-              <div className="w-16 h-16 rounded-full bg-[#EAC881]/20 flex items-center justify-center text-[#1A2F2B] font-display text-2xl shrink-0">M</div>
-              <div>
-                <h4 className="font-bold text-lg m-0 mb-1">Meera & Dev</h4>
-                <p className="text-[10px] text-[#EAC881] font-bold uppercase tracking-widest mb-3">Working Parents, Mumbai</p>
-                <p className="italic text-[#1A2F2B]/70 mb-3 text-sm">"We had no time to cook separately for us and the kids, and diet plans were too expensive to maintain."</p>
-                <p className="text-sm font-light"><strong>The Result:</strong> Adopted the budget-friendly Indian nutrition guide. Using simple ingredients like Sattu, local paneer, and lentils, the entire family got healthier without doubling their grocery bill.</p>
-              </div>
-            </div>
           </div>
 
           <h2 className="text-2xl mt-16 mb-6">Final Thoughts</h2>
@@ -1411,9 +1377,6 @@ export const Blog: React.FC = () => {
               </button>
               
               <div className="flex gap-4">
-                 <button className="hidden md:flex text-[#1A2F2B] hover:text-[#EAC881] transition-colors">
-                   <Star size={20} strokeWidth={1.5} />
-                 </button>
                  <button 
                   onClick={() => setSelectedPost(null)}
                   className="w-10 h-10 rounded-full bg-[#1A2F2B]/5 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all"
@@ -1424,15 +1387,15 @@ export const Blog: React.FC = () => {
             </div>
 
             {/* Modal Hero Banner */}
-            <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh]">
+            <div className="relative w-full min-h-[60vh] md:min-h-[60vh] lg:min-h-[70vh] flex flex-col justify-end">
               <img 
                 src={selectedPost.coverImage || selectedPost.image} 
                 alt={selectedPost.title}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F2B] via-[#1A2F2B]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F2B] via-[#1A2F2B]/60 to-transparent"></div>
               
-              <div className="absolute inset-0 flex flex-col justify-end px-6 lg:px-12 pb-12 lg:pb-20 max-w-5xl mx-auto w-full">
+              <div className="relative z-10 px-6 lg:px-12 pb-12 lg:pb-20 pt-32 max-w-5xl mx-auto w-full">
                 <motion.div 
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -1441,7 +1404,7 @@ export const Blog: React.FC = () => {
                   <span className="bg-[#EAC881] text-[#1A2F2B] px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block mb-6 shadow-lg">
                     {selectedPost.category}
                   </span>
-                  <h1 className="text-4xl md:text-5xl lg:text-7xl font-display text-white leading-[1.1] mb-6">
+                  <h1 className="text-3xl md:text-5xl lg:text-6xl font-display text-white leading-tight mb-6">
                     {selectedPost.title}
                   </h1>
                   {selectedPost.subtitle && (

@@ -4,51 +4,51 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const REVIEWS = [
   {
-    name: "Priya",
+    name: "Aditi Rao",
     location: "Mumbai, India",
-    content: "I had struggled with irregular periods and severe cystic acne for 5 years. Disha Arora's approach completely changed my relationship with food. I'm not just eating better; I feel emotionally lighter and my acne is gone.",
+    content: "I had struggled with irregular cycles and painful hormonal acne for 5 years. Trying to figure it out alone was exhausting. Disha Arora's holistic approach changed everything—I'm not restricted; I simply learned how to nourish my body correctly. My acne has entirely cleared up.",
     rating: 5
   },
   {
-    name: "Sarah",
+    name: "Sophie Laurent",
     location: "London, UK",
-    content: "My doctor told me weight loss was impossible with my thyroid condition. Working with Disha Arora proved them wrong. By focusing on gut health and hormonal balance, I naturally dropped 12kg without feeling starved.",
+    content: "My doctor told me losing weight was nearly impossible with my thyroid condition, which left me feeling defeated. Working with Ojasio proved them wrong. By focusing heavily on gut health and insulin control, I managed to naturally drop 12kg without ever feeling starved or deprived.",
     rating: 5
   },
   {
-    name: "Aisha",
+    name: "Zoya Farooq",
     location: "Dubai, UAE",
-    content: "The continuous fatigue and mood swings were ruining my career. Ojasio's personalized plan helped me understand my cortisol spikes. I finally have my energy back, and I feel like myself again.",
+    content: "The afternoon fatigue and constant mood swings were taking a serious toll on my demanding corporate career. This personalized plan finally helped me stabilize my blood sugar. I have my sharp focus back, and I feel incredible.",
     rating: 5
   },
   {
-    name: "Jessica",
+    name: "Harper Sterling",
     location: "New York, USA",
-    content: "I was skeptical at first, but Disha Arora's science-backed nutritional advice is unmatched. She doesn't just tell you what to eat; she explains why. My insulin resistance is finally under control.",
+    content: "I was highly skeptical at first, but Disha’s nuanced grasp of functional nutrition is unmatched. She doesn't just hand you a generic diet chart; she carefully explains the biochemistry of why certain foods work for you. My insulin resistance is successfully reversed.",
     rating: 5
   },
   {
-    name: "Ananya",
+    name: "Lavanya Krishnamurthy",
     location: "Bangalore, India",
-    content: "A premium experience from start to finish. The meal plans are easy to follow, delicious, and deeply nourishing. My persistent bloating is history.",
+    content: "An absolutely premium experience from day one. I work 10-hour days, and the tailored meal plans were practical, profoundly nourishing, and extremely easy to incorporate. That awful, persistent bloating I battled for years is history.",
     rating: 5
   },
   {
-    name: "Emma",
+    name: "Grace Holloway",
     location: "Sydney, Australia",
-    content: "After trying every fad diet, Ojasio was a breath of fresh air. It's truly holistic. I sleep beautifully now, and my chronic inflammation has significantly reduced.",
+    content: "After burning out on every fad diet imaginable, Ojasio was a breath of fresh air. It’s a genuinely therapeutic lifestyle upgrade. I am sleeping beautifully, and my inflammatory markers have significantly dropped.",
     rating: 5
   },
   {
-    name: "Roshni",
+    name: "Tanya Gill",
     location: "Toronto, Canada",
-    content: "I started the plan solely for weight loss, but the improvements in my hormonal health were the real victory. My cycles are finally regular after years of unpredictability.",
+    content: "I initially joined strictly for weight loss, but the miraculous improvements in my systemic hormonal health were the real victory here. After years of frustrating unpredictability, my cycles are perfectly regular.",
     rating: 5
   },
   {
-    name: "Nina",
+    name: "Isabelle Chen",
     location: "Chicago, USA",
-    content: "Disha Arora genuinely cares about her clients. The check-ins and adjustments to my plan made all the difference. My hormonal migraines have almost completely vanished.",
+    content: "Disha genuinely invests in her clients. The meticulous check-ins and smart micro-adjustments she made to my nutritional plan changed everything. My debilitating hormonal migraines have almost completely vanished.",
     rating: 5
   }
 ];

@@ -18,7 +18,7 @@ export const Reviews: React.FC = () => {
 
   const testimonials = [
     {
-      name: "Meera Desai",
+      name: "Kavya Nambiar",
       age: 34,
       profession: "Working Mother",
       location: "Chicago, USA",
@@ -26,7 +26,7 @@ export const Reviews: React.FC = () => {
       text: "I struggled with post-pregnancy weight and intense sugar cravings that made traditional dieting impossible with a full-time job. Disha designed a flexible plan incorporating my favorite Indian meals. I never felt starved. The portions were satisfying, and the cravings naturally faded. I've lost 12 kg and 4 inches around my waist in 5 months. I finally fit into my old clothes and have the energy to keep up with my toddler without crashing at 3 PM. My confidence is completely back."
     },
     {
-      name: "Sofia Martinez",
+      name: "Olivia Rossi",
       age: 27,
       profession: "Graduate Student",
       location: "Barcelona, Spain",
@@ -34,7 +34,7 @@ export const Reviews: React.FC = () => {
       text: "I was plagued by irregular cycles, acne, and stubborn weight gain from undiagnosed PCOS. Ojasio didn't just give me a diet; they educated me on how certain foods triggered my symptoms. The holistic plan was easy on my student budget and tight schedule. My cycle regulated within 3 months, my skin cleared up, and I safely lost 5 kg. I feel like I finally have control over my body again. The constant exhaustion is gone, and I feel vibrant and focused."
     },
     {
-      name: "Rajesh Sharma",
+      name: "Amit Verma",
       age: 52,
       profession: "Corporate Executive",
       location: "Mumbai, India",
@@ -42,7 +42,7 @@ export const Reviews: React.FC = () => {
       text: "Diagnosed with Type 2 diabetes, dealing with high stress, and having zero time for extensive workouts, I thought I had to give up all my comfort foods. The Ojasio team showed me how to balance my plates and manage my eating timings around my endless meetings. My HbA1c dropped from 8.2 to 6.1, and my medicine dosage has been halved. My doctor was amazed. I feel lighter, my brain fog has lifted, and I'm no longer anxious about my health's future."
     },
     {
-      name: "David Okafor",
+      name: "Michael Adebayo",
       age: 45,
       profession: "Entrepreneur",
       location: "London, UK",
@@ -50,7 +50,7 @@ export const Reviews: React.FC = () => {
       text: "I had high blood pressure from chronic stress and poor eating habits on the go. The Ojasio plan was practical. It wasn't about eating kale salads every day; it was about smart choices I could make even in restaurants. My BP normalized to 120/80 consistently over 6 months, and I lost 8 kg of visceral fat. I sleep soundly now, and the constant midday fatigue has vanished. I truly feel revitalized and younger."
     },
     {
-      name: "Chloe Evans",
+      name: "Isla Montgomery",
       age: 31,
       profession: "Graphic Designer",
       location: "Sydney, Australia",
@@ -58,15 +58,15 @@ export const Reviews: React.FC = () => {
       text: "I suffered from severe bloating, poor sleep, and a sedentary lifestyle leading to constant sluggishness. Ojasio focused on my gut health and daily routine. The small tweaks to my morning habits and hydration made a world of difference without needing a gym. My digestion issues are completely resolved, and my sleep quality is drastically better. I wake up feeling refreshed instead of hitting snooze, and have sustained energy to truly enjoy my weekends."
     },
     {
-      name: "Aisha & Yusuf Khan",
+      name: "Sara & Fahad Qureshi",
       age: 38,
       profession: "Homemaker & Parent",
       location: "Dubai, UAE",
       topic: "Child Nutrition Management",
-      text: "Yusuf was a picky eater, constantly falling sick, and lacked growth milestones. Dinner time used to be a battlefield. Disha guided me on how to present nutrient-dense foods creatively so he'd actually enjoy them. Our journey has been incredible. Yusuf gained healthy weight, his immunity improved, and he now eats a variety of vegetables. As a mom, the relief of seeing my child thrive and eat happily without forcing him is immeasurable."
+      text: "Fahad was a picky eater, constantly falling sick, and lacked growth milestones. Dinner time used to be a battlefield. Disha guided me on how to present nutrient-dense foods creatively so he'd actually enjoy them. Our journey has been incredible. Fahad gained healthy weight, his immunity improved, and he now eats a variety of vegetables. As a mom, the relief of seeing my child thrive and eat happily without forcing him is immeasurable."
     },
     {
-      name: "Kenji Sato",
+      name: "Yuki Takahashi",
       age: 24,
       profession: "Software Engineer",
       location: "Tokyo, Japan",
@@ -74,7 +74,7 @@ export const Reviews: React.FC = () => {
       text: "I was underweight, had poor stamina, and struggled to build muscle despite eating a lot of junk food. I realized I wasn't eating the right calories. Ojasio created a high-protein, calorie-dense plan that didn't make me feel bloated or sluggish. I gained 7 kg of lean muscle mass in 4 months. I finally feel strong and confident in my clothes. My posture has improved, and I have the stamina to play sports after work."
     },
     {
-      name: "Elena Rustova",
+      name: "Katarina Ivanov",
       age: 29,
       profession: "Yoga Instructor",
       location: "Vancouver, Canada",

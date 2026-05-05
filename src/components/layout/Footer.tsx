@@ -12,21 +12,27 @@ export const Footer: React.FC = () => {
     const svg = qrRef.current.querySelector('svg');
     if (!svg) return;
 
-    const svgData = new XMLSerializer().serializeToString(svg);
+    // Clone and resize for high-quality export
+    const svgClone = svg.cloneNode(true) as SVGElement;
+    const exportSize = 512;
+    svgClone.setAttribute('width', exportSize.toString());
+    svgClone.setAttribute('height', exportSize.toString());
+
+    const svgData = new XMLSerializer().serializeToString(svgClone);
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     const img = new Image();
     
     img.onload = () => {
       // Add padding to the downloaded image
-      const padding = 20;
-      canvas.width = img.width + padding * 2;
-      canvas.height = img.height + padding * 2;
+      const padding = Math.floor(exportSize * 0.1); // Proportional padding
+      canvas.width = exportSize + padding * 2;
+      canvas.height = exportSize + padding * 2;
       
       if (ctx) {
         ctx.fillStyle = '#FFFFFF';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, padding, padding);
+        ctx.drawImage(img, padding, padding, exportSize, exportSize);
         const pngFile = canvas.toDataURL('image/png');
         const downloadLink = document.createElement('a');
         downloadLink.download = 'Ojasio_QRCode.png';
