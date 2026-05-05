@@ -845,71 +845,78 @@ const BLOG_POSTS = [
     date: "April 18, 2026",
     author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.unsplash.com/photo-1515023115689-589c33041d3c?auto=format&fit=crop&q=80&w=800",
+    coverImage: "https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=format&fit=crop&q=80&w=2000",
     excerpt: "Your hormones dictate everything from your mood to your metabolism. Explore the best foods to include in your daily routine to balance them naturally.",
     content: (
       <>
         <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
           
-          <h2 className="text-3xl mt-12 mb-6">What is Hormonal Imbalance?</h2>
+          <h2 className="text-2xl mt-16 mb-6">What is Hormonal Imbalance?</h2>
           <p>
             Think of hormones as your body’s chemical messengers. They travel through your bloodstream, telling your organs and tissues what to do and when to do it. From your metabolism and heart rate to your mood, sleep, and reproductive cycles—hormones control it all. 
             When you experience a hormonal imbalance, it means you have too much or too little of a certain hormone. Even tiny shifts in this delicate ecosystem can cause widespread disruption, turning what should be a perfectly synchronized orchestra into chaos.
           </p>
 
-          <img src="https://images.pexels.com/photos/5214957/pexels-photo-5214957.jpeg" alt="Hormonal balance and wellness" className="w-full rounded-2xl my-8 object-cover aspect-[21/9] shadow-lg" />
-          <p className="text-xs text-center text-[#1A2F2B]/50 -mt-4 mb-8">Balancing your hormones naturally through proper nutrition and lifestyle.</p>
+          <figure className="my-12">
+            <img src="https://images.pexels.com/photos/5214957/pexels-photo-5214957.jpeg" alt="Hormonal balance and wellness" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <figcaption className="text-xs text-center text-[#1A2F2B]/50">Balancing your hormones naturally through proper nutrition and lifestyle.</figcaption>
+          </figure>
 
-          <h2 className="text-3xl mt-12 mb-6">Signs and Symptoms to Watch For</h2>
+          <h2 className="text-2xl mt-16 mb-6">Signs and Symptoms to Watch For</h2>
           <p>
             How do you know if your hormones are out of sync? Your body is incredibly communicative, but often we dismiss its warning signs as "normal" aging or stress. Common symptoms include:
           </p>
-          <ul className="space-y-4 my-8 pl-4 border-l-2 border-[#EAC881] list-none">
-            <li><strong>Unexplained Weight Gain:</strong> Specifically stubborn visceral fat around the abdomen, often signaling high cortisol or insulin resistance.</li>
-            <li><strong>Adult Acne:</strong> Deep, cystic breakouts along the jawline typically point to elevated androgens or estrogen dominance.</li>
-            <li><strong>Severe Mood Swings & Anxiety:</strong> Feeling overwhelmed, irritable, or dealing with intense PMS symptoms due to dropping progesterone levels.</li>
-            <li><strong>Irregular Periods & Fatigue:</strong> Chronic exhaustion no matter how much you sleep, coupled with unpredictable or missing menstrual cycles.</li>
+          <ul className="space-y-4 my-8 pl-4 border-l-4 border-[#EAC881] list-none">
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Unexplained Weight Gain:</strong> Specifically stubborn visceral fat around the abdomen, often signaling high cortisol or insulin resistance.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Adult Acne:</strong> Deep, cystic breakouts along the jawline typically point to elevated androgens or estrogen dominance.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Severe Mood Swings & Anxiety:</strong> Feeling overwhelmed, irritable, or dealing with intense PMS symptoms due to dropping progesterone levels.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Irregular Periods & Fatigue:</strong> Chronic exhaustion no matter how much you sleep, coupled with unpredictable or missing menstrual cycles.</span></li>
           </ul>
 
-          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1600" alt="Healthy balanced lifestyle" className="w-full rounded-2xl my-8 object-cover aspect-[21/9] shadow-lg" />
-          <p className="text-xs text-center text-[#1A2F2B]/50 -mt-4 mb-8">Understanding your body's signals is the first step toward profound healing.</p>
+          <figure className="my-12">
+            <img src="https://images.pexels.com/photos/6608542/pexels-photo-6608542.jpeg?auto=format&fit=crop&q=80&w=1600" alt="Healthy balanced lifestyle" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <figcaption className="text-xs text-center text-[#1A2F2B]/50">Understanding your body's signals is the first step toward profound healing.</figcaption>
+          </figure>
 
-          <h2 className="text-3xl mt-12 mb-6">The Best Foods for Hormonal Balance</h2>
+          <h2 className="text-2xl mt-16 mb-6">The Best Foods for Hormonal Balance</h2>
           
-          <div className="space-y-8 my-8">
+          <div className="space-y-6 my-8 not-prose">
             <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
-              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">1. Healthy Fats</h4>
+              <h4 className="font-bold text-[#1A2F2B] mb-2 text-lg">1. Healthy Fats</h4>
               <p className="text-sm font-light m-0 text-[#1A2F2B]/80"><strong>What to Eat:</strong> Avocados, wild-caught salmon, chia seeds, flaxseeds, and organic ghee.</p>
               <p className="text-sm font-light mt-2 text-[#1A2F2B]/80"><strong>Why it works:</strong> Your body literally cannot synthesize hormones without cholesterol and healthy fats. Fat is the molecular building block for estrogen, progesterone, and testosterone. Furthermore, Omega-3 fatty acids actively lower systemic inflammation and cellular stress.</p>
             </div>
             
             <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
-              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">2. Fiber-Rich Foods</h4>
+              <h4 className="font-bold text-[#1A2F2B] mb-2 text-lg">2. Fiber-Rich Foods</h4>
               <p className="text-sm font-light m-0 text-[#1A2F2B]/80"><strong>What to Eat:</strong> Dark leafy greens, broccoli, oats, lentils, and berries.</p>
               <p className="text-sm font-light mt-2 text-[#1A2F2B]/80"><strong>Why it works:</strong> Fiber feeds the estrobolome—a specific set of bacteria in your gut responsible for metabolizing and eliminating excess estrogen. Without fiber, excess estrogen gets reabsorbed into your bloodstream, leading to estrogen dominance.</p>
             </div>
 
             <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
-              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">3. Quality Protein Sources</h4>
+              <h4 className="font-bold text-[#1A2F2B] mb-2 text-lg">3. Quality Protein Sources</h4>
               <p className="text-sm font-light m-0 text-[#1A2F2B]/80"><strong>What to Eat:</strong> Organic eggs, grass-fed poultry, lentils, quinoa, and almonds.</p>
               <p className="text-sm font-light mt-2 text-[#1A2F2B]/80"><strong>Why it works:</strong> Dietary protein provides essential amino acids needed to produce peptide hormones, such as insulin and growth hormone. Starting your morning with 20-30g of high-quality protein dramatically flattens your blood sugar curve for the remainder of the day.</p>
             </div>
 
             <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
-              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">4. Anti-Inflammatory Foods</h4>
+              <h4 className="font-bold text-[#1A2F2B] mb-2 text-lg">4. Anti-Inflammatory Foods</h4>
               <p className="text-sm font-light m-0 text-[#1A2F2B]/80"><strong>What to Eat:</strong> Turmeric, ginger, extra virgin olive oil, green tea, and dark chocolate.</p>
               <p className="text-sm font-light mt-2 text-[#1A2F2B]/80"><strong>Why it works:</strong> Systemic inflammation triggers the adrenal glands to pump out cortisol. When cortisol is chronically elevated, it signals your liver to dump glucose, driving insulin resistance. Anti-inflammatory foods cool down this stress response at a cellular level.</p>
             </div>
 
             <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
-              <h4 className="font-display text-xl text-[#1A2F2B] mb-2">5. Herbs and Adaptogens</h4>
+              <h4 className="font-bold text-[#1A2F2B] mb-2 text-lg">5. Herbs and Adaptogens</h4>
               <p className="text-sm font-light m-0 text-[#1A2F2B]/80"><strong>What to Eat:</strong> Ashwagandha, Maca root, Holy Basil (Tulsi), and Spearmint.</p>
               <p className="text-sm font-light mt-2 text-[#1A2F2B]/80"><strong>Why it works:</strong> Adaptogens physically regulate your HPA axis (Hypothalamic-Pituitary-Adrenal axis). They help lower excess cortisol and protect your body from the physical wear-and-tear of modern stress, naturally preserving your progesterone levels.</p>
             </div>
           </div>
 
-          <img src="https://images.pexels.com/photos/30089164/pexels-photo-30089164.jpeg" alt="Nutritional ingredients" className="w-full rounded-2xl my-8 object-cover aspect-[21/9] shadow-lg" />
+          <figure className="my-12">
+            <img src="https://images.pexels.com/photos/1161547/pexels-photo-1161547.jpeg?auto=format&fit=crop&q=80&w=1600" alt="Nutritional ingredients" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+          </figure>
 
-          <h2 className="text-3xl mt-12 mb-6">Foods to Strictly Avoid</h2>
+          <h2 className="text-2xl mt-16 mb-6">Foods to Strictly Avoid</h2>
           <p>If you're serious about healing your endocrine system, you must significantly limit:</p>
           <ul className="space-y-4 my-8">
             <li><strong>Refined Sugar & Simple Carbs:</strong> These cause violent spikes in insulin, leading to insulin resistance, which prompts your ovaries to create excess testosterone (the primary driver of PCOS).</li>
@@ -917,35 +924,35 @@ const BLOG_POSTS = [
             <li><strong>Excess Caffeine & Alcohol:</strong> Drinking coffee on an empty stomach spikes cortisol by up to 30%. Alcohol severely taxes the liver, crippling its ability to filter and detoxify old hormones out of your system.</li>
           </ul>
 
-          <h2 className="text-3xl mt-12 mb-6">Daily Routine Tips for Healing</h2>
+          <h2 className="text-2xl mt-16 mb-6">Daily Routine Tips for Healing</h2>
           <p>
             Food is only half the equation. Your environment and daily habits dictate your internal biochemistry just as much as your plate does.
           </p>
-          <ul className="space-y-4 my-8 pl-4 border-l-2 border-[#EAC881] list-none">
-            <li><strong>Meal Timing:</strong> Stop eating 3 hours before bed to allow your insulin levels to drop, permitting maximum release of Human Growth Hormone (HGH) overnight.</li>
-            <li><strong>Sleep Hygiene:</strong> 90% of your hormonal repair happens during deep REM sleep. Keep your room pitch dark and avoid blue light 90 minutes before sleep.</li>
-            <li><strong>Hydration:</strong> Drink warm lemon water upon waking to stimulate hepatic (liver) function, accelerating the detoxification of excess hormones.</li>
-            <li><strong>Stress Management:</strong> Practice slow, guided diaphragmatic breathing for 5 minutes daily. This physically shifts your nervous system out of "fight or flight" (sympathetic) and into "rest and digest" (parasympathetic).</li>
+          <ul className="space-y-4 my-8 pl-4 border-l-4 border-[#EAC881] list-none">
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Meal Timing:</strong> Stop eating 3 hours before bed to allow your insulin levels to drop, permitting maximum release of Human Growth Hormone (HGH) overnight.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Sleep Hygiene:</strong> 90% of your hormonal repair happens during deep REM sleep. Keep your room pitch dark and avoid blue light 90 minutes before sleep.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Hydration:</strong> Drink warm lemon water upon waking to stimulate hepatic (liver) function, accelerating the detoxification of excess hormones.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Stress Management:</strong> Practice slow, guided diaphragmatic breathing for 5 minutes daily. This physically shifts your nervous system out of "fight or flight" (sympathetic) and into "rest and digest" (parasympathetic).</span></li>
           </ul>
 
-          <h2 className="text-3xl mt-12 mb-6">Do's and Don'ts</h2>
-          <div className="grid md:grid-cols-2 gap-8 my-8">
-            <div className="bg-green-50 p-6 rounded-2xl border border-green-200">
-              <h4 className="text-green-800 font-bold mb-4">DO's</h4>
-              <ul className="space-y-2 text-sm text-green-900 list-inside">
-                <li>• Eat protein within 60 minutes of waking.</li>
-                <li>• Walk for 15 minutes after your heaviest meal.</li>
-                <li>• Cycle your seeds (flax/pumpkin phase 1, sunflower/sesame phase 2).</li>
-                <li>• Prioritize strength training over excessive chronic cardio.</li>
+          <h2 className="text-2xl mt-16 mb-6">Do's and Don'ts</h2>
+          <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
+            <div className="flex-1 bg-green-50 p-6 rounded-2xl border-l-4 border-green-500 shadow-sm transition-shadow hover:shadow-md">
+              <h4 className="font-bold text-green-700 mb-4 text-lg">DO's</h4>
+              <ul className="space-y-3 text-[#1A2F2B]/80 font-light">
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> Eat protein within 60 minutes of waking.</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> Walk for 15 minutes after your heaviest meal.</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> Cycle your seeds (flax/pumpkin phase 1, sunflower/sesame phase 2).</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> Prioritize strength training over excessive chronic cardio.</li>
               </ul>
             </div>
-            <div className="bg-red-50 p-6 rounded-2xl border border-red-200">
-              <h4 className="text-red-800 font-bold mb-4">DON'Ts</h4>
-              <ul className="space-y-2 text-sm text-red-900 list-inside">
-                <li>• Don't drink coffee on an empty stomach.</li>
-                <li>• Don't drastically slash your healthy fat intake.</li>
-                <li>• Don't ignore chronic, low-grade stress.</li>
-                <li>• Don't eat large meals late at night.</li>
+            <div className="flex-1 bg-red-50 p-6 rounded-2xl border-l-4 border-red-500 shadow-sm transition-shadow hover:shadow-md">
+              <h4 className="font-bold text-red-700 mb-4 text-lg">DON'Ts</h4>
+              <ul className="space-y-3 text-[#1A2F2B]/80 font-light">
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> Don't drink coffee on an empty stomach.</li>
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> Don't drastically slash your healthy fat intake.</li>
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> Don't ignore chronic, low-grade stress.</li>
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> Don't eat large meals late at night.</li>
               </ul>
             </div>
           </div>
@@ -953,6 +960,231 @@ const BLOG_POSTS = [
         </div>
         
         <ReviewsSlider reviews={ReviewData.HORMONAL_BALANCE_REVIEWS} />
+      </>
+    )
+  },
+  {
+    id: "lifestyle-guide-busy-professionals",
+    title: "Complete Lifestyle Guide for Busy Professionals, Night Shift Workers, and Budget-Friendly Healthy Living",
+    subtitle: "Realistic, actionable wellness for the real world.",
+    category: "Lifestyle",
+    readTime: "12 Min Read",
+    date: "August 12, 2026",
+    author: "Disha Arora | Nutritionist",
+    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
+    coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=2000",
+    excerpt: "Learn how to maintain a healthy lifestyle despite corporate jobs, night shifts, limited budgets, and lack of time. Practical, realistic, and actionable guidance for the modern worker.",
+    content: (
+      <>
+        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+          
+          <h2 className="text-2xl mt-16 mb-6">Introduction</h2>
+          <p className="lead text-xl italic text-[#1A2F2B]/70 mb-10 border-l-4 border-[#EAC881] pl-8 leading-relaxed">
+            "You don't need a perfect schedule to be healthy. You just need a strategy that bends to fit your reality."
+          </p>
+          <p>
+            We are constantly told to sleep 8 hours, eat fresh home-cooked meals 3 times a day, and exercise daily. But let’s be honest: if you work a 10-hour corporate desk job, rotate through night shifts, or are navigating life on a strict budget, that "textbook" advice often feels like an impossible luxury. You might feel fatigued, overwhelmed, and guilty for relying on quick fixes or skipping meals altogether.
+          </p>
+          <p>
+            This guide is not about perfection. It’s about <strong>adaptation</strong>. Whether you have zero time to cook, an unpredictable schedule, or financial constraints, maintaining a healthy lifestyle is achievable when you focus on practical, realistic adjustments rather than idealistic goals.
+          </p>
+
+          <h2 className="text-2xl mt-16 mb-6">What is a Healthy Lifestyle in Today’s World?</h2>
+          <p>
+            Forget the magazines. In today’s fast-paced world, a healthy lifestyle doesn't mean eating kale salads on a beach. It means having the <strong>energy</strong> to get through your workday without crashing at 3 PM. It means your hormones are balanced so you can sleep soundly when you finally hit the pillow. It means having a functional immune system, a clear mind, and an approach to food that doesn't cause you chronic stress.
+          </p>
+
+          <figure className="my-12">
+            <img src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Professional working" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <figcaption className="text-xs text-center text-[#1A2F2B]/50">Adapting your health journey to fit your real, everyday life.</figcaption>
+          </figure>
+
+          <h2 className="text-2xl mt-16 mb-6">Lifestyle Pros and Cons</h2>
+          <p>The impact of your daily habits compound over time. Here is what happens under the surface:</p>
+          
+          <div className="grid md:grid-cols-2 gap-8 my-8 not-prose">
+            <div className="bg-[#1A2F2B]/5 p-6 rounded-2xl border border-[#1A2F2B]/10">
+              <h4 className="text-[#1A2F2B] font-display text-xl mb-4">Pros of a Disciplined Lifestyle</h4>
+              <ul className="space-y-3 font-light">
+                <li>• <strong>Metabolism:</strong> Efficiently burns fuel; maintains stable weight.</li>
+                <li>• <strong>Hormones:</strong> Balanced cortisol and insulin leading to stable moods.</li>
+                <li>• <strong>Energy:</strong> Sustained vitality throughout the day without caffeine dependency.</li>
+                <li>• <strong>Mental Health:</strong> Reduced anxiety, sharper focus, and better resilience to stress.</li>
+              </ul>
+            </div>
+            <div className="bg-red-50 p-6 rounded-2xl border border-red-100">
+              <h4 className="text-red-900 font-display text-xl mb-4">Cons of Poor Habits</h4>
+              <ul className="space-y-3 text-red-900/80 font-light">
+                <li>• <strong>Metabolism:</strong> Sluggish digestion, insulin resistance, and stubborn fat.</li>
+                <li>• <strong>Hormones:</strong> High cortisol, disrupted melatonin, and reproductive issues.</li>
+                <li>• <strong>Energy:</strong> Constant lethargy, afternoon crashes, and brain fog.</li>
+                <li>• <strong>Mental Health:</strong> Increased irritability, heightened stress, and depressive moods.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Do’s and Don’ts</h2>
+          <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
+            <div className="flex-1 bg-green-50 p-6 rounded-2xl border-l-4 border-green-500 shadow-sm transition-shadow hover:shadow-md">
+              <h4 className="font-bold text-green-700 mb-4 text-lg">The Do's</h4>
+              <ul className="space-y-3 text-[#1A2F2B]/80 font-light">
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> <strong>Hydrate early:</strong> Drink two glasses of water before your first coffee.</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> <strong>Protein first:</strong> Anchor your first meal with solid protein (eggs, paneer, lentils) to stabilize blood sugar.</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> <strong>Incidental movement:</strong> Take stairs, walk while on calls.</li>
+                <li className="flex items-center gap-3"><CheckCircle2 size={18} className="text-green-500 shrink-0" /> <strong>Protect sleep:</strong> Keep your room cool and dark, no matter what time you sleep.</li>
+              </ul>
+            </div>
+            <div className="flex-1 bg-red-50 p-6 rounded-2xl border-l-4 border-red-500 shadow-sm transition-shadow hover:shadow-md">
+              <h4 className="font-bold text-red-700 mb-4 text-lg">The Don'ts</h4>
+              <ul className="space-y-3 text-[#1A2F2B]/80 font-light">
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> <strong>Don't skip meals:</strong> It destroys your metabolism and leads to severe binge eating later.</li>
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> <strong>Avoid junk dependency:</strong> Don't rely on sugary biscuits or chips for energy.</li>
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> <strong>Don't skimp on sleep:</strong> Irregular sleep wreaks havoc on your insulin sensitivity.</li>
+                <li className="flex items-center gap-3"><X size={18} className="text-red-500 shrink-0" /> <strong>Don't drink calories:</strong> Avoid sugary sodas and heavily sweetened teas/coffees.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Corporate Professionals Lifestyle Guide</h2>
+          <p><strong>The Problem:</strong> Long sitting hours, high stress, and irregular meal timings due to back-to-back meetings.</p>
+          <p><strong>The Solution:</strong></p>
+          <ul className="space-y-4 my-8 pl-4 border-l-4 border-[#EAC881] list-none">
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Meal Timing:</strong> Do not let more than 4-5 hours pass without eating. If a meeting runs late, have a small handful of almonds ready at your desk.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Office Snacks:</strong> Stock your drawer with roasted makhana (fox nuts), murmura (puffed rice), roasted chana, unsalted peanuts, or protein bars.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Hydration:</strong> Keep a 1-liter bottle on your desk. Make it a rule to finish it before lunch, and refill it for the afternoon.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Movement:</strong> Implement the 50/10 rule. Sit for 50 minutes, stand/walk/stretch for 10 minutes. </span></li>
+          </ul>
+
+          <h2 className="text-2xl mt-16 mb-6">Night Shift Lifestyle Guide</h2>
+          <p><strong>The Problem:</strong> Circadian rhythm disruption, poor digestion at night, hormonal imbalance, and poor daytime sleep quality.</p>
+          <p><strong>The Solution:</strong></p>
+          <ul className="space-y-4 my-8 pl-4 border-l-4 border-[#EAC881] list-none">
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Meal Timing:</strong> Eat your "main" heavy meal before your shift begins (around 7-8 PM). During the night shift, your digestion slows down naturally.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>What to eat during the shift:</strong> Stick to light, warm, and easily digestible foods. Think soups, a small portion of dal-rice, or a protein shake. </span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Foods to avoid:</strong> Heavy, greasy fast food, excessively sugary energy drinks, and heavy dairy which will trigger acid reflux.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Sleep Recovery:</strong> When you get home, wear sunglasses if the sun is up. Make your bedroom pitch black. Eat a very light carbohydrate snack (like a banana or plain toast) to naturally boost serotonin and help you sleep.</span></li>
+          </ul>
+
+          <figure className="my-12">
+            <img src="https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Night shift and planning" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <figcaption className="text-xs text-center text-[#1A2F2B]/50">Structured habits make unconventional schedules manageable.</figcaption>
+          </figure>
+
+          <h2 className="text-2xl mt-16 mb-6">For People Who Can’t Cook at Home</h2>
+          <p>Not everyone has the time, energy, or facilities to cook elaborate meals. You can still eat healthy on the go.</p>
+          <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20 my-8">
+            <ul className="space-y-3">
+              <li><strong>Smart Outside Choices:</strong> Opt for grilled, baked, or steamed over fried. Choose a chicken salad, paneer tikka, idli, or a simple thali (skip the heavy gravies) instead of cheesy pastas or burgers.</li>
+              <li><strong>No-Cook Meals:</strong> Mix Greek yogurt with fruits and nuts. Create a sprouted moong salad (buy sprouts ready-made). Hummus with carrot/cucumber sticks.</li>
+              <li><strong>Ready-to-Eat Nutritious Ideas:</strong> Keep hard-boiled eggs (if possible), pre-cut fruits, unsweetened peanut butter on whole wheat bread, or a high-quality whey protein powder handy.</li>
+            </ul>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Budget-Friendly Nutrition Guide</h2>
+          <p>Healthy eating does NOT have to be expensive. You don't need avocados, salmon, or chia seeds to be fit. Local, traditional foods are incredibly powerful.</p>
+          
+          <div className="space-y-6 my-8 not-prose">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
+              <h4 className="font-bold text-[#1A2F2B] mb-2 text-lg">Cheap but Nutritious Indian Foods</h4>
+              <p className="text-sm font-light text-[#1A2F2B]/80">Sattu (roasted gram flour) is the ultimate cheap protein. Moong dal, eggs, locally sourced seasonal greens (palak, methi), and dahi (curd).</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
+              <h4 className="font-bold text-[#1A2F2B] mb-2 text-lg">Protein on a Budget</h4>
+              <p className="text-sm font-light text-[#1A2F2B]/80">Eggs, soya chunks, locally sourced paneer, black chana, rajma, and lentils. Milk is also a highly affordable complete protein.</p>
+            </div>
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
+              <h4 className="font-bold text-[#1A2F2B] mb-2 text-lg">Smart Grocery Planning</h4>
+              <p className="text-sm font-light text-[#1A2F2B]/80">Buy seasonal fruits and vegetables—they are cheaper and more nutritious. Buy grains and pulses in bulk. Skip the packaged "diet" snacks; they are overpriced and highly processed.</p>
+            </div>
+          </div>
+
+          <figure className="my-12">
+            <img src="https://images.pexels.com/photos/4099238/pexels-photo-4099238.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Budget friendly healthy living" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <figcaption className="text-xs text-center text-[#1A2F2B]/50">Affordable, accessible local foods are the foundation of good health.</figcaption>
+          </figure>
+
+          <div className="bg-[#1A2F2B] text-white p-8 rounded-3xl my-10 not-prose">
+            <h3 className="text-2xl font-display text-[#EAC881] mb-6">Special Focus Sections</h3>
+            
+            <h4 className="text-lg font-bold mb-2">🤰 Pregnant Women</h4>
+            <p className="text-white/80 font-light mb-8">
+              Focus on simple, safe, and nutritious habits. Prioritize folic acid (dark leafy greens, lentils), iron, and calcium. Do not restrict calories, but manage portions to avoid drastic sugar spikes. Snack on soaked almonds, walnuts, and fresh fruits. Stay highly hydrated.
+            </p>
+
+            <h4 className="text-lg font-bold mb-2">👦 Kids & Growing Children</h4>
+            <p className="text-white/80 font-light">
+              Children need dense energy and healthy fats for brain development. Include ghee, full-fat dairy, eggs, and nuts. Don't frame foods as "good" or "bad"; teach them balance. Hide veggies in parathas, sauces, or soups if they are picky eaters.
+            </p>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Sample Daily Routines</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 my-8 not-prose">
+             <div className="border border-[#1A2F2B]/10 p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow">
+                <h4 className="font-display text-xl text-[#1A2F2B] mb-4 border-b border-[#1A2F2B]/10 pb-4">The Office Worker</h4>
+                <ul className="space-y-4 text-sm font-light text-[#1A2F2B]/80">
+                  <li className="flex justify-between border-b border-gray-100 pb-2"><strong>7:30 AM:</strong> <span>Warm water</span></li>
+                  <li className="flex justify-between border-b border-gray-100 pb-2"><strong>8:30 AM:</strong> <span>High protein breakfast</span></li>
+                  <li className="flex justify-between border-b border-gray-100 pb-2"><strong>11:30 AM:</strong> <span>Nuts and green tea</span></li>
+                  <li className="flex justify-between border-b border-gray-100 pb-2"><strong>1:30 PM:</strong> <span>Balanced lunch</span></li>
+                  <li className="flex justify-between border-b border-gray-100 pb-2"><strong>5:00 PM:</strong> <span>Roasted chana/fruit</span></li>
+                  <li className="flex justify-between pb-2"><strong>8:30 PM:</strong> <span>Light dinner</span></li>
+                </ul>
+             </div>
+             
+             <div className="border border-[#1A2F2B]/10 p-6 rounded-2xl bg-[#FAF9F6] shadow-sm hover:shadow-md transition-shadow">
+                <h4 className="font-display text-xl text-[#1A2F2B] mb-4 border-b border-[#1A2F2B]/10 pb-4">The Night Shift Worker</h4>
+                <ul className="space-y-4 text-sm font-light text-[#1A2F2B]/80">
+                  <li className="flex justify-between border-b border-[#1A2F2B]/5 pb-2"><strong>4:00 PM:</strong> <span>Hydrate, movement</span></li>
+                  <li className="flex justify-between border-b border-[#1A2F2B]/5 pb-2"><strong>5:00 PM:</strong> <span>"Breakfast" meal</span></li>
+                  <li className="flex justify-between border-b border-[#1A2F2B]/5 pb-2"><strong>8:30 PM:</strong> <span>Main heavy meal</span></li>
+                  <li className="flex justify-between border-b border-[#1A2F2B]/5 pb-2"><strong>1:00 AM:</strong> <span>Light digestable snack</span></li>
+                  <li className="flex justify-between border-b border-[#1A2F2B]/5 pb-2"><strong>4:00 AM:</strong> <span>Clear soup/shake</span></li>
+                  <li className="flex justify-between pb-2"><strong>7:30 AM:</strong> <span>Very light carb snack</span></li>
+                </ul>
+             </div>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Client Transformation Stories</h2>
+          
+          <div className="space-y-6 my-10 not-prose">
+            <div className="flex flex-col md:flex-row gap-6 items-start bg-white p-6 rounded-2xl border border-[#1A2F2B]/5 shadow-sm transition-shadow hover:shadow-md">
+              <div className="w-16 h-16 rounded-full bg-[#EAC881]/20 flex items-center justify-center text-[#1A2F2B] font-display text-2xl shrink-0">R</div>
+              <div>
+                <h4 className="font-bold text-lg m-0 mb-1">Rahul S., 34</h4>
+                <p className="text-[10px] text-[#EAC881] font-bold uppercase tracking-widest mb-3">IT Professional, Bangalore</p>
+                <p className="italic text-[#1A2F2B]/70 mb-3 text-sm">"I was sitting 11 hours a day and ordering Swiggy every night. My cholesterol spiked and my energy was zero."</p>
+                <p className="text-sm font-light"><strong>The Result:</strong> Using the practical guide, Rahul swapped junk for affordable local foods and used the 50/10 movement rule. He lost 8kg in 4 months and his cholesterol is back to normal range.</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col md:flex-row gap-6 items-start bg-white p-6 rounded-2xl border border-[#1A2F2B]/5 shadow-sm transition-shadow hover:shadow-md">
+              <div className="w-16 h-16 rounded-full bg-[#EAC881]/20 flex items-center justify-center text-[#1A2F2B] font-display text-2xl shrink-0">A</div>
+              <div>
+                <h4 className="font-bold text-lg m-0 mb-1">Anita K., 28</h4>
+                <p className="text-[10px] text-[#EAC881] font-bold uppercase tracking-widest mb-3">Nurse (Night Shifts), London</p>
+                <p className="italic text-[#1A2F2B]/70 mb-3 text-sm">"Working night shifts destroyed my hormones. I gained weight and couldn't sleep during the day."</p>
+                <p className="text-sm font-light"><strong>The Result:</strong> By following the night shift digestion protocol, Anita stopped eating heavy meals at 3 AM. Her bloating disappeared, she sleeps 7 solid hours during the day, and smoothly dropped 5kg.</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col md:flex-row gap-6 items-start bg-white p-6 rounded-2xl border border-[#1A2F2B]/5 shadow-sm transition-shadow hover:shadow-md">
+              <div className="w-16 h-16 rounded-full bg-[#EAC881]/20 flex items-center justify-center text-[#1A2F2B] font-display text-2xl shrink-0">M</div>
+              <div>
+                <h4 className="font-bold text-lg m-0 mb-1">Meera & Dev</h4>
+                <p className="text-[10px] text-[#EAC881] font-bold uppercase tracking-widest mb-3">Working Parents, Mumbai</p>
+                <p className="italic text-[#1A2F2B]/70 mb-3 text-sm">"We had no time to cook separately for us and the kids, and diet plans were too expensive to maintain."</p>
+                <p className="text-sm font-light"><strong>The Result:</strong> Adopted the budget-friendly Indian nutrition guide. Using simple ingredients like Sattu, local paneer, and lentils, the entire family got healthier without doubling their grocery bill.</p>
+              </div>
+            </div>
+          </div>
+
+          <h2 className="text-2xl mt-16 mb-6">Final Thoughts</h2>
+          <p>Health is not reserved for the wealthy or the people with endless free time. It is a daily practice of making the *slightly better* choice within your current circumstances. Take control of what you can, and forgive yourself for what you can't.</p>
+
+        </div>
+
+        <ReviewsSlider reviews={ReviewData.LIFESTYLE_REVIEWS} />
       </>
     )
   }

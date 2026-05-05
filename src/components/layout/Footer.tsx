@@ -1,9 +1,45 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Instagram, Linkedin, Mail } from 'lucide-react';
 import QRCode from 'react-qr-code';
 
 export const Footer: React.FC = () => {
+  const qrRef = useRef<HTMLDivElement>(null);
+
+  const handleDownloadQR = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!qrRef.current) return;
+    const svg = qrRef.current.querySelector('svg');
+    if (!svg) return;
+
+    const svgData = new XMLSerializer().serializeToString(svg);
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    
+    img.onload = () => {
+      // Add padding to the downloaded image
+      const padding = 20;
+      canvas.width = img.width + padding * 2;
+      canvas.height = img.height + padding * 2;
+      
+      if (ctx) {
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, padding, padding);
+        const pngFile = canvas.toDataURL('image/png');
+        const downloadLink = document.createElement('a');
+        downloadLink.download = 'Ojasio_QRCode.png';
+        downloadLink.href = pngFile;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+      }
+    };
+    
+    img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgData)));
+  };
+
   return (
     <footer className="bg-beige text-green-deep border-t border-gold/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16">
@@ -67,15 +103,17 @@ export const Footer: React.FC = () => {
 
           <div className="flex flex-col items-start md:items-center">
             <h3 className="font-sans font-bold text-[10px] tracking-widest uppercase mb-6 text-gold text-center">Scan to Visit</h3>
-            <a href="/ojasio-qr.png" download="Ojasio_QRCode.png" className="bg-white p-3 rounded-xl shadow-sm border border-gold/20 flex flex-col items-center justify-center hover:shadow-md transition-all">
-              <QRCode 
-                value="https://ojasio.com" 
-                size={80} 
-                className="text-green-deep"
-                fgColor="#1C3F3A" // green-deep colour
-              />
+            <a href="#" onClick={handleDownloadQR} className="bg-white p-3 rounded-xl shadow-sm border border-gold/20 flex flex-col items-center justify-center hover:shadow-md transition-all">
+              <div ref={qrRef} className="bg-white">
+                <QRCode 
+                  value="https://ojasio.com" 
+                  size={80} 
+                  className="text-green-deep"
+                  fgColor="#1C3F3A" // green-deep colour
+                />
+              </div>
             </a>
-            <p className="mt-3 text-[9px] font-sans text-green-deep/60 uppercase tracking-widest text-center">Tap to Download</p>
+            <p className="mt-3 text-[9px] font-sans text-green-deep/60 uppercase tracking-widest text-center cursor-pointer hover:text-gold transition-colors" onClick={handleDownloadQR}>Tap to Download</p>
           </div>
         </div>
         

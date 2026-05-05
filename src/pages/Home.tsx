@@ -141,39 +141,41 @@ export const Home: React.FC = () => {
             transition={{ duration: 0.7 }}
             className="flex flex-col justify-center"
           >
-            <div className="mb-12">
-              <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#C4A052] mb-4 block">The Ojasio Advantage</span>
+            <div className="mb-14">
+              <span className="text-sm md:text-base font-bold uppercase tracking-[0.25em] text-[#C4A052] mb-4 block">The Ojasio Advantage</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-[#1A2F2B] leading-tight mb-6">
                 Why Discerning Individuals Choose Ojasio
               </h2>
-              <p className="text-lg text-[#1A2F2B]/70 font-light leading-relaxed">
-                Elevate your health journey with an approach that respects your body's innate intelligence.
+              <p className="text-lg md:text-2xl text-[#1A2F2B]/80 font-light leading-relaxed font-serif italic max-w-2xl">
+                Elevate your health journey with a science-backed, deeply personalized approach that respects your body's innate intelligence and demands for luxury wellness.
               </p>
             </div>
             
-            <div className="space-y-10">
+            <div className="space-y-12">
               {[
                 { 
-                  title: 'Deeply Personalised Protocols', 
-                  desc: 'There are no generic templates here. Every therapeutic diet plan is meticulously tailored to your unique biology, medical history, and lifestyle constraints for maximum clinical efficacy.' 
+                  title: 'Deeply Personalised Nutrition Protocols', 
+                  desc: 'There are no generic templates here. Every therapeutic diet plan is meticulously tailored to your unique biology, medical history, and lifestyle constraints for maximum clinical efficacy and sustainable weight loss.' 
                 },
                 { 
                   title: 'Advanced Scientific Integration', 
-                  desc: 'We seamlessly blend modern functional medicine, evidence-based nutrition, and biochemical realities with holistic wellness wisdom to address the root cause of metabolic and hormonal disorders.' 
+                  desc: 'We seamlessly blend modern functional medicine, evidence-based nutrition, and biochemical realities with holistic wellness wisdom to address the root cause of metabolic disorders and PCOS naturally.' 
                 },
                 { 
-                  title: 'Global Adaptability & Lifestyle Fit', 
-                  desc: 'Whether you reside in Toronto, Dubai, or Mumbai, our dynamic nutritional strategies are designed to adapt seamlessly to diverse cultural cuisines, travel schedules, and demanding international careers.' 
+                  title: 'Global Adaptability & Premium Lifestyle Fit', 
+                  desc: 'Whether you reside in Toronto, Dubai, or Mumbai, our dynamic nutritional strategies are designed to adapt seamlessly to diverse cultural cuisines, luxury travel schedules, and demanding international careers.' 
                 },
                 { 
-                  title: 'Sustainable, Lifelong Transformation', 
-                  desc: 'We strictly avoid starvation routines or short-term fixes. Our coaching guarantees sustainable weight loss, insulin sensitivity, and long-lasting vitality that you can maintain effortlessly.' 
+                  title: 'Sustainable, Lifelong Wellness Transformation', 
+                  desc: 'We strictly avoid starvation routines or short-term fixes. Our expert health coaching guarantees sustainable fat loss, optimized insulin sensitivity, and long-lasting vitality that you can maintain effortlessly.' 
                 }
               ].map((item, idx) => (
-                <div key={idx} className="relative pl-8 border-l border-[#C4A052]/30 group hover:border-[#C4A052] transition-colors duration-500">
-                  <div className="absolute left-[-5px] top-2.5 w-2 h-2 rounded-full bg-[#C4A052] shadow-[0_0_10px_rgba(196,160,82,0.8)] group-hover:scale-150 transition-transform duration-500"></div>
-                  <h3 className="text-xl md:text-2xl font-display text-[#1A2F2B] mb-3">{item.title}</h3>
-                  <p className="text-base md:text-lg font-light text-[#1A2F2B]/80 leading-relaxed font-serif italic">{item.desc}</p>
+                <div key={idx} className="relative pl-10 border-l-2 border-[#C4A052]/30 group hover:border-[#C4A052] transition-colors duration-500">
+                  <div className="absolute left-[-9px] top-2.5 w-4 h-4 rounded-full bg-[#C4A052] shadow-[0_0_15px_rgba(196,160,82,0.6)] group-hover:scale-125 group-hover:shadow-[0_0_20px_rgba(196,160,82,0.9)] transition-all duration-500 flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-display text-[#1A2F2B] mb-4 group-hover:text-[#C4A052] transition-colors duration-300">{item.title}</h3>
+                  <p className="text-lg md:text-xl font-light text-[#1A2F2B]/80 leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>

@@ -108,45 +108,50 @@ export const About: React.FC = () => {
               <div className="w-16 h-px bg-[#EAC881] mx-auto" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="flex flex-col relative"
-              >
-                <h3 className="text-base font-bold uppercase tracking-[0.25em] text-[#C4A052] mb-6 flex items-center gap-4">
-                  <span className="w-8 h-px bg-[#C4A052]"></span>
-                  Our Mission
-                </h3>
-                <h4 className="text-2xl md:text-3xl font-display text-[#1A2F2B] mb-6 leading-tight">
-                  Sustainable Weight Loss & Hormonal Harmony
-                </h4>
-                <p className="text-lg md:text-xl font-light text-[#1A2F2B]/80 leading-relaxed font-serif italic">
-                  "To transform lives globally through accessible, science-backed, and deeply personalised holistic nutrition protocols. We empower individuals to achieve sustainable weight loss, naturally manage PCOS, reverse hormonal imbalances, and take control of their lifelong wellness—bridging functional medicine with everyday dietary habits for profound, lasting vitality."
-                </p>
-              </motion.div>
+            <div className="bg-[#1A2F2B] p-12 md:p-16 lg:p-20 rounded-[2rem] border border-[#EAC881]/20 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#EAC881]/10 rounded-full blur-[80px]"></div>
+              <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#EAC881]/5 rounded-full blur-[80px]"></div>
               
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex flex-col relative"
-              >
-                <div className="absolute -left-8 lg:-left-12 top-0 bottom-0 w-px bg-[#EAC881]/30 hidden md:block"></div>
-                <h3 className="text-base font-bold uppercase tracking-[0.25em] text-[#C4A052] mb-6 flex items-center gap-4">
-                  <span className="w-8 h-px bg-[#C4A052]"></span>
-                  Our Vision
-                </h3>
-                <h4 className="text-2xl md:text-3xl font-display text-[#1A2F2B] mb-6 leading-tight">
-                  Redefining Luxury Integrative Health
-                </h4>
-                <p className="text-lg md:text-xl font-light text-[#1A2F2B]/80 leading-relaxed font-serif italic">
-                  "To become the world’s most trusted and sought-after luxury wellness brand, completely redefining how people experience advanced functional nutrition and therapeutic diet plans. We envision a future where elite medical nutritional guidance creates a life of absolute metabolic health, physical strength, and boundless energy achievable for everyone, everywhere."
-                </p>
-              </motion.div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 relative z-10">
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="flex flex-col relative"
+                >
+                  <h3 className="text-xl md:text-2xl font-bold uppercase tracking-[0.25em] text-[#EAC881] mb-6 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[#EAC881]"></span>
+                    Our Mission
+                  </h3>
+                  <h4 className="text-2xl md:text-3xl font-display text-white mb-6 leading-tight">
+                    Sustainable Weight Loss & Hormonal Harmony
+                  </h4>
+                  <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed font-serif italic">
+                    "To transform lives globally through accessible, science-backed, and deeply personalised holistic nutrition protocols. We empower individuals to achieve sustainable weight loss, naturally manage PCOS, reverse hormonal imbalances, and take control of their lifelong wellness—bridging functional medicine with everyday dietary habits for profound, lasting vitality."
+                  </p>
+                </motion.div>
+                
+                <motion.div 
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="flex flex-col relative"
+                >
+                  <div className="absolute -left-8 lg:-left-12 top-0 bottom-0 w-px bg-[#EAC881]/20 hidden md:block"></div>
+                  <h3 className="text-xl md:text-2xl font-bold uppercase tracking-[0.25em] text-[#EAC881] mb-6 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[#EAC881]"></span>
+                    Our Vision
+                  </h3>
+                  <h4 className="text-2xl md:text-3xl font-display text-white mb-6 leading-tight">
+                    Redefining Luxury Integrative Health
+                  </h4>
+                  <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed font-serif italic">
+                    "To become the world’s most trusted and sought-after luxury wellness brand, completely redefining how people experience advanced functional nutrition and therapeutic diet plans. We envision a future where elite medical nutritional guidance creates a life of absolute metabolic health, physical strength, and boundless energy achievable for everyone, everywhere."
+                  </p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>

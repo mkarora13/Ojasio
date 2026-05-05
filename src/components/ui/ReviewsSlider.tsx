@@ -111,12 +111,12 @@ export const ReviewsSlider: React.FC<ReviewsSliderProps> = ({ reviews = REVIEWS 
             className="text-center relative z-10"
           >
             <div className="flex justify-center gap-1 mb-6">
-              {[...Array(reviews[safeIndex].rating)].map((_, i) => (
+              {Array.from({ length: reviews[safeIndex].rating || 5 }).map((_, i) => (
                 <Star key={i} size={18} className="text-[#EAC881] fill-[#EAC881]" />
               ))}
             </div>
             <p className="text-xl md:text-2xl font-serif italic text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto">
-              "{reviews[safeIndex].content}"
+              "{reviews[safeIndex].content || ''}"
             </p>
             <div className="font-sans">
               <p className="text-white font-semibold tracking-wide uppercase text-sm">{reviews[safeIndex].name}</p>

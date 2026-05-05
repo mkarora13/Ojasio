@@ -188,3 +188,54 @@ export const HORMONAL_BALANCE_REVIEWS: Review[] = [
     rating: 5
   }
 ];
+
+export const LIFESTYLE_REVIEWS: Review[] = [
+  {
+    name: "Akash M.",
+    location: "Bangalore, India",
+    content: "Working 12-hour shifts in IT had ruined my sleep and digestion. Disha Arora's night shift protocol completely changed that. I no longer feel drained during the day, and the affordable meal prep ideas are a blessing.",
+    rating: 5
+  },
+  {
+    name: "Sarah C.",
+    location: "New York, USA",
+    content: "As a working mom, I had zero time to cook for myself. Disha showed me how to make smart choices without drastically increasing my grocery budget. The quick meal ideas literally saved my sanity.",
+    rating: 5
+  },
+  {
+    name: "Vikram S.",
+    location: "London, UK",
+    content: "I thought healthy eating meant expensive imported superfoods. This plan taught me how to use local, affordable ingredients to stay fit. Highly practical and genuinely life-changing.",
+    rating: 4
+  },
+  {
+    name: "Ayesha T.",
+    location: "Dubai, UAE",
+    content: "The corporate lifestyle guide is exactly what I needed. Learning how to manage my meals around endless meetings has improved my energy immensely. I finally feel in control.",
+    rating: 5
+  },
+  {
+    name: "Rohan D.",
+    location: "Mumbai, India",
+    content: "Dealing with rotating shifts was throwing my hormones off balance. The structured guidance on what to eat post-shift to promote sleep recovery by Disha Arora has been phenomenal.",
+    rating: 5
+  },
+  {
+    name: "Emily W.",
+    location: "Toronto, Canada",
+    content: "I appreciate the realistic no-cook options. I travel often, and instead of relying on junk food, I now know exactly what to grab from a convenience store to stay on track.",
+    rating: 5
+  },
+  {
+    name: "Priya K.",
+    location: "Delhi, India",
+    content: "During my pregnancy, I wanted healthy options but felt overwhelmed. The pregnancy nutrition section is extremely comforting and practical. Nutritionist Disha breaks down complex science into easy daily habits.",
+    rating: 5
+  },
+  {
+    name: "Carlos M.",
+    location: "Madrid, Spain",
+    content: "Budget-friendly, no-nonsense, and effective. I've never seen a plan address actual real-world problems like lack of time and budget so accurately before. Exceptional content.",
+    rating: 5
+  }
+];
