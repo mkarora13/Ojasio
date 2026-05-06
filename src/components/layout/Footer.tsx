@@ -1,10 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Instagram, Linkedin, Mail } from 'lucide-react';
+import { Instagram, Linkedin, Mail, X } from 'lucide-react';
 import QRCode from 'react-qr-code';
+import { motion, AnimatePresence } from 'motion/react';
 
 export const Footer: React.FC = () => {
   const qrRef = useRef<HTMLDivElement>(null);
+  const [isQRModalOpen, setIsQRModalOpen] = useState(false);
 
   const handleDownloadQR = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -77,6 +79,8 @@ export const Footer: React.FC = () => {
               <li><NavLink to="/" className="text-green-deep/80 hover:text-gold transition-colors">Home</NavLink></li>
               <li><NavLink to="/about" className="text-green-deep/80 hover:text-gold transition-colors">About Us</NavLink></li>
               <li><NavLink to="/expert" className="text-green-deep/80 hover:text-gold transition-colors">Disha Arora</NavLink></li>
+              <li><NavLink to="/reviews" className="text-green-deep/80 hover:text-gold transition-colors">Reviews</NavLink></li>
+              <li><NavLink to="/blog" className="text-green-deep/80 hover:text-gold transition-colors">Blog</NavLink></li>
               <li><NavLink to="/contact" className="text-green-deep/80 hover:text-gold transition-colors">Contact</NavLink></li>
             </ul>
           </div>
@@ -109,7 +113,7 @@ export const Footer: React.FC = () => {
 
           <div className="flex flex-col items-start md:items-center">
             <h3 className="font-sans font-bold text-[10px] tracking-widest uppercase mb-6 text-gold text-center">Scan to Visit</h3>
-            <a href="#" onClick={handleDownloadQR} className="bg-white p-3 rounded-xl shadow-sm border border-gold/20 flex flex-col items-center justify-center hover:shadow-md transition-all">
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsQRModalOpen(true); }} className="bg-white p-3 rounded-xl shadow-sm border border-gold/20 flex flex-col items-center justify-center hover:shadow-md transition-all">
               <div ref={qrRef} className="bg-white">
                 <QRCode 
                   value="https://ojasio.com" 
@@ -133,6 +137,46 @@ export const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isQRModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1A2F2B]/60 backdrop-blur-sm" onClick={() => setIsQRModalOpen(false)}>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="bg-white p-8 rounded-[2rem] flex flex-col items-center shadow-2xl relative max-w-sm w-full mx-4"
+              onClick={e => e.stopPropagation()}
+            >
+              <button 
+                onClick={() => setIsQRModalOpen(false)}
+                className="absolute top-6 right-6 text-[#1A2F2B]/50 hover:text-[#1A2F2B] transition-colors"
+                aria-label="Close"
+              >
+                <X size={20} />
+              </button>
+              <h3 className="font-display text-3xl text-[#1A2F2B] mb-2 text-center">Scan QR</h3>
+              <p className="text-sm font-sans text-[#1A2F2B]/60 mb-8 text-center px-4">
+                Share this QR code to open Ojasio on another device
+              </p>
+              <div className="bg-white p-6 border border-gold/30 rounded-2xl mb-8 shadow-sm">
+                <QRCode 
+                  value="https://ojasio.com" 
+                  size={200} 
+                  className="text-[#1A2F2B]"
+                  fgColor="#1C3F3A" 
+                />
+              </div>
+              <button 
+                onClick={handleDownloadQR}
+                className="w-full flex items-center justify-center gap-2 bg-[#EAC881] text-[#1A2F2B] px-6 py-3 rounded-xl font-sans text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-[#1A2F2B] hover:text-white transition-all shadow-md"
+              >
+                Download Image
+              </button>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </footer>
   );
 };

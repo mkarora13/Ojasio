@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download } from 'lucide-react';
+import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2, Copy } from 'lucide-react';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
 import { ReviewsSlider } from '../components/ui/ReviewsSlider';
 import * as ReviewData from '../data/reviewsData';
 
 import { jsPDF } from 'jspdf';
+import QRCode from 'qrcode';
 
 // Content Data Structure
 
@@ -103,12 +104,28 @@ const DIET_PLANS: Record<string, any> = {
   }
 };
 
-const downloadDietPlanPDF = (countryCode: string) => {
+const downloadDietPlanPDF = async (countryCode: string) => {
   const planInfo = DIET_PLANS[countryCode];
   if (!planInfo) return;
 
   const doc = new jsPDF();
-  let y = 20;
+  
+  // Premium Branding Header
+  doc.setFillColor(26, 47, 43); // Deep Green Background
+  doc.rect(0, 0, 210, 45, 'F');
+  
+  doc.setFontSize(26);
+  doc.setFont('helvetica', 'bold');
+  doc.setTextColor(234, 200, 129); // Gold
+  doc.text("OJASIO", 105, 22, { align: "center" });
+
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(255, 255, 255);
+  doc.text("Premium Personalized Nutrition", 105, 30, { align: "center" });
+  doc.text("hello@ojasio.com", 105, 36, { align: "center" });
+
+  let y = 60;
 
   doc.setFontSize(22);
   doc.setTextColor(26, 47, 43);
@@ -166,8 +183,44 @@ const downloadDietPlanPDF = (countryCode: string) => {
   doc.setTextColor(50, 50, 50);
   const whySplit = doc.splitTextToSize(planInfo.why, 170);
   doc.text(whySplit, 20, y);
-  
-  doc.save(`${planInfo.country.toLowerCase().replace(/ /g, '-')}-pcos-diet-plan.pdf`);
+  y += 6 * whySplit.length;
+
+  try {
+    // Generate QR Code for Ojasio website
+    if (y > 220) {
+      doc.addPage();
+      y = 20;
+    }
+    y += 15;
+    const qrDataUrl = await QRCode.toDataURL('https://ojasio.com', {
+      margin: 1,
+      color: { dark: '#1A2F2B', light: '#FFFFFF' }
+    });
+    doc.addImage(qrDataUrl, 'PNG', 20, y, 40, 40);
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(26, 47, 43);
+    doc.text("Scan to transform your health", 65, y + 20);
+    doc.setFont('helvetica', 'normal');
+    doc.text("Visit ojasio.com to start your journey", 65, y + 26);
+  } catch (error) {
+    console.error('Error generating QR', error);
+  }
+
+  try {
+    const pdfBlob = doc.output('blob');
+    const url = URL.createObjectURL(pdfBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${planInfo.country.toLowerCase().replace(/ /g, '-')}-pcos-diet-plan.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(url), 100);
+  } catch (e) {
+    console.error("Download failed, opening in new window", e);
+    window.open(doc.output('bloburl'), '_blank');
+  }
 };
 
 const PCOS_REVIEWS = [
@@ -412,6 +465,97 @@ const LocalReviewsSlider = ({ reviews }: { reviews: any[] }) => {
   );
 };
 
+export const openDietPlanModal = (countryCode: string) => {
+  window.dispatchEvent(new CustomEvent('open-diet-plan', { detail: countryCode }));
+};
+
+export const DietPlanModal = ({ countryCode, onClose }: { countryCode: string, onClose: () => void }) => {
+  const planInfo = DIET_PLANS[countryCode];
+  if (!planInfo) return null;
+
+  const handleDownload = async () => {
+    await downloadDietPlanPDF(countryCode);
+  };
+
+  const planText = `Ojasio - ${planInfo.country} 7 Day PCOS Diet Plan\n\n${planInfo.why}\n\n` + 
+    [1,2,3,4,5,6,7].map(i => `Day ${i}:\nBreakfast: ${planInfo.days[i].breakfast}\nLunch: ${planInfo.days[i].lunch}\nDinner: ${planInfo.days[i].dinner}\nSnack: ${planInfo.days[i].snack}`).join('\n\n');
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(planText);
+    alert('Plan copied to clipboard!');
+  };
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: `Ojasio - ${planInfo.country} PCOS Diet Plan`,
+          text: planText,
+        });
+      } catch (err) {
+        console.log('Error sharing', err);
+      }
+    } else {
+      handleCopy();
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 bg-[#1A2F2B]/60 backdrop-blur-sm" onClick={onClose}>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        className="bg-white rounded-[2rem] w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="p-6 md:p-8 bg-[#1A2F2B] text-white relative shrink-0">
+          <button onClick={onClose} className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors">
+            <X size={24} />
+          </button>
+          <h2 className="text-2xl md:text-3xl font-display mb-2">{planInfo.country}</h2>
+          <p className="text-[#EAC881] text-sm md:text-base uppercase tracking-widest font-bold">7-Day PCOS Nutrition Guide</p>
+        </div>
+        
+        <div className="p-6 md:p-8 overflow-y-auto grow custom-scrollbar bg-[#FAF9F6]">
+          <p className="text-sm font-sans text-[#1A2F2B]/80 mb-8 leading-relaxed bg-[#EAC881]/10 p-5 rounded-2xl border border-[#EAC881]/30 italic">
+            "{planInfo.why}"
+          </p>
+          
+          <div className="space-y-6">
+            {[1, 2, 3, 4, 5, 6, 7].map(day => (
+              <div key={day} className="bg-white p-6 rounded-2xl shadow-sm border border-[#1A2F2B]/5">
+                <h3 className="font-display font-bold text-xl text-[#1A2F2B] mb-4 border-b border-[#EAC881]/30 pb-2">Day {day}</h3>
+                <ul className="space-y-4 text-sm font-sans">
+                  <li><strong className="text-[#1A2F2B] uppercase tracking-widest text-[10px] block mb-1">Breakfast</strong> <span className="text-[#1A2F2B]/80 font-light">{planInfo.days[day].breakfast}</span></li>
+                  <li><strong className="text-[#1A2F2B] uppercase tracking-widest text-[10px] block mb-1">Lunch</strong> <span className="text-[#1A2F2B]/80 font-light">{planInfo.days[day].lunch}</span></li>
+                  <li><strong className="text-[#1A2F2B] uppercase tracking-widest text-[10px] block mb-1">Dinner</strong> <span className="text-[#1A2F2B]/80 font-light">{planInfo.days[day].dinner}</span></li>
+                  <li><strong className="text-[#1A2F2B] uppercase tracking-widest text-[10px] block mb-1">Snack</strong> <span className="text-[#1A2F2B]/80 font-light">{planInfo.days[day].snack}</span></li>
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="p-6 border-t border-[#1A2F2B]/10 bg-white flex flex-wrap gap-4 justify-between shrink-0">
+          <button onClick={handleDownload} className="flex-1 flex justify-center items-center gap-2 bg-[#EAC881] text-[#1A2F2B] px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all shadow-md">
+            <Download size={16} /> Download your plan
+          </button>
+          
+          <div className="flex gap-4 w-full sm:w-auto">
+            <button onClick={handleCopy} className="flex-1 sm:w-auto flex justify-center items-center gap-2 bg-[#FAF9F6] border border-[#1A2F2B]/20 text-[#1A2F2B] px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all" title="Copy to Clipboard">
+              <Copy size={16} /> Copy
+            </button>
+            <button onClick={handleShare} className="flex-1 sm:w-auto flex justify-center items-center gap-2 bg-[#FAF9F6] border border-[#1A2F2B]/20 text-[#1A2F2B] px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all" title="Share">
+              <Share2 size={16} /> Share
+            </button>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 const BLOG_POSTS = [
   {
     id: "pcos-diet-plan",
@@ -420,7 +564,6 @@ const BLOG_POSTS = [
     subtitle: "For Hormonal Balance & Healing From Within",
     category: "PCOS & Hormones",
     readTime: "9 Min Read",
-    date: "May 03, 2026",
     author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.pexels.com/photos/37409098/pexels-photo-37409098.png",
     coverImage: "https://images.pexels.com/photos/4394022/pexels-photo-4394022.jpeg",
@@ -467,10 +610,10 @@ const BLOG_POSTS = [
                 </ul>
             </div>
             <button 
-              onClick={() => downloadDietPlanPDF("Indian Vegetarian")}
+              onClick={() => openDietPlanModal("Indian Vegetarian")}
               className="relative z-10 shrink-0 flex items-center justify-center gap-3 bg-[#1A2F2B] text-white px-8 py-5 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-all duration-300 shadow-[0_10px_30px_rgba(26,47,43,0.15)] hover:shadow-[0_15px_40px_rgba(234,200,129,0.3)] hover:-translate-y-1"
             >
-              <Download size={18} /> Download PDF
+              <ArrowRight size={18} /> View & Share Plan
             </button>
           </div>
 
@@ -500,10 +643,10 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => downloadDietPlanPDF("Canada")}
+                onClick={() => openDietPlanModal("Canada")}
                 className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <Download size={14} /> Download PDF
+                <ArrowRight size={14} /> View Plan
               </button>
             </div>
             
@@ -517,10 +660,10 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => downloadDietPlanPDF("USA")}
+                onClick={() => openDietPlanModal("USA")}
                 className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <Download size={14} /> Download PDF
+                <ArrowRight size={14} /> View Plan
               </button>
             </div>
 
@@ -534,10 +677,10 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => downloadDietPlanPDF("UK")}
+                onClick={() => openDietPlanModal("UK")}
                 className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <Download size={14} /> Download PDF
+                <ArrowRight size={14} /> View Plan
               </button>
             </div>
 
@@ -551,10 +694,10 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => downloadDietPlanPDF("Australia")}
+                onClick={() => openDietPlanModal("Australia")}
                 className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <Download size={14} /> Download PDF
+                <ArrowRight size={14} /> View Plan
               </button>
             </div>
 
@@ -568,10 +711,10 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => downloadDietPlanPDF("Spain")}
+                onClick={() => openDietPlanModal("Spain")}
                 className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <Download size={14} /> Download PDF
+                <ArrowRight size={14} /> View Plan
               </button>
             </div>
 
@@ -585,10 +728,10 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => downloadDietPlanPDF("Japan")}
+                onClick={() => openDietPlanModal("Japan")}
                 className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <Download size={14} /> Download PDF
+                <ArrowRight size={14} /> View Plan
               </button>
             </div>
           </div>
@@ -638,7 +781,6 @@ const BLOG_POSTS = [
     subtitle: "The Ultimate Guide to Sustainable Fat Loss",
     category: "Weight Loss",
     readTime: "8 Min Read",
-    date: "April 02, 2026",
     author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop",
     coverImage: "https://images.pexels.com/photos/8436499/pexels-photo-8436499.jpeg",
@@ -842,7 +984,6 @@ const BLOG_POSTS = [
     subtitle: "A Clinical Nutritionist's Guide to Healing",
     category: "Gut Health & Wellness",
     readTime: "5 Min Read",
-    date: "April 18, 2026",
     author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.pexels.com/photos/6632286/pexels-photo-6632286.jpeg?auto=compress&cs=tinysrgb&w=800",
     coverImage: "https://images.pexels.com/photos/6632286/pexels-photo-6632286.jpeg?auto=compress&cs=tinysrgb&w=2000",
@@ -969,7 +1110,6 @@ const BLOG_POSTS = [
     subtitle: "Realistic, actionable wellness for the real world.",
     category: "Lifestyle",
     readTime: "12 Min Read",
-    date: "February 12, 2024",
     author: "BY DISHA ARORA | NUTRITIONIST | NUTRITION MANAGER | ACTIVE CSNM MEMBER",
     image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
     coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=2000",
@@ -1161,16 +1301,23 @@ const CATEGORIES = ["All", "PCOS & Hormones", "Weight Loss", "Gut Health & Welln
 export const Blog: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedPost, setSelectedPost] = useState<typeof BLOG_POSTS[0] | null>(null);
+  const [dietPlanCountry, setDietPlanCountry] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleOpen = (e: any) => setDietPlanCountry(e.detail);
+    window.addEventListener('open-diet-plan', handleOpen as any);
+    return () => window.removeEventListener('open-diet-plan', handleOpen as any);
+  }, []);
 
   // Disable body scroll when modal is open
   useEffect(() => {
-    if (selectedPost) {
+    if (selectedPost || dietPlanCountry) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
     return () => { document.body.style.overflow = 'unset'; };
-  }, [selectedPost]);
+  }, [selectedPost, dietPlanCountry]);
 
   const filteredPosts = BLOG_POSTS.filter(post => 
     activeCategory === "All" || post.category === activeCategory
@@ -1418,10 +1565,6 @@ export const Blog: React.FC = () => {
                        <img src="https://images.pexels.com/photos/37274943/pexels-photo-37274943.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Author" className="w-8 h-8 rounded-full object-cover border border-[#EAC881]/30" />
                        <span className="text-white">By {selectedPost.author}</span>
                     </div>
-                    <div className="flex items-center gap-2 hidden sm:flex">
-                      <Calendar size={14} />
-                      <span>{selectedPost.date}</span>
-                    </div>
                     <div className="flex items-center gap-2">
                       <Clock size={14} />
                       <span>{selectedPost.readTime}</span>
@@ -1457,6 +1600,12 @@ export const Blog: React.FC = () => {
             </div>
 
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {dietPlanCountry && (
+          <DietPlanModal countryCode={dietPlanCountry} onClose={() => setDietPlanCountry(null)} />
         )}
       </AnimatePresence>
 

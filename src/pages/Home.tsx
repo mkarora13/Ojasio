@@ -132,52 +132,71 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Trust Section */}
-      <section className="py-24 bg-beige relative overflow-hidden border-y border-gold/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="flex flex-col justify-center"
-          >
-            <div className="mb-12 md:mb-16 text-center">
-              <span className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-gold mb-6 block">The Ojasio Advantage</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-green-deep leading-[1.15] mb-8">
-                Why Discerning Individuals Choose Ojasio
-              </h2>
-              <p className="text-lg md:text-xl text-green-deep/80 font-light leading-relaxed font-sans max-w-3xl mx-auto">
-                Elevate your health with our expert-led, science-backed approach. We design elegant, practical personalized nutrition strategies that respect your body’s unique biochemistry and fit seamlessly into your high-profile life.
-              </p>
-            </div>
+      <section className="py-24 lg:py-32 bg-beige relative overflow-hidden border-y border-gold/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             
-            <div className="space-y-10 md:space-y-12">
-              {[
-                { 
-                  title: 'Personalized Nutrition for Sustainable Weight Loss', 
-                  desc: 'Experience absolute metabolic health and natural fat burning. We craft deeply tailored weight loss plans that optimize insulin sensitivity—delivering sustainable, long-lasting transformation without starvation or restriction.' 
-                },
-                { 
-                  title: 'Expert Holistic Care for PCOS Management', 
-                  desc: 'True wellness begins at the root cause. We seamlessly blend functional medicine with holistic nutrition to naturally manage PCOS, reverse hormonal imbalances, and restore your vibrant, everyday health.' 
-                },
-                { 
-                  title: 'Tailored Diets for Busy Working Professionals', 
-                  desc: 'A demanding career should never compromise your wellbeing. Our dynamic nutrition plans adapt flawlessly to demanding international schedules, business travel, and the fast-paced corporate lifestyle.' 
-                },
-                { 
-                  title: 'Premium Yet Accessible Healthy Eating', 
-                  desc: 'Elevated luxury meets everyday reality. We create sophisticated, therapeutic diet plans using affordable, easily accessible local ingredients, making your profound health journey simple and effortlessly maintained.' 
-                }
-              ].map((item, idx) => (
-                <div key={idx} className="relative pl-8 md:pl-10 border-l border-gold/30 group hover:border-gold transition-colors duration-500">
-                  <div className="absolute left-[-5px] top-2.5 w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(196,160,82,0.8)] group-hover:scale-150 transition-transform duration-500"></div>
-                  <h3 className="text-xl md:text-2xl font-display font-medium text-green-deep mb-3 leading-tight tracking-tight group-hover:text-gold transition-colors duration-300">{item.title}</h3>
-                  <p className="text-base md:text-lg font-light text-green-deep/80 leading-relaxed font-sans">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+            <motion.div
+               initial={{ opacity: 0, x: -30 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               transition={{ duration: 0.8 }}
+               className="relative h-[450px] sm:h-[550px] lg:h-full lg:min-h-[800px] w-full rounded-[2rem] overflow-hidden shadow-xl order-2 lg:order-1"
+            >
+              <img 
+                src="https://images.pexels.com/photos/15319019/pexels-photo-15319019.jpeg" 
+                alt="Premium Wellness Experience" 
+                className="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-green-deep/20 mix-blend-multiply transition-colors"></div>
+              <div className="absolute inset-4 sm:inset-6 md:inset-8 rounded-[1.5rem] border border-white/40 z-20 pointer-events-none"></div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-col justify-center order-1 lg:order-2"
+            >
+              <div className="mb-12 md:mb-16 text-left">
+                <span className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-gold mb-6 block">The Ojasio Advantage</span>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-green-deep leading-[1.15] mb-8">
+                  Why Discerning Individuals Choose Ojasio
+                </h2>
+                <p className="text-lg md:text-xl text-green-deep/80 font-light leading-relaxed font-sans">
+                  Elevate your health with our expert-led, science-backed approach. We design elegant, practical personalized nutrition strategies that respect your body’s unique biochemistry and fit seamlessly into your high-profile life.
+                </p>
+              </div>
+              
+              <div className="space-y-10 md:space-y-12">
+                {[
+                  { 
+                    title: 'Personalized Nutrition for Sustainable Weight Loss', 
+                    desc: 'Experience absolute metabolic health and natural fat burning. We craft deeply tailored weight loss plans that optimize insulin sensitivity—delivering sustainable, long-lasting transformation without starvation or restriction.' 
+                  },
+                  { 
+                    title: 'Expert Holistic Care for PCOS Management', 
+                    desc: 'True wellness begins at the root cause. We seamlessly blend functional medicine with holistic nutrition to naturally manage PCOS, reverse hormonal imbalances, and restore your vibrant, everyday health.' 
+                  },
+                  { 
+                    title: 'Tailored Diets for Busy Working Professionals', 
+                    desc: 'A demanding career should never compromise your wellbeing. Our dynamic nutrition plans adapt flawlessly to demanding international schedules, business travel, and the fast-paced corporate lifestyle.' 
+                  },
+                  { 
+                    title: 'Premium Yet Accessible Healthy Eating', 
+                    desc: 'Elevated luxury meets everyday reality. We create sophisticated, therapeutic diet plans using affordable, easily accessible local ingredients, making your profound health journey simple and effortlessly maintained.' 
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="relative pl-8 md:pl-10 border-l border-gold/30 group hover:border-gold transition-colors duration-500">
+                    <div className="absolute left-[-5px] top-2.5 w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_rgba(196,160,82,0.8)] group-hover:scale-150 transition-transform duration-500"></div>
+                    <h3 className="text-xl md:text-2xl font-display font-medium text-green-deep mb-3 leading-tight tracking-tight group-hover:text-gold transition-colors duration-300">{item.title}</h3>
+                    <p className="text-base md:text-lg font-light text-green-deep/80 leading-relaxed font-sans">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
