@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
                 <span className="font-display text-3xl font-semibold tracking-wide text-green-deep leading-none">
                   OJASIO
                 </span>
-                <span className="font-sans text-[0.65rem] tracking-[0.25em] text-green-deep/70 uppercase mt-1.5 w-max hidden lg:block font-medium">
+                <span className="font-sans text-[0.5rem] sm:text-[0.65rem] tracking-[0.15em] sm:tracking-[0.25em] text-green-deep/70 uppercase mt-1 sm:mt-1.5 w-max block font-medium">
                   Personalised Nutrition • Real Results
                 </span>
               </div>
