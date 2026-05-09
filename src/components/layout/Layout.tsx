@@ -12,7 +12,7 @@ export const Layout: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen border-8 border-beige bg-ivory text-green-deep selection:bg-gold/30 relative">
+    <div className="flex flex-col min-h-screen border-8 border-beige bg-ivory text-green-deep selection:bg-gold/30 relative overflow-x-hidden">
       <Navbar />
       <main className="flex-grow flex flex-col">
         <Outlet />
