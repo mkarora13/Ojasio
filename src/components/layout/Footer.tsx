@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 font-sans text-xs">
               <li><NavLink to="/" className="text-green-deep/80 hover:text-gold transition-colors">Home</NavLink></li>
               <li><NavLink to="/about" className="text-green-deep/80 hover:text-gold transition-colors">About Us</NavLink></li>
-              <li><NavLink to="/expert" className="text-green-deep/80 hover:text-gold transition-colors">Disha Arora</NavLink></li>
+              <li><NavLink to="/founder" className="text-green-deep/80 hover:text-gold transition-colors">Disha Arora</NavLink></li>
               <li><NavLink to="/reviews" className="text-green-deep/80 hover:text-gold transition-colors">Reviews</NavLink></li>
               <li><NavLink to="/blog" className="text-green-deep/80 hover:text-gold transition-colors">Blog</NavLink></li>
               <li><NavLink to="/faq" className="text-green-deep/80 hover:text-gold transition-colors">FAQ</NavLink></li>
