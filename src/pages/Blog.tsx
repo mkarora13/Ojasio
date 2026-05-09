@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2 } from 'lucide-react';
+import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2, Moon, Plane, BookOpen, Briefcase } from 'lucide-react';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
 import { ReviewsSlider } from '../components/ui/ReviewsSlider';
 import * as ReviewData from '../data/reviewsData';
@@ -1409,19 +1409,54 @@ const BLOG_POSTS = [
             <li><strong>Metabolic Benefit:</strong> Delivers complete amino acid profiles essential for muscle recovery, ensuring weight loss comes from fat, not muscle mass.</li>
           </ul>
 
-          <h2 className="text-2xl mt-16 mb-6">Breakfast for Different Lifestyles</h2>
-          
-          <h4 className="font-bold text-[#1A2F2B] mb-2 mt-8 text-lg">Working Professionals</h4>
-          <p>Prepare overnight oats in a jar with chia seeds and a scoop of protein powder. Carry it to your Delhi NCR office and enjoy a pristine, insulin-stabilizing meal at your desk.</p>
+          <div className="my-24 not-prose">
+            <h3 className="text-xs font-bold font-sans uppercase tracking-[0.2em] text-[#EAC881] mb-4 text-center">Variations</h3>
+            <h2 className="text-3xl md:text-5xl font-display text-[#1A2F2B] mb-16 text-center leading-snug">
+              Breakfast for Different Lifestyles
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-[#FAF9F6] border border-[#1A2F2B]/10 p-10 rounded-[2rem] shadow-[0_10px_30px_-15px_rgba(26,47,43,0.05)] hover:-translate-y-1 transition-transform group">
+                <div className="w-14 h-14 rounded-2xl bg-white border border-[#1A2F2B]/5 flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                  <Briefcase className="text-[#EAC881]" size={28} />
+                </div>
+                <h4 className="text-2xl font-display text-[#1A2F2B] mb-4">Working Professionals</h4>
+                <p className="font-serif text-lg font-light text-[#1A2F2B]/80 leading-relaxed m-0">
+                  Time is your most valuable asset. Prepare overnight oats in a glass jar with chia seeds, flax seeds, and a scoop of high-quality whey or plant protein powder. Carry it to your office and enjoy a pristine, insulin-stabilizing meal at your desk. This quick Indian breakfast prevents the notorious 11 AM energy slump, keeping your focus sharp through back-to-back corporate meetings while effortlessly supporting your fat loss goals.
+                </p>
+              </div>
 
-          <h4 className="font-bold text-[#1A2F2B] mb-2 mt-8 text-lg">Night Shift Employees</h4>
-          <p>Focus on light, easily digestible proteins before you sleep in the morning. A simple tofu scramble or a Greek yogurt bowl with nuts prevents bloating and aids deep recovery sleep.</p>
+              <div className="bg-[#FAF9F6] border border-[#1A2F2B]/10 p-10 rounded-[2rem] shadow-[0_10px_30px_-15px_rgba(26,47,43,0.05)] hover:-translate-y-1 transition-transform group">
+                <div className="w-14 h-14 rounded-2xl bg-white border border-[#1A2F2B]/5 flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                  <Moon className="text-[#EAC881]" size={28} />
+                </div>
+                <h4 className="text-2xl font-display text-[#1A2F2B] mb-4">Night Shift Employees</h4>
+                <p className="font-serif text-lg font-light text-[#1A2F2B]/80 leading-relaxed m-0">
+                  Focus on light, easily digestible proteins before you sleep in the morning to offset circadian rhythm disruption. A simple tofu scramble or a Greek yogurt bowl topped with crushed walnuts prevents insulin-driven bloating and heavily aids deep, restorative recovery sleep during daylight hours.
+                </p>
+              </div>
 
-          <h4 className="font-bold text-[#1A2F2B] mb-2 mt-8 text-lg">Frequent Travelers</h4>
-          <p>Hotel buffets can be dangerous. Always request a plain omelette with vegetables, or black coffee with a side of mixed nuts. Avoid the bakery section entirely.</p>
+              <div className="bg-[#FAF9F6] border border-[#1A2F2B]/10 p-10 rounded-[2rem] shadow-[0_10px_30px_-15px_rgba(26,47,43,0.05)] hover:-translate-y-1 transition-transform group">
+                <div className="w-14 h-14 rounded-2xl bg-white border border-[#1A2F2B]/5 flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                  <Plane className="text-[#EAC881]" size={28} />
+                </div>
+                <h4 className="text-2xl font-display text-[#1A2F2B] mb-4">Frequent Travelers</h4>
+                <p className="font-serif text-lg font-light text-[#1A2F2B]/80 leading-relaxed m-0">
+                  Hotel buffets are traps disguised as luxury. Always navigate straight to the live counter and request a plain omelette loaded with immune-boosting vegetables, or grab a black coffee with a side of mixed nuts. Avoid the bakery section and fruit juices entirely to keep your metabolism active while flying or touring.
+                </p>
+              </div>
 
-          <h4 className="font-bold text-[#1A2F2B] mb-2 mt-8 text-lg">Students & Busy Parents</h4>
-          <p>Keep boiled eggs ready in the fridge or prepare an instant nutrient-dense smoothie (e.g., banana, spinach, peanut butter, and plant protein) that takes 2 minutes to blend.</p>
+              <div className="bg-[#FAF9F6] border border-[#1A2F2B]/10 p-10 rounded-[2rem] shadow-[0_10px_30px_-15px_rgba(26,47,43,0.05)] hover:-translate-y-1 transition-transform group">
+                <div className="w-14 h-14 rounded-2xl bg-white border border-[#1A2F2B]/5 flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                  <BookOpen className="text-[#EAC881]" size={28} />
+                </div>
+                <h4 className="text-2xl font-display text-[#1A2F2B] mb-4">Students & Busy Parents</h4>
+                <p className="font-serif text-lg font-light text-[#1A2F2B]/80 leading-relaxed m-0">
+                  You cannot pour from an empty cup. Keep hard-boiled eggs ready in the fridge or prepare an instant nutrient-dense smoothie (blending spinach, banana, pure peanut butter, and plant protein) that takes exactly two minutes to assemble. This guarantees premium nutrition on your most chaotic mornings.
+                </p>
+              </div>
+            </div>
+          </div>
 
           <h2 className="text-2xl mt-16 mb-6">The Protocol: Do's &amp; Don'ts</h2>
           <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
@@ -1445,28 +1480,112 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Intermittent Fasting &amp; Breakfast</h2>
-          <p>
-            When utilizing intermittent fasting, "breakfast" simply means "breaking the fast", even if it occurs at 1 PM. Fasting works wonderfully for insulin resistance, but <strong>who should avoid fasting?</strong>
-          </p>
-          <ul>
-            <li>Women with severely elevated cortisol or advanced stage PCOS (extreme fasting can worsen hormonal imbalances).</li>
-            <li>Night shift workers who need steady energy cues to regulate their displaced circadian rhythms.</li>
-            <li>Individuals with a history of extreme acid reflux.</li>
-          </ul>
+          <div className="my-24 relative rounded-[3rem] overflow-hidden not-prose group">
+            <img src="https://images.pexels.com/photos/4056015/pexels-photo-4056015.jpeg" alt="Intermittent Fasting" className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1A2F2B]/95 to-[#1A2F2B]/70 backdrop-blur-sm"></div>
+            <div className="relative p-10 md:p-16 lg:p-20 z-10 text-white flex flex-col md:flex-row gap-12 items-center">
+              <div className="w-full md:w-1/2">
+                 <h3 className="text-xs font-bold font-sans uppercase tracking-[0.2em] text-[#EAC881] mb-4">Advanced Strategy</h3>
+                 <h2 className="text-3xl md:text-5xl font-display text-white mb-6">Intermittent Fasting & Breakfast</h2>
+                 <p className="font-serif text-lg md:text-xl font-light text-white/90 leading-relaxed mb-8">
+                   When utilizing intermittent fasting for weight loss, "breakfast" simply means "breaking the fast", even if your first meal occurs at 1 PM. Strategic fasting works wonderfully for reversing insulin resistance, but it requires mindful execution.
+                 </p>
+              </div>
+              <div className="w-full md:w-1/2 bg-white/10 p-8 rounded-3xl border border-white/20 backdrop-blur-md shadow-2xl">
+                 <h4 className="text-xl font-display text-white mb-6">Who Should Proceed with Caution?</h4>
+                 <ul className="space-y-4 font-serif text-lg font-light text-white/90">
+                   <li className="flex gap-4 items-start">
+                     <span className="text-[#EAC881] shrink-0 mt-1">✦</span>
+                     <span>Women with severely elevated cortisol or advanced stage PCOS (extreme fasting can worsen hormonal imbalances).</span>
+                   </li>
+                   <li className="flex gap-4 items-start">
+                     <span className="text-[#EAC881] shrink-0 mt-1">✦</span>
+                     <span>Night shift workers requiring steady circadian cues to regulate displaced rhythms.</span>
+                   </li>
+                   <li className="flex gap-4 items-start">
+                     <span className="text-[#EAC881] shrink-0 mt-1">✦</span>
+                     <span>Individuals with a clinical history of extreme acid reflux.</span>
+                   </li>
+                 </ul>
+              </div>
+            </div>
+          </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Workout &amp; Movement Integration</h2>
-          <p>
-            Nutrition must marry movement. For optimum fat loss, pair your high-protein Indian breakfast with a beginner-friendly routine. If you work out in the morning, the <strong>best breakfast before a workout</strong> is easily digestible energy and a bit of protein (e.g., half a banana and a boiled egg). <strong>After your workout</strong>, hit your body with a substantial protein load like the Moong Dal Chilla or an Omelette within an hour to maximize recovery. Even a simple 20-minute brisk walk or home yoga routine works wonders for your metabolism.
-          </p>
+          <div className="my-24 flex flex-col md:flex-row-reverse gap-12 md:gap-20 items-center not-prose">
+            <div className="w-full md:w-1/2 relative">
+               <div className="absolute -inset-4 bg-[#EAC881]/20 rounded-[3rem] blur-xl"></div>
+               <img src="https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg" alt="Morning Workout Routine" className="relative w-full rounded-[2.5rem] shadow-2xl aspect-[4/5] object-cover" />
+            </div>
+            <div className="w-full md:w-1/2">
+              <h3 className="text-xs font-bold font-sans uppercase tracking-[0.2em] text-[#EAC881] mb-4">The Intersection</h3>
+              <h2 className="text-3xl md:text-5xl font-display text-[#1A2F2B] mb-8 leading-snug">Workout & Movement Integration</h2>
+              <p className="font-serif text-lg md:text-xl font-light text-[#1A2F2B]/80 leading-relaxed mb-8">
+                Nutrition must marry movement. For optimum fat loss and hormonal alignment, pair your high-protein Indian breakfast with a dedicated routine. Even a 20-minute brisk walk works wonders for cellular metabolism.
+              </p>
+              <div className="space-y-8 mt-10">
+                <div className="flex gap-6">
+                  <div className="w-12 h-12 rounded-full border border-[#1A2F2B]/10 flex items-center justify-center shrink-0 shadow-sm bg-white">
+                     <ArrowRight className="text-[#1A2F2B]" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-display text-[#1A2F2B] mb-2">Pre-Workout Fuel</h4>
+                    <p className="font-serif text-lg font-light text-[#1A2F2B]/80 leading-relaxed m-0">The best breakfast before a workout is easily digestible clean energy combined with light protein (e.g., half a banana paired with a boiled egg or a small bowl of curd).</p>
+                  </div>
+                </div>
+                <div className="flex gap-6">
+                  <div className="w-12 h-12 rounded-full border border-[#1A2F2B]/10 flex items-center justify-center shrink-0 shadow-sm bg-white">
+                     <ArrowRight className="text-[#1A2F2B]" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-display text-[#1A2F2B] mb-2">Post-Workout Recovery</h4>
+                    <p className="font-serif text-lg font-light text-[#1A2F2B]/80 leading-relaxed m-0">Hit your body with a substantial protein load like the Moong Dal Chilla or a Masala Omelette within 60 minutes of training to maximize muscle synthesis and amplify the afterburn effect.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Affordable Ideas (Under ₹100)</h2>
-          <p>Premium wellness does not demand a premium grocery bill. Some of the healthiest Indian breakfasts are incredibly budget-friendly:</p>
-          <ul>
-            <li><strong>Sprouts Salad:</strong> Sprouted moong beans, onions, tomatoes, and lemon. Extremely cheap and packed with living enzymes and protein.</li>
-            <li><strong>Sattu Drink:</strong> Roasted gram flour (sattu) mixed with water, lemon, and a pinch of pink salt is the ultimate indigenous protein drink.</li>
-            <li><strong>Eggs:</strong> The most cost-effective, bioavailable protein on the planet.</li>
-          </ul>
+          <div className="my-24 not-prose">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h3 className="text-xs font-bold font-sans uppercase tracking-[0.2em] text-[#EAC881] mb-4">Budget Conscious</h3>
+              <h2 className="text-3xl md:text-5xl font-display text-[#1A2F2B] mb-6">Premium Nutrition Can Be Affordable</h2>
+              <p className="font-serif text-lg md:text-xl font-light text-[#1A2F2B]/80 leading-relaxed">
+                Premium weight loss nutrition does not demand a premium grocery bill. Some of the healthiest, most potent Indian breakfasts cost less than your daily cup of cafe coffee.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white border border-[#1A2F2B]/10 rounded-[2rem] p-8 shadow-md hover:shadow-xl transition-all duration-300 group">
+                <div className="w-16 h-16 rounded-2xl bg-[#FAF9F6] border border-[#1A2F2B]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                   <span className="text-3xl font-display text-[#EAC881]">01</span>
+                </div>
+                <h4 className="text-2xl font-display text-[#1A2F2B] mb-4">Sprouts Salad</h4>
+                <p className="font-serif text-lg font-light text-[#1A2F2B]/80 leading-relaxed m-0">
+                  Sprouted moong beans tossed with onions, tomatoes, green chilies, and a squeeze of fresh lemon. Extremely economical and bursting with living enzymes, fiber, and clean protein.
+                </p>
+              </div>
+              
+              <div className="bg-white border border-[#1A2F2B]/10 rounded-[2rem] p-8 shadow-md hover:shadow-xl transition-all duration-300 group">
+                <div className="w-16 h-16 rounded-2xl bg-[#FAF9F6] border border-[#1A2F2B]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                   <span className="text-3xl font-display text-[#EAC881]">02</span>
+                </div>
+                <h4 className="text-2xl font-display text-[#1A2F2B] mb-4">Sattu Drink</h4>
+                <p className="font-serif text-lg font-light text-[#1A2F2B]/80 leading-relaxed m-0">
+                  Roasted gram flour (sattu) whisked into chilled water, lemon, cumin powder, and a pinch of pink salt. It is the ultimate indigenous, high-protein summer drink for fat loss.
+                </p>
+              </div>
+              
+              <div className="bg-white border border-[#1A2F2B]/10 rounded-[2rem] p-8 shadow-md hover:shadow-xl transition-all duration-300 group">
+                <div className="w-16 h-16 rounded-2xl bg-[#FAF9F6] border border-[#1A2F2B]/5 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                   <span className="text-3xl font-display text-[#EAC881]">03</span>
+                </div>
+                <h4 className="text-2xl font-display text-[#1A2F2B] mb-4">Boiled Eggs</h4>
+                <p className="font-serif text-lg font-light text-[#1A2F2B]/80 leading-relaxed m-0">
+                  The most cost-effective, highly bioavailable protein on the planet. Two boiled eggs with a sprinkle of black pepper provide unparalleled satiety and metabolic support.
+                </p>
+              </div>
+            </div>
+          </div>
 
           <h2 className="text-2xl mt-16 mb-6">Frequently Asked Questions</h2>
           <div className="space-y-6 my-8 not-prose text-base">
