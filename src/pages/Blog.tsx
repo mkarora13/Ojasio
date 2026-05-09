@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2, Copy } from 'lucide-react';
+import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2 } from 'lucide-react';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
 import { ReviewsSlider } from '../components/ui/ReviewsSlider';
 import * as ReviewData from '../data/reviewsData';
@@ -110,22 +110,49 @@ const downloadDietPlanPDF = async (countryCode: string) => {
 
   const doc = new jsPDF();
   
+  // Fetch Logo
+  let logoBase64 = null;
+  try {
+     const logoUrl = 'https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?auto=compress&cs=tinysrgb&w=150';
+     const response = await fetch(logoUrl);
+     const blob = await response.blob();
+     const reader = new FileReader();
+     logoBase64 = await new Promise<string>((resolve) => {
+       reader.onloadend = () => resolve(reader.result as string);
+       reader.readAsDataURL(blob);
+     });
+  } catch (err) {
+     console.error('Failed to load logo', err);
+  }
+
   // Premium Branding Header
   doc.setFillColor(26, 47, 43); // Deep Green Background
-  doc.rect(0, 0, 210, 45, 'F');
+  doc.rect(0, 0, 210, 75, 'F');
   
-  doc.setFontSize(26);
+  if (logoBase64) {
+    doc.addImage(logoBase64, 'PNG', 95, 10, 20, 20);
+  }
+
+  doc.setFontSize(20);
   doc.setFont('helvetica', 'bold');
   doc.setTextColor(234, 200, 129); // Gold
-  doc.text("OJASIO", 105, 22, { align: "center" });
+  doc.text("OJASIO", 105, 38, { align: "center" });
+
+  doc.setFontSize(11);
+  doc.text("PREMIUM WELLNESS", 105, 45, { align: "center" });
 
   doc.setFontSize(10);
-  doc.setFont('helvetica', 'normal');
+  doc.setFont('helvetica', 'italic');
   doc.setTextColor(255, 255, 255);
-  doc.text("Premium Personalized Nutrition", 105, 30, { align: "center" });
-  doc.text("hello@ojasio.com", 105, 36, { align: "center" });
+  doc.text("Modern Nutrition", 105, 54, { align: "center" });
+  doc.text("Rooted in Vitality", 105, 60, { align: "center" });
 
-  let y = 60;
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(9);
+  doc.setTextColor(200, 200, 200);
+  doc.text("hello@ojasio.com", 105, 68, { align: "center" });
+
+  let y = 90;
 
   doc.setFontSize(22);
   doc.setTextColor(26, 47, 43);
@@ -480,11 +507,6 @@ export const DietPlanModal = ({ countryCode, onClose }: { countryCode: string, o
   const planText = `Ojasio - ${planInfo.country} 7 Day PCOS Diet Plan\n\n${planInfo.why}\n\n` + 
     [1,2,3,4,5,6,7].map(i => `Day ${i}:\nBreakfast: ${planInfo.days[i].breakfast}\nLunch: ${planInfo.days[i].lunch}\nDinner: ${planInfo.days[i].dinner}\nSnack: ${planInfo.days[i].snack}`).join('\n\n');
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(planText);
-    alert('Plan copied to clipboard!');
-  };
-
   const handleShare = async () => {
     if (navigator.share) {
       try {
@@ -496,7 +518,8 @@ export const DietPlanModal = ({ countryCode, onClose }: { countryCode: string, o
         console.log('Error sharing', err);
       }
     } else {
-      handleCopy();
+      navigator.clipboard.writeText(planText);
+      alert('Plan copied to clipboard!');
     }
   };
 
@@ -543,9 +566,6 @@ export const DietPlanModal = ({ countryCode, onClose }: { countryCode: string, o
           </button>
           
           <div className="flex gap-4 w-full sm:w-auto">
-            <button onClick={handleCopy} className="flex-1 sm:w-auto flex justify-center items-center gap-2 bg-[#FAF9F6] border border-[#1A2F2B]/20 text-[#1A2F2B] px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all" title="Copy to Clipboard">
-              <Copy size={16} /> Copy
-            </button>
             <button onClick={handleShare} className="flex-1 sm:w-auto flex justify-center items-center gap-2 bg-[#FAF9F6] border border-[#1A2F2B]/20 text-[#1A2F2B] px-6 py-4 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all" title="Share">
               <Share2 size={16} /> Share
             </button>
