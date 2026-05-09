@@ -239,3 +239,36 @@ export const LIFESTYLE_REVIEWS: Review[] = [
     rating: 5
   }
 ];
+
+export const BREAKFAST_WEIGHT_LOSS_REVIEWS: Review[] = [
+  {
+    name: "Aarti Desai",
+    location: "Ahmedabad, India",
+    content: "I always believed Indian breakfasts were too carb-heavy for weight loss, but this article changed my perspective. The high-protein moong dal chilla recipe is now my morning staple, and I've naturally lost 3 kilos in a month without feeling deprived.",
+    rating: 5
+  },
+  {
+    name: "Siddharth Rao",
+    location: "Bengaluru, India",
+    content: "Balancing my stressful tech job and health seemed impossible until I found these quick, nutrient-dense breakfast options. Skipping breakfast used to give me brain fog, but the tailored overnight oats keep me incredibly focused and energized.",
+    rating: 5
+  },
+  {
+    name: "Nandini Iyer",
+    location: "Chennai, India",
+    content: "The insights on stabilizing blood sugar first thing in the morning are phenomenal. I swapped my standard sugar-laden tea and biscuits for the savory oats recipe, and my mid-morning cravings simply vanished.",
+    rating: 5
+  },
+  {
+    name: "Simran Kaur",
+    location: "Chandigarh, India",
+    content: "A truly premium approach to traditional Indian food. I love how the article respects our cultural eating habits while optimizing them for metabolic health and fat loss. Highly practical and beautifully written.",
+    rating: 5
+  },
+  {
+    name: "Kavita Menon",
+    location: "Pune, India",
+    content: "I struggled with a sluggish metabolism for years. The structured advice on incorporating healthy fats and protein into the first meal of the day completely transformed my digestion and energy levels. Absolutely life-changing.",
+    rating: 5
+  }
+];
