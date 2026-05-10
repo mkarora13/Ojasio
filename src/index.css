@@ -15,9 +15,6 @@
 }
 
 @layer base {
-  html, body {
-    @apply overflow-x-hidden;
-  }
   body {
     @apply bg-ivory text-green-deep font-sans antialiased;
   }

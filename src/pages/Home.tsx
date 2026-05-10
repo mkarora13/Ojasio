@@ -41,7 +41,7 @@ export const Home: React.FC = () => {
                 <span className="italic font-light text-gold text-4xl lg:text-6xl xl:text-7xl">Rooted in Vitality</span>
               </h1>
               <div className="w-full overflow-hidden">
-                <p className="text-xs sm:text-sm md:text-base font-light font-sans tracking-wide text-green-deep/80 max-w-2xl mx-auto md:mx-0 xl:max-w-none xl:whitespace-nowrap">
+                <p className="text-xs sm:text-sm md:text-base font-light font-sans tracking-wide text-green-deep/80 max-w-2xl mx-auto md:mx-0">
                   Personalised diet plans combining modern science with holistic nutrition to deliver sustainable results for a global community.
                 </p>
               </div>

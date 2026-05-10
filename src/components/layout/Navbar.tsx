@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
                 <span className="font-display text-3xl font-semibold tracking-wide text-green-deep leading-none">
                   OJASIO
                 </span>
-                <span className="font-sans text-[0.5rem] sm:text-[0.65rem] tracking-[0.15em] sm:tracking-[0.25em] text-green-deep/70 uppercase mt-1 sm:mt-1.5 w-max block font-medium">
+                <span className="font-sans text-[9px] sm:text-[0.65rem] tracking-[0.1em] sm:tracking-[0.25em] text-green-deep/70 uppercase mt-1 sm:mt-1.5 block font-medium max-w-[200px] sm:max-w-none break-words leading-tight">
                   Personalised Nutrition • Real Results
                 </span>
               </div>
@@ -73,27 +73,28 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Content */}
       <div
-        className={`md:hidden absolute w-full bg-ivory border-b border-gold/20 transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-screen opacity-100 shadow-2xl' : 'max-h-0 opacity-0 overflow-hidden'
+        className={`md:hidden fixed top-[80px] left-0 w-full h-[calc(100vh-80px)] bg-ivory/98 backdrop-blur-xl overflow-y-auto transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          isOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-10 opacity-0 invisible pointer-events-none'
         }`}
       >
-        <div className="px-6 py-6 flex flex-col space-y-4">
+        <div className="flex flex-col px-10 py-10 space-y-8">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
               to={link.path}
               onClick={closeMenu}
               className={({ isActive }) =>
-                `block pb-2 border-b border-gold/10 text-sm font-semibold uppercase tracking-[0.2em] transition-colors ${
+                `text-sm font-sans uppercase tracking-[0.25em] font-medium transition-all duration-300 ${
                   isActive
-                    ? 'text-gold'
-                    : 'text-green-deep hover:text-gold'
+                    ? 'text-gold translate-x-2'
+                    : 'text-green-deep hover:text-gold hover:translate-x-2 opacity-80'
                 }`
               }
             >
               {link.name}
             </NavLink>
           ))}
+          <div className="w-full h-px bg-gold/20 mt-8" />
         </div>
       </div>
     </nav>

@@ -92,7 +92,7 @@ const faqs = [
   }
 ];
 
-const FAQItem = ({ question, answer, isOpen, onClick }: { question: string, answer: React.ReactNode, isOpen: boolean, onClick: () => void }) => {
+const FAQItem = ({ question, answer, isOpen, onClick }: { key?: number, question: string, answer: React.ReactNode, isOpen: boolean, onClick: () => void }) => {
   return (
     <div className="border-b border-[#1A2F2B]/10 overflow-hidden group">
       <button

@@ -272,3 +272,42 @@ export const BREAKFAST_WEIGHT_LOSS_REVIEWS: Review[] = [
     rating: 5
   }
 ];
+
+export const DIABETES_BP_REVIEWS: Review[] = [
+  {
+    name: "Aditi Rao",
+    location: "Mumbai, India",
+    content: "I've been struggling with my blood pressure for the past year. Following Disha Arora's holistic nutrition plan helped me understand the importance of potassium and low-sodium foods. My energy levels are incredible, and my doctor is thrilled.",
+    rating: 5
+  },
+  {
+    name: "Marcus Thorne",
+    location: "London, UK",
+    content: "Balancing a high-stress corporate job with diabetes felt impossible. The lifestyle habits and practical meal tips from Ojasio gave me a completely new perspective. It’s highly practical and incredibly effective.",
+    rating: 5
+  },
+  {
+    name: "Rishi Kapoor",
+    location: "New Delhi, India",
+    content: "Understanding how sleep and stress impact blood sugar was an eye-opener. The premium, relatable guidance helped me implement small daily habits like walking and better sleep hygiene without feeling overwhelmed.",
+    rating: 4
+  },
+  {
+    name: "Sarah Jenkins",
+    location: "Toronto, Canada",
+    content: "Instead of extreme restrictions, Disha focuses on nourishment. Adding more fiber-rich foods and whole grains to my diet has stabilized my afternoon energy crashes beautifully.",
+    rating: 5
+  },
+  {
+    name: "Pooja Mehta",
+    location: "Dubai, UAE",
+    content: "The balance of science and human-centered design in this approach is remarkable. Knowing exactly which heart-friendly foods to incorporate has made managing my hypertension a stress-free process.",
+    rating: 5
+  },
+  {
+    name: "James Anderson",
+    location: "Sydney, Australia",
+    content: "I appreciate the realistic food options. Being able to enjoy my meals while supporting my metabolic health has been a game-changer. The advice is medically responsible and easy to follow.",
+    rating: 4
+  }
+];

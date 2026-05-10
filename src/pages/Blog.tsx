@@ -578,6 +578,262 @@ export const DietPlanModal = ({ countryCode, onClose }: { countryCode: string, o
 
 const BLOG_POSTS = [
   {
+    id: "diabetes-blood-pressure-management",
+    featured: true,
+    title: "Complete Guide to Managing Diabetes and High Blood Pressure Naturally",
+    subtitle: "How Nutrition and Lifestyle Can Support Healthy Blood Sugar and Blood Pressure Levels",
+    category: "Metabolic Health",
+    readTime: "8 Min Read",
+    author: "Disha Arora | Nutritionist | Nutrition Manager | Wellness Coach Delhi NCR",
+    image: "https://images.pexels.com/photos/6836308/pexels-photo-6836308.jpeg?auto=compress&cs=tinysrgb&w=800",
+    coverImage: "https://images.pexels.com/photos/6836308/pexels-photo-6836308.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    excerpt: "Discover daily habits and foods that may help support healthy blood sugar and blood pressure levels. Learn how natural nutrition and proper wellness habits can contribute to your metabolic health.",
+    content: (
+      <>
+        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+          
+          {/* 1. Powerful Introduction */}
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-16 mb-8 leading-tight">A Powerful Foundation for Your Metabolic Health</h2>
+          <p className="lead text-xl md:text-2xl italic text-[#1A2F2B]/70 mb-10 border-l-4 border-[#EAC881] pl-8 leading-relaxed font-serif">
+            "Your daily lifestyle choices lay the groundwork for a healthier, more vibrant life. A calm, educational, and reassuring approach to nutrition can meticulously transform your metabolic health and foster long-term vitality."
+          </p>
+          <p className="mb-6 leading-loose text-lg">
+            Globally, concerns around managing diabetes, stabilizing blood sugar, and combating high blood pressure are growing at an unprecedented rate. In today’s fast-paced environment, we lead increasingly demanding lives, often leaving little room to prioritize our cardiovascular and systemic health. However, the importance of everyday lifestyle and holistic nutrition choices cannot be overstated when it comes to disease prevention and vitality.
+          </p>
+          <p className="mb-8 leading-loose text-lg">
+            Early prevention and proactive care matter. There is a profound, clinically proven link between chronic stress, modern processed food habits, an insidious lack of quality restorative sleep, and long-term metabolic disruption. Making thoughtful, expert-led adjustments to your daily routine can help support healthier lifestyle habits, reverse metabolic sluggishness, and significantly elevate your overall wellness trajectory over the coming decades.
+          </p>
+          <figure className="my-10">
+            <img src="https://images.pexels.com/photos/105028/pexels-photo-105028.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Premium lifestyle wellness and healthy habits" className="w-full rounded-2xl object-cover shadow-lg aspect-[21/9]" />
+            <figcaption className="text-xs text-center text-[#1A2F2B]/50 mt-2">Nourishing the body and mind through mindful daily habits.</figcaption>
+          </figure>
+
+          {/* 2. Understanding Diabetes & High Blood Pressure */}
+          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Understanding Diabetes & High Blood Pressure</h2>
+          <p className="mb-10 leading-loose text-lg">
+            In simple terms, <strong>diabetes</strong> occurs when your body struggles to effectively manage blood sugar (glucose) levels. This happens either because the body does not produce enough insulin or cannot use it properly. Common signs include excessive thirst, frequent urination, and unusual fatigue.
+          </p>
+          <p className="mb-10 leading-loose text-lg">
+            <strong>High blood pressure</strong> (hypertension), on the other hand, means the force of your blood pushing against your blood vessel walls is consistently too high. Over time, this places extra strain on your heart and arteries. It is often called a "silent condition" because it may not present clear symptoms until it is quite advanced. Risk factors for both conditions include a sedentary lifestyle, poor diet, genetics, and excess body weight.
+          </p>
+          <div className="bg-[#FAF9F6] p-6 rounded-2xl border border-[#EAC881]/30 my-8">
+            <p className="text-sm font-light m-0">
+              <strong className="text-[#1A2F2B]">Important Note:</strong> This guide provides nutritional and lifestyle education. Readers should absolutely consult a qualified doctor or healthcare professional for an accurate diagnosis, medical concerns, and treatment. Nutrition and lifestyle alone do not guarantee cures, but they may help support overall health and symptom management.
+            </p>
+          </div>
+
+          {/* 3. Foods That May Help Support Healthy Blood Sugar Levels */}
+          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Foods That May Help Support Healthy Blood Sugar Levels</h2>
+          <p className="mb-8 leading-loose text-lg">
+            Instead of fearing food, embrace the right kinds of nourishment. Exploring a balanced diabetes diet plan can improve your relationship with food while helping to manage symptoms.
+          </p>
+          <ul className="space-y-6 my-8 list-none pl-0 text-lg leading-loose">
+            <li className="flex items-start gap-4">
+               <CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> 
+               <div><strong className="text-[#1A2F2B]">Whole Grains:</strong> Foods like brown rice, oats, and quinoa take longer to digest, slowing the release of sugar into your bloodstream.</div>
+            </li>
+            <li className="flex items-start gap-4">
+               <CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> 
+               <div><strong className="text-[#1A2F2B]">Leafy Vegetables & High-Fiber Foods:</strong> Spinach, kale, and broccoli provide incredible volume and fiber without spiking blood sugar.</div>
+            </li>
+            <li className="flex items-start gap-4">
+               <CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> 
+               <div><strong className="text-[#1A2F2B]">Lentils and Legumes:</strong> Brilliant sources of slow-digesting complex carbohydrates and plant-based protein.</div>
+            </li>
+            <li className="flex items-start gap-4">
+               <CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> 
+               <div><strong className="text-[#1A2F2B]">Nuts and Seeds:</strong> Almonds, walnuts, and chia seeds provide healthy fats that promote sustained energy.</div>
+            </li>
+            <li className="flex items-start gap-4">
+               <CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> 
+               <div><strong className="text-[#1A2F2B]">Berries & Cinnamon:</strong> Blackberries, blueberries, and a dash of cinnamon may help improve insulin sensitivity naturally.</div>
+            </li>
+            <li className="flex items-start gap-4">
+               <CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> 
+               <div><strong className="text-[#1A2F2B]">Yogurt & Healthy Proteins:</strong> Protein helps you feel full and helps stabilize blood sugar effectively.</div>
+            </li>
+          </ul>
+
+          {/* 4. Foods That May Help Support Healthy Blood Pressure Levels */}
+          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Foods That May Help Support Healthy Blood Pressure Levels</h2>
+          <p className="mb-8 leading-loose text-lg">
+            When considering a healthy diet for blood pressure and overarching heart health, focus on incorporating nutrient-dense, heart-friendly options. 
+          </p>
+          <div className="bg-[#FAF9F6] p-8 md:p-14 rounded-[2rem] shadow-sm border border-[#EAC881]/30 my-12 not-prose relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#EAC881]/10 rounded-full blur-[60px] group-hover:bg-[#EAC881]/20 transition-all duration-700"></div>
+            <h4 className="font-display text-2xl md:text-3xl text-[#1A2F2B] mb-10 relative z-10 text-center">Essential Heart-Healthy Nutrients</h4>
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 relative z-10">
+              <div className="bg-white p-8 rounded-[1.5rem] border border-[#1A2F2B]/5 shadow-sm hover:shadow-md transition-shadow">
+                 <h5 className="font-bold text-[#1A2F2B] uppercase tracking-[0.15em] text-sm md:text-base mb-6 pb-4 border-b border-[#EAC881]/30 flex items-center gap-3">
+                   <div className="w-2 h-2 rounded-full bg-[#EAC881] shrink-0"></div>
+                   Potassium & Low Sodium
+                 </h5>
+                 <p className="text-base font-light text-[#1A2F2B]/80 mb-6 leading-relaxed">Potassium actively helps your body balance excess sodium levels and eases tension in your blood vessel walls.</p>
+                 <ul className="space-y-4 text-base text-[#1A2F2B]">
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#EAC881] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Bananas and Plantains</span></li>
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#EAC881] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Beetroot and Beetroot Juice</span></li>
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#EAC881] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Sweet Potatoes and Yams</span></li>
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#EAC881] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Spinach and Leafy Greens</span></li>
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#EAC881] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Avocados</span></li>
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#EAC881] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Lentils and Kidney Beans</span></li>
+                 </ul>
+              </div>
+              <div className="bg-white p-8 rounded-[1.5rem] border border-[#1A2F2B]/5 shadow-sm hover:shadow-md transition-shadow">
+                 <h5 className="font-bold text-[#1A2F2B] uppercase tracking-[0.15em] text-sm md:text-base mb-6 pb-4 border-b border-[#EAC881]/30 flex items-center gap-3">
+                   <div className="w-2 h-2 rounded-full bg-[#1A2F2B] shrink-0"></div>
+                   Heart-Friendly Fats & Fiber
+                 </h5>
+                 <p className="text-base font-light text-[#1A2F2B]/80 mb-6 leading-relaxed">Supporting your intricate cardiovascular system means prioritizing clean, unprocessed fats and rich whole foods.</p>
+                 <ul className="space-y-4 text-base text-[#1A2F2B]">
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#1A2F2B] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Fatty fish (rich in Omega-3s like Salmon)</span></li>
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#1A2F2B] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Extra virgin olive oil (Cold-pressed)</span></li>
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#1A2F2B] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Oats, Quinoa, and Whole Grains</span></li>
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#1A2F2B] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Flaxseeds and Chia Seeds</span></li>
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#1A2F2B] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Almonds, Walnuts, and Pistachios</span></li>
+                   <li className="flex items-start gap-3"><CheckCircle2 size={18} className="text-[#1A2F2B] shrink-0 mt-1" /> <span className="font-light leading-relaxed">Berries and Citrus Fruits</span></li>
+                 </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 5. Foods and Habits to Avoid */}
+          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Foods and Habits to Avoid</h2>
+          <p className="mb-8 leading-loose text-lg">Avoiding certain pitfalls is just as crucial as what you add to your plate.</p>
+          <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
+             <div className="flex-1 bg-red-50 p-6 rounded-2xl border-l-[6px] border-red-500 shadow-sm transition-all hover:shadow-md">
+                <h4 className="font-bold text-red-800 mb-4 text-xl">The Don'ts</h4>
+                <ul className="space-y-4 text-[#1A2F2B]/80 font-light list-none p-0">
+                  <li className="flex items-center gap-3"><X size={20} className="text-red-600 shrink-0" /> <span><strong>Excess Sugar:</strong> Including sugary beverages and refined sweets.</span></li>
+                  <li className="flex items-center gap-3"><X size={20} className="text-red-600 shrink-0" /> <span><strong>High Sodium Foods:</strong> Processed foods and excessive table salt.</span></li>
+                  <li className="flex items-center gap-3"><X size={20} className="text-red-600 shrink-0" /> <span><strong>Smoking & Alcohol:</strong> Avoid smoking entirely and limit alcohol excess.</span></li>
+                  <li className="flex items-center gap-3"><X size={20} className="text-red-600 shrink-0" /> <span><strong>Sedentary Lifestyle:</strong> Lack of movement stiffens arteries.</span></li>
+                  <li className="flex items-center gap-3"><X size={20} className="text-red-600 shrink-0" /> <span><strong>Poor Wellness:</strong> Avoid excess stress and a lack of quality sleep.</span></li>
+                </ul>
+             </div>
+          </div>
+
+          {/* 6. Daily Lifestyle Habits That Matter */}
+          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Daily Lifestyle Habits That Matter</h2>
+          <p className="mb-8 leading-loose text-lg">Small, achievable lifestyle tips for diabetes and hypertension can help manage conditions naturally over time. These beginner-friendly wellness habits will transform your health foundation.</p>
+          <ul className="space-y-6 my-8 pl-6 border-l-4 border-[#EAC881] list-none text-lg leading-loose">
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Walking & Light Workouts:</strong> Just 30 minutes of brisk walking can significantly improve insulin sensitivity.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Hydration:</strong> Drinking adequate water supports blood volume and helps flush excess sodium through the kidneys.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Sleep & Stress Management:</strong> High cortisol from stress and poor sleep raises blood pressure and blood sugar simultaneously. Aim for 7-8 hours.</span></li>
+            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Meal Timing & Portion Control:</strong> Eating at consistent times trains your body to manage insulin drops and prevents late-night binge episodes.</span></li>
+          </ul>
+
+          <figure className="my-14 lg:my-20">
+            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-[#1A2F2B]/5">
+              <div className="absolute inset-0 bg-[#1A2F2B]/10 mix-blend-overlay z-10"></div>
+              <img src="https://images.pexels.com/photos/4803920/pexels-photo-4803920.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Mental wellness and stress management" className="w-full object-cover aspect-[16/9] md:aspect-[21/9] transform hover:scale-105 transition-transform duration-700 ease-in-out" />
+            </div>
+            <figcaption className="text-sm font-light text-center text-[#1A2F2B]/60 mt-6 tracking-wide uppercase">Mindful routines can help lower resting heart rate and support healthy metabolism.</figcaption>
+          </figure>
+
+          {/* 7. Tips for Working Professionals & Night Shift Workers */}
+          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Tips for Working Professionals & Night Shift Workers</h2>
+          <p className="mb-8 leading-loose text-lg">When you have back-to-back meetings or work irregular shifts, maintaining health routines seems daunting. If you are looking for the best nutritionist in Delhi NCR or online nutrition consultation in India, our strategies focus heavily on realistic adjustments.</p>
+          <ul className="space-y-6 my-8 text-lg leading-loose">
+             <li className="flex items-start gap-4">
+               <span className="text-[#EAC881] mt-1">•</span> <span className="leading-relaxed"><strong className="text-[#1A2F2B]">Meal Planning:</strong> Prepare meals ahead of time so you aren't forced into rushed, unhealthy eating habits.</span>
+             </li>
+             <li className="flex items-start gap-4">
+               <span className="text-[#EAC881] mt-1">•</span> <span className="leading-relaxed"><strong className="text-[#1A2F2B]">Carry-Friendly Healthy Snacks:</strong> Keep almonds, roasted chickpeas, or fresh fruits securely packed at your desk to avoid junk food dependency.</span>
+             </li>
+             <li className="flex items-start gap-4">
+               <span className="text-[#EAC881] mt-1">•</span> <span className="leading-relaxed"><strong className="text-[#1A2F2B]">Hydration at the Workplace:</strong> Keep a large glass bottle visible and drink steadily throughout your shift.</span>
+             </li>
+             <li className="flex items-start gap-4">
+               <span className="text-[#EAC881] mt-1">•</span> <span className="leading-relaxed"><strong className="text-[#1A2F2B]">Sleep Management:</strong> For night shift workers, ensure your sleeping environment during the day is pitch black and cool to simulate night time.</span>
+             </li>
+          </ul>
+
+          {/* 8. Vegetarian & Non-Vegetarian Meal Suggestions */}
+          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Vegetarian & Non-Vegetarian Meal Suggestions</h2>
+          <p className="mb-8 leading-loose text-lg">Here are globally relatable, balanced eating examples that align with a diet for a healthy heart and balanced sugar.</p>
+          
+          <div className="bg-[#FAF9F6] p-8 md:p-14 rounded-[2rem] shadow-sm border border-[#EAC881]/30 my-12 not-prose relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#EAC881]/10 rounded-full blur-[60px] group-hover:bg-[#EAC881]/20 transition-all duration-700"></div>
+            <h4 className="font-display text-2xl md:text-3xl text-[#1A2F2B] mb-10 relative z-10 text-center">Daily Balanced Meals</h4>
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 relative z-10">
+              <div className="bg-white p-8 rounded-[1.5rem] border border-[#1A2F2B]/5 shadow-sm hover:shadow-md transition-shadow">
+                 <h5 className="font-bold text-[#1A2F2B] uppercase tracking-[0.15em] text-sm md:text-base mb-6 pb-4 border-b border-[#EAC881]/30 flex items-center gap-3">
+                   <div className="w-2 h-2 rounded-full bg-[#EAC881] shrink-0"></div>
+                   Vegetarian Options
+                 </h5>
+                 <ul className="space-y-6 text-base text-[#1A2F2B]">
+                   <li className="flex flex-col"><strong className="text-[#1A2F2B] font-bold text-xs uppercase tracking-[0.1em] mb-2 opacity-80">Breakfast</strong> <span className="leading-loose text-[#1A2F2B]/90 font-light">Steel-cut oats cooked with almond milk, chia seeds, and a handful of berries.</span></li>
+                   <li className="flex flex-col"><strong className="text-[#1A2F2B] font-bold text-xs uppercase tracking-[0.1em] mb-2 opacity-80">Lunch</strong> <span className="leading-loose text-[#1A2F2B]/90 font-light">A robust bowl of quinoa, black lentils, cucumbers, and tomatoes with an olive oil dressing.</span></li>
+                   <li className="flex flex-col"><strong className="text-[#1A2F2B] font-bold text-xs uppercase tracking-[0.1em] mb-2 opacity-80">Snacks</strong> <span className="leading-loose text-[#1A2F2B]/90 font-light">A portion of unsweetened Greek yogurt with walnuts.</span></li>
+                   <li className="flex flex-col"><strong className="text-[#1A2F2B] font-bold text-xs uppercase tracking-[0.1em] mb-2 opacity-80">Dinner</strong> <span className="leading-loose text-[#1A2F2B]/90 font-light">Gently sautéed tofu with a generous serving of broccoli and bell peppers.</span></li>
+                 </ul>
+              </div>
+              <div className="bg-white p-8 rounded-[1.5rem] border border-[#1A2F2B]/5 shadow-sm hover:shadow-md transition-shadow">
+                 <h5 className="font-bold text-[#1A2F2B] uppercase tracking-[0.15em] text-sm md:text-base mb-6 pb-4 border-b border-[#EAC881]/30 flex items-center gap-3">
+                   <div className="w-2 h-2 rounded-full bg-[#1A2F2B] shrink-0"></div>
+                   Non-Vegetarian Options
+                 </h5>
+                 <ul className="space-y-6 text-base text-[#1A2F2B]">
+                   <li className="flex flex-col"><strong className="text-[#1A2F2B] font-bold text-xs uppercase tracking-[0.1em] mb-2 opacity-80">Breakfast</strong> <span className="leading-loose text-[#1A2F2B]/90 font-light">Scrambled eggs or a vegetable omelet with a side of whole-grain toast.</span></li>
+                   <li className="flex flex-col"><strong className="text-[#1A2F2B] font-bold text-xs uppercase tracking-[0.1em] mb-2 opacity-80">Lunch</strong> <span className="leading-loose text-[#1A2F2B]/90 font-light">Grilled chicken breast over a large bed of leafy greens, sprinkled with nuts.</span></li>
+                   <li className="flex flex-col"><strong className="text-[#1A2F2B] font-bold text-xs uppercase tracking-[0.1em] mb-2 opacity-80">Snacks</strong> <span className="leading-loose text-[#1A2F2B]/90 font-light">A small apple with pure peanut butter.</span></li>
+                   <li className="flex flex-col"><strong className="text-[#1A2F2B] font-bold text-xs uppercase tracking-[0.1em] mb-2 opacity-80">Dinner</strong> <span className="leading-loose text-[#1A2F2B]/90 font-light">Baked salmon (rich in Omega-3) with roasted asparagus or beetroot salad.</span></li>
+                 </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 9. When to Consult a Doctor */}
+          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">When to Consult a Doctor</h2>
+          <p className="mb-8 leading-loose text-lg">Nutritional guidance is meant to complement traditional medicine. You should seek immediate professional medical consultation if you experience any of the following:</p>
+          <ul className="space-y-3 font-light">
+             <li>• Persistent symptoms that do not resolve.</li>
+             <li>• Sudden, unexplained dizziness or fainting.</li>
+             <li>• Unusual fatigue that keeps you incredibly lethargic.</li>
+             <li>• Frequent urination that disrupts your daily routine.</li>
+             <li>• Sudden or drastic blood pressure spikes.</li>
+          </ul>
+          <p className="mb-8 leading-loose text-lg">Regular health checkups are an absolute necessity. Please always trust your healthcare professional for primary care management.</p>
+
+        </div>
+
+        {/* 10. Realistic Wellness Experiences */}
+        <ReviewsSlider reviews={ReviewData.DIABETES_BP_REVIEWS} />
+
+        {/* 11. FAQ Section */}
+        <div className="mt-24 mb-16 border-t border-[#1A2F2B]/10 pt-16 font-sans">
+          <h3 className="text-3xl font-display text-[#1A2F2B] mb-8 text-center">Frequently Asked Questions</h3>
+          <div className="space-y-6 max-w-4xl mx-auto text-[#1A2F2B]/80 font-light">
+             <div className="bg-white p-6 rounded-2xl border border-[#EAC881]/20 shadow-sm">
+                <h4 className="font-bold text-[#1A2F2B] text-lg mb-2">What foods help manage blood sugar naturally?</h4>
+                <p>Foods rich in fiber, whole grains like oats and quinoa, green leafy vegetables, lentils, legumes, nuts, and healthy proteins help slow digestion and prevent drastic sugar spikes.</p>
+             </div>
+             <div className="bg-white p-6 rounded-2xl border border-[#EAC881]/20 shadow-sm">
+                <h4 className="font-bold text-[#1A2F2B] text-lg mb-2">What should people with high blood pressure avoid?</h4>
+                <p>It is recommended to avoid high sodium (salt) packaged foods, excess refined sugar, heavily processed meals, smoking, and excessive alcohol.</p>
+             </div>
+             <div className="bg-white p-6 rounded-2xl border border-[#EAC881]/20 shadow-sm">
+                <h4 className="font-bold text-[#1A2F2B] text-lg mb-2">Can nutrition support heart health?</h4>
+                <p>Absolutely. A diet rich in fresh vegetables, omega-3 fatty acids (like in salmon and walnuts), olive oil, and low sodium foods can contribute to maintaining a healthy cardiovascular profile while lowering inflammation.</p>
+             </div>
+             <div className="bg-white p-6 rounded-2xl border border-[#EAC881]/20 shadow-sm">
+                <h4 className="font-bold text-[#1A2F2B] text-lg mb-2">Is walking good for diabetes management?</h4>
+                <p>Yes, regular brisk walking combined with other healthy lifestyle habits can help improve insulin sensitivity and support healthier blood sugar levels by allowing your muscles to utilize glucose effectively.</p>
+             </div>
+             <div className="bg-white p-6 rounded-2xl border border-[#EAC881]/20 shadow-sm">
+                <h4 className="font-bold text-[#1A2F2B] text-lg mb-2">How does sleep affect blood pressure?</h4>
+                <p>Poor sleep or lack of sleep increases cortisol (the stress hormone), which can raise resting heart rate and blood pressure. Setting a consistent sleep schedule is a vital part of hypertension management.</p>
+             </div>
+             <div className="bg-white p-6 rounded-2xl border border-[#EAC881]/20 shadow-sm">
+                <h4 className="font-bold text-[#1A2F2B] text-lg mb-2">What lifestyle habits help manage diabetes?</h4>
+                <p>Nutrition support for diabetes is critical, but prioritizing adequate sleep, managing daily stress through meditation or deep breathing, keeping hydrated, and maintaining regular, light physical activity are equally important for overall metabolic wellness.</p>
+             </div>
+          </div>
+        </div>
+      </>
+    )
+  },
+  {
     id: "pcos-diet-plan",
     featured: true,
     title: "The Ultimate 7-Day PCOS Diet Plan: Indian & Global Nutrition Guide",
@@ -1611,7 +1867,7 @@ const BLOG_POSTS = [
   }
 ];
 
-const CATEGORIES = ["All", "PCOS & Hormones", "Weight Loss", "Healthy Breakfasts", "Gut Health & Wellness", "Lifestyle"];
+const CATEGORIES = ["All", "PCOS & Hormones", "Weight Loss", "Healthy Breakfasts", "Gut Health & Wellness", "Lifestyle", "Metabolic Health"];
 
 export const Blog: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -1639,27 +1895,38 @@ export const Blog: React.FC = () => {
   );
 
   const featuredPost = filteredPosts.find(p => p.featured) || filteredPosts[0];
-  const regularPosts = filteredPosts.filter(p => !p.featured && p.id !== featuredPost?.id);
+  const regularPosts = filteredPosts.filter(p => p.id !== featuredPost?.id);
 
   return (
     <div className="bg-[#FAF9F6] min-h-screen text-[#1A2F2B] font-sans selection:bg-[#EAC881]/30">
       
       {/* HEADER HERO SECTION */}
-      <section className="relative pt-32 pb-16 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col items-center text-center">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EAC881]/10 rounded-full blur-[120px] -z-10 translate-x-1/3 -translate-y-1/4"></div>
-        <div className="absolute top-40 left-0 w-[300px] h-[300px] bg-[#1A2F2B]/5 rounded-full blur-[100px] -z-10 -translate-x-1/3"></div>
+      <section className="relative pt-32 pb-24 px-6 lg:px-12 flex flex-col items-center text-center overflow-hidden">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.pexels.com/photos/11337257/pexels-photo-11337257.jpeg" 
+            alt="Wellness Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#FAF9F6]/80 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6]/50 via-transparent to-[#FAF9F6]"></div>
+        </div>
+        
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EAC881]/20 rounded-full blur-[120px] z-0 translate-x-1/3 -translate-y-1/4 mix-blend-multiply"></div>
+        <div className="absolute top-40 left-0 w-[300px] h-[300px] bg-[#1A2F2B]/10 rounded-full blur-[100px] z-0 -translate-x-1/3 mix-blend-multiply"></div>
         
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl"
+          className="max-w-3xl relative z-10"
         >
-          <span className="text-[#EAC881] text-[10px] font-bold uppercase tracking-[0.3em] block mb-6">Editorial</span>
-          <h1 className="text-4xl md:text-5xl font-display text-[#1A2F2B] leading-[1.1] mb-6">
-            The Wellness <span className="italic font-serif text-[#1A2F2B]/80">Journal</span>
+          <span className="text-[#1A2F2B] text-[10px] font-bold uppercase tracking-[0.3em] block mb-6 bg-white/50 backdrop-blur-md w-max mx-auto px-4 py-1.5 rounded-full border border-[#1A2F2B]/10 shadow-sm">Editorial</span>
+          <h1 className="text-4xl md:text-6xl font-display text-[#1A2F2B] leading-[1.1] mb-6 drop-shadow-sm">
+            The Wellness <span className="italic font-serif text-[#1A2F2B]/90">Journal</span>
           </h1>
-          <p className="text-lg md:text-xl text-[#1A2F2B]/60 font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-[#1A2F2B]/70 font-light leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
             Clinical insights, science-backed nutrition, and transformative protocols for a deeply nourished life.
           </p>
         </motion.div>
@@ -1833,12 +2100,19 @@ export const Blog: React.FC = () => {
             <div className="sticky top-0 left-0 right-0 h-20 bg-white/80 backdrop-blur-md z-50 border-b border-[#1A2F2B]/5 px-6 lg:px-12 flex items-center justify-between">
               <button 
                 onClick={() => setSelectedPost(null)}
-                className="flex items-center gap-2 text-[#1A2F2B] hover:text-[#EAC881] transition-colors font-sans text-xs font-bold uppercase tracking-widest"
+                className="flex items-center gap-2 text-[#1A2F2B] hover:text-[#EAC881] transition-colors font-sans text-xs font-bold uppercase tracking-widest hidden sm:flex"
               >
                 <ArrowRight size={16} className="transform rotate-180" /> Back to Journal
               </button>
               
-              <div className="flex gap-4">
+              <div className="flex-1 text-center truncate px-4 hidden sm:block">
+                <span className="text-[#1A2F2B] font-display text-lg tracking-wide truncate">{selectedPost.title}</span>
+              </div>
+              <div className="flex-1 text-left truncate sm:hidden">
+                <span className="text-[#1A2F2B] font-display text-lg tracking-wide truncate">{selectedPost.title}</span>
+              </div>
+              
+              <div className="flex gap-4 shrink-0">
                  <button 
                   onClick={() => setSelectedPost(null)}
                   className="w-10 h-10 rounded-full bg-[#1A2F2B]/5 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all"
@@ -1907,7 +2181,13 @@ export const Blog: React.FC = () => {
                    <p className="text-[#1A2F2B]/60 mb-8 max-w-md mx-auto font-light">
                      Speak with our clinical nutritionists today and get a protocol engineered specifically for your body.
                    </p>
-                   <button onClick={() => window.open('https://wa.me/919990356350', '_blank')} className="bg-[#1A2F2B] text-white px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-all duration-300 shadow-[0_10px_30px_rgba(26,47,43,0.2)]">
+                   <button 
+                     onClick={() => {
+                        const message = encodeURIComponent(`Hi Ojasio, I read your article "${selectedPost.title}" and would like to book a free 20 minute consultation.`);
+                        window.open(`https://wa.me/919990356350?text=${message}`, '_blank');
+                     }} 
+                     className="bg-[#1A2F2B] text-white px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-all duration-300 shadow-[0_10px_30px_rgba(26,47,43,0.2)]"
+                   >
                      Book Your Free 20 Minutes Consultation
                    </button>
                 </div>

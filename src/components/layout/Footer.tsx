@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
                 <span className="font-display text-2xl font-bold tracking-tighter text-green-deep leading-none">
                   OJASIO
                 </span>
-                <span className="font-sans text-[0.55rem] tracking-[0.25em] text-green-deep/70 uppercase mt-1 w-max">
+                <span className="font-sans text-[0.55rem] tracking-[0.25em] text-green-deep/70 uppercase mt-1 block max-w-[200px] sm:max-w-none break-words leading-tight">
                   Personalised Nutrition Real Results
                 </span>
               </div>
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 font-sans text-xs">
               <li><NavLink to="/" className="text-green-deep/80 hover:text-gold transition-colors">Home</NavLink></li>
               <li><NavLink to="/about" className="text-green-deep/80 hover:text-gold transition-colors">About Us</NavLink></li>
-              <li><NavLink to="/founder" className="text-green-deep/80 hover:text-gold transition-colors">Disha Arora</NavLink></li>
+              <li><NavLink to="/founder" className="text-green-deep/80 hover:text-gold transition-colors">Founder</NavLink></li>
               <li><NavLink to="/reviews" className="text-green-deep/80 hover:text-gold transition-colors">Reviews</NavLink></li>
               <li><NavLink to="/blog" className="text-green-deep/80 hover:text-gold transition-colors">Blog</NavLink></li>
               <li><NavLink to="/faq" className="text-green-deep/80 hover:text-gold transition-colors">FAQ</NavLink></li>
