@@ -63,8 +63,8 @@ export const Footer: React.FC = () => {
                 <span className="font-display text-2xl font-bold tracking-tighter text-green-deep leading-none">
                   OJASIO
                 </span>
-                <span className="font-sans text-[0.55rem] tracking-[0.25em] text-green-deep/70 uppercase mt-1 block max-w-[200px] sm:max-w-none break-words leading-tight">
-                  Personalised Nutrition Real Results
+                <span className="font-sans text-[8px] sm:text-[9px] tracking-[0.2em] sm:tracking-[0.3em] text-green-deep/70 uppercase mt-1.5 block font-medium leading-tight">
+                  Personalised Nutrition • Real Results
                 </span>
               </div>
             </span>

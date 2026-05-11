@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2, Moon, Plane, BookOpen, Briefcase } from 'lucide-react';
+import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2, Moon, Plane, BookOpen, Briefcase, Check, FileText } from 'lucide-react';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
 import { ReviewsSlider } from '../components/ui/ReviewsSlider';
 import * as ReviewData from '../data/reviewsData';
@@ -584,9 +584,9 @@ const BLOG_POSTS = [
     subtitle: "How Nutrition and Lifestyle Can Support Healthy Blood Sugar and Blood Pressure Levels",
     category: "Metabolic Health",
     readTime: "8 Min Read",
-    author: "Disha Arora | Nutritionist | Nutrition Manager | Wellness Coach Delhi NCR",
+    author: "DISHA ARORA | NUTRITIONIST | NUTRITION MANAGER | ACTIVE CSNM MEMBER",
     image: "https://images.pexels.com/photos/6836308/pexels-photo-6836308.jpeg?auto=compress&cs=tinysrgb&w=800",
-    coverImage: "https://images.pexels.com/photos/6836308/pexels-photo-6836308.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    coverImage: "https://images.pexels.com/photos/11337257/pexels-photo-11337257.jpeg?auto=compress&cs=tinysrgb&w=2000",
     excerpt: "Discover daily habits and foods that may help support healthy blood sugar and blood pressure levels. Learn how natural nutrition and proper wellness habits can contribute to your metabolic health.",
     content: (
       <>
@@ -713,22 +713,26 @@ const BLOG_POSTS = [
           </div>
 
           {/* 6. Daily Lifestyle Habits That Matter */}
-          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Daily Lifestyle Habits That Matter</h2>
-          <p className="mb-8 leading-loose text-lg">Small, achievable lifestyle tips for diabetes and hypertension can help manage conditions naturally over time. These beginner-friendly wellness habits will transform your health foundation.</p>
-          <ul className="space-y-6 my-8 pl-6 border-l-4 border-[#EAC881] list-none text-lg leading-loose">
-            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Walking & Light Workouts:</strong> Just 30 minutes of brisk walking can significantly improve insulin sensitivity.</span></li>
-            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Hydration:</strong> Drinking adequate water supports blood volume and helps flush excess sodium through the kidneys.</span></li>
-            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Sleep & Stress Management:</strong> High cortisol from stress and poor sleep raises blood pressure and blood sugar simultaneously. Aim for 7-8 hours.</span></li>
-            <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Meal Timing & Portion Control:</strong> Eating at consistent times trains your body to manage insulin drops and prevents late-night binge episodes.</span></li>
-          </ul>
-
-          <figure className="my-14 lg:my-20">
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-[#1A2F2B]/5">
-              <div className="absolute inset-0 bg-[#1A2F2B]/10 mix-blend-overlay z-10"></div>
-              <img src="https://images.pexels.com/photos/4803920/pexels-photo-4803920.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Mental wellness and stress management" className="w-full object-cover aspect-[16/9] md:aspect-[21/9] transform hover:scale-105 transition-transform duration-700 ease-in-out" />
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center my-14 lg:my-20">
+            <div>
+              <h2 className="text-3xl font-display text-[#1A2F2B] mb-6">Daily Lifestyle Habits That Matter</h2>
+              <p className="mb-8 leading-loose text-lg">Small, achievable lifestyle tips for diabetes and hypertension can help manage conditions naturally over time. These beginner-friendly wellness habits will transform your health foundation.</p>
+              <ul className="space-y-6 pl-6 border-l-4 border-[#EAC881] list-none text-lg leading-loose">
+                <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Walking & Light Workouts:</strong> Just 30 minutes of brisk walking can significantly improve insulin sensitivity.</span></li>
+                <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Hydration:</strong> Drinking adequate water supports blood volume and helps flush excess sodium through the kidneys.</span></li>
+                <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Sleep & Stress Management:</strong> High cortisol from stress and poor sleep raises blood pressure and blood sugar simultaneously. Aim for 7-8 hours.</span></li>
+                <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Meal Timing & Portion Control:</strong> Eating at consistent times trains your body to manage insulin drops and prevents late-night binge episodes.</span></li>
+              </ul>
             </div>
-            <figcaption className="text-sm font-light text-center text-[#1A2F2B]/60 mt-6 tracking-wide uppercase">Mindful routines can help lower resting heart rate and support healthy metabolism.</figcaption>
-          </figure>
+            
+            <figure className="order-first md:order-last">
+              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-[#1A2F2B]/5 aspect-[4/5] sm:aspect-square md:aspect-[3/4] lg:aspect-[4/5] max-w-md mx-auto md:max-w-none">
+                <div className="absolute inset-0 bg-[#1A2F2B]/10 mix-blend-overlay z-10 pointer-events-none"></div>
+                <img src="https://images.pexels.com/photos/4803920/pexels-photo-4803920.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mental wellness and stress management" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 ease-in-out block" />
+              </div>
+              <figcaption className="text-sm font-light text-center text-[#1A2F2B]/60 mt-6 tracking-wide uppercase">Mindful routines support healthy metabolism.</figcaption>
+            </figure>
+          </div>
 
           {/* 7. Tips for Working Professionals & Night Shift Workers */}
           <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Tips for Working Professionals & Night Shift Workers</h2>
@@ -1386,7 +1390,7 @@ const BLOG_POSTS = [
     subtitle: "Realistic, actionable wellness for the real world.",
     category: "Lifestyle",
     readTime: "12 Min Read",
-    author: "BY DISHA ARORA | NUTRITIONIST | NUTRITION MANAGER | ACTIVE CSNM MEMBER",
+    author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
     coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=2000",
     excerpt: "Learn how to maintain a healthy lifestyle despite corporate jobs, night shifts, limited budgets, and lack of time. Practical, realistic, and actionable guidance for the modern worker.",
@@ -1867,7 +1871,7 @@ const BLOG_POSTS = [
   }
 ];
 
-const CATEGORIES = ["All", "PCOS & Hormones", "Weight Loss", "Healthy Breakfasts", "Gut Health & Wellness", "Lifestyle", "Metabolic Health"];
+const CATEGORIES = ["All", ...Array.from(new Set(BLOG_POSTS.map(post => post.category)))];
 
 export const Blog: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -1894,39 +1898,25 @@ export const Blog: React.FC = () => {
     activeCategory === "All" || post.category === activeCategory
   );
 
-  const featuredPost = filteredPosts.find(p => p.featured) || filteredPosts[0];
-  const regularPosts = filteredPosts.filter(p => p.id !== featuredPost?.id);
-
   return (
     <div className="bg-[#FAF9F6] min-h-screen text-[#1A2F2B] font-sans selection:bg-[#EAC881]/30">
       
       {/* HEADER HERO SECTION */}
-      <section className="relative pt-32 pb-24 px-6 lg:px-12 flex flex-col items-center text-center overflow-hidden">
-        {/* Background Image Container */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.pexels.com/photos/11337257/pexels-photo-11337257.jpeg" 
-            alt="Wellness Background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#FAF9F6]/80 backdrop-blur-[2px]"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6]/50 via-transparent to-[#FAF9F6]"></div>
-        </div>
-        
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EAC881]/20 rounded-full blur-[120px] z-0 translate-x-1/3 -translate-y-1/4 mix-blend-multiply"></div>
-        <div className="absolute top-40 left-0 w-[300px] h-[300px] bg-[#1A2F2B]/10 rounded-full blur-[100px] z-0 -translate-x-1/3 mix-blend-multiply"></div>
+      <section className="relative pt-32 pb-16 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col items-center text-center">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EAC881]/10 rounded-full blur-[120px] -z-10 translate-x-1/3 -translate-y-1/4"></div>
+        <div className="absolute top-40 left-0 w-[300px] h-[300px] bg-[#1A2F2B]/5 rounded-full blur-[100px] -z-10 -translate-x-1/3"></div>
         
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl relative z-10"
+          className="max-w-3xl"
         >
-          <span className="text-[#1A2F2B] text-[10px] font-bold uppercase tracking-[0.3em] block mb-6 bg-white/50 backdrop-blur-md w-max mx-auto px-4 py-1.5 rounded-full border border-[#1A2F2B]/10 shadow-sm">Editorial</span>
-          <h1 className="text-4xl md:text-6xl font-display text-[#1A2F2B] leading-[1.1] mb-6 drop-shadow-sm">
-            The Wellness <span className="italic font-serif text-[#1A2F2B]/90">Journal</span>
+          <span className="text-[#EAC881] text-[10px] font-bold uppercase tracking-[0.3em] block mb-6">Editorial</span>
+          <h1 className="text-4xl md:text-5xl font-display text-[#1A2F2B] leading-[1.1] mb-6">
+            The Wellness <span className="italic font-serif text-[#1A2F2B]/80">Journal</span>
           </h1>
-          <p className="text-lg md:text-xl text-[#1A2F2B]/70 font-light leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
+          <p className="text-lg md:text-xl text-[#1A2F2B]/60 font-light leading-relaxed max-w-2xl mx-auto">
             Clinical insights, science-backed nutrition, and transformative protocols for a deeply nourished life.
           </p>
         </motion.div>
@@ -1961,59 +1951,11 @@ export const Blog: React.FC = () => {
       <main className="px-6 lg:px-12 max-w-7xl mx-auto pb-24">
         
         <AnimatePresence mode="popLayout">
-        {/* FEATURED POST (LARGE LAYOUT) */}
-        {featuredPost && (
-          <motion.article 
-            key={`featured-${featuredPost.id}`}
-            layout
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.5 }}
-            className="mb-20 group cursor-pointer"
-            onClick={() => setSelectedPost(featuredPost)}
-          >
-            <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_-20px_rgba(26,47,43,0.1)] border border-[#EAC881]/20 flex flex-col lg:flex-row transition-transform duration-500 hover:-translate-y-2">
-              <div className="lg:w-3/5 overflow-hidden relative">
-                <div className="absolute inset-0 bg-[#1A2F2B]/10 z-10 mix-blend-overlay"></div>
-                <img 
-                  src={featuredPost.image} 
-                  alt={featuredPost.title} 
-                  className="w-full h-full object-cover min-h-[400px] lg:min-h-[500px] transition-transform duration-1000 group-hover:scale-105"
-                />
-              </div>
-              <div className="lg:w-2/5 p-8 lg:p-14 flex flex-col justify-center">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="bg-[#EAC881]/20 text-[#1A2F2B] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Featured</span>
-                  <span className="text-[#1A2F2B]/50 text-xs font-semibold tracking-widest uppercase">{featuredPost.category}</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] leading-tight mb-4 group-hover:text-[#EAC881] transition-colors duration-500">
-                  {featuredPost.title}
-                </h2>
-                <p className="font-serif italic text-xl text-[#1A2F2B]/70 mb-6">{featuredPost.subtitle}</p>
-                <p className="text-[#1A2F2B]/70 font-light leading-relaxed mb-10 text-base md:text-lg">
-                  {featuredPost.excerpt}
-                </p>
-                
-                <div className="mt-auto flex items-center justify-between border-t border-[#1A2F2B]/10 pt-6">
-                  <div className="flex items-center gap-2 text-xs text-[#1A2F2B]/50 font-semibold tracking-widest uppercase">
-                    <Clock size={14} />
-                    <span>{featuredPost.readTime}</span>
-                  </div>
-                  <button className="flex items-center gap-2 text-sm font-semibold tracking-widest uppercase text-[#1A2F2B] group-hover:text-[#EAC881] transition-colors">
-                    Read Article <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </motion.article>
-        )}
-
-        {/* 2-COLUMN GRID POSTS */}
-        {regularPosts.length > 0 && (
-          <motion.div key="regular-posts-grid" layout className="grid md:grid-cols-2 gap-10 lg:gap-14">
+        {/* TILE GRID POSTS */}
+        {filteredPosts.length > 0 && (
+          <motion.div key="regular-posts-grid" layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <AnimatePresence mode="popLayout">
-            {regularPosts.map((post, idx) => (
+            {filteredPosts.map((post, idx) => (
               <motion.article 
                 layout
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -2021,10 +1963,10 @@ export const Blog: React.FC = () => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.5 }}
                 key={post.id}
-                className="group cursor-pointer flex flex-col h-full"
+                className="group cursor-pointer flex flex-col h-full bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_-15px_rgba(26,47,43,0.15)] border border-[#EAC881]/20 transition-all hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(26,47,43,0.2)]"
                 onClick={() => setSelectedPost(post)}
               >
-                <div className="rounded-[2rem] overflow-hidden mb-8 relative aspect-[4/3] shadow-[0_10px_30px_-15px_rgba(26,47,43,0.2)] border border-[#1A2F2B]/5">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#1A2F2B]">
                     {post.category}
                   </div>
@@ -2036,11 +1978,11 @@ export const Blog: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F2B]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 </div>
                 
-                <div className="flex flex-col flex-grow px-2">
-                  <h3 className="text-2xl md:text-3xl font-display text-[#1A2F2B] leading-tight mb-4 group-hover:text-[#EAC881] transition-colors duration-300">
+                <div className="flex flex-col flex-grow p-6 lg:p-8">
+                  <h3 className="text-xl md:text-2xl font-display text-[#1A2F2B] leading-tight mb-3 group-hover:text-[#EAC881] transition-colors duration-300">
                     {post.title}
                   </h3>
-                  <p className="text-[#1A2F2B]/60 font-light leading-relaxed mb-8 flex-grow">
+                  <p className="text-[#1A2F2B]/60 font-light leading-relaxed mb-6 flex-grow text-sm">
                     {post.excerpt}
                   </p>
                   
@@ -2050,7 +1992,7 @@ export const Blog: React.FC = () => {
                       <span>{post.readTime}</span>
                     </div>
                     <button className="flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-[#1A2F2B] group-hover:text-[#EAC881] transition-colors">
-                      Read Article <ChevronRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
+                      Read <ArrowRight size={14} className="transform group-hover:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>
@@ -2072,7 +2014,7 @@ export const Blog: React.FC = () => {
             Join our private newsletter for clinical insights, hormone-balancing recipes, and evidence-based wellness protocols. 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto justify-center">
-            <a href="https://wa.me/919990356350" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <a href="https://wa.me/919990356350?text=Hi%20Ojasio%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
               <button className="w-full bg-[#25D366] text-white px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-[#128C7E] transition-all duration-300 shadow-[0_0_20px_rgba(37,211,102,0.3)] whitespace-nowrap flex items-center justify-center gap-2">
                 Book your free 20 minutes consultation
               </button>

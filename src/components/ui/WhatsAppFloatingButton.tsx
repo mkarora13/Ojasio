@@ -1,8 +1,24 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useLocation } from 'react-router-dom';
 
 export const WhatsAppFloatingButton: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const location = useLocation();
+
+  const getMessageParam = () => {
+    let message = "Hi Ojasio, I would like to book a consultation.";
+    if (location.pathname.startsWith('/blog')) {
+      message = "Hi Ojasio, I was reading an article on your wellness hub and would like to book a consultation.";
+    } else if (location.pathname.startsWith('/disha')) {
+      message = "Hi Disha, I would like to book a consultation with you.";
+    } else if (location.pathname.startsWith('/about')) {
+      message = "Hi Ojasio, I am interested in learning more about your services.";
+    } else if (location.pathname.startsWith('/faq')) {
+      message = "Hi Ojasio, I have a question regarding a diet plan.";
+    }
+    return encodeURIComponent(message);
+  }
 
   return (
     <div className="fixed bottom-6 right-6 z-[9999] flex items-center justify-end">
@@ -31,7 +47,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
         <div className="absolute inset-0 rounded-full bg-[#25D366] opacity-20 blur-md"></div>
         
         <motion.a
-          href="https://wa.me/919990356350"
+          href={`https://wa.me/919990356350?text=${getMessageParam()}`}
           target="_blank"
           rel="noopener noreferrer"
           className="relative flex items-center justify-center w-[60px] h-[60px] bg-gradient-to-tr from-[#128C7E] to-[#25D366] text-white rounded-full shadow-[0_8px_30px_rgb(37,211,102,0.4)] hover:shadow-[0_8px_30px_rgb(37,211,102,0.6)] transition-all duration-300 border border-white/20"

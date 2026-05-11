@@ -183,7 +183,7 @@ export const Contact: React.FC = () => {
                  Skip the form and connect with our nutrition specialists directly via WhatsApp. Instant bookings and fast replies.
                </p>
                
-               <a href="https://wa.me/919990356350" target="_blank" rel="noopener noreferrer" className="block w-full mb-4">
+               <a href="https://wa.me/919990356350?text=Hi%20Ojasio%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" className="block w-full mb-4">
                  <Button variant="whatsapp" fullWidth size="lg" className="flex items-center space-x-3 py-5">
                    <Phone size={24} />
                    <span className="text-lg">Book your 20 minutes free consultation</span>

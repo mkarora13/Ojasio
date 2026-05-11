@@ -185,7 +185,7 @@ export const FAQ = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto mb-10">
               <a 
-                href="https://wa.me/919990356350" 
+                href="https://wa.me/919990356350?text=Hi%20Ojasio%2C%20I%20would%20like%20to%20book%20a%20consultation." 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex-1 w-full inline-flex items-center justify-center gap-3 bg-[#EAC881] hover:bg-[#1A2F2B] text-[#1A2F2B] hover:text-white px-6 py-4 rounded-full font-sans text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300"

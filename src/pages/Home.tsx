@@ -123,7 +123,7 @@ export const Home: React.FC = () => {
             ))}
             
             {/* Callout box to fill grid */}
-            <div className="bg-beige p-8 flex flex-col justify-start items-start text-left border-t border-gold/20 md:border-t-0">
+            <div className="bg-ivory hover:bg-beige/30 transition-colors p-8 flex flex-col justify-start items-start text-left border-t border-gold/20 md:border-t-0">
                <h5 className="font-bold text-xl md:text-2xl mb-4 font-display text-green-deep">Holistic Wellness</h5>
                <p className="text-sm md:text-base font-sans text-green-deep/70 leading-relaxed font-light">True health goes beyond calories and diet charts. It involves balance — physically, mentally, and nutritionally. At Ojasio, we integrate modern nutritional science with holistic principles to create a complete wellness experience. This includes mindful eating, gut health, lifestyle correction, and sustainable habits. Our approach focuses on long-term transformation, helping you build a healthier relationship with food and your body.</p>
             </div>
