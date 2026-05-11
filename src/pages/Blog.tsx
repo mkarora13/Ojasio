@@ -590,17 +590,17 @@ const BLOG_POSTS = [
     excerpt: "Discover daily habits and foods that may help support healthy blood sugar and blood pressure levels. Learn how natural nutrition and proper wellness habits can contribute to your metabolic health.",
     content: (
       <>
-        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+        <div className="prose md:prose-lg prose-headings:font-display prose-headings:font-normal prose-headings:text-[#1A2F2B] prose-h2:mb-10 prose-h2:mt-20 prose-h3:mt-16 prose-h3:mb-6 prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-p:leading-relaxed prose-p:text-lg lg:prose-p:text-xl prose-li:text-[#1A2F2B]/80 prose-li:font-light prose-li:leading-relaxed prose-li:text-lg lg:prose-li:text-xl prose-strong:font-semibold prose-strong:text-[#1A2F2B] prose-a:text-[#EAC881] hover:prose-a:text-[#1A2F2B] transition-colors max-w-none font-sans">
           
           {/* 1. Powerful Introduction */}
-          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-16 mb-8 leading-tight">A Powerful Foundation for Your Metabolic Health</h2>
+          <h2>A Powerful Foundation for Your Metabolic Health</h2>
           <p className="lead text-xl md:text-2xl italic text-[#1A2F2B]/70 mb-10 border-l-4 border-[#EAC881] pl-8 leading-relaxed font-serif">
             "Your daily lifestyle choices lay the groundwork for a healthier, more vibrant life. A calm, educational, and reassuring approach to nutrition can meticulously transform your metabolic health and foster long-term vitality."
           </p>
-          <p className="mb-6 leading-loose text-lg">
+          <p>
             Globally, concerns around managing diabetes, stabilizing blood sugar, and combating high blood pressure are growing at an unprecedented rate. In today’s fast-paced environment, we lead increasingly demanding lives, often leaving little room to prioritize our cardiovascular and systemic health. However, the importance of everyday lifestyle and holistic nutrition choices cannot be overstated when it comes to disease prevention and vitality.
           </p>
-          <p className="mb-8 leading-loose text-lg">
+          <p>
             Early prevention and proactive care matter. There is a profound, clinically proven link between chronic stress, modern processed food habits, an insidious lack of quality restorative sleep, and long-term metabolic disruption. Making thoughtful, expert-led adjustments to your daily routine can help support healthier lifestyle habits, reverse metabolic sluggishness, and significantly elevate your overall wellness trajectory over the coming decades.
           </p>
           <figure className="my-10">
@@ -609,11 +609,11 @@ const BLOG_POSTS = [
           </figure>
 
           {/* 2. Understanding Diabetes & High Blood Pressure */}
-          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Understanding Diabetes & High Blood Pressure</h2>
-          <p className="mb-10 leading-loose text-lg">
+          <h2>Understanding Diabetes & High Blood Pressure</h2>
+          <p>
             In simple terms, <strong>diabetes</strong> occurs when your body struggles to effectively manage blood sugar (glucose) levels. This happens either because the body does not produce enough insulin or cannot use it properly. Common signs include excessive thirst, frequent urination, and unusual fatigue.
           </p>
-          <p className="mb-10 leading-loose text-lg">
+          <p>
             <strong>High blood pressure</strong> (hypertension), on the other hand, means the force of your blood pushing against your blood vessel walls is consistently too high. Over time, this places extra strain on your heart and arteries. It is often called a "silent condition" because it may not present clear symptoms until it is quite advanced. Risk factors for both conditions include a sedentary lifestyle, poor diet, genetics, and excess body weight.
           </p>
           <div className="bg-[#FAF9F6] p-6 rounded-2xl border border-[#EAC881]/30 my-8">
@@ -623,11 +623,11 @@ const BLOG_POSTS = [
           </div>
 
           {/* 3. Foods That May Help Support Healthy Blood Sugar Levels */}
-          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Foods That May Help Support Healthy Blood Sugar Levels</h2>
-          <p className="mb-8 leading-loose text-lg">
+          <h2>Foods That May Help Support Healthy Blood Sugar Levels</h2>
+          <p>
             Instead of fearing food, embrace the right kinds of nourishment. Exploring a balanced diabetes diet plan can improve your relationship with food while helping to manage symptoms.
           </p>
-          <ul className="space-y-6 my-8 list-none pl-0 text-lg leading-loose">
+          <ul>
             <li className="flex items-start gap-4">
                <CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> 
                <div><strong className="text-[#1A2F2B]">Whole Grains:</strong> Foods like brown rice, oats, and quinoa take longer to digest, slowing the release of sugar into your bloodstream.</div>
@@ -655,8 +655,8 @@ const BLOG_POSTS = [
           </ul>
 
           {/* 4. Foods That May Help Support Healthy Blood Pressure Levels */}
-          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Foods That May Help Support Healthy Blood Pressure Levels</h2>
-          <p className="mb-8 leading-loose text-lg">
+          <h2>Foods That May Help Support Healthy Blood Pressure Levels</h2>
+          <p>
             When considering a healthy diet for blood pressure and overarching heart health, focus on incorporating nutrient-dense, heart-friendly options. 
           </p>
           <div className="bg-[#FAF9F6] p-8 md:p-14 rounded-[2rem] shadow-sm border border-[#EAC881]/30 my-12 not-prose relative overflow-hidden group">
@@ -697,8 +697,8 @@ const BLOG_POSTS = [
           </div>
 
           {/* 5. Foods and Habits to Avoid */}
-          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Foods and Habits to Avoid</h2>
-          <p className="mb-8 leading-loose text-lg">Avoiding certain pitfalls is just as crucial as what you add to your plate.</p>
+          <h2>Foods and Habits to Avoid</h2>
+          <p>Avoiding certain pitfalls is just as crucial as what you add to your plate.</p>
           <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
              <div className="flex-1 bg-red-50 p-6 rounded-2xl border-l-[6px] border-red-500 shadow-sm transition-all hover:shadow-md">
                 <h4 className="font-bold text-red-800 mb-4 text-xl">The Don'ts</h4>
@@ -716,8 +716,8 @@ const BLOG_POSTS = [
           <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center my-14 lg:my-20">
             <div>
               <h2 className="text-3xl font-display text-[#1A2F2B] mb-6">Daily Lifestyle Habits That Matter</h2>
-              <p className="mb-8 leading-loose text-lg">Small, achievable lifestyle tips for diabetes and hypertension can help manage conditions naturally over time. These beginner-friendly wellness habits will transform your health foundation.</p>
-              <ul className="space-y-6 pl-6 border-l-4 border-[#EAC881] list-none text-lg leading-loose">
+              <p>Small, achievable lifestyle tips for diabetes and hypertension can help manage conditions naturally over time. These beginner-friendly wellness habits will transform your health foundation.</p>
+              <ul>
                 <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Walking & Light Workouts:</strong> Just 30 minutes of brisk walking can significantly improve insulin sensitivity.</span></li>
                 <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Hydration:</strong> Drinking adequate water supports blood volume and helps flush excess sodium through the kidneys.</span></li>
                 <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-2" /> <span><strong className="text-[#1A2F2B]">Sleep & Stress Management:</strong> High cortisol from stress and poor sleep raises blood pressure and blood sugar simultaneously. Aim for 7-8 hours.</span></li>
@@ -735,9 +735,9 @@ const BLOG_POSTS = [
           </div>
 
           {/* 7. Tips for Working Professionals & Night Shift Workers */}
-          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Tips for Working Professionals & Night Shift Workers</h2>
-          <p className="mb-8 leading-loose text-lg">When you have back-to-back meetings or work irregular shifts, maintaining health routines seems daunting. If you are looking for the best nutritionist in Delhi NCR or online nutrition consultation in India, our strategies focus heavily on realistic adjustments.</p>
-          <ul className="space-y-6 my-8 text-lg leading-loose">
+          <h2>Tips for Working Professionals & Night Shift Workers</h2>
+          <p>When you have back-to-back meetings or work irregular shifts, maintaining health routines seems daunting. If you are looking for the best nutritionist in Delhi NCR or online nutrition consultation in India, our strategies focus heavily on realistic adjustments.</p>
+          <ul>
              <li className="flex items-start gap-4">
                <span className="text-[#EAC881] mt-1">•</span> <span className="leading-relaxed"><strong className="text-[#1A2F2B]">Meal Planning:</strong> Prepare meals ahead of time so you aren't forced into rushed, unhealthy eating habits.</span>
              </li>
@@ -753,8 +753,8 @@ const BLOG_POSTS = [
           </ul>
 
           {/* 8. Vegetarian & Non-Vegetarian Meal Suggestions */}
-          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">Vegetarian & Non-Vegetarian Meal Suggestions</h2>
-          <p className="mb-8 leading-loose text-lg">Here are globally relatable, balanced eating examples that align with a diet for a healthy heart and balanced sugar.</p>
+          <h2>Vegetarian & Non-Vegetarian Meal Suggestions</h2>
+          <p>Here are globally relatable, balanced eating examples that align with a diet for a healthy heart and balanced sugar.</p>
           
           <div className="bg-[#FAF9F6] p-8 md:p-14 rounded-[2rem] shadow-sm border border-[#EAC881]/30 my-12 not-prose relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#EAC881]/10 rounded-full blur-[60px] group-hover:bg-[#EAC881]/20 transition-all duration-700"></div>
@@ -788,8 +788,8 @@ const BLOG_POSTS = [
           </div>
 
           {/* 9. When to Consult a Doctor */}
-          <h2 className="text-3xl font-display text-[#1A2F2B] mt-16 mb-6">When to Consult a Doctor</h2>
-          <p className="mb-8 leading-loose text-lg">Nutritional guidance is meant to complement traditional medicine. You should seek immediate professional medical consultation if you experience any of the following:</p>
+          <h2>When to Consult a Doctor</h2>
+          <p>Nutritional guidance is meant to complement traditional medicine. You should seek immediate professional medical consultation if you experience any of the following:</p>
           <ul className="space-y-3 font-light">
              <li>• Persistent symptoms that do not resolve.</li>
              <li>• Sudden, unexplained dizziness or fainting.</li>
@@ -797,7 +797,7 @@ const BLOG_POSTS = [
              <li>• Frequent urination that disrupts your daily routine.</li>
              <li>• Sudden or drastic blood pressure spikes.</li>
           </ul>
-          <p className="mb-8 leading-loose text-lg">Regular health checkups are an absolute necessity. Please always trust your healthcare professional for primary care management.</p>
+          <p>Regular health checkups are an absolute necessity. Please always trust your healthcare professional for primary care management.</p>
 
         </div>
 
@@ -850,7 +850,7 @@ const BLOG_POSTS = [
     excerpt: "Discover a premium, science-backed 7-day Indian vegetarian diet plan for PCOS along with global eating variations. Learn how to manage weight, balance hormones naturally, and feel energetic.",
     content: (
       <>
-        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+        <div className="prose md:prose-lg prose-headings:font-display prose-headings:font-normal prose-headings:text-[#1A2F2B] prose-h2:mb-10 prose-h2:mt-20 prose-h3:mt-16 prose-h3:mb-6 prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-p:leading-relaxed prose-p:text-lg lg:prose-p:text-xl prose-li:text-[#1A2F2B]/80 prose-li:font-light prose-li:leading-relaxed prose-li:text-lg lg:prose-li:text-xl prose-strong:font-semibold prose-strong:text-[#1A2F2B] prose-a:text-[#EAC881] hover:prose-a:text-[#1A2F2B] transition-colors max-w-none font-sans">
           <p className="lead text-xl italic text-[#1A2F2B]/70 mb-10 border-l-4 border-[#EAC881] pl-8 leading-relaxed">
             "85% of women with PCOS have insulin resistance. An anti-inflammatory, low-glycaemic diet is the single most effective non-pharmacological intervention."
           </p>
@@ -859,7 +859,7 @@ const BLOG_POSTS = [
             Weight gain that feels impossible to lose. Unpredictable periods causing constant stress. Fatigue that drains your energy by 3 PM. If you are battling Polycystic Ovary Syndrome (PCOS), these struggles aren't just inconvenient—they deeply impact how you feel in your own body every single day. Women all across the world face this silently, but finding balance is possible. 
           </p>
 
-          <h2 className="text-2xl mt-16 mb-6">Why Diet Is The Real Medicine</h2>
+          <h2>Why Diet Is The Real Medicine</h2>
           <p>
             You’ve likely been told to "just lose weight." But PCOS isn't about willpower. It’s an endocrine disorder intricately tied to <strong>insulin resistance</strong>, hormonal imbalance, and chronic inflammation. When your cells resist insulin, your body pumps out more of it, which triggers your ovaries to overproduce testosterone. Over time, this leads to weight gain around your midsection, adult acne, hair thinning, and skipped periods.
           </p>
@@ -869,7 +869,7 @@ const BLOG_POSTS = [
 
           <img src="https://images.pexels.com/photos/5622182/pexels-photo-5622182.jpeg" alt="Preparing healthy food" className="w-full rounded-2xl my-12 object-cover aspect-[21/9] shadow-lg" />
 
-          <h2 className="text-2xl mt-16 mb-8 text-[#1A2F2B]">The 7-Day Indian Vegetarian PCOS Diet Plan</h2>
+          <h2>The 7-Day Indian Vegetarian PCOS Diet Plan</h2>
           
           <p>
             An Indian vegetarian diet plan for PCOS is uniquely powerful because it leverages traditional, anti-inflammatory spices like turmeric, methi, and cinnamon. While many believe an Indian diet is inherently high in carbs and unsuitable for hormonal balance, a thoughtfully structured plan emphasizes whole food complex carbohydrates like millets (jowar, bajra, ragi), protein-rich dals, and antioxidant-rich vegetables. 
@@ -897,7 +897,7 @@ const BLOG_POSTS = [
             </button>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Natural Home Remedies for Hormonal Healing</h2>
+          <h2>Natural Home Remedies for Hormonal Healing</h2>
           <p>
             Nature provides profound therapeutic compounds that act directly on your endocrine system. Incorporating these natural remedies daily can make a significant difference:
           </p>
@@ -909,7 +909,7 @@ const BLOG_POSTS = [
             <li><strong>Turmeric:</strong> A potent anti-inflammatory. Since PCOS is an inflammatory state, turmeric (with black pepper for absorption) soothes cellular inflammation.</li>
           </ul>
 
-          <h2 className="text-2xl mt-16 mb-8 text-[#1A2F2B]">Global PCOS Diet Variations</h2>
+          <h2>Global PCOS Diet Variations</h2>
           <p className="mb-10 text-xl font-light italic">PCOS is a global reality. Managing it should fit your local cuisine and lifestyle. Here’s how women around the world eat for hormonal balance.</p>
 
           <div className="space-y-8 my-8">
@@ -1017,7 +1017,7 @@ const BLOG_POSTS = [
           </div>
 
 
-          <h2 className="text-2xl mt-16 mb-6">What to Eat vs. What to Avoid</h2>
+          <h2>What to Eat vs. What to Avoid</h2>
           <div className="grid md:grid-cols-2 gap-8 my-8 not-prose">
             <div className="bg-white p-8 rounded-2xl border-t-4 border-green-600 shadow-lg">
               <h4 className="font-bold text-[#1A2F2B] mb-6 text-xl uppercase tracking-widest text-center">✔ What to Eat</h4>
@@ -1039,7 +1039,7 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Expert Lifestyle Tips for Hormonal Harmony</h2>
+          <h2>Expert Lifestyle Tips for Hormonal Harmony</h2>
           <ul className="space-y-6">
             <li><strong>Sleep is Non-Negotiable:</strong> Lack of sleep increases insulin resistance by 30% the next day. Aim for 7-8 hours of quality sleep.</li>
             <li><strong>Stress Management:</strong> High cortisol stops ovulation. Practice yoga, meditation, or simple deep breathing exercises daily.</li>
@@ -1067,7 +1067,7 @@ const BLOG_POSTS = [
     excerpt: "Learn how to lose weight without starving using a sustainable diet plan, home remedies, yoga, and workouts. Healthy fat loss made simple and effective.",
     content: (
       <>
-        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+        <div className="prose md:prose-lg prose-headings:font-display prose-headings:font-normal prose-headings:text-[#1A2F2B] prose-h2:mb-10 prose-h2:mt-20 prose-h3:mt-16 prose-h3:mb-6 prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-p:leading-relaxed prose-p:text-lg lg:prose-p:text-xl prose-li:text-[#1A2F2B]/80 prose-li:font-light prose-li:leading-relaxed prose-li:text-lg lg:prose-li:text-xl prose-strong:font-semibold prose-strong:text-[#1A2F2B] prose-a:text-[#EAC881] hover:prose-a:text-[#1A2F2B] transition-colors max-w-none font-sans">
           <p className="lead text-xl italic text-[#1A2F2B]/70 mb-10 border-l-4 border-[#EAC881] pl-8 leading-relaxed">
             If you’ve ever tried to lose weight, chances are you’ve been told one thing repeatedly: Eat less. Skip meals. Cut carbs. Avoid everything you love.
           </p>
@@ -1080,7 +1080,7 @@ const BLOG_POSTS = [
             Here’s the truth most diets don’t tell you: <strong>You don’t need to starve to lose weight.</strong> In fact, starvation is the biggest reason people fail. Sustainable fat loss is not about eating less — it’s about <strong>eating right</strong>.
           </p>
 
-          <h2 className="text-2xl mt-16 mb-6">Why Starving Doesn’t Work (Simple Science)</h2>
+          <h2>Why Starving Doesn’t Work (Simple Science)</h2>
           <p>
             Your body is incredibly smart. When you drastically reduce your food intake, your metabolism slows down to conserve energy.
           </p>
@@ -1100,7 +1100,7 @@ const BLOG_POSTS = [
             <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=1000" alt="Running" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">What to Eat for Healthy Weight Loss</h2>
+          <h2>What to Eat for Healthy Weight Loss</h2>
           <p>Instead of focusing on restriction, focus on <strong>nourishment</strong>.</p>
           
           <div className="space-y-6 my-8">
@@ -1126,7 +1126,7 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Sample Day Diet Plan (Balanced & Filling)</h2>
+          <h2>Sample Day Diet Plan (Balanced & Filling)</h2>
           <div className="bg-white rounded-2xl shadow-md border border-[#1A2F2B]/10 p-8 my-8">
             <ul className="space-y-4 not-prose list-none p-0 m-0">
               <li className="flex gap-4 items-start border-b border-[#1A2F2B]/10 pb-4">
@@ -1156,7 +1156,7 @@ const BLOG_POSTS = [
             </ul>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">What to Avoid (For Faster Results)</h2>
+          <h2>What to Avoid (For Faster Results)</h2>
           <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
             <div className="flex-1 bg-red-50 p-6 rounded-2xl border-l-4 border-red-500 shadow-sm transition-shadow hover:shadow-md">
               <h4 className="font-bold text-red-700 mb-4 text-lg">Avoid These:</h4>
@@ -1179,7 +1179,7 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">What to Do (For Lasting Success)</h2>
+          <h2>What to Do (For Lasting Success)</h2>
           <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
             <div className="flex-1 bg-green-50 p-6 rounded-2xl border-l-4 border-green-500 shadow-sm transition-shadow hover:shadow-md">
               <h4 className="font-bold text-green-700 mb-4 text-lg">Make Sure To:</h4>
@@ -1203,7 +1203,7 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Natural Home Remedies for Weight Loss</h2>
+          <h2>Natural Home Remedies for Weight Loss</h2>
           <p>Simple daily habits can make a big difference in enhancing your body's natural metabolic processes:</p>
           <ul className="space-y-2">
             <li><strong>Jeera Water:</strong> Boosts digestion and reduces bloating. Drink in the morning.</li>
@@ -1212,7 +1212,7 @@ const BLOG_POSTS = [
             <li><strong>Warm Water:</strong> Sip throughout the day to improve digestion and flush toxins.</li>
           </ul>
 
-          <h2 className="text-2xl mt-16 mb-6">Movement That Helps You Lose Weight Naturally</h2>
+          <h2>Movement That Helps You Lose Weight Naturally</h2>
           
           <div className="grid md:grid-cols-2 gap-6 my-8 not-prose">
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
@@ -1240,7 +1240,7 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Daily Habits That Accelerate Fat Loss</h2>
+          <h2>Daily Habits That Accelerate Fat Loss</h2>
           <ul>
             <li><strong>Sleep:</strong> 7–8 hours every night.</li>
             <li><strong>Hydration:</strong> Drink 2.5–3 liters of water.</li>
@@ -1248,7 +1248,7 @@ const BLOG_POSTS = [
             <li><strong>Timing:</strong> Eat your meals on consistent times.</li>
           </ul>
 
-          <h2 className="text-2xl mt-16 mb-6">Final Thoughts</h2>
+          <h2>Final Thoughts</h2>
           <p>Weight loss doesn’t need to be painful. You don’t need to starve, avoid everything you love, or follow extreme diets. You just need the <strong>right food</strong>, the <strong>right habits</strong>, and <strong>consistency</strong>.</p>
         </div>
 
@@ -1270,9 +1270,9 @@ const BLOG_POSTS = [
     excerpt: "Your hormones dictate everything from your mood to your metabolism. Explore the best foods to include in your daily routine to balance them naturally.",
     content: (
       <>
-        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+        <div className="prose md:prose-lg prose-headings:font-display prose-headings:font-normal prose-headings:text-[#1A2F2B] prose-h2:mb-10 prose-h2:mt-20 prose-h3:mt-16 prose-h3:mb-6 prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-p:leading-relaxed prose-p:text-lg lg:prose-p:text-xl prose-li:text-[#1A2F2B]/80 prose-li:font-light prose-li:leading-relaxed prose-li:text-lg lg:prose-li:text-xl prose-strong:font-semibold prose-strong:text-[#1A2F2B] prose-a:text-[#EAC881] hover:prose-a:text-[#1A2F2B] transition-colors max-w-none font-sans">
           
-          <h2 className="text-2xl mt-16 mb-6">What is Hormonal Imbalance?</h2>
+          <h2>What is Hormonal Imbalance?</h2>
           <p>
             Think of hormones as your body’s chemical messengers. They travel through your bloodstream, telling your organs and tissues what to do and when to do it. From your metabolism and heart rate to your mood, sleep, and reproductive cycles—hormones control it all. 
             When you experience a hormonal imbalance, it means you have too much or too little of a certain hormone. Even tiny shifts in this delicate ecosystem can cause widespread disruption, turning what should be a perfectly synchronized orchestra into chaos.
@@ -1283,7 +1283,7 @@ const BLOG_POSTS = [
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Balancing your hormones naturally through proper nutrition and lifestyle.</figcaption>
           </figure>
 
-          <h2 className="text-2xl mt-16 mb-6">Signs and Symptoms to Watch For</h2>
+          <h2>Signs and Symptoms to Watch For</h2>
           <p>
             How do you know if your hormones are out of sync? Your body is incredibly communicative, but often we dismiss its warning signs as "normal" aging or stress. Common symptoms include:
           </p>
@@ -1299,7 +1299,7 @@ const BLOG_POSTS = [
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Understanding your body's signals is the first step toward profound healing.</figcaption>
           </figure>
 
-          <h2 className="text-2xl mt-16 mb-6">The Best Foods for Hormonal Balance</h2>
+          <h2>The Best Foods for Hormonal Balance</h2>
           
           <div className="space-y-6 my-8 not-prose">
             <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
@@ -1337,7 +1337,7 @@ const BLOG_POSTS = [
             <img src="https://images.pexels.com/photos/1161547/pexels-photo-1161547.jpeg?auto=format&fit=crop&q=80&w=1600" alt="Nutritional ingredients" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
           </figure>
 
-          <h2 className="text-2xl mt-16 mb-6">Foods to Strictly Avoid</h2>
+          <h2>Foods to Strictly Avoid</h2>
           <p>If you're serious about healing your endocrine system, you must significantly limit:</p>
           <ul className="space-y-4 my-8">
             <li><strong>Refined Sugar & Simple Carbs:</strong> These cause violent spikes in insulin, leading to insulin resistance, which prompts your ovaries to create excess testosterone (the primary driver of PCOS).</li>
@@ -1345,7 +1345,7 @@ const BLOG_POSTS = [
             <li><strong>Excess Caffeine & Alcohol:</strong> Drinking coffee on an empty stomach spikes cortisol by up to 30%. Alcohol severely taxes the liver, crippling its ability to filter and detoxify old hormones out of your system.</li>
           </ul>
 
-          <h2 className="text-2xl mt-16 mb-6">Daily Routine Tips for Healing</h2>
+          <h2>Daily Routine Tips for Healing</h2>
           <p>
             Food is only half the equation. Your environment and daily habits dictate your internal biochemistry just as much as your plate does.
           </p>
@@ -1356,7 +1356,7 @@ const BLOG_POSTS = [
             <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Stress Management:</strong> Practice slow, guided diaphragmatic breathing for 5 minutes daily. This physically shifts your nervous system out of "fight or flight" (sympathetic) and into "rest and digest" (parasympathetic).</span></li>
           </ul>
 
-          <h2 className="text-2xl mt-16 mb-6">Do's and Don'ts</h2>
+          <h2>Do's and Don'ts</h2>
           <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
             <div className="flex-1 bg-green-50 p-6 rounded-2xl border-l-4 border-green-500 shadow-sm transition-shadow hover:shadow-md">
               <h4 className="font-bold text-green-700 mb-4 text-lg">DO's</h4>
@@ -1396,9 +1396,9 @@ const BLOG_POSTS = [
     excerpt: "Learn how to maintain a healthy lifestyle despite corporate jobs, night shifts, limited budgets, and lack of time. Practical, realistic, and actionable guidance for the modern worker.",
     content: (
       <>
-        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+        <div className="prose md:prose-lg prose-headings:font-display prose-headings:font-normal prose-headings:text-[#1A2F2B] prose-h2:mb-10 prose-h2:mt-20 prose-h3:mt-16 prose-h3:mb-6 prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-p:leading-relaxed prose-p:text-lg lg:prose-p:text-xl prose-li:text-[#1A2F2B]/80 prose-li:font-light prose-li:leading-relaxed prose-li:text-lg lg:prose-li:text-xl prose-strong:font-semibold prose-strong:text-[#1A2F2B] prose-a:text-[#EAC881] hover:prose-a:text-[#1A2F2B] transition-colors max-w-none font-sans">
           
-          <h2 className="text-2xl mt-16 mb-6">Introduction</h2>
+          <h2>Introduction</h2>
           <p className="lead text-xl italic text-[#1A2F2B]/70 mb-10 border-l-4 border-[#EAC881] pl-8 leading-relaxed">
             "You don't need a perfect schedule to be healthy. You just need a strategy that bends to fit your reality."
           </p>
@@ -1409,7 +1409,7 @@ const BLOG_POSTS = [
             This guide is not about perfection. It’s about <strong>adaptation</strong>. Whether you have zero time to cook, an unpredictable schedule, or financial constraints, maintaining a healthy lifestyle is achievable when you focus on practical, realistic adjustments rather than idealistic goals.
           </p>
 
-          <h2 className="text-2xl mt-16 mb-6">What is a Healthy Lifestyle in Today’s World?</h2>
+          <h2>What is a Healthy Lifestyle in Today’s World?</h2>
           <p>
             Forget the magazines. In today’s fast-paced world, a healthy lifestyle doesn't mean eating kale salads on a beach. It means having the <strong>energy</strong> to get through your workday without crashing at 3 PM. It means your hormones are balanced so you can sleep soundly when you finally hit the pillow. It means having a functional immune system, a clear mind, and an approach to food that doesn't cause you chronic stress.
           </p>
@@ -1419,7 +1419,7 @@ const BLOG_POSTS = [
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Adapting your health journey to fit your real, everyday life.</figcaption>
           </figure>
 
-          <h2 className="text-2xl mt-16 mb-6">Lifestyle Pros and Cons</h2>
+          <h2>Lifestyle Pros and Cons</h2>
           <p>The impact of your daily habits compound over time. Here is what happens under the surface:</p>
           
           <div className="grid md:grid-cols-2 gap-8 my-8 not-prose">
@@ -1443,7 +1443,7 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Do’s and Don’ts</h2>
+          <h2>Do’s and Don’ts</h2>
           <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
             <div className="flex-1 bg-green-50 p-6 rounded-2xl border-l-4 border-green-500 shadow-sm transition-shadow hover:shadow-md">
               <h4 className="font-bold text-green-700 mb-4 text-lg">The Do's</h4>
@@ -1465,7 +1465,7 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Corporate Professionals Lifestyle Guide</h2>
+          <h2>Corporate Professionals Lifestyle Guide</h2>
           <p><strong>The Problem:</strong> Long sitting hours, high stress, and irregular meal timings due to back-to-back meetings.</p>
           <p><strong>The Solution:</strong></p>
           <ul className="space-y-4 my-8 pl-4 border-l-4 border-[#EAC881] list-none">
@@ -1475,7 +1475,7 @@ const BLOG_POSTS = [
             <li className="flex gap-4 items-start"><CheckCircle2 size={24} className="text-[#EAC881] shrink-0 mt-1" /> <span><strong>Movement:</strong> Implement the 50/10 rule. Sit for 50 minutes, stand/walk/stretch for 10 minutes. </span></li>
           </ul>
 
-          <h2 className="text-2xl mt-16 mb-6">Night Shift Lifestyle Guide</h2>
+          <h2>Night Shift Lifestyle Guide</h2>
           <p><strong>The Problem:</strong> Circadian rhythm disruption, poor digestion at night, hormonal imbalance, and poor daytime sleep quality.</p>
           <p><strong>The Solution:</strong></p>
           <ul className="space-y-4 my-8 pl-4 border-l-4 border-[#EAC881] list-none">
@@ -1490,7 +1490,7 @@ const BLOG_POSTS = [
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Structured habits make unconventional schedules manageable.</figcaption>
           </figure>
 
-          <h2 className="text-2xl mt-16 mb-6">For People Who Can’t Cook at Home</h2>
+          <h2>For People Who Can’t Cook at Home</h2>
           <p>Not everyone has the time, energy, or facilities to cook elaborate meals. You can still eat healthy on the go.</p>
           <div className="bg-[#FAF9F6] p-6 rounded-2xl shadow-sm border border-[#EAC881]/20 my-8">
             <ul className="space-y-3">
@@ -1500,7 +1500,7 @@ const BLOG_POSTS = [
             </ul>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Budget-Friendly Nutrition Guide</h2>
+          <h2>Budget-Friendly Nutrition Guide</h2>
           <p>Healthy eating does NOT have to be expensive. You don't need avocados, salmon, or chia seeds to be fit. Local, traditional foods are incredibly powerful.</p>
           
           <div className="space-y-6 my-8 not-prose">
@@ -1537,7 +1537,7 @@ const BLOG_POSTS = [
             </p>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Sample Daily Routines</h2>
+          <h2>Sample Daily Routines</h2>
           
           <div className="grid md:grid-cols-2 gap-8 my-8 not-prose">
              <div className="border border-[#1A2F2B]/10 p-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow">
@@ -1565,7 +1565,7 @@ const BLOG_POSTS = [
              </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Final Thoughts</h2>
+          <h2>Final Thoughts</h2>
           <p>Health is not reserved for the wealthy or the people with endless free time. It is a daily practice of making the *slightly better* choice within your current circumstances. Take control of what you can, and forgive yourself for what you can't.</p>
 
         </div>
@@ -1586,9 +1586,9 @@ const BLOG_POSTS = [
     excerpt: "Discover the most effective, nutrient-dense traditional Indian breakfast options meticulously designed to stabilize blood sugar, burn fat, and keep you energized.",
     content: (
       <>
-        <div className="prose prose-headings:font-display prose-headings:text-[#1A2F2B] prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-li:font-light max-w-none font-sans">
+        <div className="prose md:prose-lg prose-headings:font-display prose-headings:font-normal prose-headings:text-[#1A2F2B] prose-h2:mb-10 prose-h2:mt-20 prose-h3:mt-16 prose-h3:mb-6 prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-p:leading-relaxed prose-p:text-lg lg:prose-p:text-xl prose-li:text-[#1A2F2B]/80 prose-li:font-light prose-li:leading-relaxed prose-li:text-lg lg:prose-li:text-xl prose-strong:font-semibold prose-strong:text-[#1A2F2B] prose-a:text-[#EAC881] hover:prose-a:text-[#1A2F2B] transition-colors max-w-none font-sans">
           
-          <h2 className="text-2xl mt-16 mb-6">The Importance of a High-Protein Breakfast</h2>
+          <h2>The Importance of a High-Protein Breakfast</h2>
           <p className="lead text-xl italic text-[#1A2F2B]/70 mb-10 border-l-4 border-[#EAC881] pl-8 leading-relaxed">
             "Your first meal sets the metabolic tone for the entire day. Treat it with the respect it deserves."
           </p>
@@ -1600,7 +1600,7 @@ const BLOG_POSTS = [
             If your goal is sustainable weight loss, managing conditions like PCOS, or simply maximizing productivity as a working professional in India, you do not need to abandon your cultural roots. The key to the <strong>best Indian breakfast for weight loss</strong> lies in strategically upgrading our traditional dishes with high-quality protein, essential healthy fats, and complex fibers to stabilize insulin and support metabolic health.
           </p>
 
-          <h2 className="text-2xl mt-16 mb-6">Why Breakfast Matters</h2>
+          <h2>Why Breakfast Matters</h2>
           <p>
             The role of breakfast in a fat-loss journey is often misunderstood. A well-constructed, protein-rich meal in the morning does more than just fill your stomach:
           </p>
@@ -1612,7 +1612,7 @@ const BLOG_POSTS = [
             <li><strong>Productivity:</strong> For corporate employees and busy professionals in cities like Delhi NCR, stable blood sugar guarantees sustained, laser-sharp focus throughout morning meetings.</li>
           </ul>
 
-          <h2 className="text-2xl mt-16 mb-6">Top 5 Premium Indian Breakfasts for Weight Loss</h2>
+          <h2>Top 5 Premium Indian Breakfasts for Weight Loss</h2>
 
           <h4 className="font-bold text-[#1A2F2B] mb-2 mt-10 text-xl">1. High-Protein Moong Dal Chilla</h4>
           <figure className="my-8">
@@ -1718,7 +1718,7 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">The Protocol: Do's &amp; Don'ts</h2>
+          <h2>The Protocol: Do's &amp; Don'ts</h2>
           <div className="flex flex-col md:flex-row gap-8 my-8 not-prose">
             <div className="flex-1 bg-green-50 p-6 rounded-2xl border-l-[6px] border-green-500 shadow-sm transition-all hover:shadow-md">
               <h4 className="font-bold text-green-800 mb-4 text-xl">The Do's</h4>
@@ -1771,14 +1771,14 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <div className="my-24 flex flex-col md:flex-row-reverse gap-12 md:gap-20 items-center not-prose">
+          <div className="my-24 flex flex-col md:flex-row-reverse gap-12 md:gap-20 items-stretch not-prose">
             <div className="w-full md:w-1/2 relative group">
                <div className="absolute -inset-4 bg-[#EAC881]/20 rounded-[3rem] blur-xl transition-all duration-700 group-hover:bg-[#EAC881]/30"></div>
-               <img src="https://images.pexels.com/photos/1552108/pexels-photo-1552108.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Workout & Movement Integration" className="relative w-full rounded-[2.5rem] shadow-[0_20px_50px_rgba(26,47,43,0.15)] aspect-[4/5] sm:aspect-square md:aspect-[4/5] object-cover border border-white/50 transform group-hover:scale-[1.02] transition-transform duration-700" />
+               <img src="https://images.pexels.com/photos/1552108/pexels-photo-1552108.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Workout & Movement Integration" className="relative w-full h-full min-h-[400px] rounded-[2.5rem] shadow-[0_20px_50px_rgba(26,47,43,0.15)] object-cover border border-white/50 transform group-hover:scale-[1.02] transition-transform duration-700" />
             </div>
             <div className="w-full md:w-1/2">
               <h3 className="text-xs font-bold font-sans uppercase tracking-[0.2em] text-[#EAC881] mb-4">The Intersection</h3>
-              <h2 className="text-3xl md:text-5xl font-display text-[#1A2F2B] mb-8 leading-snug">Workout & Movement Integration</h2>
+              <h2>Workout & Movement Integration</h2>
               <p className="font-serif text-lg md:text-xl font-light text-[#1A2F2B]/80 leading-relaxed mb-8">
                 Nutrition must marry movement. For optimum fat loss and hormonal alignment, pair your high-protein Indian breakfast with a dedicated routine. Even a 20-minute brisk walk works wonders for cellular metabolism.
               </p>
@@ -1847,7 +1847,7 @@ const BLOG_POSTS = [
             </div>
           </div>
 
-          <h2 className="text-2xl mt-16 mb-6">Frequently Asked Questions</h2>
+          <h2>Frequently Asked Questions</h2>
           <div className="space-y-6 my-8 not-prose text-base">
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#EAC881]/20">
               <h4 className="font-bold text-[#1A2F2B] mb-2 text-lg">Which Indian breakfast is best for weight loss?</h4>
