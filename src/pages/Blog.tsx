@@ -1660,7 +1660,7 @@ const BLOG_POSTS = [
 
           <h4 className="font-bold text-[#1A2F2B] mb-2 mt-10 text-xl">5. Masala Egg Bhurji</h4>
           <figure className="my-8">
-            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&q=80&w=800" alt="Egg Scramble" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img src="https://images.pexels.com/photos/7393351/pexels-photo-7393351.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Egg Scramble" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Non-Vegetarian • Complete Amino Acids</figcaption>
           </figure>
           <p>For immediate, high-yield biological protein, non-vegetarian Indian options like an egg bhurji (scramble) or leftover grilled chicken wrap are unparalleled for pure fat loss.</p>
@@ -1772,9 +1772,9 @@ const BLOG_POSTS = [
           </div>
 
           <div className="my-24 flex flex-col md:flex-row-reverse gap-12 md:gap-20 items-center not-prose">
-            <div className="w-full md:w-1/2 relative">
-               <div className="absolute -inset-4 bg-[#EAC881]/20 rounded-[3rem] blur-xl"></div>
-               <img src="https://images.pexels.com/photos/4056723/pexels-photo-4056723.jpeg" alt="Morning Workout Routine" className="relative w-full rounded-[2.5rem] shadow-2xl aspect-[4/5] object-cover" />
+            <div className="w-full md:w-1/2 relative group">
+               <div className="absolute -inset-4 bg-[#EAC881]/20 rounded-[3rem] blur-xl transition-all duration-700 group-hover:bg-[#EAC881]/30"></div>
+               <img src="https://images.pexels.com/photos/1552108/pexels-photo-1552108.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Workout & Movement Integration" className="relative w-full rounded-[2.5rem] shadow-[0_20px_50px_rgba(26,47,43,0.15)] aspect-[4/5] sm:aspect-square md:aspect-[4/5] object-cover border border-white/50 transform group-hover:scale-[1.02] transition-transform duration-700" />
             </div>
             <div className="w-full md:w-1/2">
               <h3 className="text-xs font-bold font-sans uppercase tracking-[0.2em] text-[#EAC881] mb-4">The Intersection</h3>
