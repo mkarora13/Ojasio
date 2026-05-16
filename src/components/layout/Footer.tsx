@@ -87,6 +87,17 @@ export const Footer: React.FC = () => {
           </div>
           
           <div>
+            <h3 className="font-sans font-bold text-[10px] tracking-widest uppercase mb-6 text-gold">Programs</h3>
+            <ul className="space-y-3 font-sans text-xs">
+              <li><NavLink to="/programs/pcos-diet-plan" className="text-green-deep/80 hover:text-gold transition-colors">PCOS Diet Plan</NavLink></li>
+              <li><NavLink to="/programs/weight-loss-diet-plan" className="text-green-deep/80 hover:text-gold transition-colors">Weight Loss Plan</NavLink></li>
+              <li><NavLink to="/programs/thyroid-diet-plan" className="text-green-deep/80 hover:text-gold transition-colors">Thyroid Diet Plan</NavLink></li>
+              <li><NavLink to="/programs/hormonal-imbalance-diet" className="text-green-deep/80 hover:text-gold transition-colors">Hormonal Imbalance</NavLink></li>
+              <li><NavLink to="/programs/diet-plan-for-working-professionals" className="text-green-deep/80 hover:text-gold transition-colors">Working Professionals</NavLink></li>
+            </ul>
+          </div>
+          
+          <div>
             <h3 className="font-sans font-bold text-[10px] tracking-widest uppercase mb-6 text-gold">Connect</h3>
             <div className="mb-8 space-y-2">
               <p className="font-sans text-xs text-green-deep/60">

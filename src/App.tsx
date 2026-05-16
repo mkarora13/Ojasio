@@ -14,6 +14,11 @@ const Reviews = lazy(() => import('./pages/Reviews').then(m => ({ default: m.Rev
 const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
 const Blog = lazy(() => import('./pages/Blog').then(m => ({ default: m.Blog })));
 const FAQ = lazy(() => import('./pages/FAQ').then(m => ({ default: m.FAQ })));
+const PCOSDietPlan = lazy(() => import('./pages/programs/PCOSDietPlan').then(m => ({ default: m.PCOSDietPlan })));
+const WeightLossDietPlan = lazy(() => import('./pages/programs/WeightLossDietPlan').then(m => ({ default: m.WeightLossDietPlan })));
+const ThyroidDietPlan = lazy(() => import('./pages/programs/ThyroidDietPlan').then(m => ({ default: m.ThyroidDietPlan })));
+const HormonalImbalanceDiet = lazy(() => import('./pages/programs/HormonalImbalanceDiet').then(m => ({ default: m.HormonalImbalanceDiet })));
+const WorkingProfessionalsDiet = lazy(() => import('./pages/programs/WorkingProfessionalsDiet').then(m => ({ default: m.WorkingProfessionalsDiet })));
 
 // A simple loading fallback for Suspense
 const PageLoader = () => (
@@ -36,6 +41,11 @@ export default function App() {
             <Route path="blog/:id" element={<Blog />} />
             <Route path="faq" element={<FAQ />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="programs/pcos-diet-plan" element={<PCOSDietPlan />} />
+            <Route path="programs/weight-loss-diet-plan" element={<WeightLossDietPlan />} />
+            <Route path="programs/thyroid-diet-plan" element={<ThyroidDietPlan />} />
+            <Route path="programs/hormonal-imbalance-diet" element={<HormonalImbalanceDiet />} />
+            <Route path="programs/diet-plan-for-working-professionals" element={<WorkingProfessionalsDiet />} />
           </Route>
         </Routes>
       </Suspense>

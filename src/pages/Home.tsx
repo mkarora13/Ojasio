@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { Activity, Droplets, Target, Utensils, Heart } from 'lucide-react';
 import { Button } from '../components/ui/Button';
+import { SEO } from '../components/seo/SEO';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -23,6 +24,24 @@ export const Home: React.FC = () => {
 
   return (
     <div className="w-full">
+      <SEO 
+        title="Ojasio | Premium Nutrition & Diet Consultation by Disha Arora"
+        description="Book your 1-on-1 nutrition consultation with Disha Arora. Specializing in weight loss, PCOS, diabetes, and sustainable diet plans for busy professionals."
+        url="https://www.ojasio.com"
+        jsonLdSchema={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Ojasio",
+          "image": "https://www.ojasio.com/logo.png",
+          "url": "https://www.ojasio.com",
+          "telephone": "+91-XXXXXXXXXX",
+          "description": "Premium nutrition and wellness consultations by certified nutritionist Disha Arora.",
+          "founder": {
+            "@type": "Person",
+            "name": "Disha Arora"
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex items-center bg-ivory overflow-hidden border-b border-gold/20 pt-28 pb-16">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col">
