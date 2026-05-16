@@ -199,7 +199,7 @@ export const Contact: React.FC = () => {
 
                <div className="mt-12 pt-8 border-t border-ivory/20">
                  <div className="flex items-center space-x-4">
-                   <img 
+                   <img loading="lazy" 
                     src="https://images.pexels.com/photos/37274943/pexels-photo-37274943.jpeg?auto=compress&cs=tinysrgb&w=800" 
                     alt="Disha Arora" 
                     className="w-16 h-16 rounded-full object-cover border-2 border-gold"

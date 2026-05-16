@@ -24,7 +24,7 @@ export const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center pr-4">
             <NavLink to="/" className="flex items-center gap-4 group">
-              <img 
+              <img loading="lazy" 
                 src="https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?_gl=1*i3glqi*_ga*NTM3MzUwNTMxLjE3NzcyMjg2OTI.*_ga_8JE65Q40S6*czE3NzcyMjg2OTEkbzEkZzEkdDE3NzcyMzEzMjQkajQ4JGwwJGgw" 
                 alt="Ojasio Logo" 
                 className="w-14 h-14 object-cover rounded-full border border-gold/30 transform group-hover:scale-105 transition-transform duration-300 shadow-sm"

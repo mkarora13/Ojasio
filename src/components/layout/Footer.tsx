@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           <div className="md:col-span-2">
             <span className="font-display text-2xl font-bold tracking-tighter text-green-deep mb-4 flex items-center gap-3">
-              <img 
+              <img loading="lazy" 
                 src="https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?_gl=1*i3glqi*_ga*NTM3MzUwNTMxLjE3NzcyMjg2OTI.*_ga_8JE65Q40S6*czE3NzcyMjg2OTEkbzEkZzEkdDE3NzcyMzEzMjQkajQ4JGwwJGgw" 
                 alt="Ojasio Logo" 
                 className="w-12 h-12 object-cover rounded-full border border-gold/30"

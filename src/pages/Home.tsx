@@ -59,18 +59,37 @@ export const Home: React.FC = () => {
              {/* Main large image */}
              <div className="md:col-span-8 rounded-2xl md:rounded-tl-[4rem] md:rounded-br-[4rem] overflow-hidden shadow-2xl relative group">
                 <div className="absolute inset-0 bg-green-deep/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
-                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600" alt="Healthy gourmet food" className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
+                <img 
+                  src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600" 
+                  alt="Healthy gourmet food" 
+                  className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" 
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="sync"
+                />
              </div>
              
              {/* Right side images */}
              <div className="md:col-span-4 flex flex-col gap-4 hidden md:flex">
                 <div className="flex-1 rounded-tr-[3rem] rounded-bl-[2rem] overflow-hidden shadow-xl relative group">
                    <div className="absolute inset-0 bg-gold/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
-                   <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" alt="Yoga and wellbeing" className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 object-top" />
+                   <img 
+                     src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" 
+                     alt="Yoga and wellbeing" 
+                     className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 object-top" 
+                     fetchPriority="high"
+                     loading="eager"
+                   />
                 </div>
                 <div className="flex-1 rounded-br-[3rem] rounded-tl-[2rem] overflow-hidden shadow-xl relative group">
                    <div className="absolute inset-0 bg-green-deep/20 group-hover:bg-transparent transition-colors duration-700 z-10" />
-                   <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800" alt="Workout and fitness" className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" />
+                   <img 
+                     src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800" 
+                     alt="Workout and fitness" 
+                     className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" 
+                     fetchPriority="high"
+                     loading="eager"
+                   />
                 </div>
              </div>
           </motion.div>
@@ -147,6 +166,8 @@ export const Home: React.FC = () => {
                 src="https://images.pexels.com/photos/15319019/pexels-photo-15319019.jpeg" 
                 alt="Premium Wellness Experience" 
                 className="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-1000"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-green-deep/20 mix-blend-multiply transition-colors"></div>
               <div className="absolute inset-4 sm:inset-6 md:inset-8 rounded-[1.5rem] border border-white/40 z-20 pointer-events-none"></div>

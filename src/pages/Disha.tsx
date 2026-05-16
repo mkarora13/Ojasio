@@ -50,7 +50,7 @@ export const Disha: React.FC = () => {
              transition={{ duration: 0.9, delay: 0.1 }}
              className="order-1 lg:order-2 w-full max-w-lg mx-auto lg:ml-auto mb-8 lg:mb-0 rounded-[2rem] overflow-hidden shadow-2xl relative border border-gold/20"
           >
-            <img 
+            <img loading="lazy" 
               src="https://images.pexels.com/photos/37435132/pexels-photo-37435132.jpeg?auto=compress&cs=tinysrgb&w=800" 
               alt="Disha Arora, Nutrition Expert" 
               className="w-full h-auto block hover:scale-[1.02] transition-transform duration-1000"
