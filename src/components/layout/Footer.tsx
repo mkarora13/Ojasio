@@ -51,8 +51,8 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-beige text-green-deep border-t border-gold/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-12">
+          <div className="md:col-span-2 lg:col-span-2">
             <span className="font-display text-2xl font-bold tracking-tighter text-green-deep mb-4 flex items-center gap-3">
               <img loading="lazy" 
                 src="https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?_gl=1*i3glqi*_ga*NTM3MzUwNTMxLjE3NzcyMjg2OTI.*_ga_8JE65Q40S6*czE3NzcyMjg2OTEkbzEkZzEkdDE3NzcyMzEzMjQkajQ4JGwwJGgw" 
@@ -123,19 +123,19 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-start md:items-center">
-            <h3 className="font-sans font-bold text-[10px] tracking-widest uppercase mb-6 text-gold text-center">Scan to Visit</h3>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsQRModalOpen(true); }} className="bg-white p-3 rounded-xl shadow-sm border border-gold/20 flex flex-col items-center justify-center hover:shadow-md transition-all">
-              <div ref={qrRef} className="bg-white">
+          <div className="flex flex-col items-start lg:items-center justify-start">
+            <h3 className="font-sans font-bold text-[10px] tracking-widest uppercase mb-6 text-gold lg:text-center">Scan to Visit</h3>
+            <a href="#" onClick={(e) => { e.preventDefault(); setIsQRModalOpen(true); }} className="bg-white p-2.5 rounded-2xl shadow-sm border border-gold/30 flex flex-col items-center justify-center hover:shadow-md hover:border-gold/60 transition-all group">
+              <div ref={qrRef} className="bg-white rounded-xl overflow-hidden p-1">
                 <QRCode 
                   value="https://ojasio.com" 
-                  size={80} 
-                  className="text-green-deep"
-                  fgColor="#1C3F3A" // green-deep colour
+                  size={90} 
+                  className="text-green-deep transform group-hover:scale-105 transition-transform duration-300"
+                  fgColor="#1A2F2B"
                 />
               </div>
             </a>
-            <p className="mt-3 text-[9px] font-sans text-green-deep/60 uppercase tracking-widest text-center cursor-pointer hover:text-gold transition-colors" onClick={handleDownloadQR}>Tap to Download</p>
+            <p className="mt-4 text-[9px] font-sans text-green-deep/70 uppercase tracking-widest lg:text-center cursor-pointer hover:text-gold transition-colors font-semibold" onClick={handleDownloadQR}>Tap to Download</p>
           </div>
         </div>
         

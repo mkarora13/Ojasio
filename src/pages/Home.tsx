@@ -9,11 +9,11 @@ export const Home: React.FC = () => {
   const navigate = useNavigate();
 
   const services = [
-    { title: 'Weight Loss', icon: <Target size={32} className="text-gold" />, desc: 'At Ojasio, weight loss is not about starving or following unrealistic diets. It is about creating a sustainable lifestyle that works for your body and routine. With years of hands-on experience across diverse client profiles, we design personalised plans that focus on fat loss while maintaining energy, metabolism, and overall health.' },
-    { title: 'Diabetes Care', icon: <Activity size={32} className="text-gold" />, desc: 'Managing diabetes requires more than just avoiding sugar. It demands a structured and well-balanced nutritional strategy. At Ojasio, we create customised diet plans that help regulate blood sugar levels, improve insulin sensitivity, and support overall metabolic health.' },
-    { title: 'PCOS Management', icon: <Droplets size={32} className="text-gold" />, desc: 'PCOS is a lifestyle-driven condition that requires a personalised and consistent approach. We design nutrition plans that focus on hormonal balance, weight management, and improving metabolic health.' },
-    { title: 'Weight Gain', icon: <Utensils size={32} className="text-gold" />, desc: 'Healthy weight gain is not about eating excessively — it is about eating smart. At Ojasio, we focus on structured nutrition that promotes lean muscle gain, improves appetite naturally, and enhances overall strength.' },
-    { title: 'Wellness & Fitness', icon: <Heart size={32} className="text-gold" />, desc: 'Fitness is not just about appearance — it is about how you feel, perform, and function daily. Our wellness and fitness plans are designed to improve energy levels, support physical activity, and enhance overall body performance.' },
+    { title: 'Clinical Weight Management', icon: <Target size={32} className="text-gold" />, desc: 'Effective lipolysis and weight reduction demand a scientific approach, not restrictive starvation diets. We engineer sustainable, nutrient-dense eating protocols tailored specifically to your metabolic rate. By addressing the root causes of weight stagnation, our customized strategies ensure steady fat loss while protecting your vital energy reserves and optimizing long-term body composition.' },
+    { title: 'Advanced Diabetes Control', icon: <Activity size={32} className="text-gold" />, desc: 'Reclaiming control over blood glucose parameters involves sophisticated carbohydrate management and precise food pairing. Our clinical diabetes nutrition frameworks are designed to actively enhance insulin sensitivity and blunt post-meal sugar spikes. We provide practical, culturally integrated meal plans that seamlessly fit into your life while aggressively stabilizing your metabolic markers.' },
+    { title: 'PCOS & Hormonal Balance', icon: <Droplets size={32} className="text-gold" />, desc: 'Polycystic Ovary Syndrome (PCOS) fundamentally requires a dedicated, anti-inflammatory dietary intervention. We construct specialized nutrition pathways targeting systemic insulin resistance and hormone dysregulation. Our evidence-based approach helps normalize menstrual cycles, reduce severe androgenic symptoms, and facilitate entirely natural, long-lasting wellness.' },
+    { title: 'Strategic Lean Mass Building', icon: <Utensils size={32} className="text-gold" />, desc: 'Quality weight gain involves cellular nourishment, not empty caloric gluttony. We develop intelligent, hypertrophic nutrition plans structured to increase muscle density safely. By utilizing high-biological-value protein sources and complex carbohydrates, we naturally stimulate healthy appetite and promote robust physical strength.' },
+    { title: 'Comprehensive Lifestyle Conditioning', icon: <Heart size={32} className="text-gold" />, desc: 'True peak performance necessitates impeccable internal health. Our holistic lifestyle and fitness conditioning programs are architected to amplify daily endurance, sharpen cognitive focus, and fortify immune resilience. We seamlessly merge modern dietary science with practical habits for individuals demanding high-octane daily functioning.' },
   ];
 
   const stats = [
@@ -48,13 +48,13 @@ export const Home: React.FC = () => {
           
           {/* Top text section */}
           <div className="w-full flex flex-col items-center md:items-start justify-center mb-16 gap-4 text-center md:text-left">
-            <motion.div
+            <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="max-w-4xl"
             >
-              <h3 className="text-gold uppercase tracking-[0.4em] text-xs font-sans font-bold mb-6">Premium Wellness</h3>
+              <h3 className="text-gold uppercase tracking-[0.4em] text-xs font-sans font-bold mb-6">PREMIUM WELLNESS</h3>
               <h1 className="text-5xl lg:text-7xl xl:text-[5.5rem] font-display text-green-deep mb-6 leading-[1.0] flex flex-col gap-2">
                 <span>Modern Nutrition</span>
                 <span className="italic font-light text-gold text-4xl lg:text-6xl xl:text-7xl">Rooted in Vitality</span>
@@ -162,8 +162,8 @@ export const Home: React.FC = () => {
             
             {/* Callout box to fill grid */}
             <div className="bg-ivory hover:bg-beige/30 transition-colors p-8 flex flex-col justify-start items-start text-left border-t border-gold/20 md:border-t-0">
-               <h5 className="font-bold text-xl md:text-2xl mb-4 font-display text-green-deep">Holistic Wellness</h5>
-               <p className="text-sm md:text-base font-sans text-green-deep/70 leading-relaxed font-light">True health goes beyond calories and diet charts. It involves balance — physically, mentally, and nutritionally. At Ojasio, we integrate modern nutritional science with holistic principles to create a complete wellness experience. This includes mindful eating, gut health, lifestyle correction, and sustainable habits. Our approach focuses on long-term transformation, helping you build a healthier relationship with food and your body.</p>
+               <h5 className="font-bold text-xl md:text-2xl mb-4 font-display text-green-deep">Integrative Functional Healing</h5>
+               <p className="text-sm md:text-base font-sans text-green-deep/70 leading-relaxed font-light">Authentic physiological restoration extends far beyond restrictive caloric arithmetic. It demands a profound alignment of gut microbiome integrity, psychological resilience, and cellular nourishment. Through Ojasio’s meticulous methodologies, we synthesize the latest advancements in nutritional biochemistry with time-tested holistic practices to architect a resilient, disease-resistant physiological state, ultimately redefining your baseline of health.</p>
             </div>
           </div>
         </div>
@@ -200,32 +200,32 @@ export const Home: React.FC = () => {
               className="flex flex-col justify-center order-1 lg:order-2"
             >
               <div className="mb-12 md:mb-16 text-left">
-                <span className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-gold mb-6 block">The Ojasio Advantage</span>
+                <span className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-gold mb-6 block">The Ojasio Paradigm</span>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-green-deep leading-[1.15] mb-8">
-                  Why Discerning Individuals Choose Ojasio
+                  Why Discerning Individuals Trust Clinical Precision
                 </h2>
                 <p className="text-lg md:text-xl text-green-deep/80 font-light leading-relaxed font-sans">
-                  Elevate your health with our expert-led, science-backed approach. We design elegant, practical personalized nutrition strategies that respect your body’s unique biochemistry and fit seamlessly into your high-profile life.
+                  Transcend generic dietary advice. Engage with a scientifically grounded, expert-guided methodology that honors your unique biochemical fingerprint. We construct pragmatic, high-impact nutritional architectures uniquely suited to accommodate the rigors of an elite professional lifestyle.
                 </p>
               </div>
               
               <div className="space-y-10 md:space-y-12">
                 {[
                   { 
-                    title: 'Personalized Nutrition for Sustainable Weight Loss', 
-                    desc: 'Experience absolute metabolic health and natural fat burning. We craft deeply tailored weight loss plans that optimize insulin sensitivity—delivering sustainable, long-lasting transformation without starvation or restriction.' 
+                    title: 'Precision Protocols for Optimal Fat Oxidation', 
+                    desc: 'Achieve remarkable weight regulation through data-driven dietary design. We meticulously construct macronutrient-balanced profiles that combat insulin resistance and accelerate natural fat loss without enforcing detrimental starvation cycles.' 
                   },
                   { 
-                    title: 'Expert Holistic Care for PCOS Management', 
-                    desc: 'True wellness begins at the root cause. We seamlessly blend functional medicine with holistic nutrition to naturally manage PCOS, reverse hormonal imbalances, and restore your vibrant, everyday health.' 
+                    title: 'Root-Cause Resolution for Endocrine Disorders', 
+                    desc: 'Systemic health originates from hormonal equilibrium. We merge diagnostic insights with therapeutic diets to dramatically alleviate PCOS symptoms, reverse chronic inflammation, and reclaim your inherent biochemical stability.' 
                   },
                   { 
-                    title: 'Tailored Diets for Busy Working Professionals', 
-                    desc: 'A demanding career should never compromise your wellbeing. Our dynamic nutrition plans adapt flawlessly to demanding international schedules, business travel, and the fast-paced corporate lifestyle.' 
+                    title: 'Executive Nutrition for High-Demand Careers', 
+                    desc: 'Relentless corporate demands require impeccable fuel. Our remarkably adaptable meal algorithms flawlessly integrate into chaotic business travel schedules and exhaustive working hours to sustain paramount cognitive performance.' 
                   },
                   { 
-                    title: 'Premium Yet Accessible Healthy Eating', 
-                    desc: 'Elevated luxury meets everyday reality. We create sophisticated, therapeutic diet plans using affordable, easily accessible local ingredients, making your profound health journey simple and effortlessly maintained.' 
+                    title: 'Sustainably Elegant & Culturally Aligned Food Choices', 
+                    desc: 'Therapeutic nutrition should never feel isolating. We brilliantly weave medically sound dietary adjustments into your native cultural cuisine, utilizing readily available regional ingredients for a transformation that is permanently sustainable.' 
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="relative pl-8 md:pl-10 border-l border-gold/30 group hover:border-gold transition-colors duration-500">
@@ -249,7 +249,7 @@ export const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-display text-green-deep mb-6"
           >
-            Take Control of Your Health
+            Initiate Your Metabolic Rehabilitation
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -258,7 +258,7 @@ export const Home: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-sm font-sans text-green-deep/70 mb-10 leading-relaxed uppercase tracking-widest"
           >
-            Your transformation starts today. Join us to unlock your peak wellness.
+            A profound physiological shift awaits. Secure your consultation to commence a definitive health optimization protocol.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

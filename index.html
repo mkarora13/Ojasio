@@ -10,25 +10,58 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://images.pexels.com" />
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600" as="image" />
     
     <!-- Fonts loaded in head instead of CSS @import to avoid render-blocking -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
 
-    <title>Ojasio</title>
-    <meta name="description" content="Ojasio - Premium global wellness and nutrition brand offering personalized, science-based lifestyle and diet plans." />
-    <meta property="og:title" content="Ojasio" />
-    <meta property="og:description" content="Ojasio - Premium global wellness and nutrition brand offering personalized, science-based lifestyle and diet plans." />
+    <title>Ojasio | Premium Nutrition & Diet Consultation by Disha Arora</title>
+    <meta name="description" content="Ojasio - Premium global wellness and nutrition brand offering personalized, science-based lifestyle and diet plans for weight loss, PCOS, diabetes and general wellness. Book your consultation today." />
+    <meta name="keywords" content="diet plan, weight loss diet, PCOS diet plan, diet plan for working professionals, healthy lifestyle, nutrition consultation, diabetes diet, blood pressure diet, wellness coaching" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ojasio | Premium Nutrition & Diet Consultation" />
+    <meta property="og:description" content="Book your 1-on-1 nutrition consultation with Disha Arora. Specializing in weight loss, PCOS, diabetes, and sustainable diet plans for busy professionals." />
     <meta property="og:type" content="website" />
-<!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DT0HZLX6HC"></script>
-    <script>
+    <meta property="og:url" content="https://www.ojasio.com" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600" />
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ojasio | Premium Nutrition & Diet Consultation" />
+    <meta name="twitter:description" content="Premium global wellness and nutrition brand offering personalized, science-based lifestyle and diet plans." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600" />
+
+    <!-- Schema Markup for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Ojasio",
+      "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600",
+      "@id": "https://www.ojasio.com",
+      "url": "https://www.ojasio.com",
+      "telephone": "+91-XXXXXXXXXX",
+      "description": "Premium nutrition and wellness consultations by certified nutritionist Disha Arora.",
+      "founder": {
+        "@type": "Person",
+        "name": "Disha Arora"
+      }
+    }
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-DT0HZLX6HC"></script>
+    <script defer>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-DT0HZLX6HC');
     </script>
-    <script type="text/javascript">
+    <script defer type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;

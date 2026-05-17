@@ -6,8 +6,8 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/layout/Layout';
+import { Home } from './pages/Home';
 
-const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
 const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
 const Disha = lazy(() => import('./pages/Disha').then(m => ({ default: m.Disha })));
 const Reviews = lazy(() => import('./pages/Reviews').then(m => ({ default: m.Reviews })));

@@ -18,68 +18,68 @@ export const Reviews: React.FC = () => {
 
   const testimonials = [
     {
-      name: "Kavya Nambiar",
+      name: "Kiran R.",
       age: 34,
-      profession: "Working Mother",
-      location: "Chicago, USA",
-      topic: "Weight Loss Transformation",
-      text: "I struggled with post-pregnancy weight and intense sugar cravings that made traditional dieting impossible with a full-time job. Disha designed a flexible plan incorporating my favorite Indian meals. I never felt starved. The portions were satisfying, and the cravings naturally faded. I've lost 12 kg and 4 inches around my waist in 5 months. I finally fit into my old clothes and have the energy to keep up with my toddler without crashing at 3 PM. My confidence is completely back."
+      profession: "Corporate Director",
+      location: "San Francisco, USA",
+      topic: "Executive Fat Loss & Stamina",
+      text: "Navigating high-stakes boardrooms and endless international flights left my metabolism wrecked. Traditional dieting felt like a punishment I couldn't sustain. Ojasio fundamentally re-engineered my fuel intake. They crafted an adaptive eating protocol that accommodated business dinners and volatile travel schedules. Within 16 weeks, my visceral fat plummeted, my chronic brain fog lifted, and I reclaimed a level of executive stamina I thought was permanently lost."
     },
     {
-      name: "Olivia Rossi",
-      age: 27,
-      profession: "Graduate Student",
-      location: "Barcelona, Spain",
-      topic: "PCOS Management",
-      text: "I was plagued by irregular cycles, acne, and stubborn weight gain from undiagnosed PCOS. Ojasio didn't just give me a diet; they educated me on how certain foods triggered my symptoms. The holistic plan was easy on my student budget and tight schedule. My cycle regulated within 3 months, my skin cleared up, and I safely lost 5 kg. I feel like I finally have control over my body again. The constant exhaustion is gone, and I feel vibrant and focused."
+      name: "Isabella Martinez",
+      age: 28,
+      profession: "Architect",
+      location: "Madrid, Spain",
+      topic: "Systemic PCOS Reboot",
+      text: "The clinical diagnosis of PCOS felt like a life sentence of hormonal chaos, uncontrollable acne, and creeping weight gain. Ojasio's intervention was nothing short of revolutionary. Through targeted nutritional chemistry and anti-inflammatory food sequencing, they stabilized my insulin naturally. My dermatological issues resolved entirely, my cycle normalized after years of irregularity, and I organically dropped 6 kg without tracking a single calorie."
     },
     {
-      name: "Amit Verma",
-      age: 52,
-      profession: "Corporate Executive",
-      location: "Mumbai, India",
-      topic: "Diabetes Control",
-      text: "Diagnosed with Type 2 diabetes, dealing with high stress, and having zero time for extensive workouts, I thought I had to give up all my comfort foods. The Ojasio team showed me how to balance my plates and manage my eating timings around my endless meetings. My HbA1c dropped from 8.2 to 6.1, and my medicine dosage has been halved. My doctor was amazed. I feel lighter, my brain fog has lifted, and I'm no longer anxious about my health's future."
-    },
-    {
-      name: "Michael Adebayo",
-      age: 45,
-      profession: "Entrepreneur",
+      name: "Anand Desai",
+      age: 48,
+      profession: "Finance Partner",
       location: "London, UK",
-      topic: "Blood Pressure Management",
-      text: "I had high blood pressure from chronic stress and poor eating habits on the go. The Ojasio plan was practical. It wasn't about eating kale salads every day; it was about smart choices I could make even in restaurants. My BP normalized to 120/80 consistently over 6 months, and I lost 8 kg of visceral fat. I sleep soundly now, and the constant midday fatigue has vanished. I truly feel revitalized and younger."
+      topic: "Advanced Glycemic Control",
+      text: "When my physician flagged my pre-diabetic trajectory, panic set in. I assumed my culturally rich culinary traditions were permanently off-limits. Ojasio's clinical team proved otherwise. By instituting strategic glycemic buffering and precise meal timing, they intercepted my rising HbA1c levels, bringing them comfortably back to baseline. The panic is gone, and my metabolic health is firmly back in my control, all while still enjoying the foods of my heritage."
     },
     {
-      name: "Isla Montgomery",
-      age: 31,
-      profession: "Graphic Designer",
-      location: "Sydney, Australia",
-      topic: "Lifestyle Improvement",
-      text: "I suffered from severe bloating, poor sleep, and a sedentary lifestyle leading to constant sluggishness. Ojasio focused on my gut health and daily routine. The small tweaks to my morning habits and hydration made a world of difference without needing a gym. My digestion issues are completely resolved, and my sleep quality is drastically better. I wake up feeling refreshed instead of hitting snooze, and have sustained energy to truly enjoy my weekends."
+      name: "David H.",
+      age: 39,
+      profession: "Tech Founder",
+      location: "Austin, USA",
+      topic: "Hypertension & Stress Management",
+      text: "Running a startup had pushed my cortisol and blood pressure into dangerous territory. I was perpetually exhausted yet unable to sleep deeply. The Ojasio framework functioned like a systemic reset. By introducing mineral-dense dietary adjustments and circadian-aligned eating windows, my blood pressure normalized within four months. I finally achieved deep restorative sleep and operate daily with unshakeable mental clarity."
     },
     {
-      name: "Sara & Fahad Qureshi",
-      age: 38,
-      profession: "Homemaker & Parent",
+      name: "Priya V.",
+      age: 32,
+      profession: "Marketing Lead",
+      location: "Toronto, Canada",
+      topic: "Gut Health Restoration",
+      text: "Severe gastrointestinal distress and perpetual bloating dictated my mood and wardrobe for years. No generic probiotic fixed it. Ojasio instituted a methodical elimination and reintroduction protocol tailored specifically to my microbiome. The constant inflammatory response halted. My digestion is flawlessly regulated, my skin is radiating, and the daily afternoon lethargy has been fully eradicated."
+    },
+    {
+      name: "The Sharma Family",
+      age: 37,
+      profession: "Working Parents",
       location: "Dubai, UAE",
-      topic: "Child Nutrition Management",
-      text: "Fahad was a picky eater, constantly falling sick, and lacked growth milestones. Dinner time used to be a battlefield. Disha guided me on how to present nutrient-dense foods creatively so he'd actually enjoy them. Our journey has been incredible. Fahad gained healthy weight, his immunity improved, and he now eats a variety of vegetables. As a mom, the relief of seeing my child thrive and eat happily without forcing him is immeasurable."
+      topic: "Pediatric Nutritional Excellence",
+      text: "Our young son's severe food aversions and stagnant growth curve were incredibly stressful. Disha provided an empathetic, scientifically sound pediatric strategy. She taught us how to neurologically associate nutrient-dense foods with positive experiences. The transformation was profound: his immune resilience spiked, his growth metrics normalized, and dinnertime evolved from a battleground into a peaceful, nourishing family ritual."
     },
     {
-      name: "Yuki Takahashi",
-      age: 24,
-      profession: "Software Engineer",
+      name: "Kenji M.",
+      age: 26,
+      profession: "Data Scientist",
       location: "Tokyo, Japan",
-      topic: "Weight Gain",
-      text: "I was underweight, had poor stamina, and struggled to build muscle despite eating a lot of junk food. I realized I wasn't eating the right calories. Ojasio created a high-protein, calorie-dense plan that didn't make me feel bloated or sluggish. I gained 7 kg of lean muscle mass in 4 months. I finally feel strong and confident in my clothes. My posture has improved, and I have the stamina to play sports after work."
+      topic: "Hypertrophic Lean Mass Gain",
+      text: "Despite consuming massive amounts of food, I remained chronically underweight and structurally weak. Ojasio diagnosed my malabsorption issues and engineered a high-biological-value protein and complex carbohydrate matrix. Over 5 months, I successfully accumulated 8 kg of solid, lean architectural muscle. My biomechanical strength is phenomenal, and my somatic confidence has fundamentally changed."
     },
     {
-      name: "Katarina Ivanov",
-      age: 29,
-      profession: "Yoga Instructor",
-      location: "Vancouver, Canada",
-      topic: "Fitness + Workout Guidance",
-      text: "I had hit a plateau in my fitness and felt completely depleted after teaching my classes. Even as a fitness professional, I needed guidance. The sports nutrition approach filled the gaps in my diet I had ignored for years. I saw a noticeable improvement in stamina and muscle recovery, and my body fat dropped by 4%. I feel incredibly resilient. The constant soreness is gone, and I have the fuel to give my 100% to my students."
+      name: "Elena K.",
+      age: 31,
+      profession: "Performance Coach",
+      location: "Melbourne, Australia",
+      topic: "Elite Sports Nutrition",
+      text: "As an athlete, my physical plateau was incredibly frustrating. My recovery times were extending, and my power output was dropping. The Ojasio team deployed a sophisticated sports nutrition protocol focusing on glycogen replenishment and mitochondrial support. The shift was immediate. My explosive power returned, delayed onset muscle soreness vanished, and I dropped my body fat percentage into elite metrics."
     }
   ];
 

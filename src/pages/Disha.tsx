@@ -24,21 +24,21 @@ export const Disha: React.FC = () => {
             </h1>
             
             <p className="text-3xl md:text-4xl lg:text-5xl font-display text-green-deep leading-[1.15] mb-10 border-l-2 border-gold pl-6">
-              "We don't just change your diet; we profoundly reconnect you to your body's natural state of vitality, health, and effortless well-being."
+              "We transcend generic diet interventions, deploying clinical precision to actively restore your inherent physiological dominance and metabolic vitality."
             </p>
 
             <div className="space-y-6 text-base md:text-lg font-sans text-green-deep/80 font-light leading-relaxed">
               <p>
-                Disha Arora’s journey in nutrition, diet management, and wellness is built on over a decade of continuous learning, hands-on experience, and a deep commitment to transforming lives through food and lifestyle.
+                Disha Arora’s expertise in therapeutic dietetics, metabolic correction, and clinical wellness is the culmination of more than a decade of intense professional practice and international academic engagement.
               </p>
               <p>
-                With a strong academic foundation in Food & Nutrition Management from Georgian College, Canada, she combines global education with practical, real-world application. Over the years, she has worked across diverse environments including clinics, corporate setups, diet centers, and customer-focused wellness platforms, allowing her to understand the unique health challenges faced by individuals from different backgrounds.
+                Holding distinguished credentials in Food & Nutrition Management from Canada’s renowned Georgian College, she actively bridges complex nutritional science with actionable, culturally sound dietary design. Her extensive tenure spans elite medical clinics, multi-national corporate health sectors, and sophisticated wellness initiatives, granting her unparalleled insight into complex endocrine and metabolic dysfunctions.
               </p>
               <p>
-                Her experience goes beyond theoretical knowledge. Disha has worked closely with clients dealing with weight management, diabetes, PCOS, and overall lifestyle disorders, helping them achieve sustainable and realistic results through personalised nutrition strategies.
+                She operates far beyond standardized protocols. Disha specializes in architecting highly individualized protocols for stubborn fat loss, intricate diabetes management, PCOS reversal, and profound lifestyle reorganization, ensuring remarkable clinical outcomes.
               </p>
               <p>
-                What sets Disha apart is her client-centric approach. She believes that every individual is different, and therefore every diet plan should be personalised, practical, and easy to follow. With a blend of international exposure, practical expertise, and a passion for holistic wellness, Disha Arora continues to help individuals take control of their health and build a better, healthier future.
+                The hallmark of her success lies in unyielding biochemical individualization. She meticulously rejects the "one-size-fits-all" paradigm, demanding that every protocol seamlessly fit the client's international lifestyle. With her fusion of functional modern medicine and an empathetic wellness vision, Disha continually architects lasting health transformations for high-performing professionals worldwide.
               </p>
             </div>
           </motion.div>
@@ -148,14 +148,14 @@ export const Disha: React.FC = () => {
           transition={{ duration: 0.7 }}
           className="bg-white rounded-3xl p-10 shadow-lg border border-beige"
         >
-          <h3 className="text-3xl font-display text-center text-green-deep mb-12">Why Trust Me?</h3>
+          <h3 className="text-3xl font-display text-center text-green-deep mb-12">Clinical Authority & Credentials</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: <GraduationCap size={40} />, title: "International Education", desc: "Georgian College, Canada" },
-              { icon: <Briefcase size={40} />, title: "10+ Years Experience", desc: "Clinics, MNCs & Wellness Establishments" },
-              { icon: <Users size={40} />, title: "Diverse Clients", desc: "Successfully managed clients globally" },
-              { icon: <Star size={40} />, title: "Personalised Approach", desc: "Data-driven, biologically tailored plans" }
+              { icon: <GraduationCap size={40} />, title: "Distinguished Academic Background", desc: "Georgian College, Canada" },
+              { icon: <Briefcase size={40} />, title: "Over a Decade of Practice", desc: "Elite Clinics & Corporate Health" },
+              { icon: <Users size={40} />, title: "Global Patient Portfolio", desc: "Transformational outcomes across continents" },
+              { icon: <Star size={40} />, title: "Precision-Driven Approach", desc: "Biochemically tailored therapeutic planning" }
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center text-center p-4">
                 <div className="text-gold mb-4">{item.icon}</div>

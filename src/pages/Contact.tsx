@@ -65,10 +65,10 @@ export const Contact: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl font-display text-green-deep mb-4"
           >
-            Start Your Transformation Today
+            Initiate Your Clinical Assessment
           </motion.h1>
            <p className="text-xl text-green-deep/70 font-light max-w-2xl mx-auto">
-             Fill out the form below for a customised wellness assessment, or connect directly on WhatsApp.
+             Secure your bespoke metabolic evaluation by completing the comprehensive intake dossier below, or engage our priority concierge team immediately via WhatsApp.
            </p>
         </div>
 

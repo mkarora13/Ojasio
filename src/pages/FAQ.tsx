@@ -2,93 +2,94 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, MessageCircle, ArrowRight, Phone, Mail, Instagram, Linkedin } from 'lucide-react';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
+import { SEO } from '../components/seo/SEO';
 
 const faqs = [
   {
-    question: "What is Ojasio?",
+    question: "What is the core philosophy of Ojasio?",
     answer: (
       <>
         <p className="mb-4">
-          Ojasio is a premium nutrition and wellness platform dedicated to holistic health and sustainable wellness. We provide highly personalized nutrition plans tailored to your unique biology and lifestyle. Our core expertise spans weight management, PCOS, diabetes management, and comprehensive lifestyle transformation. We believe in an expert-led, human approach, crafting strategies that aren't just diets, but foundational shifts toward your ultimate well-being.
+          Ojasio functions as an elite clinical nutrition consultancy devoted exclusively to biological optimization and sustainable health reconstruction. We engineer profoundly individualized dietary pathways rooted in metabolic science. Our primary disciplines include complex weight regulation, endocrine stabilization (such as PCOS), metabolic disorders, and elite wellness conditioning. We reject algorithmic template diets, instead deploying expert-led, biochemically customized interventions designed to serve as permanent systemic resets.
         </p>
         <div className="mt-6 mb-2 bg-[#1A2F2B]/5 p-6 rounded-2xl border border-[#1A2F2B]/10">
-          <p className="mb-3 text-[#1A2F2B] font-medium font-sans">In Sanskrit, <span className="font-display italic text-xl text-[#EAC881]">Ojas</span> represents the ultimate manifestation of:</p>
+          <p className="mb-3 text-[#1A2F2B] font-medium font-sans">Etymologically derived from Sanskrit, <span className="font-display italic text-xl text-[#EAC881]">Ojas</span> signifies the absolute peak of:</p>
           <ul className="pl-5 mb-4 space-y-2">
-            <li className="flex items-center gap-3"><span className="text-[#EAC881] text-lg">✦</span> <span className="font-serif">Vitality</span></li>
-            <li className="flex items-center gap-3"><span className="text-[#EAC881] text-lg">✦</span> <span className="font-serif">Life Energy</span></li>
-            <li className="flex items-center gap-3"><span className="text-[#EAC881] text-lg">✦</span> <span className="font-serif">Immunity</span></li>
-            <li className="flex items-center gap-3"><span className="text-[#EAC881] text-lg">✦</span> <span className="font-serif">Inner Glow</span></li>
+            <li className="flex items-center gap-3"><span className="text-[#EAC881] text-lg">✦</span> <span className="font-serif">Physiological Resilience</span></li>
+            <li className="flex items-center gap-3"><span className="text-[#EAC881] text-lg">✦</span> <span className="font-serif">Vibrant Energy</span></li>
+            <li className="flex items-center gap-3"><span className="text-[#EAC881] text-lg">✦</span> <span className="font-serif">Robust Immunity</span></li>
+            <li className="flex items-center gap-3"><span className="text-[#EAC881] text-lg">✦</span> <span className="font-serif">Cellular Luminosity</span></li>
           </ul>
           <p className="italic text-[#1A2F2B]/80 border-l-4 border-[#EAC881] pl-4 font-serif">
-            "It is considered the essence of health and well-being — the energy that sustains life."
+            "It is recognized as the ultimate biochemical reserve—the sovereign energy governing human longevity."
           </p>
         </div>
       </>
     )
   },
   {
-    question: "How to Contact Ojasio Customer Support?",
+    question: "How can I initiate a consultation with the clinical team?",
     answer: (
       <span>
-        We ensure you are always supported on your journey. You can reach our dedicated support team via our official email at <a href="mailto:hello@ojasio.com" className="font-semibold text-[#1A2F2B] hover:text-[#EAC881] transition-colors border-b border-[#EAC881]/30 hover:border-[#EAC881] pb-0.5">hello@ojasio.com</a> for detailed queries. For immediate assistance and seamless consultation booking, we recommend connecting with us directly through our fast-response WhatsApp support. Click the WhatsApp button on your screen to start a conversation with our premium care team today.
+        We guarantee uninterrupted support throughout your metabolic rehabilitation journey. Direct inquiries and detailed medical profiles can be directed to our clinical coordination team via <a href="mailto:hello@ojasio.com" className="font-semibold text-[#1A2F2B] hover:text-[#EAC881] transition-colors border-b border-[#EAC881]/30 hover:border-[#EAC881] pb-0.5">hello@ojasio.com</a>. For expedited onboarding and real-time scheduling concerns, we strongly advise engaging our concierge team directly via the WhatsApp portal located on your screen.
       </span>
     )
   },
   {
-    question: "What Services Does Ojasio Offer?",
-    answer: "Ojasio offers a comprehensive suite of high-end wellness services, meticulously designed for real results. Our offerings include personalized diet plans, targeted sustainable fat-loss and weight management nutrition, comprehensive PCOS management, and specialized diabetes nutrition support. We also provide hormonal balance guidance, intelligent meal planning for working professionals with busy schedules, and holistic wellness coaching to elevate every aspect of your daily lifestyle."
+    question: "What specific therapeutic domains does Ojasio cover?",
+    answer: "Ojasio engineers an extensive portfolio of clinical dietary interventions aimed at generating profound, measurable outcomes. Our specializations encompass sophisticated lipolysis (fat loss) protocols, comprehensive endocrine and PCOS reversal frameworks, precise glycemic control for diabetes, targeted lean hypertrophy (muscle gain), and executive-tier lifestyle conditioning optimized for high-performing professionals."
   },
   {
-    question: "Who is the Founder of Ojasio and Is the Founder Certified?",
-    answer: "Disha Arora is the visionary founder of Ojasio. As a certified Nutritionist, Nutrition Manager, and Active CSNM Member, her journey is marked by excellence. She began her career with VLCC and completed a prestigious internship at Sir Ganga Ram Hospital, New Delhi, later working with an MNC process related to Nestlé. Disha further pursued advanced studies at Georgian College, Canada in Food & Nutrition Management. Having assisted 1000+ clients globally, conducted 50+ wellness seminars, and impacted over 5000 lives, she specializes in weight management, PCOS, diabetes care, blood pressure management, and integrating workout with nutrition guidance. Her approach is realistic, professional, and science-backed."
+    question: "What are the clinical credentials of the founder?",
+    answer: "Disha Arora anchors Ojasio’s methodologies. Educated extensively in Food & Nutrition Management at Georgian College, Canada, she holds esteemed qualifications as a clinical Nutritionist, Nutrition Manager, and Active CSNM Member. Her robust medical background includes strategic tenures at Sir Ganga Ram Hospital (New Delhi) and specialized nutritional operations alongside global conglomerates. Having architected dietary transformations for thousands globally, her approach is impeccably researched, deeply analytical, and unapologetically results-driven."
   },
   {
-    question: "What Are the Benefits of Taking a Diet Plan from Ojasio?",
-    answer: "Partnering with Ojasio means choosing a personalized approach that respects your time and body. You benefit from highly practical meal planning—no starvation, no extreme or fad dieting. Our focus is purely on sustainable, long-term results that fit seamlessly into busy, modern lifestyles. We provide budget-friendly, nutrient-dense nutrition strategies designed specifically to support working professionals, ensuring that your journey to wellness is empowering, enjoyable, and enduring."
+    question: "Why should I choose an Ojasio biochemical protocol?",
+    answer: "Aligning with Ojasio ensures you abandon generalized, deprivation-based dieting in favor of scientific, tailored nourishment. We construct highly strategic dietary architectures that actively accommodate intense professional schedules. By prioritizing nutrient density and metabolic stability over sheer caloric restriction, we guarantee that your physical transformation is both fundamentally restorative and permanently sustainable."
   },
   {
-    question: "What Makes Ojasio Different from Other Nutrition Brands?",
-    answer: "Ojasio stands apart through a foundation of founder-led, personalized guidance backed by over 10 years of robust industry experience. We don't believe in generic templates. Having personally assisted 1000+ clients and impacted 5000+ lives with international education exposure, our brand merges high-end science with a profoundly human-centered wellness approach. Ojasio is not just a diet provider; we are a premium, trustworthy, and practical wellness partner dedicated to real-world transformation."
+    question: "How does Ojasio distinguish itself from commercial diet platforms?",
+    answer: "The critical distinction lies in our unwavering commitment to biochemical individuality and founder-directed clinical oversight. We vehemently reject automated, algorithmic meal delivery. Backed by over a decade of international practice, Ojasio intertwines robust medical nutrition therapy with empathetic behavioral coaching, positioning us as an elite clinical partner rather than a transient commercial diet vendor."
   },
   {
-    question: "Which diet plan is best for weight loss in India?",
-    answer: "The best weight loss plan in India is one that honors your cultural palate while intelligently managing your macros. We specialize in structuring traditional Indian meals—incorporating rich, regional ingredients—into a calorie-conscious, high-protein framework that drives sustainable fat loss without sacrificing the flavors you love."
+    question: "What is the optimal methodology for fat loss in India?",
+    answer: "The most potent weight reduction strategy in India is one that respects indigenous culinary traditions while optimizing macronutrient efficiency. We specialize in recalibrating traditional, culturally rich meals into highly functional, hyper-satiating nutritional blocks, driving systemic fat oxidation without forcefully alienating you from the heritage foods you enjoy."
   },
   {
-    question: "Can Ojasio help with PCOS weight management?",
-    answer: "Absolutely. We excel in PCOS weight management by focusing on hormonal balance, insulin sensitivity, and reducing systemic inflammation. Our tailored nutrition strategies tackle the root cause, making weight management an achievable, stress-free reality for women navigating PCOS."
+    question: "Is Ojasio equipped to manage severe PCOS symptoms?",
+    answer: "Unequivocally. Our clinical focus regarding PCOS centers heavily on neutralizing systemic inflammation and aggressively reversing insulin resistance through precise carbohydrate sequencing. Our bespoke nutritional therapeutics directly target the endocrine disruption at its root, facilitating natural symptom resolution and sustainable metabolic control."
   },
   {
-    question: "Are Ojasio diet plans suitable for working professionals?",
-    answer: "Yes, our plans are engineered specifically for the high-end working professional. We eliminate the prep-work stress by designing practical, easy-to-assemble meals that stabilize your energy levels throughout demanding corporate schedules and frequent travel."
+    question: "Are these protocols viable for intense executive schedules?",
+    answer: "Absolutely. Our dietary architectures are custom-built for high-velocity lifestyles. We engineer streamlined, minimally invasive meal strategies that bypass extensive culinary preparation, perfectly stabilizing cognitive focus and energy levels amidst back-to-back corporate engagements and frequent global transit."
   },
   {
-    question: "Does Ojasio provide vegetarian and non-vegetarian meal plans?",
-    answer: "We cater to all dietary preferences. Whether you adhere to a strict vegetarian, vegan, or non-vegetarian lifestyle, your customized meal plan is crafted to ensure optimal protein intake and nutrient density matching your personal choices."
+    question: "Do you accommodate specialized or restrictive dietary choices?",
+    answer: "We seamlessly navigate all nutritional orientations. Whether you require a strictly plant-based (vegan/vegetarian) framework, or follow heavily carnivorous or pescatarian patterns, your protocol is mathematically calculated to ensure peak amino acid profiles and essential micronutrient saturation."
   },
   {
-    question: "Can I follow Ojasio plans while traveling?",
-    answer: "Yes. We equip you with practical navigation strategies for hotel buffets, restaurant menus, and airport lounges, ensuring your wellness journey seamlessly integrates with your frequent travel schedule without compromising your goals."
+    question: "How do I maintain compliance during heavy international travel?",
+    answer: "We proactively shield your progress against travel disruptions. Your protocol includes highly pragmatic tactical guides for navigating airport logistics, hotel dining, and executive restaurant scenarios, perfectly bridging the gap between clinical rigidity and real-world mobility."
   },
   {
-    question: "Does Ojasio offer online consultations across India?",
-    answer: "We offer seamless, premium online wellness consultations not only across Delhi NCR and India but globally. Our digital infrastructure ensures you receive personalized, high-touch support no matter where you are located."
+    question: "Are your consultations exclusively geographically restricted?",
+    answer: "Not at all. Ojasio operates via a highly secure, frictionless digital infrastructure, delivering our premium, high-touch clinical consultations seamlessly to clients worldwide. Your geographical location will not impede your access to elite nutritional engineering."
   },
   {
-    question: "Are Ojasio diet plans affordable?",
-    answer: "Premium wellness should be accessible. Our customized plans ensure that you utilize practical, everyday ingredients that don't demand a premium grocery bill, making the Ojasio experience both luxurious in its care and highly budget-friendly in its execution."
+    question: "What is the financial accessibility of an Ojasio program?",
+    answer: "We believe clinical excellence shouldn't necessitate financial exhaustion. While our therapeutic strategy is undeniably premium, the execution relies intentionally on highly accessible, locally sourced ingredients. You invest in elite guidance, not an exorbitant grocery markup."
   },
   {
-    question: "How long does healthy weight loss take?",
-    answer: "Sustainable weight loss is a journey, not a sprint. While individual results vary, a healthy, scientifically sound rate of fat loss is generally 2 to 4 kilograms per month. Our focus is entirely on permanent lifestyle shifts rather than temporary, rapid fluctuations."
+    question: "What timeline should I anticipate for optimal body reconfiguration?",
+    answer: "True physiological remodeling is a methodical progression. While immediate metabolic improvements often manifest rapidly, we target a clinical fat-reduction rate of 2 to 4 kilograms monthly to protect muscle mass and endocrine health, ensuring the transformation is entirely permanent."
   },
   {
-    question: "Can Ojasio help with diabetes management?",
-    answer: "Yes. Our expert-led approach incorporates intelligent carbohydrate scaling and fiber-rich meal structures specifically designed to stabilize blood sugar, manage insulin spikes, and comprehensively support individuals with diabetes."
+    question: "Can your team actively manage complex glycemic issues like diabetes?",
+    answer: "Yes. We deploy rigorous, advanced carbohydrate modulation therapies tailored to blunt insulin volatility. Our high-fiber, strategically timed dietary interventions rapidly stabilize blood glucose parameters, frequently requiring physician coordination to manage reduced medication dependency."
   },
   {
-    question: "Do I need to go to gym while following Ojasio plans?",
-    answer: "While movement is celebrated for metabolic health, a gym membership is not mandatory. We seamlessly integrate simple home workouts, brisk walking strategies, and movement therapies that complement your nutrition plan and fit effortlessly into your existing lifestyle."
+    question: "Is aggressive physical training mandatory for your protocols?",
+    answer: "While we advocate for functional movement to elevate metabolic rates, intensive gym training is absolutely not a prerequisite for lipolysis. We engineer the nutritional protocol to drive primary fat loss, while integrating highly scalable, lifestyle-appropriate physical activity that suits your current capacity."
   }
 ];
 
@@ -135,6 +136,23 @@ export const FAQ = () => {
 
   return (
     <main className="bg-[#FAF9F6] min-h-screen pt-32 pb-24 font-sans selection:bg-[#EAC881]/30 text-[#1A2F2B]">
+      <SEO 
+        title="FAQ - Ojasio Nutrition Consultations"
+        description="Frequently asked questions about Ojasio's premium nutrition consultations, weight loss strategies, and holistic wellness plans."
+        url="https://www.ojasio.com/faq"
+        jsonLdSchema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": typeof faq.answer === 'string' ? faq.answer : faq.question // basic fallback for ReactNode
+            }
+          }))
+        }}
+      />
       {/* Premium Hero Section */}
       <section className="relative px-4 sm:px-6 lg:px-10 max-w-5xl mx-auto text-center mb-24">
         <motion.div

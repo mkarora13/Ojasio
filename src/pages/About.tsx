@@ -8,20 +8,20 @@ export const About: React.FC = () => {
   const navigate = useNavigate();
 
   const differentiators = [
-    "Personalisation at the core — no generic diet charts",
-    "Science-backed strategies combined with holistic principles",
-    "Designed for real lifestyles, not unrealistic routines",
-    "Focus on long-term transformation, not short-term results",
-    "Global approach with culturally adaptable nutrition plans"
+    "Biochemical Individuality — No standardized templates",
+    "Evidence-based clinical protocols fused with functional nutrition",
+    "Adaptable architectural meal planning for executive lifestyles",
+    "Focus on metabolic rehabilitation, not temporary restriction",
+    "Culturally inclusive regimens for an international clientele"
   ];
 
   const values = [
-    { title: "Personalisation Over Perfection", desc: "Every individual is unique, and so is every plan we create.", icon: <Target className="w-6 h-6" /> },
-    { title: "Sustainability Over Shortcuts", desc: "We focus on habits that last a lifetime, not quick results that fade.", icon: <Leaf className="w-6 h-6" /> },
-    { title: "Science Meets Holistic Wisdom", desc: "We combine modern research with time-tested wellness principles.", icon: <Diamond className="w-6 h-6" /> },
-    { title: "Simplicity & Practicality", desc: "Nutrition should fit your life — not complicate it.", icon: <CheckCircle className="w-6 h-6" /> },
-    { title: "Integrity & Trust", desc: "We prioritise honesty, transparency, and real results.", icon: <ShieldCheck className="w-6 h-6" /> },
-    { title: "Client-Centric Approach", desc: "Your goals, your lifestyle, your journey — everything revolves around you.", icon: <Heart className="w-6 h-6" /> }
+    { title: "Metabolic Precision", desc: "Your biochemical makeup dictates our specialized strategy.", icon: <Target className="w-6 h-6" /> },
+    { title: "Longevity Over Fads", desc: "We engineer habits designed to permanently optimize physiological function.", icon: <Leaf className="w-6 h-6" /> },
+    { title: "Clinical Integrity", desc: "Every protocol is underwritten by peer-reviewed nutritional science.", icon: <Diamond className="w-6 h-6" /> },
+    { title: "Executive Practicality", desc: "Advanced nutrition crafted flawlessly for demanding international schedules.", icon: <CheckCircle className="w-6 h-6" /> },
+    { title: "Empathetic Guidance", desc: "Unwavering support prioritizing your mental and physical equilibrium.", icon: <ShieldCheck className="w-6 h-6" /> },
+    { title: "Holistic Synergy", desc: "Harmonizing gut health, endocrine stability, and immune resilience.", icon: <Heart className="w-6 h-6" /> }
   ];
 
   return (
@@ -54,13 +54,13 @@ export const About: React.FC = () => {
         >
           <div className="space-y-8 text-lg md:text-xl text-green-deep/80 font-light leading-relaxed">
             <p>
-              In a world filled with quick fixes, restrictive diets, and overwhelming information, Ojasio stands for clarity, simplicity, and results that last. We believe that true health is not achieved through extremes, but through a personalised and sustainable approach that respects your body, your lifestyle, and your individuality.
+              In a digital landscape saturated with superficial quick fixes and severely restrictive fad diets, Ojasio emerges as a vanguard for clinical, evidence-based nutritional rehabilitation. We fundamentally reject the notion of physiological extremes. Instead, our methodology is anchored in a highly individualized, sustainable architecture that meticulously honors your unique metabolic profile and executive lifestyle.
             </p>
             <p>
-              At Ojasio, we combine the precision of modern nutritional science with the wisdom of holistic wellness to create plans that are not only effective, but also practical and enjoyable. Every recommendation is thoughtfully designed to fit seamlessly into your daily life, ensuring that transformation is not temporary — but a lasting change.
+              At Ojasio, we brilliantly synthesize cutting-edge nutritional biochemistry with profound holistic therapeutics. Our precise dietary blueprints are designed explicitly to dismantle metabolic blockages without sacrificing the joy of gastronomy. Every protocol we draft is highly practical, ensuring that robust physical transformation seamlessly integrates into your demanding routine rather than disrupting it.
             </p>
             <p>
-              We work with individuals across the globe, helping them take control of their health through structured guidance, continuous support, and deeply personalised strategies. Whether your goal is weight management, hormonal balance, disease control, or overall well-being, Ojasio is built to guide you every step of the way.
+              Operating globally, we empower a discerning clientele to seize absolute control of their vitality. Whether your objective involves overcoming profound insulin resistance, navigating complex hormonal imbalances such as PCOS, or orchestrating a seamless clinical weight management journey, Ojasio delivers an unparalleled caliber of consultative excellence.
             </p>
           </div>
         </motion.div>
@@ -125,7 +125,7 @@ export const About: React.FC = () => {
                   Precision Nutrition for Lifelong Vitality
                 </h4>
                 <p className="text-lg md:text-xl font-light text-green-deep/80 text-justify leading-relaxed font-serif pt-2 tracking-wide">
-                  At Ojasio, our mission is to profoundly transform lives through science-backed, deeply personalized nutrition protocols. We empower discerning individuals to effortlessly achieve sustainable weight loss, naturally manage PCOS and lifestyle disorders, and take absolute control of their well-being. By bridging elite functional medicine with real-world accessibility, we ensure lasting health without compromising on the joy of eating.
+                  At Ojasio, our core directive is the profound restoration of human vitality via scientifically rigorous, meticulously tailored nutritional engineering. We equip ambitious individuals to effortlessly conquer systemic weight challenges, actively reverse lifestyle-driven endocrine disorders like PCOS, and establish unshakeable physiological resilience. By dissolving the barriers between advanced clinical nutrition and real-world culinary enjoyment, we guarantee enduring health transformations.
                 </p>
               </motion.div>
               
