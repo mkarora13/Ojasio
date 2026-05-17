@@ -589,8 +589,8 @@ const BLOG_POSTS = [
     category: "Metabolic Health",
     readTime: "8 Min Read",
     author: "DISHA ARORA | NUTRITIONIST | NUTRITION MANAGER | ACTIVE CSNM MEMBER",
-    image: "https://images.pexels.com/photos/37620949/pexels-photo-37620949.png?auto=compress&cs=tinysrgb&w=800",
-    coverImage: "https://images.pexels.com/photos/37621164/pexels-photo-37621164.png?auto=compress&cs=tinysrgb&w=2000",
+    image: "https://images.pexels.com/photos/8155155/pexels-photo-8155155.jpeg?auto=compress&cs=tinysrgb&w=800",
+    coverImage: "https://images.pexels.com/photos/8155155/pexels-photo-8155155.jpeg?auto=compress&cs=tinysrgb&w=2000",
     excerpt: "Discover daily habits and foods that may help support healthy blood sugar and blood pressure levels. Learn how natural nutrition and proper wellness habits can contribute to your metabolic health.",
     content: (
       <>
