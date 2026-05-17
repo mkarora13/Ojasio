@@ -578,7 +578,12 @@ export const DietPlanModal = ({ countryCode, onClose }: { countryCode: string, o
   );
 };
 
+import { article1 } from '../data/blogs/indian-diet-plan-pcos';
+import { article2 } from '../data/blogs/lose-weight-without-starving';
+
 const BLOG_POSTS = [
+  article1,
+  article2,
   {
     id: "diabetes-blood-pressure-management",
     featured: true,
