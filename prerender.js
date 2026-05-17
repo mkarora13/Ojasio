@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const distPath = path.resolve('dist');
+const distPath = path.resolve('dist/client');
 
 const today = new Date().toISOString().split('T')[0];
 
@@ -138,13 +138,28 @@ BLOG_ARTICLES.forEach(article => {
 
 const indexTemplate = fs.existsSync(path.join(distPath, 'index.html')) ? fs.readFileSync(path.join(distPath, 'index.html'), 'utf-8') : '';
 
-if (indexTemplate) {
-  routes.forEach(route => {
+async function run() {
+  if (!indexTemplate) {
+    console.error('index.html not found!');
+    return;
+  }
+
+  // Import SSR Render function
+  const serverSsr = await import('./dist/server/entry-server.js');
+  console.log("serverSsr exports:", Object.keys(serverSsr));
+  const { render } = serverSsr;
+
+  for (const route of routes) {
     // Determine target directory
     const dirPath = route.path === '/' ? distPath : path.join(distPath, route.path);
     if (!fs.existsSync(dirPath)) {
       fs.mkdirSync(dirPath, { recursive: true });
     }
+
+    try {
+      // SSR render
+      const { html: appHtml } = render(route.path);
+
 
     // Build the injected HTML tags
     const canonical = `https://ojasio.com${route.path === '/' ? '' : route.path}`;
@@ -175,17 +190,20 @@ if (indexTemplate) {
       ${route.faqSchema ? `<script type="application/ld+json">${JSON.stringify(route.faqSchema)}</script>` : ''}
     `;
 
-    const noscriptTag = `\n<noscript>${route.noscript}</noscript>\n`;
-
-    // Inject into index template
-    let html = indexTemplate;
-    
     // Remove existing title if any, then inject
-    html = html.replace(/<title>.*?<\/title>/, '');
-    html = html.replace('</head>', `${headTags}</head>`);
-    html = html.replace('<div id="root"></div>', `<div id="root"></div>${noscriptTag}`);
+    let finalHtml = indexTemplate;
+    finalHtml = finalHtml.replace(/<title>.*?<\/title>/, '');
+    finalHtml = finalHtml.replace('</head>', `${headTags}</head>`);
+    
+    // Inject the fully rendered app
+    finalHtml = finalHtml.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
 
-    fs.writeFileSync(path.join(dirPath, 'index.html'), html);
+    fs.writeFileSync(path.join(dirPath, 'index.html'), finalHtml);
     console.log(`Prerendered: ${route.path}`);
-  });
+    } catch (e) {
+      console.error(`Failed to prerender ${route.path}`, e);
+    }
+  }
 }
+
+run();

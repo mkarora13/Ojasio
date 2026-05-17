@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
 
-export default defineConfig(({mode}) => {
+export default defineConfig(({mode, isSsrBuild}) => {
   const env = loadEnv(mode, '.', '');
   return {
     plugins: [react(), tailwindcss()],
@@ -15,11 +15,14 @@ export default defineConfig(({mode}) => {
         '@': path.resolve(__dirname, '.'),
       },
     },
+    ssr: {
+      noExternal: ['motion', 'motion/react', 'lucide-react', 'react-router-dom', 'react-router']
+    },
     build: {
       minify: 'esbuild',
       cssMinify: true,
       rollupOptions: {
-        output: {
+        output: isSsrBuild ? {} : {
           manualChunks: {
             'react-vendor': ['react', 'react-dom', 'react-router-dom'],
             'motion': ['motion/react'],
