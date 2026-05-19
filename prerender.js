@@ -58,6 +58,32 @@ const routes = [
     noscript: "<h1>About Disha Arora and Ojasio</h1><p>Learn about our deeply rooted philosophy in holistic healing through customized, unrestrictive dietary plans.</p>"
   },
   {
+    path: '/founder',
+    title: 'Founder Disha Arora | Ojasio Premium Nutrition',
+    description: 'Meet Disha Arora, Certified Nutrition Manager and founder of Ojasio. Specializing in clinical nutrition, PCOS, and metabolic repair.',
+    schema: {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Disha Arora",
+        "jobTitle": "Certified Nutrition Manager"
+    },
+    noscript: "<h1>Meet Disha Arora</h1><p>Disha Arora is the founder of Ojasio.</p>"
+  },
+  {
+    path: '/reviews',
+    title: 'Client Reviews & Success Stories | Ojasio',
+    description: 'Read real success stories and reviews from Ojasio clients worldwide who have reversed PCOS, lost weight, and regained their health.',
+    schema: {},
+    noscript: "<h1>Client Reviews</h1><p>Real success stories from our global clients.</p>"
+  },
+  {
+    path: '/faq',
+    title: 'Frequently Asked Questions | Ojasio Nutrition',
+    description: 'Find answers to common questions about Ojasio\'s premium nutrition programs, booking process, and how we help you achieve your health goals.',
+    schema: {},
+    noscript: "<h1>Frequently Asked Questions</h1><p>Answers to common questions about Ojasio.</p>"
+  },
+  {
     path: '/services',
     title: 'Nutrition Programs & Diet Plans | Ojasio',
     description: 'Explore Ojasio\'s premium programs including PCOS Diet Plans, Weight Loss Programs, and Metabolic Health Consultation.',
