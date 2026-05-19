@@ -12,10 +12,7 @@ const BLOG_ARTICLES = [
   { slug: 'best-foods-for-hormonal-balance', title: 'Best Foods for Hormonal Balance', desc: 'Discover the top foods to restore hormonal equity and boost wellness.' },
   { slug: 'lifestyle-guide-busy-professionals', title: 'Complete Lifestyle Guide for Busy Professionals', desc: 'Nutrition and productivity tips for people on the go.' },
   { slug: 'best-indian-breakfast-weight-loss', title: 'Best Indian Breakfast for Weight Loss: High-Protein & Quick', desc: 'Traditional and modern Indian breakfast recipes.' },
-  { slug: 'best-diet-plan-working-women', title: 'Best Diet Plan for Working Women', desc: 'Optimized nutrition strategy designed for the modern working woman.' },
-  { slug: 'vegetarian-weight-loss-diet-plan', title: 'Vegetarian Weight Loss Diet Plan', desc: 'A complete plant-based protocol for fat loss.' },
-  { slug: 'understanding-insulin-resistance', title: 'Understanding Insulin Resistance', desc: 'Everything you need to know about insulin and metabolic health.' },
-  { slug: 'pcos-weight-loss-success-story', title: 'PCOS Weight Loss Success Story', desc: 'Real-world results and step-by-step strategies.' }
+  { slug: 'best-diet-plan-for-working-women-in-india', title: 'Best Diet Plan for Working Women', desc: 'Optimized nutrition strategy designed for the modern working woman.' }
 ];
 
 const routes = [
