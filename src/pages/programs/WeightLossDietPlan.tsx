@@ -71,12 +71,11 @@ export const WeightLossDietPlan: React.FC = () => {
           <div className="bg-[#EAC881]/10 p-8 md:p-10 rounded-2xl border border-[#EAC881]/30 mb-16 not-prose">
             <h3 className="font-display text-2xl text-[#1A2F2B] mb-4">Quick Expert Answer</h3>
             <p className="text-[#1A2F2B]/80 font-light leading-relaxed text-lg mb-0 text-justify">
-              "Sustainable weight loss is not a math equation of calories in versus calories out—it is a hormonal equation. When you severely restrict calories, your body panics, spikes cortisol, and aggressively holds onto fat while burning muscle. To permanently lose weight, you must focus on blood sugar stabilization. Eat adequate protein to preserve muscle mass, incorporate healthy fats to signal safety to your brain, and prioritize fiber to feed your microbiome." <br/><br/>
-              <span className="font-medium text-[#1A2F2B]">— Disha Arora, Certified Nutrition Manager at Ojasio</span>
+              "Sustainable weight loss is not a math equation of calories in versus calories out—it is a hormonal equation. When you severely restrict calories, your body panics, spikes cortisol, and aggressively holds onto fat while burning muscle. To permanently lose weight, you must focus on blood sugar stabilization. Eat adequate protein to preserve muscle mass, incorporate healthy fats to signal safety to your brain, and prioritize fiber to feed your microbiome."
             </p>
           </div>
 
-          <h2>The Truth About Weight Loss for Women Over 25</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">The Truth About Weight Loss for Women Over 25</h2>
           <p>
             You have likely read every magazine article, downloaded every fitness app, and tried fasting until noon. Perhaps you lost 5 kilos, only to gain back 7 when you inevitably resumed a normal lifestyle. 
           </p>
@@ -87,7 +86,7 @@ export const WeightLossDietPlan: React.FC = () => {
             For working women navigating their late 20s, 30s, and 40s, weight loss is deeply intertwined with metabolic age, stress (cortisol), and hormonal shifts. The modern lifestyle—sitting for 10 hours a day, eating refined foods at odd hours, and chronic sleep deprivation—fundamentally alters how your body processes energy. 
           </p>
 
-          <h2>Core Principles of Clinical Fat Loss</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Core Principles of Clinical Fat Loss</h2>
           <p>
             At Ojasio, our weight loss philosophy is rooted in metabolic restoration. Before you can lose weight, you have to heal the systems that govern fat storage. 
           </p>
@@ -110,7 +109,7 @@ export const WeightLossDietPlan: React.FC = () => {
             </div>
           </div>
 
-          <h2>The Indian and NRI Weight Loss Strategy</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">The Indian and NRI Weight Loss Strategy</h2>
           <p>
             A major hurdle for Indian women living locally or abroad (in the UK, Canada, UAE, or USA) is adapting a traditional Indian palate to modern metabolic science. You do not need to abandon your heritage to be healthy. The Indian diet is fundamentally nutritious; it simply requires architectural restructuring. 
           </p>
@@ -136,7 +135,7 @@ export const WeightLossDietPlan: React.FC = () => {
             </p>
           </div>
 
-          <h2>Your 7-Day Fat Loss Blueprint</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Your 7-Day Fat Loss Blueprint</h2>
           <p>
             This plan is designed not as a prescription, but as an educational template to show you how a clinical weight loss week looks when structured correctly. 
           </p>
@@ -198,11 +197,20 @@ export const WeightLossDietPlan: React.FC = () => {
             </table>
           </div>
 
-          <h2>Success Story: Escaping the Diet Trap</h2>
-          <p className="border-l-4 border-[#EAC881] pl-6 italic text-[#1A2F2B]/80 font-serif text-xl my-10 bg-white p-8 rounded-tr-2xl rounded-br-2xl shadow-sm border-t border-b border-r">
-            "I had tried every diet under the sun—keto, intermittent fasting, juice cleanses. I would always lose a few kilos, only to rebound spectacularly a month later. It completely destroyed my relationship with food. Working with Disha and the Ojasio team completely changed my paradigm. They didn't put me on a diet; they rebuilt my metabolism. By eating more protein and actually incorporating carbs back into my meals strategically, my energy levels soared. I lost 14 kilos over 6 months, and for the first time in ten years, I know exactly what to do to keep it off. It feels like absolute freedom." <br/><br/>
-            <span className="font-sans font-semibold text-lg text-[#1A2F2B]">— Ananya (London, UK)</span>
-          </p>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-24 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Success Story: Escaping the Diet Trap</h2>
+          <div className="bg-white p-10 md:p-14 rounded-[2.5rem] shadow-sm border border-[#1A2F2B]/5 relative my-16 overflow-hidden not-prose">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#EAC881]/10 rounded-bl-full"></div>
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-16 h-16 rounded-full bg-[#1A2F2B] flex items-center justify-center text-[#EAC881] font-display text-2xl font-bold">A</div>
+              <div>
+                <h4 className="font-display text-2xl text-[#1A2F2B] m-0">Ananya, 34</h4>
+                <p className="text-[#1A2F2B]/60 font-medium text-sm tracking-wider uppercase m-0 mt-1">London, UK • Lost 14kg in 6 months</p>
+              </div>
+            </div>
+            <p className="text-[#1A2F2B]/80 font-serif text-2xl leading-relaxed italic relative z-10 m-0">
+              "I had tried every diet under the sun—keto, intermittent fasting, juice cleanses. I would always lose a few kilos, only to rebound spectacularly a month later. It completely destroyed my relationship with food. Working with the Ojasio team completely changed my paradigm. They didn't put me on a diet; they rebuilt my metabolism. By eating more protein and actually incorporating carbs back into my meals strategically, my energy levels soared. I lost 14 kilos over 6 months, and for the first time in ten years, I know exactly what to do to keep it off. It feels like absolute freedom."
+            </p>
+          </div>
 
           <div className="not-prose my-16">
             <h3 className="font-display text-3xl text-center mb-10 text-[#1A2F2B]">More Success Stories</h3>
@@ -210,39 +218,38 @@ export const WeightLossDietPlan: React.FC = () => {
           </div>
 
           <div className="mt-24 pt-16 border-t border-[#1A2F2B]/10 not-prose">
-            <div className="flex items-center gap-4 mb-10">
-              <div className="h-px bg-[#EAC881] flex-1"></div>
-              <h2 className="text-3xl font-display font-normal text-[#1A2F2B] m-0 text-center uppercase tracking-widest bg-[#EAC881]/10 py-3 px-8 rounded-full border border-[#EAC881]/30 shadow-sm">Frequently Asked Questions</h2>
-              <div className="h-px bg-[#EAC881] flex-1"></div>
+            <div className="text-center mb-16">
+              <span className="text-[#EAC881] font-bold tracking-widest uppercase text-sm mb-4 block">Knowledge Base</span>
+              <h2 className="text-4xl lg:text-5xl font-display text-[#1A2F2B]">Frequently Asked Questions</h2>
             </div>
             
-            <div className="space-y-6">
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+            <div className="space-y-8 max-w-4xl mx-auto">
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   How fast is it safe to lose weight?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>A clinically safe and sustainable rate of fat loss is between 0.5 to 1 kilogram per week. Rapid weight loss (e.g., 5 kilos in a week) is almost entirely water and muscle depletion, which damages your metabolism and guarantees rapid regain.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   Can I drink alcohol on a weight loss diet?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>Yes, but with caveats. Your body treats alcohol as a toxin. When you drink, your liver stops metabolizing fat to process the alcohol. If you choose to drink, stick to clear spirits with soda (no sugary mixers like tonic or juice) and limit it to 1-2 drinks a week, ensuring you stay highly hydrated.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   Do I need to do heavy cardio to lose weight?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>Actually, extreme, high-intensity cardio every day can sometimes stall weight loss by driving cortisol too high. The most effective protocol for fat loss is a combination of a high-protein diet, strength-training (to build muscle), and low-intensity steady-state movement (like walking 8,000-10,000 steps daily) to oxidize fat without spiking stress.</p>
                 </div>
               </div>
@@ -257,8 +264,8 @@ export const WeightLossDietPlan: React.FC = () => {
              <p className="font-serif text-lg md:text-xl font-light text-white/90 leading-relaxed mb-10 relative z-10 max-w-3xl mx-auto">
                 Ready for a roadmap built specifically for your metabolism, your lifestyle, and your goals? 
              </p>
-             <a href="https://www.ojasio.com" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center justify-center bg-[#EAC881] text-[#1A2F2B] px-8 py-5 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(234,200,129,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.3)]">
-               Book your free 15-minute discovery call
+             <a href="https://calendly.com/ojasiocare" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center justify-center bg-[#EAC881] text-[#1A2F2B] px-8 py-5 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(234,200,129,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.3)]">
+               BOOK YOUR FREE 20 MINUTE DISCOVERY CALL
              </a>
           </div>
 

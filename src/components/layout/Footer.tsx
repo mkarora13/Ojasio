@@ -1,7 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Instagram, Linkedin, Mail, X } from 'lucide-react';
-import QRCode from 'react-qr-code';
+import QRCodeModule from 'react-qr-code';
+const QRCode = (QRCodeModule as any).default || QRCodeModule;
+
 import { motion, AnimatePresence } from 'motion/react';
 
 export const Footer: React.FC = () => {

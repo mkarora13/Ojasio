@@ -71,12 +71,11 @@ export const HormonalImbalanceDiet: React.FC = () => {
           <div className="bg-[#EAC881]/10 p-8 md:p-10 rounded-2xl border border-[#EAC881]/30 mb-16 not-prose">
             <h3 className="font-display text-2xl text-[#1A2F2B] mb-4">Quick Expert Answer</h3>
             <p className="text-[#1A2F2B]/80 font-light leading-relaxed text-lg mb-0 text-justify">
-              "Your hormones are not random actors; they are messengers heavily influenced by what you eat and how you live. The symptoms you experience—whether it's crippling PMS, unexplained weight gain, or midnight anxiety—are simply your body frantically communicating that the chemical environment is flawed. The fastest way to restore hormonal balance is not through obscure supplements, but by systematically reducing inflammation, stabilizing blood sugar, and ensuring your liver and gut can properly excrete used hormones." <br/><br/>
-              <span className="font-medium text-[#1A2F2B]">— Disha Arora, Certified Nutrition Manager at Ojasio</span>
+              "Your hormones are not random actors; they are messengers heavily influenced by what you eat and how you live. The symptoms you experience—whether it's crippling PMS, unexplained weight gain, or midnight anxiety—are simply your body frantically communicating that the chemical environment is flawed. The fastest way to restore hormonal balance is not through obscure supplements, but by systematically reducing inflammation, stabilizing blood sugar, and ensuring your liver and gut can properly excrete used hormones."
             </p>
           </div>
 
-          <h2>The Silent Epidemic of Hormonal Chaos</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">The Silent Epidemic of Hormonal Chaos</h2>
           <p>
             Whether you are a corporate executive in New York or a busy mother in Mumbai, you have likely normalized feeling less than optimal. You drink three coffees to power through the morning, experience intense sugar cravings by 4 PM, suffer from painful periods, and toss and turn all night. 
           </p>
@@ -84,7 +83,7 @@ export const HormonalImbalanceDiet: React.FC = () => {
             Mainstream medicine often labels these symptoms as "normal" parts of aging or simply prescribes synthetic hormones (like the birth control pill) to mask the discomfort. But the underlying issue—a foundational hormonal imbalance—remains untreated. 
           </p>
 
-          <h2>Understanding the Big Three Disruptions</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Understanding the Big Three Disruptions</h2>
           <p>
             Hormonal imbalance rarely occurs in isolation. It is usually a domino effect involving three major systems:
           </p>
@@ -107,7 +106,7 @@ export const HormonalImbalanceDiet: React.FC = () => {
             </div>
           </div>
 
-          <h2>The Liver-Gut Connection to Hormonal Balance</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">The Liver-Gut Connection to Hormonal Balance</h2>
           <p>
             Many people do not realize that hormones are not just produced; they must also be excreted. Once estrogen has done its job in your body, it travels to the liver. The liver packages up the used estrogen and sends it to the gut, where it binds to fiber and leaves the body through a bowel movement. 
           </p>
@@ -115,7 +114,7 @@ export const HormonalImbalanceDiet: React.FC = () => {
             If your liver is sluggish (from a diet high in processed foods or alcohol) or if you are constipated (from a lack of fiber), that packaged estrogen cannot escape. Instead, it gets reabsorbed into the bloodstream, circulating again and causing systemic estrogen dominance. 
           </p>
 
-          <h2>The Hormonal Imbalance Diet: What to Eat</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">The Hormonal Imbalance Diet: What to Eat</h2>
           <p>
             Healing a hormonal imbalance requires feeding your liver and stabilizing your adrenals. Focus on incorporating these super-frames into your day:
           </p>
@@ -145,7 +144,7 @@ export const HormonalImbalanceDiet: React.FC = () => {
             </p>
           </div>
 
-          <h2>Seed Cycling: A Gentle Hormonal Support Protocol</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Seed Cycling: A Gentle Hormonal Support Protocol</h2>
           <p>
             Seed cycling is a naturopathic protocol that uses specific seeds to support the two main phases of the menstrual cycle. It provides the specific fatty acids and nutrients required to boost estrogen in the first half and progesterone in the second half.
           </p>
@@ -160,7 +159,7 @@ export const HormonalImbalanceDiet: React.FC = () => {
             </li>
           </ul>
 
-          <h2>7-Day Hormone Resect Meal Plan (Global Edition)</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">7-Day Hormone Resect Meal Plan (Global Edition)</h2>
           <p>
             This plan is engineered to support your adrenals, detoxify estrogen, and keep your blood sugar perfectly flat.
           </p>
@@ -228,39 +227,38 @@ export const HormonalImbalanceDiet: React.FC = () => {
           </div>
 
           <div className="mt-24 pt-16 border-t border-[#1A2F2B]/10 not-prose">
-            <div className="flex items-center gap-4 mb-10">
-              <div className="h-px bg-[#EAC881] flex-1"></div>
-              <h2 className="text-3xl font-display font-normal text-[#1A2F2B] m-0 text-center uppercase tracking-widest bg-[#EAC881]/10 py-3 px-8 rounded-full border border-[#EAC881]/30 shadow-sm">Frequently Asked Questions</h2>
-              <div className="h-px bg-[#EAC881] flex-1"></div>
+            <div className="text-center mb-16">
+              <span className="text-[#EAC881] font-bold tracking-widest uppercase text-sm mb-4 block">Knowledge Base</span>
+              <h2 className="text-4xl lg:text-5xl font-display text-[#1A2F2B]">Frequently Asked Questions</h2>
             </div>
             
-            <div className="space-y-6">
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+            <div className="space-y-8 max-w-4xl mx-auto">
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   How long does it take to balance hormones with diet?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>Because human cells and hormonal cycles take about 90 to 100 days to fully turn over, the timeline for meaningful hormonal healing is roughly 3 months (90 days). However, physiological shifts such as reduced bloating, deeper sleep, and fewer sugar cravings can often be observed within the first two weeks of adopting a hormone-balancing diet.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   Can intermittent fasting cause hormonal imbalance?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>For women of reproductive age, aggressive intermittent fasting (such as 16+ hours) can definitely act as an environmental stressor. When the body goes without food for long periods, it signals the adrenal glands to pump out cortisol. Chronically high cortisol can down-regulate progesterone and suppress ovulation. For most women, 12 to 14 hours of overnight fasting is a much safer, hormone-friendly baseline.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   Do I need hormone testing before starting a diet?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>While comprehensive testing (such as a DUTCH test or standard blood work) is fantastic for identifying the exact broken pathways, you do not need a test to begin foundational healing. Stabilizing blood sugar, improving liver health with cruciferous vegetables, and reducing stress will benefit every hormonal profile across the board.</p>
                 </div>
               </div>
@@ -275,8 +273,8 @@ export const HormonalImbalanceDiet: React.FC = () => {
              <p className="font-serif text-lg md:text-xl font-light text-white/90 leading-relaxed mb-10 relative z-10 max-w-3xl mx-auto">
                 Ready for a roadmap built specifically for your metabolism, your lifestyle, and your goals? 
              </p>
-             <a href="https://www.ojasio.com" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center justify-center bg-[#EAC881] text-[#1A2F2B] px-8 py-5 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(234,200,129,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.3)]">
-               Book your free 15-minute discovery call
+             <a href="https://calendly.com/ojasiocare" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center justify-center bg-[#EAC881] text-[#1A2F2B] px-8 py-5 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(234,200,129,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.3)]">
+               BOOK YOUR FREE 20 MINUTE DISCOVERY CALL
              </a>
           </div>
 

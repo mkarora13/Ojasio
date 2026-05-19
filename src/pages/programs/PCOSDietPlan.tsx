@@ -61,7 +61,7 @@ export const PCOSDietPlan: React.FC = () => {
           <div className="bg-[#EAC881]/10 p-8 rounded-2xl border border-[#EAC881]/30 mb-12 not-prose">
             <h3 className="font-display text-2xl text-[#1A2F2B] mb-4">Quick Expert Answer</h3>
             <p className="text-[#1A2F2B]/80 font-light leading-relaxed text-lg mb-0">
-              The most effective PCOS diet plan focuses on reversing insulin resistance and lowering systemic inflammation. According to Ojasio nutritionist Disha Arora, "PCOS cannot be managed by starving yourself. It requires stabilizing your blood sugar by pairing every carbohydrate with a high-quality protein and fat source. A clinical approach prioritizes fiber-rich lentils, complex grains like amaranth or millets, and anti-inflammatory fats."
+              "The most effective PCOS diet plan focuses on reversing insulin resistance and lowering systemic inflammation. PCOS cannot be managed by starving yourself. It requires stabilizing your blood sugar by pairing every carbohydrate with a high-quality protein and fat source. A clinical approach prioritizes fiber-rich lentils, complex grains like amaranth or millets, and anti-inflammatory fats."
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export const PCOSDietPlan: React.FC = () => {
             The truth is, your body is not broken. Your metabolism is simply asking for a different fuel strategy. In this comprehensive guide, we will break down exactly how to use food to heal your hormones, featuring a complete 7-day PCOS diet plan tailored for the modern Indian palate—perfectly adaptable for NRIs worldwide.
           </p>
 
-          <h2>Understanding PCOS: What It Is and Why It Happens</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Understanding PCOS: What It Is and Why It Happens</h2>
           <p>
             PCOS is a complex endocrine disorder that affects how a woman's ovaries function. According to the World Health Organization (WHO), PCOS affects an estimated 8–13% of women of reproductive age globally, with numbers appearing even higher in South Asian populations.
           </p>
@@ -98,7 +98,7 @@ export const PCOSDietPlan: React.FC = () => {
             </li>
           </ul>
 
-          <h2>Why Diet is the Primary Treatment for PCOS</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Why Diet is the Primary Treatment for PCOS</h2>
           <p>
             Medications like Metformin or oral contraceptives can manage symptoms, but they do not resolve the underlying metabolic dysfunction. Diet is the only sustainable lever you have to pull to lower insulin resistance. 
           </p>
@@ -106,10 +106,10 @@ export const PCOSDietPlan: React.FC = () => {
             According to Ojasio nutritionist Disha Arora, "When we optimize a client's diet to flatten their blood sugar curve, we almost immediately see a reduction in cravings and an improvement in energy. Within months, testosterone levels drop, and metabolic healing begins."
           </p>
           <p>
-            [Internal link → read our complete guide to hormonal balance here]
+            When we optimize your diet for blood sugar, cravings reduce and energy improves immediately.
           </p>
 
-          <h2>The Ultimate PCOS Food List: What to Eat</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">The Ultimate PCOS Food List: What to Eat</h2>
           <p>
             A healing diet revolves around foods that digest slowly and provide maximum nutritional density.
           </p>
@@ -132,7 +132,7 @@ export const PCOSDietPlan: React.FC = () => {
             </li>
           </ul>
 
-          <h2>PCOS Foods to Avoid Completely</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">PCOS Foods to Avoid Completely</h2>
           <p>
             Certain foods exacerbate insulin resistance and fuel inflammation:
           </p>
@@ -155,7 +155,7 @@ export const PCOSDietPlan: React.FC = () => {
             </li>
           </ul>
 
-          <h2>7-Day PCOS Diet Plan: South Asian & NRI Friendly</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">7-Day PCOS Diet Plan: South Asian & NRI Friendly</h2>
           <p>
             This sample meal plan is engineered for blood sugar stabilization, keeping the recipes familiar and easy to source globally.
           </p>
@@ -217,56 +217,58 @@ export const PCOSDietPlan: React.FC = () => {
             </table>
           </div>
 
-          <h2>Real Experiences: Priya's PCOS Victory in London</h2>
-          <p className="border-l-4 border-[#EAC881] pl-6 italic text-[#1A2F2B]/80 font-serif text-xl my-8">
-            "When I moved to the UK for work, my PCOS flared up aggressively. The cold weather, the stress, and the reliance on quick supermarket sandwiches caused a 15 kg weight gain in just over a year. My doctor recommended birth control, but I wanted to fix the root cause. Working with Ojasio changed everything. They taught me how to find the right ingredients in London supermarkets to recreate hormone-healing Indian meals. By simply optimizing my breakfast protein and switching my walking routine to post-lunch, my periods returned naturally within 4 months, and the weight began steadily dropping off. I finally feel in control of my body again." — Priya (London, UK)
-          </p>
-          
-          <p>
-            [Internal link → discover our diet plan for working professionals]
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-24 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Real Experiences: Priya's PCOS Victory in London</h2>
+          <p className="border-l-4 border-[#EAC881] pl-6 italic text-[#1A2F2B] font-serif text-2xl my-12 leading-relaxed bg-white p-8 rounded-r-3xl shadow-sm">
+            "When I moved to the UK for work, my PCOS flared up aggressively. The cold weather, the stress, and the reliance on quick supermarket sandwiches caused a 15 kg weight gain in just over a year. Working with Ojasio changed everything. They taught me how to find the right ingredients in London supermarkets to recreate hormone-healing Indian meals. By simply optimizing my breakfast protein and switching my walking routine to post-lunch, my periods returned naturally within 4 months, and the weight began steadily dropping off. I finally feel in control of my body again." <br /><br /><span className="text-lg font-sans font-medium text-[#1A2F2B]/60 not-italic">— Priya (London, UK)</span>
           </p>
 
           <div className="mt-24 pt-16 border-t border-[#1A2F2B]/10 not-prose">
-            <h2 className="text-3xl font-display text-[#1A2F2B] mb-8 text-center uppercase tracking-widest">Frequently Asked Questions</h2>
+            <div className="text-center mb-16">
+              <span className="text-[#EAC881] font-bold tracking-widest uppercase text-sm mb-4 block">Knowledge Base</span>
+              <h2 className="text-4xl lg:text-5xl font-display text-[#1A2F2B]">Frequently Asked Questions</h2>
+            </div>
             
-            <div className="space-y-6">
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+            <div className="space-y-8 max-w-4xl mx-auto">
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   Can I reverse PCOS permanently with diet?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>PCOS is a genetic predisposition, meaning it cannot be "cured" forever. However, the symptoms are almost entirely driven by lifestyle and diet. Through proper nutrition, you can put PCOS into complete remission, experiencing regular cycles, normalized weight, and clear skin.</p>
                 </div>
               </div>
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   Do I have to give up rice if I have PCOS?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>No. You do not need to give up rice. The key is serving size and food combinations. A small portion of rice consumed alongside a large portion of protein (like chicken or paneer) and fibrous vegetables will not cause a drastic insulin spike.</p>
                 </div>
               </div>
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   How fast will I see results on a PCOS diet plan?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>Most individuals notice a significant drop in sugar cravings and an improvement in energy within the first two weeks. Because hormone cycles take roughly 90 days to reset, measurable changes in period regularity and hair growth typically become evident after 3 months of strict compliance.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-20 pt-16 border-t border-[#1A2F2B]/10 text-center not-prose">
-             <h4 className="font-display text-3xl text-[#1A2F2B] mb-4">Take Control of Your Health.</h4>
-             <p className="text-[#1A2F2B]/60 mb-8 max-w-md mx-auto font-light">
-               Ready to address the root cause of your symptoms? Book your free 15-minute discovery call with Ojasio today.
+          <div className="bg-[#1A2F2B] text-white p-10 md:p-14 rounded-[2.5rem] mt-24 text-center shadow-xl relative overflow-hidden group not-prose">
+             <div className="absolute top-0 right-0 w-64 h-64 bg-[#EAC881]/10 rounded-full blur-[80px] group-hover:bg-[#EAC881]/20 transition-all duration-700"></div>
+             <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#EAC881]/10 rounded-full blur-[60px] group-hover:bg-[#EAC881]/20 transition-all duration-700"></div>
+             
+             <h2 className="text-3xl md:text-5xl font-display text-white mb-8 relative z-10">Stop guessing. Start healing.</h2>
+             <p className="font-serif text-lg md:text-xl font-light text-white/90 leading-relaxed mb-10 relative z-10 max-w-3xl mx-auto">
+                Ready to address the root cause of your symptoms? A personalized clinical approach awaits.
              </p>
-             <a href="https://www.ojasio.com" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#1A2F2B] text-white px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-all duration-300 shadow-[0_10px_30px_rgba(26,47,43,0.2)]">
-               Book your free 15-minute discovery call → www.ojasio.com
+             <a href="https://calendly.com/ojasiocare" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center justify-center bg-[#EAC881] text-[#1A2F2B] px-8 py-5 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(234,200,129,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.3)]">
+               BOOK YOUR FREE 20 MINUTE DISCOVERY CALL
              </a>
           </div>
 

@@ -71,12 +71,11 @@ export const WorkingProfessionalsDiet: React.FC = () => {
           <div className="bg-[#EAC881]/10 p-8 md:p-10 rounded-2xl border border-[#EAC881]/30 mb-16 not-prose">
             <h3 className="font-display text-2xl text-[#1A2F2B] mb-4">Quick Expert Answer</h3>
             <p className="text-[#1A2F2B]/80 font-light leading-relaxed text-lg mb-0 text-justify">
-              "The biggest mistake working professionals make is relying on caffeine for energy instead of actual food. When you are stressed at your desk in Dubai or rushing to a meeting in Toronto, your brain needs stable glucose. If you skip breakfast or eat a high-carb lunch, you will inevitably crash at 3 PM. The clinical solution is not a restrictive diet, but strategic meal assembly—focusing heavily on pre-planned protein and structural hydration—so your brain always has a steady supply of premium fuel." <br/><br/>
-              <span className="font-medium text-[#1A2F2B]">— Disha Arora, Certified Nutrition Manager at Ojasio</span>
+              "The biggest mistake working professionals make is relying on caffeine for energy instead of actual food. When you are stressed at your desk in Dubai or rushing to a meeting in Toronto, your brain needs stable glucose. If you skip breakfast or eat a high-carb lunch, you will inevitably crash at 3 PM. The clinical solution is not a restrictive diet, but strategic meal assembly—focusing heavily on pre-planned protein and structural hydration—so your brain always has a steady supply of premium fuel."
             </p>
           </div>
 
-          <h2>The Executive Health Crisis</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">The Executive Health Crisis</h2>
           <p>
             You are operating in a high-stakes environment. Whether you are leading a corporate team in India, managing finances in the UAE, or consulting in the UK and Canada, your days are defined by endless meetings, high stress, and very little time for yourself. 
           </p>
@@ -84,7 +83,7 @@ export const WorkingProfessionalsDiet: React.FC = () => {
             The result? Your waistline is slowly expanding, your sleep is broken, and you find yourself staring blankly at your monitor by mid-afternoon. Mainstream advice tells you to "meal prep for 4 hours every Sunday" or "just eat salads." For a busy professional, neither of these is a realistic or sustainable long-term strategy.
           </p>
 
-          <h2>Why the "Corporate Diet" Fails</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Why the "Corporate Diet" Fails</h2>
           <p>
             Most professionals fall into a chaotic eating cycle driven by convenience and stress.
           </p>
@@ -121,7 +120,7 @@ export const WorkingProfessionalsDiet: React.FC = () => {
             </div>
           </div>
 
-          <h2>The 5 Pillars of the Executive Diet</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">The 5 Pillars of the Executive Diet</h2>
           <p>
             To transform your body composition and skyrocket your productivity, adopt these five non-negotiable pillars. No macro-counting required.
           </p>
@@ -150,7 +149,7 @@ export const WorkingProfessionalsDiet: React.FC = () => {
             </p>
           </div>
 
-          <h2>7-Day Meal Plan: The High-Performance Routine</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">7-Day Meal Plan: The High-Performance Routine</h2>
           <p>
             Designed for minimal kitchen time and maximum mental clarity.
           </p>
@@ -212,60 +211,63 @@ export const WorkingProfessionalsDiet: React.FC = () => {
             </table>
           </div>
 
-          <div className="bg-white p-10 rounded-3xl shadow-sm border border-[#1A2F2B]/5 my-16">
-            <h2 className="text-3xl font-display text-[#1A2F2B] mt-0 mb-8 border-b border-[#EAC881]/30 pb-4">From Struggle to Strength: A Real Ojasio Client Story</h2>
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="w-full md:w-1/3">
-                 <img loading="lazy" src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Corporate Executive - Ojasio Client Success Story UAE" className="rounded-2xl object-cover w-full h-[300px] shadow-lg" />
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-24 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">From Struggle to Strength: A Real Ojasio Client Story</h2>
+          <div className="bg-white p-10 md:p-14 rounded-[2.5rem] shadow-sm border border-[#1A2F2B]/5 relative my-16 overflow-hidden not-prose">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#EAC881]/10 rounded-bl-full"></div>
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-16 h-16 rounded-full bg-[#1A2F2B] flex items-center justify-center text-[#EAC881] font-display text-2xl font-bold">K</div>
+              <div>
+                <h4 className="font-display text-2xl text-[#1A2F2B] m-0">Kavita, 41</h4>
+                <p className="text-[#1A2F2B]/60 font-medium text-sm tracking-wider uppercase m-0 mt-1">Dubai, UAE • Chief Financial Officer</p>
               </div>
-              <div className="w-full md:w-2/3">
-                <p className="font-light text-lg leading-relaxed text-[#1A2F2B]/80 mb-6">
-                  Meet Kavita, 41, a Chief Financial Officer based in Dubai. She was working 60-hour weeks, ordering high-end takeout for every meal, and relying on four espressos a day just to function. She came to Ojasio complaining of chronic fatigue, severe bloating, and a creeping weight gain of 10 kilos that wouldn't budge despite hitting the gym sporadically on weekends. She assumed she was just getting older.
-                </p>
-                <p className="font-light text-lg leading-relaxed text-[#1A2F2B]/80 mb-6">
-                  We immediately restructured her day. Since she hated cooking, we didn't force her into meal prep. Instead, we audited her favorite takeout spots in Dubai and built a "Smart Order" menu for her assistants. We replaced her sugary morning latte with a clean protein shake that took 60 seconds to blend. 
-                </p>
-                <p className="font-light text-lg leading-relaxed text-[#1A2F2B]/80">
-                  By week three, her blood sugar stabilized, completely eliminating her afternoon crashes. Within four months, she lost 11 kilos, reversed her pre-diabetes, and gained an immense amount of mental clarity. "Ojasio didn't just give me a diet," Kavita says. "They gave me a system that actually fits a CFO's schedule."
-                </p>
-              </div>
+            </div>
+            
+            <div className="space-y-6 relative z-10">
+              <p className="text-[#1A2F2B]/80 font-serif text-xl leading-relaxed italic m-0">
+                "I was working 60-hour weeks, ordering high-end takeout for every meal, and relying on four espressos a day just to function. I came to Ojasio complaining of chronic fatigue, severe bloating, and a creeping weight gain of 10 kilos that wouldn't budge despite hitting the gym sporadically on weekends. I assumed I was just getting older."
+              </p>
+              <p className="text-[#1A2F2B]/80 font-serif text-xl leading-relaxed italic m-0">
+                "They immediately restructured my day. Since I hated cooking, they didn't force me into meal prep. Instead, they audited my favorite takeout spots in Dubai and built a 'Smart Order' menu for my assistants. We replaced my sugary morning latte with a clean protein shake that took 60 seconds to blend."
+              </p>
+              <p className="text-[#1A2F2B]/80 font-serif text-xl leading-relaxed italic m-0">
+                "By week three, my blood sugar stabilized, completely eliminating my afternoon crashes. Within four months, I lost 11 kilos, reversed my pre-diabetes, and gained an immense amount of mental clarity. Ojasio didn't just give me a diet. They gave me a system that actually fits a CFO's schedule."
+              </p>
             </div>
           </div>
 
           <div className="mt-24 pt-16 border-t border-[#1A2F2B]/10 not-prose">
-            <div className="flex items-center gap-4 mb-10">
-              <div className="h-px bg-[#EAC881] flex-1"></div>
-              <h2 className="text-3xl font-display font-normal text-[#1A2F2B] m-0 text-center uppercase tracking-widest bg-[#EAC881]/10 py-3 px-8 rounded-full border border-[#EAC881]/30 shadow-sm">Frequently Asked Questions</h2>
-              <div className="h-px bg-[#EAC881] flex-1"></div>
+            <div className="text-center mb-16">
+              <span className="text-[#EAC881] font-bold tracking-widest uppercase text-sm mb-4 block">Knowledge Base</span>
+              <h2 className="text-4xl lg:text-5xl font-display text-[#1A2F2B]">Frequently Asked Questions</h2>
             </div>
             
-            <div className="space-y-6">
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+            <div className="space-y-8 max-w-4xl mx-auto">
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   How do I stop falling asleep at my desk after lunch?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>The post-lunch crash is entirely caused by a sharp spike and subsequent crash in your blood sugar. To stop this, you must change your lunch composition. Decrease the amount of white rice or refined wheat, and drastically increase protein (chicken, paneer, eggs) and fiber. Also, taking a 10-minute walk after eating dramatically blunts the insulin spike.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   Is black coffee bad for my hormones while working?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>Black coffee is fine, but timing is everything. Drinking it on an empty stomach first thing in the morning spikes cortisol aggressively. Always drink it after you have had a solid, protein-based breakfast to protect your adrenals and maintain steady energy.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   I really don't have time to cook. Can I still lose weight?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>Absolutely. Weight loss is about choices, not culinary skills. You can buy pre-boiled eggs, pre-cut salads, ready-made roasted chicken, and plain Greek yogurt from the supermarket. Assembly takes 5 minutes. If you have to order in, just follow the Golden Ratio (50% veg, 25% protein, 25% complex carbs).</p>
                 </div>
               </div>
@@ -280,8 +282,8 @@ export const WorkingProfessionalsDiet: React.FC = () => {
              <p className="font-serif text-lg md:text-xl font-light text-white/90 leading-relaxed mb-10 relative z-10 max-w-3xl mx-auto">
                 Ready for a roadmap built specifically for your metabolism, your lifestyle, and your goals? 
              </p>
-             <a href="https://www.ojasio.com" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center justify-center bg-[#EAC881] text-[#1A2F2B] px-8 py-5 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(234,200,129,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.3)]">
-               Book your free 15-minute discovery call
+             <a href="https://calendly.com/ojasiocare" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center justify-center bg-[#EAC881] text-[#1A2F2B] px-8 py-5 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(234,200,129,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.3)]">
+               BOOK YOUR FREE 20 MINUTE DISCOVERY CALL
              </a>
           </div>
 

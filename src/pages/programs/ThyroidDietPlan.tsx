@@ -69,12 +69,11 @@ export const ThyroidDietPlan: React.FC = () => {
           <div className="bg-[#EAC881]/10 p-8 md:p-10 rounded-2xl border border-[#EAC881]/30 mb-16 not-prose">
             <h3 className="font-display text-2xl text-[#1A2F2B] mb-4">Quick Expert Answer</h3>
             <p className="text-[#1A2F2B]/80 font-light leading-relaxed text-lg mb-0 text-justify">
-              "You cannot just pop a Thyroxine pill and expect your metabolism to magically fix itself if you continue to eat an inflammatory diet. The vast majority of hypothyroidism cases, especially among Indian women, are autoimmune (Hashimoto's). The only way to stop the immune system from attacking your thyroid gland is to remove systemic triggers—like gluten, processed soy, and refined seed oils—while front-loading nutrients essential for T4 to T3 conversion, namely Selenium, Zinc, and Vitamin D." <br/><br/>
-              <span className="font-medium text-[#1A2F2B]">— Disha Arora, Certified Nutrition Manager at Ojasio</span>
+              "You cannot just pop a Thyroxine pill and expect your metabolism to magically fix itself if you continue to eat an inflammatory diet. The vast majority of hypothyroidism cases, especially among Indian women, are autoimmune (Hashimoto's). The only way to stop the immune system from attacking your thyroid gland is to remove systemic triggers—like gluten, processed soy, and refined seed oils—while front-loading nutrients essential for T4 to T3 conversion, namely Selenium, Zinc, and Vitamin D."
             </p>
           </div>
 
-          <h2>Understanding the Thyroid Gland: Your Body's Master Metronome</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Understanding the Thyroid Gland: Your Body's Master Metronome</h2>
           <p>
             Your thyroid is a small, butterfly-shaped gland located at the base of your neck. It acts as the master metronome for your entire body, dictating how fast or slow your cells convert nutrients into energy. 
           </p>
@@ -110,7 +109,7 @@ export const ThyroidDietPlan: React.FC = () => {
             </div>
           </div>
 
-          <h2>Why Diet is Crucial: The T4 to T3 Conversion Problem</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Why Diet is Crucial: The T4 to T3 Conversion Problem</h2>
           <p>
             When your doctor prescribes Levothyroxine (e.g., Thyronorm), they are giving you a synthetic version of the *inactive* thyroid hormone, T4. But your cells cannot use T4. Your body, specifically the liver and gut, must convert that T4 into the *active* form, T3. 
           </p>
@@ -118,7 +117,7 @@ export const ThyroidDietPlan: React.FC = () => {
              Here is the catch: that conversion process relies heavily on specific nutrients (Selenium, Zinc, Iron, and B-vitamins) and a healthy gut microbiome. If you are eating a highly inflammatory diet (like consuming refined seed oils and excessive sugar), your liver gets congested, your gut gets inflamed, and you fail to convert the T4 medicine into the T3 energy your body desperately needs. This is why so many women have "normal" lab results but still feel exhausted.
           </p>
 
-          <h2>The Hypothyroidism Healing List: What to Eat</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">The Hypothyroidism Healing List: What to Eat</h2>
           <p>
             If you are aiming to heal an underactive thyroid, focus on these critical nutrient pillars:
           </p>
@@ -141,7 +140,7 @@ export const ThyroidDietPlan: React.FC = () => {
             </li>
           </ul>
 
-          <h2>The "Do Not Eat" List for Thyroid Health</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">The "Do Not Eat" List for Thyroid Health</h2>
           <p>
             When treating Hashimoto's (autoimmune hypothyroidism), removing food triggers is mathematically more important than adding superfoods. 
           </p>
@@ -166,7 +165,7 @@ export const ThyroidDietPlan: React.FC = () => {
             </p>
           </div>
 
-          <h2>Your 7-Day Thyroid Healing Blueprint (Gluten-Free & Soy-Free)</h2>
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-20 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">Your 7-Day Thyroid Healing Blueprint (Gluten-Free & Soy-Free)</h2>
           <p>
             This template focuses on maximizing Selenium and Zinc while remaining dairy-optional and entirely gluten-free.
           </p>
@@ -228,60 +227,63 @@ export const ThyroidDietPlan: React.FC = () => {
             </table>
           </div>
 
-          <div className="bg-white p-10 rounded-3xl shadow-sm border border-[#1A2F2B]/5 my-16">
-            <h2 className="text-3xl font-display text-[#1A2F2B] mt-0 mb-8 border-b border-[#EAC881]/30 pb-4">From Struggle to Strength: A Real Ojasio Client Story</h2>
-            <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="w-full md:w-1/3">
-                 <img loading="lazy" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sarah - Ojasio Client Success Story UK" className="rounded-2xl object-cover w-full h-[300px] shadow-lg" />
+          <h2 className="text-3xl lg:text-4xl font-display text-[#1A2F2B] mt-24 mb-10 border-b border-[#EAC881]/30 pb-6 not-prose">From Struggle to Strength: A Real Ojasio Client Story</h2>
+          <div className="bg-white p-10 md:p-14 rounded-[2.5rem] shadow-sm border border-[#1A2F2B]/5 relative my-16 overflow-hidden not-prose">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#EAC881]/10 rounded-bl-full"></div>
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-16 h-16 rounded-full bg-[#1A2F2B] flex items-center justify-center text-[#EAC881] font-display text-2xl font-bold">S</div>
+              <div>
+                <h4 className="font-display text-2xl text-[#1A2F2B] m-0">Sarah, 38</h4>
+                <p className="text-[#1A2F2B]/60 font-medium text-sm tracking-wider uppercase m-0 mt-1">UK • Overcame Hashimoto's</p>
               </div>
-              <div className="w-full md:w-2/3">
-                <p className="font-light text-lg leading-relaxed text-[#1A2F2B]/80 mb-6">
-                  Meet Sarah, 38, based in the UK. After her second pregnancy, she was diagnosed with Hashimoto's Hypothyroidism. She was placed on 75mcg of Thyroxine, but two years later, her primary symptoms—crippling brain fog, cold extremities, and severe hair thinning—had not gone away. Her doctor assumed she was just stressed.
-                </p>
-                <p className="font-light text-lg leading-relaxed text-[#1A2F2B]/80 mb-6">
-                  When Sarah partnered with Ojasio, we immediately identified that her high-wheat diet was keeping her antibodies severely elevated. We transitioned her to a delicious, sustainable gluten-free Indian diet, incorporating jowar, bajra, and selenium-rich nuts.
-                </p>
-                <p className="font-light text-lg leading-relaxed text-[#1A2F2B]/80">
-                  By month four, Sarah's TPO antibodies had dropped by 60%. Her brain fog lifted, her hair began to regain volume, and she finally had the energy to keep up with her toddlers. She didn't just mask the symptoms; she cooled the autoimmune fire at the source.
-                </p>
-              </div>
+            </div>
+            
+            <div className="space-y-6 relative z-10">
+              <p className="text-[#1A2F2B]/80 font-serif text-xl leading-relaxed italic m-0">
+                "After my second pregnancy, I was diagnosed with Hashimoto's Hypothyroidism. I was placed on 75mcg of Thyroxine, but two years later, my primary symptoms—crippling brain fog, cold extremities, and severe hair thinning—had not gone away. My doctor assumed I was just stressed."
+              </p>
+              <p className="text-[#1A2F2B]/80 font-serif text-xl leading-relaxed italic m-0">
+                "When I partnered with Ojasio, they immediately identified that my high-wheat diet was keeping my antibodies severely elevated. We transitioned to a delicious, sustainable gluten-free Indian diet, incorporating jowar, bajra, and selenium-rich nuts."
+              </p>
+              <p className="text-[#1A2F2B]/80 font-serif text-xl leading-relaxed italic m-0">
+                "By month four, my TPO antibodies had dropped by 60%. My brain fog lifted, my hair began to regain volume, and I finally had the energy to keep up with my toddlers. I didn't just mask the symptoms; I cooled the autoimmune fire at the source."
+              </p>
             </div>
           </div>
 
           <div className="mt-24 pt-16 border-t border-[#1A2F2B]/10 not-prose">
-            <div className="flex items-center gap-4 mb-10">
-              <div className="h-px bg-[#EAC881] flex-1"></div>
-              <h2 className="text-3xl font-display font-normal text-[#1A2F2B] m-0 text-center uppercase tracking-widest bg-[#EAC881]/10 py-3 px-8 rounded-full border border-[#EAC881]/30 shadow-sm">Frequently Asked Questions</h2>
-              <div className="h-px bg-[#EAC881] flex-1"></div>
+            <div className="text-center mb-16">
+              <span className="text-[#EAC881] font-bold tracking-widest uppercase text-sm mb-4 block">Knowledge Base</span>
+              <h2 className="text-4xl lg:text-5xl font-display text-[#1A2F2B]">Frequently Asked Questions</h2>
             </div>
             
-            <div className="space-y-6">
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+            <div className="space-y-8 max-w-4xl mx-auto">
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   Should I stop taking my thyroid medication if I go on a diet?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>Absolutely not. Never adjust or stop your thyroid medication without direct blood tests and supervision from your endocrinologist. Our clinical diet plan works in tandem with your medication. As your body heals, your doctor may naturally decide to lower your dose based on your improving labs.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   Do I have to give up gluten forever if I have Hashimoto's?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>Current clinical research heavily supports a strict gluten-free trial for at least 3-6 months for patients with Hashimoto's, as molecular mimicry is a significant driver of the autoimmune attack. Many patients find that their symptoms dramatically improve, making the lifestyle change well worth it.</p>
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl shadow-sm border border-[#1A2F2B]/5 hover:shadow-md transition-all duration-300">
-                <h3 className="text-xl font-semibold text-[#1A2F2B] mb-4 flex items-start gap-4">
-                  <span className="bg-[#1A2F2B] text-[#EAC881] w-8 h-8 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
+              <div className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-[#1A2F2B]/5 hover:border-[#EAC881]/50 transition-colors duration-300">
+                <h3 className="text-2xl font-display text-[#1A2F2B] mb-4 flex items-start gap-4">
+                  <span className="bg-[#1A2F2B] text-[#EAC881] w-10 h-10 rounded-full flex items-center justify-center shrink-0 font-display mt-0.5 leading-none">Q</span>
                   What should I eat if I have Hyperthyroidism (Overactive Thyroid)?
                 </h3>
-                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-12 text-lg">
+                <div className="text-[#1A2F2B]/80 font-light leading-relaxed pl-14 text-lg">
                   <p>For an overactive thyroid, your metabolism is burning too quickly. You need a high-calorie, nutrient-dense diet to prevent extreme muscle loss. Interestingly, consuming raw cruciferous vegetables (like raw broccoli or raw cabbage) is actually beneficial here, as their goitrogenic properties can gently help slow down thyroid hormone production. You must also prioritize calcium and vitamin D, as hyperthyroidism severely leeches bone density.</p>
                 </div>
               </div>
@@ -296,8 +298,8 @@ export const ThyroidDietPlan: React.FC = () => {
              <p className="font-serif text-lg md:text-xl font-light text-white/90 leading-relaxed mb-10 relative z-10 max-w-3xl mx-auto">
                 Ready for a roadmap built specifically for your thyroid markers, your lifestyle, and your goals? 
              </p>
-             <a href="https://www.ojasio.com" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center justify-center bg-[#EAC881] text-[#1A2F2B] px-8 py-5 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(234,200,129,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.3)]">
-               Book your free 15-minute discovery call
+             <a href="https://calendly.com/ojasiocare" target="_blank" rel="noopener noreferrer" className="relative z-10 inline-flex items-center justify-center bg-[#EAC881] text-[#1A2F2B] px-8 py-5 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-white transition-all duration-300 shadow-[0_10px_30px_rgba(234,200,129,0.2)] hover:shadow-[0_15px_40px_rgba(255,255,255,0.3)]">
+               BOOK YOUR FREE 20 MINUTE DISCOVERY CALL
              </a>
           </div>
 
