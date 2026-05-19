@@ -77,6 +77,41 @@ const routes = [
     description: 'Read the latest insights on PCOS, weight loss, diabetes, and metabolic health from Ojasio\'s expert nutritionists.',
     schema: {},
     noscript: "<h1>Ojasio Nutrition Blog</h1><p>Read the latest insights on PCOS, weight loss, diabetes, and metabolic health.</p>"
+  },
+  {
+    path: '/programs/pcos-diet-plan',
+    title: 'PCOS Diet Plan & Consultation | Ojasio',
+    description: 'The Ultimate 7-Day PCOS Diet Plan and expert consultation by Certified Nutrition Manager Disha Arora. Reverse PCOS naturally.',
+    schema: {},
+    noscript: "<h1>PCOS Diet Plan</h1><p>The Ultimate 7-Day PCOS Diet Plan to naturaly reverse PCOS.</p>"
+  },
+  {
+    path: '/programs/weight-loss-diet-plan',
+    title: 'Weight Loss Diet Plan for Women | Ojasio',
+    description: 'Sustainably lose weight with a clinical approach focusing on metabolic restoration and hormonal health, not starving.',
+    schema: {},
+    noscript: "<h1>Weight Loss Diet Plan</h1><p>Science based fat loss plan focusing on metabolic health.</p>"
+  },
+  {
+    path: '/programs/thyroid-diet-plan',
+    title: 'Thyroid Diet Plan & Hashimoto\'s Management | Ojasio',
+    description: 'Diet plan for managing hypothyroidism and Hashimoto\'s naturally. Optimize your thyroid function and T4 to T3 conversion.',
+    schema: {},
+    noscript: "<h1>Thyroid Diet Plan</h1><p>Diet plan for managing hypothyroidism and Hashimoto's naturally.</p>"
+  },
+  {
+    path: '/programs/hormonal-imbalance-diet',
+    title: 'Hormonal Imbalance Diet Plan | Ojasio',
+    description: 'Balance your hormones naturally with a precise, clinical nutrition plan targeting liver health, gut flora, and blood sugar.',
+    schema: {},
+    noscript: "<h1>Hormonal Imbalance Diet</h1><p>Balance your hormones naturally with a targeted nutrition plan.</p>"
+  },
+  {
+    path: '/programs/diet-plan-for-working-professionals',
+    title: 'Diet Plan for Working Professionals | Ojasio',
+    description: 'A practical, high-performance diet plan for busy executives and professionals. Enhance energy and mental clarity.',
+    schema: {},
+    noscript: "<h1>Working Professionals Diet Plan</h1><p>A practical, high-performance diet plan for busy executives.</p>"
   }
 ];
 
