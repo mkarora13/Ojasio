@@ -84,13 +84,6 @@ const routes = [
     noscript: "<h1>Frequently Asked Questions</h1><p>Answers to common questions about Ojasio.</p>"
   },
   {
-    path: '/services',
-    title: 'Nutrition Programs & Diet Plans | Ojasio',
-    description: 'Explore Ojasio\'s premium programs including PCOS Diet Plans, Weight Loss Programs, and Metabolic Health Consultation.',
-    schema: {},
-    noscript: "<h1>Our Premium Diet and Nutrition Programs</h1><p>Explore Ojasio's customized protocols for reverse chronic conditions, weight loss, and sustained metabolic vitality.</p>"
-  },
-  {
     path: '/contact',
     title: 'Contact Ojasio | Nutrition Consultation Booking',
     description: 'Get in touch with Ojasio to book your premium online nutrition consultation. We serve clients in India, UK, USA, Canada, UAE, and Australia.',
