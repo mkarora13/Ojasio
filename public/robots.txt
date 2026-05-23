@@ -1,17 +1,10 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: /drafts/
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: Googlebot
 Allow: /
-Allow: /blog/
-Allow: /about
-Allow: /services
-Allow: /contact
-Allow: /corporate-wellness
-Allow: /workout-nutrition
 
 User-agent: Bingbot
 Allow: /
@@ -19,13 +12,19 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Gemini-bot
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://ojasio.com/sitemap.xml

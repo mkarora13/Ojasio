@@ -5,15 +5,23 @@ const distPath = path.resolve('dist/client');
 
 const today = new Date().toISOString().split('T')[0];
 
-const BLOG_ARTICLES = [
-  { slug: 'diabetes-blood-pressure-management', title: 'Complete Guide to Managing Diabetes and High Blood Pressure Naturally', desc: 'How Nutrition and Lifestyle Can Support Healthy Blood Sugar and Blood Pressure Levels' },
-  { slug: 'pcos-diet-plan', title: 'The Ultimate 7-Day PCOS Diet Plan', desc: 'Discover the most effective Indian vegetarian and global diet plans to manage PCOS and reverse symptoms.' },
-  { slug: 'lose-weight-without-starving', title: 'How to Lose Weight Without Starving', desc: 'A sustainable approach to weight loss using nutrient-dense foods.' },
-  { slug: 'best-foods-for-hormonal-balance', title: 'Best Foods for Hormonal Balance', desc: 'Discover the top foods to restore hormonal equity and boost wellness.' },
-  { slug: 'lifestyle-guide-busy-professionals', title: 'Complete Lifestyle Guide for Busy Professionals', desc: 'Nutrition and productivity tips for people on the go.' },
-  { slug: 'best-indian-breakfast-weight-loss', title: 'Best Indian Breakfast for Weight Loss: High-Protein & Quick', desc: 'Traditional and modern Indian breakfast recipes.' },
-  { slug: 'best-diet-plan-for-working-women-in-india', title: 'Best Diet Plan for Working Women', desc: 'Optimized nutrition strategy designed for the modern working woman.' }
-];
+const BLOG_ARTICLES = fs.readdirSync('./src/data/blogs').filter(f => f.endsWith('.tsx')).map(f => {
+  const content = fs.readFileSync('./src/data/blogs/' + f, 'utf8');
+  const idMatch = content.match(/id:\s*['"]([^'"]+)['"]/);
+  const titleMatch = content.match(/title:\s*['"]([^'"]+)['"]/);
+  const descMatch = content.match(/excerpt:\s*['"]([^'"]+)['"]/); // Assuming excerpt acts as description
+  if (idMatch && titleMatch && descMatch) {
+    return { slug: idMatch[1], title: titleMatch[1], desc: descMatch[1] };
+  }
+  return null;
+}).filter(Boolean);
+// We also want to include the 'diabetes-blood-pressure-management' one which is defined inline in Blog.tsx
+BLOG_ARTICLES.push({
+  slug: 'diabetes-blood-pressure-management',
+  title: 'Complete Guide to Managing Diabetes and High Blood Pressure Naturally',
+  desc: 'Discover daily habits and foods that may help support healthy blood sugar and blood pressure levels. Learn how natural nutrition and proper wellness habits can contribute to your metabolic health.'
+});
+
 
 const routes = [
   {

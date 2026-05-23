@@ -4,7 +4,7 @@ import { ReviewsSlider } from '../../components/ui/ReviewsSlider';
 import * as ReviewData from '../reviewsData';
 
 export const articleHealthyWeight = {
-  id: "healthy-weight-management-complete-guide",
+  id: "healthy-weight-management",
   featured: true,
   title: "Healthy Weight Management: The Complete Ojasio Guide",
   subtitle: "A comprehensive, science-backed approach to sustainable weight loss and vibrant energy without starvation or fads.",

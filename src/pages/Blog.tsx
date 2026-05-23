@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2, Moon, Plane, BookOpen, Briefcase, Check, FileText } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
@@ -582,13 +582,13 @@ import { article4 } from '../data/blogs/best-diet-plan-working-women';
 import { articleHealthyWeight } from '../data/blogs/healthy-weight-management';
 import { articleNutritionalAdviceFamilies } from '../data/blogs/nutritional-advice-for-families';
 import { articleHealthyDietFitness } from '../data/blogs/healthy-diet-for-fitness';
-import { articleHowToLoseWeightFast } from '../data/blogs/how-to-lose-weight-fast-guide';
+import { articleHowToLoseWeightFast } from '../data/blogs/how-to-lose-weight-fast';
 import { articleHowToLoseBellyFat } from '../data/blogs/how-to-lose-belly-fat';
-import { articleHowToLoseWeightBeginners } from '../data/blogs/how-to-lose-weight-beginners';
-import { articleDiabeticDiet } from '../data/blogs/diabetic-diet-complete-guide';
-import { articlePcosDietPlan } from '../data/blogs/pcos-diet-plan-weight-loss';
-import { articlePostPregnancyDiet } from '../data/blogs/post-pregnancy-diet-plan';
-import { articleIntermittentFasting } from '../data/blogs/intermittent-fasting-weight-loss-guide';
+import { articleHowToLoseWeightBeginners } from '../data/blogs/how-to-lose-weight';
+import { articleDiabeticDiet } from '../data/blogs/diabetic-diet';
+import { articlePcosDietPlan } from '../data/blogs/pcos-diet-plan-to-lose-weight';
+import { articlePostPregnancyDiet } from '../data/blogs/post-pregnancy-diet';
+import { articleIntermittentFasting } from '../data/blogs/intermittent-fasting-for-weight-loss';
 
 const BLOG_POSTS = [
   articleHealthyWeight,
