@@ -10,13 +10,12 @@ export const article4 = {
   subtitle: "A highly practical, realistic nutrition framework built to help busy professionals control their hormones, boost daily energy levels, and drop stubborn weight without enduring hours of kitchen prep.",
   category: "Metabolic Health",
   readTime: "12 Min Read",
-  author: "DISHA ARORA | NUTRITIONIST | NUTRITION MANAGER | ACTIVE CSNM MEMBER",
   image: "https://images.pexels.com/photos/37621071/pexels-photo-37621071.png?auto=compress&cs=tinysrgb&w=800",
   coverImage: "https://images.pexels.com/photos/12499374/pexels-photo-12499374.jpeg?auto=compress&cs=tinysrgb&w=2000",
   excerpt: "The modern professional's roadmap to sustainable health. Learn to effectively manage PCOS, combat insulin resistance, and maintain a vibrant metabolism despite a demanding, high-stress career.",
   content: (
     <>
-      <div className="prose md:prose-lg prose-headings:font-display prose-headings:font-normal prose-headings:text-[#1A2F2B] prose-h2:mb-10 prose-h2:mt-24 prose-h3:mt-16 prose-h3:mb-6 prose-p:mb-8 prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-p:leading-relaxed prose-p:text-lg lg:prose-p:text-xl prose-li:mb-5 prose-li:text-[#1A2F2B]/80 prose-li:font-light prose-li:leading-relaxed prose-li:text-lg lg:prose-li:text-xl prose-strong:font-semibold prose-strong:text-[#1A2F2B] prose-a:text-[#EAC881] hover:prose-a:text-[#1A2F2B] transition-colors max-w-none font-sans">
+      <div className="prose md:prose-lg prose-headings:font-display prose-headings:font-normal prose-headings:text-[#1A2F2B] prose-h2:mb-10 prose-h2:mt-20 prose-h3:mt-16 prose-h3:mb-6 prose-p:text-[#1A2F2B]/80 prose-p:font-light prose-p:leading-relaxed prose-p:text-lg lg:prose-p:text-xl prose-li:text-[#1A2F2B]/80 prose-li:font-light prose-li:leading-relaxed prose-li:text-lg lg:prose-li:text-xl prose-strong:font-semibold prose-strong:text-[#1A2F2B] prose-a:text-[#EAC881] hover:prose-a:text-[#1A2F2B] transition-colors max-w-none font-sans">
         
         <div className="bg-[#EAC881]/10 p-8 rounded-2xl border border-[#EAC881]/30 mb-16 not-prose">
           <h3 className="font-display text-2xl text-[#1A2F2B] mb-4">Quick Expert Insight</h3>
@@ -25,7 +24,7 @@ export const article4 = {
           </p>
         </div>
 
-        <p className="lead text-2xl italic text-[#1A2F2B]/70 mb-12 border-l-4 border-[#EAC881] pl-8 leading-relaxed font-serif">
+        <p className="lead text-xl italic text-[#1A2F2B]/70 mb-10 border-l-4 border-[#EAC881] pl-8 leading-relaxed">
           Morning alarms ring, yielding to a frantic dash accompanied merely by tea. The midday sprint involves back-to-back virtual meetings fueled by whatever is instantly accessible, culminating in an exhausted evening collapse. For countless female professionals, self-care is regularly postponed. This perpetual stress loop inevitably leads to inexplicable weight gain, hormonal dysregulation, and relentless fatigue. It is time to overhaul this dynamic.
         </p>
 
@@ -43,7 +42,7 @@ export const article4 = {
 
         <div className="not-prose mt-20 mb-10 bg-[#FAF9F6] p-8 md:p-12 rounded-[2rem] border border-[#EAC881]/30 shadow-sm relative overflow-hidden">
           <div className="absolute top-0 left-0 w-2 h-full bg-[#EAC881]"></div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">Why Diet is Your Most Powerful Tool for Hormonal Balance</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">What Strategy Truly Works for Busy Professionals?</h2>
         </div>
         <p>
           No amount of external success compensates for an ignored endocrine system. Combating PCOS or visceral fat demands nutritional strategies that directly target inflammation right at the cellular level. 
@@ -56,7 +55,7 @@ export const article4 = {
 
         <div className="not-prose mt-20 mb-10 bg-[#FAF9F6] p-8 md:p-12 rounded-[2rem] border border-[#EAC881]/30 shadow-sm relative overflow-hidden">
           <div className="absolute top-0 left-0 w-2 h-full bg-[#EAC881]"></div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">Best Foods for Weight Loss and PCOS: What to Load Your Plate With</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">Why Diet is Your Most Powerful Tool for Hormonal Balance</h2>
         </div>
         <p>
           The bedrock of an energized, active lifestyle revolves around thoughtful addition, omitting the archaic concept of dietary restriction. Prioritize these nutritional powerhouses consistently:
@@ -101,7 +100,7 @@ export const article4 = {
 
         <div className="not-prose mt-20 mb-10 bg-[#FAF9F6] p-8 md:p-12 rounded-[2rem] border border-[#EAC881]/30 shadow-sm relative overflow-hidden">
           <div className="absolute top-0 left-0 w-2 h-full bg-[#EAC881]"></div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">Complete Working Women Meal Plan: What to Eat for 7 Days</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">Best Foods for Weight Loss: What to Load Your Plate With</h2>
         </div>
         <p>
           Simplicity dictates longevity. Adherence relies on meals remaining highly accessible. Below is an efficient, hormone-stabilizing weekly architecture engineered explicitly for chaotic routines.

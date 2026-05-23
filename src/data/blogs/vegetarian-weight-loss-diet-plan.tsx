@@ -9,7 +9,6 @@ export const article3 = {
   subtitle: "The Science of Building a High-Protein, Plant-Powered Diet That Torches Body Fat",
   category: "Diet Plans",
   readTime: "10 Min Read",
-  author: "DISHA ARORA | CERTIFIED NUTRITION MANAGER",
   image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=800",
   coverImage: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=2000",
   excerpt: "The biggest mistake vegetarians make is undereating protein and overeating carbohydrates. Discover the exact vegetarian weight loss diet plan that balances your macros and permanently drops the weight.",
@@ -33,12 +32,7 @@ export const article3 = {
               "@context": "https://schema.org",
               "@type": "Article",
               "headline": "Vegetarian Weight Loss Diet Plan: Lose Fat Without Meat",
-              "author": {
-                "@type": "Person",
-                "name": "Ojasio Certified Nutrition Manager",
-                "url": "https://ojasio.com/about"
-              },
-              "publisher": {
+                            "publisher": {
                 "@type": "Organization",
                 "name": "Ojasio",
                 "url": "https://ojasio.com"
@@ -106,7 +100,10 @@ export const article3 = {
           You made the absolute healthiest choice to transition to a plant-based lifestyle, perfectly convinced the excess weight would effortlessly melt away. Instead, you constantly feel bloated, continuously tired, and your bathroom scale refuses to permanently budge. The harsh truth that nobody willingly admits is that standard vegetarian diets are frequently nutritional disasters, heavily overloaded with quick-burning carbohydrates and critically starved of metabolism-boosting protein. Whether you are battling severe mid-day energy crashes in a corporate office or simply desperately trying to shed stubborn belly fat, eating plates entirely composed of pasta or plain rice will completely derail your progress. The absolute fastest way to completely transform your physique without ever touching meat lies in deploying a highly strategic, protein-dense <strong>vegetarian weight loss diet plan</strong> uniquely designed to completely hack your metabolism.
         </p>
 
-        <h2>What Is a Properly Structured Vegetarian Weight Loss Diet?</h2>
+        <div className="not-prose mt-20 mb-10 bg-[#FAF9F6] p-8 md:p-12 rounded-[2rem] border border-[#EAC881]/30 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-2 h-full bg-[#EAC881]"></div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">What Is Vegetarian Fat Loss?</h2>
+        </div>
         <p>
           A completely optimized vegetarian weight loss protocol is decidedly not about merely eliminating animal meat; it rigorously focuses entirely on macronutrient architectural balance. According to extensive research beautifully outlined by the Mayo Clinic, individuals specifically attempting to drop body fat must definitively maintain a sustained caloric deficit while simultaneously preserving active muscle tissue to aggressively keep their basal metabolic rate heavily elevated.
         </p>
@@ -114,7 +111,10 @@ export const article3 = {
           When you eat a standard vegetarian meal like potato parathas or a massive bowl of fruit, your blood glucose violently spikes, vigorously flooding your entire bloodstream with insulin exactly to deal with the severe sugar rush. This profound hormonal reaction aggressively halts all innate fat-burning processes inside your body. The only clinical methodology specifically to stop this fat-storing cascade is decisively anchoring every single meal with a heavy, substantial source of high-quality plant protein entirely paired with stomach-stretching, fiber-rich vegetables.
         </p>
 
-        <h2>Why Strategic Plant Nutrition Is Your Most Powerful Fat Loss Tool</h2>
+        <div className="not-prose mt-20 mb-10 bg-[#FAF9F6] p-8 md:p-12 rounded-[2rem] border border-[#EAC881]/30 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-2 h-full bg-[#EAC881]"></div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">Why Nutrition Is Your Most Powerful Tool for Vegetarian Fat Loss</h2>
+        </div>
         <p>
           The absolute defining biological struggle for vegetarians actively attempting to lose fat cleanly involves purely separating protein heavily from carbohydrates. For instance, while lentils (dal) frequently receive widespread praise as incredible protein sources, they technically contain predominantly carbohydrates. If you strictly eat absolutely enough dal profoundly to completely hit your severe protein targets, you will inadvertently consume deeply massive, excessive quantities of pure calories heavily derived from carbohydrates. 
         </p>
@@ -127,7 +127,10 @@ export const article3 = {
           </p>
         </div>
 
-        <h2>Best Vegetarian High Protein Foods: What to Load Your Plate With</h2>
+        <div className="not-prose mt-20 mb-10 bg-[#FAF9F6] p-8 md:p-12 rounded-[2rem] border border-[#EAC881]/30 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-2 h-full bg-[#EAC881]"></div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">Best Foods for Vegetarian Fat Loss: Load Your Plate With These</h2>
+        </div>
         <p>To fundamentally stop overeating severe carbohydrates fiercely, completely structure your daily meals strictly around these incredibly <strong>vegetarian high protein foods</strong>:</p>
         
         <ul>
@@ -163,7 +166,10 @@ export const article3 = {
           </p>
         </div>
 
-        <h2>Foods Working Against You — And the Smarter Swap</h2>
+        <div className="not-prose mt-20 mb-10 bg-[#FAF9F6] p-8 md:p-12 rounded-[2rem] border border-[#EAC881]/30 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-2 h-full bg-[#EAC881]"></div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">Foods Working Against You — And the Smarter Swap</h2>
+        </div>
         <p>You strictly cannot successfully out-diet massive plates of hidden simple starches masquerading as healthy vegetarian staples.</p>
 
         <ul className="space-y-6">
@@ -179,7 +185,10 @@ export const article3 = {
           </li>
         </ul>
 
-        <h2>Your Complete 7-Day Vegetarian Weight Loss Diet Plan</h2>
+        <div className="not-prose mt-20 mb-10 bg-[#FAF9F6] p-8 md:p-12 rounded-[2rem] border border-[#EAC881]/30 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-2 h-full bg-[#EAC881]"></div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display text-[#1A2F2B] m-0 relative z-10 leading-tight">From Struggle to Strength: A Real Ojasio Client Story</h2>
+        </div>
         <p>A completely optimized, high-protein protocol designed specifically for vegetarians who want to lose stubborn fat while preserving metabolic health and muscle tone.</p>
 
         <div className="overflow-x-auto my-12 not-prose rounded-2xl shadow-sm border border-[#1A2F2B]/10">
@@ -225,7 +234,7 @@ export const article3 = {
 
         <div className="bg-[#1A2F2B] text-white p-10 md:p-14 rounded-3xl text-center my-16 shadow-xl relative overflow-hidden not-prose">
           <a href="https://ojasio.com/contact" className="inline-block bg-[#EAC881] text-[#1A2F2B] px-10 py-5 rounded-full font-semibold tracking-wide hover:bg-white transition-all transform hover:-translate-y-1 relative z-10 text-lg uppercase shadow-lg shadow-[#EAC881]/20">
-            Book your free 15-minute discovery call with Ojasio today → www.ojasio.com
+            
           </a>
         </div>
 

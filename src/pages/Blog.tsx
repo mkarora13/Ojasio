@@ -579,8 +579,28 @@ export const DietPlanModal = ({ countryCode, onClose }: { countryCode: string, o
 };
 
 import { article4 } from '../data/blogs/best-diet-plan-working-women';
+import { articleHealthyWeight } from '../data/blogs/healthy-weight-management';
+import { articleNutritionalAdviceFamilies } from '../data/blogs/nutritional-advice-for-families';
+import { articleHealthyDietFitness } from '../data/blogs/healthy-diet-for-fitness';
+import { articleHowToLoseWeightFast } from '../data/blogs/how-to-lose-weight-fast-guide';
+import { articleHowToLoseBellyFat } from '../data/blogs/how-to-lose-belly-fat';
+import { articleHowToLoseWeightBeginners } from '../data/blogs/how-to-lose-weight-beginners';
+import { articleDiabeticDiet } from '../data/blogs/diabetic-diet-complete-guide';
+import { articlePcosDietPlan } from '../data/blogs/pcos-diet-plan-weight-loss';
+import { articlePostPregnancyDiet } from '../data/blogs/post-pregnancy-diet-plan';
+import { articleIntermittentFasting } from '../data/blogs/intermittent-fasting-weight-loss-guide';
 
 const BLOG_POSTS = [
+  articleHealthyWeight,
+  articleNutritionalAdviceFamilies,
+  articleHealthyDietFitness,
+  articleHowToLoseWeightFast,
+  articleHowToLoseBellyFat,
+  articleHowToLoseWeightBeginners,
+  articleDiabeticDiet,
+  articlePcosDietPlan,
+  articlePostPregnancyDiet,
+  articleIntermittentFasting,
   {
     id: "diabetes-blood-pressure-management",
     featured: true,
@@ -588,7 +608,6 @@ const BLOG_POSTS = [
     subtitle: "How Nutrition and Lifestyle Can Support Healthy Blood Sugar and Blood Pressure Levels",
     category: "Metabolic Health",
     readTime: "8 Min Read",
-    author: "DISHA ARORA | NUTRITIONIST | NUTRITION MANAGER | ACTIVE CSNM MEMBER",
     image: "https://images.pexels.com/photos/8155155/pexels-photo-8155155.jpeg?auto=compress&cs=tinysrgb&w=800",
     coverImage: "https://images.pexels.com/photos/8155155/pexels-photo-8155155.jpeg?auto=compress&cs=tinysrgb&w=2000",
     excerpt: "Discover daily habits and foods that may help support healthy blood sugar and blood pressure levels. Learn how natural nutrition and proper wellness habits can contribute to your metabolic health.",
@@ -848,7 +867,6 @@ const BLOG_POSTS = [
     subtitle: "For Hormonal Balance & Healing From Within",
     category: "PCOS & Hormones",
     readTime: "9 Min Read",
-    author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.pexels.com/photos/37409098/pexels-photo-37409098.png",
     coverImage: "https://images.pexels.com/photos/4394022/pexels-photo-4394022.jpeg",
     excerpt: "Discover a premium, science-backed 7-day Indian vegetarian diet plan for PCOS along with global eating variations. Learn how to manage weight, balance hormones naturally, and feel energetic.",
@@ -1065,7 +1083,6 @@ const BLOG_POSTS = [
     subtitle: "The Ultimate Guide to Sustainable Fat Loss",
     category: "Weight Loss",
     readTime: "8 Min Read",
-    author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop",
     coverImage: "https://images.pexels.com/photos/8436499/pexels-photo-8436499.jpeg",
     excerpt: "Learn how to lose weight without starving using a sustainable diet plan, home remedies, yoga, and workouts. Healthy fat loss made simple and effective.",
@@ -1268,7 +1285,6 @@ const BLOG_POSTS = [
     subtitle: "A Clinical Nutritionist's Guide to Healing",
     category: "Gut Health & Wellness",
     readTime: "5 Min Read",
-    author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.pexels.com/photos/6632286/pexels-photo-6632286.jpeg?auto=compress&cs=tinysrgb&w=800",
     coverImage: "https://images.pexels.com/photos/6632286/pexels-photo-6632286.jpeg?auto=compress&cs=tinysrgb&w=2000",
     excerpt: "Your hormones dictate everything from your mood to your metabolism. Explore the best foods to include in your daily routine to balance them naturally.",
@@ -1394,7 +1410,6 @@ const BLOG_POSTS = [
     subtitle: "Realistic, actionable wellness for the real world.",
     category: "Lifestyle",
     readTime: "12 Min Read",
-    author: "Disha Arora | Nutritionist | Nutrition Manager | Active CSNM Member",
     image: "https://images.pexels.com/photos/8547566/pexels-photo-8547566.jpeg?auto=compress&cs=tinysrgb&w=800",
     coverImage: "https://images.pexels.com/photos/8547566/pexels-photo-8547566.jpeg?auto=compress&cs=tinysrgb&w=2000",
     excerpt: "Learn how to maintain a healthy lifestyle despite corporate jobs, night shifts, limited budgets, and lack of time. Practical, realistic, and actionable guidance for the modern worker.",
@@ -1591,7 +1606,6 @@ const BLOG_POSTS = [
     subtitle: "Fuel your morning and boost your metabolism without comprising on authentic taste.",
     category: "Healthy Breakfasts",
     readTime: "7 Min Read",
-    author: "DISHA ARORA | NUTRITIONIST | NUTRITION MANAGER | ACTIVE CSNM MEMBER",
     image: "https://images.pexels.com/photos/35351659/pexels-photo-35351659.jpeg",
     coverImage: "https://images.pexels.com/photos/35539315/pexels-photo-35539315.jpeg",
     excerpt: "Discover the most effective, nutrient-dense traditional Indian breakfast options meticulously designed to stabilize blood sugar, burn fat, and keep you energized.",
@@ -1936,11 +1950,7 @@ export const Blog: React.FC = () => {
           "headline": selectedPost.title,
           "description": selectedPost.excerpt,
           "image": selectedPost.coverImage,
-          "author": {
-            "@type": "Person",
-            "name": "Disha Arora"
-          },
-          "publisher": {
+                    "publisher": {
             "@type": "Organization",
             "name": "Ojasio",
             "logo": {
@@ -2142,10 +2152,6 @@ export const Blog: React.FC = () => {
                   )}
                   
                   <div className="flex items-center gap-6 text-white/60 font-sans text-xs uppercase tracking-widest font-semibold">
-                    <div className="flex items-center gap-2">
-                       <img loading="lazy" src="https://images.pexels.com/photos/37274943/pexels-photo-37274943.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Author" className="w-8 h-8 rounded-full object-cover border border-[#EAC881]/30" />
-                       <span className="text-white">By {selectedPost.author}</span>
-                    </div>
                     <div className="flex items-center gap-2">
                       <Clock size={14} />
                       <span>{selectedPost.readTime}</span>

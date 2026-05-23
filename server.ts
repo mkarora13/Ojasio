@@ -1,4 +1,5 @@
 import express from "express";
+import compression from "compression";
 import { createServer as createViteServer } from "vite";
 import path from "path";
 import fs from "fs";
@@ -7,6 +8,8 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  // Add compression middleware to gzip responses (improves LCP/Performance)
+  app.use(compression());
   app.use(express.json());
 
   // Vite middleware for development
@@ -21,8 +24,12 @@ async function startServer() {
     // In ES modules, __dirname is not available directly, so we use process.cwd()
     const distPath = path.join(process.cwd(), 'dist');
     
-    // Serve static files from the dist directory
-    app.use(express.static(distPath));
+    // Serve static files from the dist directory with caching for better performance
+    app.use(express.static(distPath, {
+      maxAge: '1y',
+      etag: true,
+      lastModified: true
+    }));
     
     // Read index.html
     const indexTemplate = fs.readFileSync(path.join(distPath, 'index.html'), 'utf-8');

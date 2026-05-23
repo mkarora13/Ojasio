@@ -248,7 +248,7 @@ const NEW_ARTICLE = `
                 At Ojasio, we specialize in understanding your unique biology to craft meals that you love, fitting seamlessly into your busy schedule—without deprivation. We are here to guide you every step of the way.
              </p>
              <p className="text-xl font-semibold text-[#EAC881] relative z-10">
-                Book your free 15-minute discovery call with Ojasio today — and let's build a plan that works for your body, your lifestyle, and your life. → <a href="https://www.ojasio.com" className="text-white underline hover:text-[#EAC881] transition-colors">www.ojasio.com</a>
+                Book your free 20-minute discovery call with Ojasio today — and let's build a plan that works for your body, your lifestyle, and your life. → <a href="https://www.ojasio.com" className="text-white underline hover:text-[#EAC881] transition-colors">www.ojasio.com</a>
              </p>
           </div>
 

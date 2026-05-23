@@ -58,12 +58,12 @@ export const Footer: React.FC = () => {
       
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#1A2F2B]/10 to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16 lg:pt-20 pb-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-10 lg:pt-12 pb-5 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6">
           
           {/* Brand Column */}
           <div className="md:col-span-2 lg:col-span-4 flex flex-col pr-4 lg:pr-10">
-            <div className="flex items-center gap-5 group mb-6 cursor-pointer">
+            <div className="flex items-center gap-5 group mb-4 cursor-pointer">
               <div className="relative">
                 <div className="absolute inset-0 rounded-full bg-[#EAC881] opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-700"></div>
                 <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-[#1A2F2B]/10 shadow-[0_4px_20px_rgb(0,0,0,0.03)] bg-white">
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
                 </span>
               </div>
             </div>
-            <p className="text-[14px] font-sans text-[#1A2F2B]/70 leading-relaxed max-w-[300px] mb-8 font-light">
+            <p className="text-[14px] font-sans text-[#1A2F2B]/70 leading-relaxed max-w-[300px] mb-5 font-light">
               Elevating metabolic health globally. We merge nuanced clinical science with holistic nourishment to orchestrate your body's profound natural healing.
             </p>
             <div className="flex space-x-3">
@@ -101,8 +101,8 @@ export const Footer: React.FC = () => {
           
           {/* Quick Links Column */}
           <div className="lg:col-span-2 lg:pl-4">
-            <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-6 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-3 inline-block">Navigation</h3>
-            <ul className="space-y-4 font-sans text-[14px]">
+            <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block">Navigation</h3>
+            <ul className="space-y-2 font-sans text-[14px]">
               <li><NavLink to="/" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Home</NavLink></li>
               <li><NavLink to="/about" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>About</NavLink></li>
               <li><NavLink to="/founder" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Founder</NavLink></li>
@@ -115,8 +115,8 @@ export const Footer: React.FC = () => {
           
           {/* Programs Column */}
           <div className="lg:col-span-3 lg:pl-2">
-            <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-6 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-3 inline-block">Signature Protocols</h3>
-            <ul className="space-y-4 font-sans text-[14px]">
+            <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block">Signature Protocols</h3>
+            <ul className="space-y-2 font-sans text-[14px]">
               <li><NavLink to="/programs/pcos-diet-plan" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>PCOS Reversal Protocol</NavLink></li>
               <li><NavLink to="/programs/weight-loss-diet-plan" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Metabolic Weight Loss</NavLink></li>
               <li><NavLink to="/programs/thyroid-diet-plan" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Thyroid Optimization</NavLink></li>
@@ -127,9 +127,9 @@ export const Footer: React.FC = () => {
           
           {/* Connect & QR Column */}
           <div className="lg:col-span-3 flex flex-col sm:flex-row lg:flex-col lg:items-end sm:justify-between lg:justify-start">
-            <div className="mb-10 lg:text-right">
-              <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-6 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-3 inline-block lg:mr-0 pl-1">Concierge</h3>
-              <p className="font-sans text-[13px] text-[#1A2F2B]/60 mb-2 font-light hidden lg:block">
+            <div className="mb-5 lg:text-right">
+              <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block lg:mr-0 pl-1">Concierge</h3>
+              <p className="font-sans text-[13px] text-[#1A2F2B]/60 mb-1.5 font-light hidden lg:block">
                 Direct inquiries:
               </p>
               <a 
@@ -153,7 +153,7 @@ export const Footer: React.FC = () => {
                   />
                 </div>
               </div>
-              <div className="flex items-center gap-2 mt-4 text-[#1A2F2B]/50 group-hover:text-[#1A2F2B] transition-colors duration-300">
+              <div className="flex items-center gap-2 mt-3 text-[#1A2F2B]/50 group-hover:text-[#1A2F2B] transition-colors duration-300">
                 <span className="text-[9px] font-sans uppercase tracking-[0.2em] font-bold">Share Profile</span>
                 <div className="w-0 h-[1px] bg-current transition-all duration-500 group-hover:w-6 opacity-0 group-hover:opacity-100"></div>
               </div>
@@ -162,13 +162,13 @@ export const Footer: React.FC = () => {
           
         </div>
         
-        <div className="mt-16 pt-8 border-t border-[#1A2F2B]/10 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+        <div className="mt-8 pt-5 border-t border-[#1A2F2B]/10 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
             <p className="text-[13px] md:text-[14px] font-serif italic text-[#1A2F2B]/80 text-center md:text-left">
               "Sustained vitality begins with profound nourishment."
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 items-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center">
              <div className="flex items-center gap-2 bg-white/60 px-4 py-1.5 rounded-full border border-[#1A2F2B]/10 shadow-[0_2px_10px_rgb(0,0,0,0.02)] backdrop-blur-sm hover:bg-white transition-all duration-300 cursor-default">
                  <div className="flex gap-[1px] text-[#C5A059]">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-[14px] h-[14px]"><path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" /></svg>
