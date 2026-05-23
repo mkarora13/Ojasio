@@ -1,147 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
   <url>
-    <loc>https://ojasio.com/</loc>
+    <loc>https://ojasio.com</loc>
     <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ojasio.com/about</loc>
     <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ojasio.com/founder</loc>
+    <loc>https://ojasio.com/services</loc>
     <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ojasio.com/reviews</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ojasio.com/blog</loc>
     <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ojasio.com/contact</loc>
     <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ojasio.com/faq</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ojasio.com/programs/pcos-diet-plan</loc>
-    <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ojasio.com/programs/weight-loss-diet-plan</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ojasio.com/programs/thyroid-diet-plan</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ojasio.com/programs/hormonal-imbalance-diet</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ojasio.com/programs/diet-plan-for-working-professionals</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ojasio.com/blog/best-diet-plan-working-women</loc>
+    <loc>https://ojasio.com/corporate-wellness</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ojasio.com/blog/diabetic-diet-complete-guide</loc>
+    <loc>https://ojasio.com/workout-nutrition</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://ojasio.com/blog/healthy-diet-for-fitness</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Blog Article -->
   <url>
     <loc>https://ojasio.com/blog/healthy-weight-management</loc>
     <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://ojasio.com/blog/how-to-lose-belly-fat</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ojasio.com/blog/how-to-lose-weight-beginners</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ojasio.com/blog/how-to-lose-weight-fast-guide</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ojasio.com/blog/intermittent-fasting-weight-loss-guide</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <!-- Blog Article -->
   <url>
     <loc>https://ojasio.com/blog/nutritional-advice-for-families</loc>
     <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+  <!-- Blog Article -->
   <url>
-    <loc>https://ojasio.com/blog/pcos-diet-plan-weight-loss</loc>
+    <loc>https://ojasio.com/blog/healthy-diet-for-fitness</loc>
     <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+  <!-- Blog Article -->
   <url>
-    <loc>https://ojasio.com/blog/post-pregnancy-diet-plan</loc>
+    <loc>https://ojasio.com/blog/how-to-lose-weight-fast</loc>
     <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
+  <!-- Blog Article -->
   <url>
-    <loc>https://ojasio.com/blog/vegetarian-weight-loss-diet-plan</loc>
+    <loc>https://ojasio.com/blog/how-to-lose-belly-fat</loc>
     <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/how-to-lose-weight</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/diabetic-diet</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/diabetic-meal-plan</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/pre-diabetic-diet</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/weight-loss-diet-plan</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/diet-plan-for-weight-loss</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/healthy-diet-plan</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/meal-plan-for-weight-loss</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/how-to-lose-weight-naturally</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/fastest-way-to-lose-weight</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/healthy-eating-for-weight-loss</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/balanced-diet</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/healthy-eating-habits</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/what-is-diabetes</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/diabetic-recipes</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/diabetic-food-list</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/diabetic-friendly-meals</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/diabetic-breakfast-ideas</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/diabetic-snacks</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/best-way-to-lose-weight</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/best-way-to-lose-belly-fat</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/meal-planning</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/healthy-meal-ideas</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/what-should-i-eat</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Blog Article -->
+  <url>
+    <loc>https://ojasio.com/blog/weight-loss-tips</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
