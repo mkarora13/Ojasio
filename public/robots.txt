@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
 
 User-agent: Googlebot
 Allow: /
@@ -24,8 +26,5 @@ Allow: /
 
 User-agent: ClaudeBot
 Allow: /
-
-Disallow: /api/
-Disallow: /_next/
 
 Sitemap: https://ojasio.com/sitemap.xml

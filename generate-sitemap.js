@@ -1,12 +1,9 @@
 import fs from 'fs';
-import path from 'fs';
-import { fileURLToPath } from 'url';
-
-// A simple script to generate sitemap.xml and robots.txt
+import path from 'path';
 
 const generateSitemap = () => {
-  const baseUrl = 'https://www.ojasio.com';
-  const currentDate = new Date().toISOString();
+  const baseUrl = 'https://ojasio.com';
+  const currentDate = new Date().toISOString().split('T')[0];
 
   // Define static routes
   const staticRoutes = [
@@ -27,12 +24,14 @@ const generateSitemap = () => {
     '/programs/diet-plan-for-working-professionals',
   ];
 
-  const blogFileNames = [
-    "best-diet-plan-working-women",
-    "pcos-weight-loss-success-story",
-    "understanding-insulin-resistance",
-    "diabetes-blood-pressure-management",
-  ];
+  // Dynamically read blog files
+  const blogsDir = path.join(process.cwd(), 'src/data/blogs');
+  let blogFileNames = [];
+  if (fs.existsSync(blogsDir)) {
+    blogFileNames = fs.readdirSync(blogsDir)
+      .filter(f => f.endsWith('.tsx') || f.endsWith('.ts'))
+      .map(f => f.replace(/.tsx?$/, ''));
+  }
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
@@ -70,27 +69,52 @@ const generateSitemap = () => {
   </url>`;
   });
 
-  xml += `\n</urlset>`;
+  xml += `
+</urlset>`;
 
   const publicDir = 'public';
-  import('fs').then(fs => {
-    if (!fs.existsSync(publicDir)) {
-      fs.mkdirSync(publicDir);
-    }
-  
-    // Write sitemap.xml
-    fs.writeFileSync(`${publicDir}/sitemap.xml`, xml);
-    console.log('sitemap.xml generated successfully!');
-  
-    // Write robots.txt
-    const robotsTxt = `User-agent: *
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir);
+  }
+
+  // Write sitemap.xml
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), xml);
+  console.log('sitemap.xml generated successfully!');
+
+  // Write robots.txt
+  const robotsTxt = `User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
 Allow: /
 
 Sitemap: ${baseUrl}/sitemap.xml
 `;
-    fs.writeFileSync(`${publicDir}/robots.txt`, robotsTxt);
-    console.log('robots.txt generated successfully!');
-  });
+  fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt);
+  console.log('robots.txt generated successfully!');
 };
 
 generateSitemap();
