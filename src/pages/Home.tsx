@@ -67,14 +67,18 @@ export const Home: React.FC = () => {
              {/* Main large image */}
              <div className="md:col-span-8 rounded-2xl md:rounded-tl-[4rem] md:rounded-br-[4rem] overflow-hidden shadow-2xl relative group">
                 <div className="absolute inset-0 bg-green-deep/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
-                <img 
-                  src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600" 
-                  alt="Healthy gourmet food" 
-                  className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" 
-                  fetchPriority="high"
-                  loading="eager"
-                  decoding="sync"
-                />
+                <picture>
+                  <source media="(max-width: 768px)" srcSet="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800&fm=webp 1x, https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1200&fm=webp 2x" />
+                  <source media="(min-width: 769px)" srcSet="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600&fm=webp 1x, https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=2400&fm=webp 2x" />
+                  <img 
+                    src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600&fm=webp" 
+                    alt="Healthy gourmet food" 
+                    className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" 
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="sync"
+                  />
+                </picture>
              </div>
              
              {/* Right side images */}
@@ -82,21 +86,21 @@ export const Home: React.FC = () => {
                 <div className="flex-1 rounded-tr-[3rem] rounded-bl-[2rem] overflow-hidden shadow-xl relative group">
                    <div className="absolute inset-0 bg-gold/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
                    <img 
-                     src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" 
+                     src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800&fm=webp" 
                      alt="Yoga and wellbeing" 
                      className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 object-top" 
-                     fetchPriority="high"
                      loading="eager"
+                     decoding="sync"
                    />
                 </div>
                 <div className="flex-1 rounded-br-[3rem] rounded-tl-[2rem] overflow-hidden shadow-xl relative group">
                    <div className="absolute inset-0 bg-green-deep/20 group-hover:bg-transparent transition-colors duration-700 z-10" />
                    <img 
-                     src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800" 
+                     src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800&fm=webp" 
                      alt="Workout and fitness" 
                      className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" 
-                     fetchPriority="high"
                      loading="eager"
+                     decoding="sync"
                    />
                 </div>
              </div>
