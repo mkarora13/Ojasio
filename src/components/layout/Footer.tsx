@@ -4,7 +4,6 @@ import { Instagram, Linkedin, Mail, X } from 'lucide-react';
 import QRCodeModule from 'react-qr-code';
 const QRCode = (QRCodeModule as any).default || QRCodeModule;
 
-import { motion, AnimatePresence } from 'motion/react';
 
 export const Footer: React.FC = () => {
   const qrRef = useRef<HTMLDivElement>(null);
@@ -69,8 +68,7 @@ export const Footer: React.FC = () => {
                 <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-[#1A2F2B]/10 shadow-[0_4px_20px_rgb(0,0,0,0.03)] bg-white">
                   <img loading="lazy" 
                     src="https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?_gl=1*i3glqi*_ga*NTM3MzUwNTMxLjE3NzcyMjg2OTI.*_ga_8JE65Q40S6*czE3NzcyMjg2OTEkbzEkZzEkdDE3NzcyMzEzMjQkajQ4JGwwJGgw" 
-                    alt="Ojasio Logo" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    alt="Ojasio Logo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
               </div>
@@ -133,8 +131,7 @@ export const Footer: React.FC = () => {
                 Direct inquiries:
               </p>
               <a 
-                href="mailto:hello@ojasio.com" 
-                className="font-serif text-[18px] text-[#1A2F2B] italic hover:text-[#C5A059] transition-all duration-300 inline-block border-b border-transparent hover:border-[#C5A059]/40 pb-0.5"
+                href="mailto:hello@ojasio.com" className="font-serif text-[18px] text-[#1A2F2B] italic hover:text-[#C5A059] transition-all duration-300 inline-block border-b border-transparent hover:border-[#C5A059]/40 pb-0.5"
               >
                 hello@ojasio.com
               </a>
@@ -146,8 +143,7 @@ export const Footer: React.FC = () => {
                 <div ref={qrRef} className="bg-white rounded-xl overflow-hidden p-2 relative z-10 border border-[#1A2F2B]/5">
                   <QRCode 
                     value="https://ojasio.com" 
-                    size={64} 
-                    className="text-[#1A2F2B] transform group-hover:scale-105 transition-transform duration-700"
+                    size={64} className="text-[#1A2F2B] transform group-hover:scale-105 transition-transform duration-700"
                     fgColor="#1A2F2B"
                     bgColor="#ffffff"
                   />
@@ -184,20 +180,14 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
-      <AnimatePresence>
+      
         {isQRModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={() => setIsQRModalOpen(false)}>
-            <motion.div 
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 20, scale: 0.95 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-[#FAF9F6] outline outline-1 outline-[#EAC881]/30 p-8 pt-12 rounded-[2rem] flex flex-col items-center shadow-2xl relative max-w-sm w-full mx-4"
+            <div className="bg-[#FAF9F6] outline outline-1 outline-[#EAC881]/30 p-8 pt-12 rounded-[2rem] flex flex-col items-center shadow-2xl relative max-w-sm w-full mx-4"
               onClick={e => e.stopPropagation()}
             >
               <button 
-                onClick={() => setIsQRModalOpen(false)}
-                className="absolute top-6 right-6 text-[#1A2F2B]/50 hover:text-[#1A2F2B] transition-colors"
+                onClick={() => setIsQRModalOpen(false)} className="absolute top-6 right-6 text-[#1A2F2B]/50 hover:text-[#1A2F2B] transition-colors"
                 aria-label="Close"
               >
                 <X size={20} />
@@ -209,22 +199,20 @@ export const Footer: React.FC = () => {
               <div className="bg-white p-6 rounded-2xl mb-8 shadow-[0_4px_20px_rgba(26,47,43,0.05)] border border-[#EAC881]/20">
                 <QRCode 
                   value="https://ojasio.com" 
-                  size={180} 
-                  className="text-[#1A2F2B]"
+                  size={180} className="text-[#1A2F2B]"
                   fgColor="#1A2F2B"
                   bgColor="#ffffff" 
                 />
               </div>
               <button 
-                onClick={handleDownloadQR}
-                className="w-full flex items-center justify-center gap-2 bg-[#EAC881] text-[#1A2F2B] px-6 py-3.5 rounded-xl font-sans text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-opacity-90 transition-all shadow-[0_8px_20px_rgba(234,200,129,0.3)] hover:-translate-y-0.5"
+                onClick={handleDownloadQR} className="w-full flex items-center justify-center gap-2 bg-[#EAC881] text-[#1A2F2B] px-6 py-3.5 rounded-xl font-sans text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-opacity-90 transition-all shadow-[0_8px_20px_rgba(234,200,129,0.3)] hover:-translate-y-0.5"
               >
                 Save to Device
               </button>
-            </motion.div>
+            </div>
           </div>
         )}
-      </AnimatePresence>
+      
     </footer>
   );
 };

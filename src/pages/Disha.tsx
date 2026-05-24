@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { GraduationCap, Briefcase, Users, Star } from 'lucide-react';
 import { Button } from '../components/ui/Button';
@@ -13,11 +12,7 @@ export const Disha: React.FC = () => {
         
         {/* Premium Hero Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-24">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1 pt-4"
+          <div className="order-2 lg:order-1 pt-4"
           >
             <h1 className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-gold mb-10 block">
               Meet Your Nutrition Expert
@@ -41,19 +36,14 @@ export const Disha: React.FC = () => {
                 The hallmark of her success lies in unyielding biochemical individualization. She meticulously rejects the "one-size-fits-all" paradigm, demanding that every protocol seamlessly fit the client's international lifestyle. With her fusion of functional modern medicine and an empathetic wellness vision, Disha continually architects lasting health transformations for high-performing professionals worldwide.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Large Hero-Style Image */}
-          <motion.div
-             initial={{ opacity: 0, scale: 0.95 }}
-             animate={{ opacity: 1, scale: 1 }}
-             transition={{ duration: 0.9, delay: 0.1 }}
-             className="order-1 lg:order-2 w-full max-w-lg mx-auto lg:ml-auto mb-8 lg:mb-0 rounded-[2rem] overflow-hidden shadow-2xl relative border border-gold/20"
+          <div className="order-1 lg:order-2 w-full max-w-lg mx-auto lg:ml-auto mb-8 lg:mb-0 rounded-[2rem] overflow-hidden shadow-2xl relative border border-gold/20"
           >
             <img loading="lazy" 
               src="https://images.pexels.com/photos/37435132/pexels-photo-37435132.jpeg?auto=compress&cs=tinysrgb&w=800" 
-              alt="Disha Arora, Nutrition Expert" 
-              className="w-full h-auto block hover:scale-[1.02] transition-transform duration-1000"
+              alt="Disha Arora, Nutrition Expert" className="w-full h-auto block hover:scale-[1.02] transition-transform duration-1000"
             />
             {/* Elegant vignette overlay */}
             <div className="absolute inset-x-0 bottom-0 h-[60%] bg-gradient-to-t from-green-deep via-green-deep/80 to-transparent pointer-events-none" />
@@ -66,15 +56,10 @@ export const Disha: React.FC = () => {
                </p>
                <p className="text-xl md:text-2xl font-serif italic text-gold font-medium">Founder, Ojasio</p>
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="my-32 relative text-center"
+        <div className="my-32 relative text-center"
         >
           {/* Subtle background element */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[15vw] font-display text-gold/[0.03] select-none pointer-events-none whitespace-nowrap z-0">
@@ -139,14 +124,9 @@ export const Disha: React.FC = () => {
                </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="bg-white rounded-3xl p-10 shadow-lg border border-beige"
+        <div className="bg-white rounded-3xl p-10 shadow-lg border border-beige"
         >
           <h3 className="text-3xl font-display text-center text-green-deep mb-12">Clinical Authority & Credentials</h3>
           
@@ -164,7 +144,7 @@ export const Disha: React.FC = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         <div className="mt-20 text-center">
             <Button size="lg" onClick={() => navigate('/contact')}>

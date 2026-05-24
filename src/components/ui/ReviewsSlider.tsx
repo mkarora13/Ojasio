@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const REVIEWS = [
@@ -101,14 +100,9 @@ export const ReviewsSlider: React.FC<ReviewsSliderProps> = ({ reviews = REVIEWS 
       <h3 className="text-3xl font-display text-white text-center mb-12 relative z-10">Real Experiences</h3>
       
       <div className="relative min-h-[250px] flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={safeIndex}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5 }}
-            className="text-center relative z-10"
+        
+          <div
+            key={safeIndex} className="text-center relative z-10"
           >
             <div className="flex justify-center gap-1 mb-6">
               {Array.from({ length: reviews[safeIndex].rating || 5 }).map((_, i) => (
@@ -122,20 +116,18 @@ export const ReviewsSlider: React.FC<ReviewsSliderProps> = ({ reviews = REVIEWS 
               <p className="text-white font-semibold tracking-wide uppercase text-sm">{reviews[safeIndex].name}</p>
               <p className="text-[#EAC881] text-xs uppercase tracking-widest mt-1">{reviews[safeIndex].location}</p>
             </div>
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        
       </div>
 
       <button 
-        onClick={prevSlide}
-        className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-colors z-20"
+        onClick={prevSlide} className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-colors z-20"
       >
         <ChevronLeft size={20} />
       </button>
       
       <button 
-        onClick={nextSlide}
-        className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-colors z-20"
+        onClick={nextSlide} className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-colors z-20"
       >
         <ChevronRight size={20} />
       </button>
@@ -144,8 +136,7 @@ export const ReviewsSlider: React.FC<ReviewsSliderProps> = ({ reviews = REVIEWS 
         {reviews.map((_, idx) => (
           <button
             key={idx}
-            onClick={() => setCurrentIndex(idx)}
-            className={`h-1.5 rounded-full transition-all duration-300 ${idx === safeIndex ? 'w-8 bg-[#EAC881]' : 'w-2 bg-white/20'}`}
+            onClick={() => setCurrentIndex(idx)} className={`h-1.5 rounded-full transition-all duration-300 ${idx === safeIndex ? 'w-8 bg-[#EAC881]' : 'w-2 bg-white/20'}`}
           />
         ))}
       </div>

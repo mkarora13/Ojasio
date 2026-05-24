@@ -31,10 +31,8 @@ export const Button: React.FC<ButtonProps> = ({
   const widthStyle = fullWidth ? 'w-full' : '';
   
   return (
-    <button
-      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${widthStyle} ${className}`}
-      {...props}
-    >
+    <button className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${widthStyle} ${className}`}
+      {...props}>
       {children}
     </button>
   );

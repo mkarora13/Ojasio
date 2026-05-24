@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, MessageCircle, ArrowRight, Phone, Mail, Instagram, Linkedin } from 'lucide-react';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
 import { SEO } from '../components/seo/SEO';
@@ -217,29 +216,22 @@ const faqs = [
 const FAQItem = ({ question, answer, isOpen, onClick }: { key?: number, question: string, answer: React.ReactNode, isOpen: boolean, onClick: () => void }) => {
   return (
     <div className="border-b border-[#1A2F2B]/10 overflow-hidden group">
-      <button
-        className="w-full py-8 flex justify-between items-center text-left focus:outline-none transition-colors group-hover:text-[#EAC881]"
-        onClick={onClick}
-      >
+      <button className="w-full py-8 flex justify-between items-center text-left focus:outline-none transition-colors group-hover:text-[#EAC881]"
+        onClick={onClick}>
         <h3 className="font-display text-xl md:text-2xl text-[#1A2F2B] pr-8 group-hover:text-[#EAC881] transition-colors">{question}</h3>
         <span className={`flex-shrink-0 w-10 h-10 rounded-full border border-[#1A2F2B]/20 flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-[#1A2F2B] border-[#1A2F2B] text-white' : 'text-[#1A2F2B] group-hover:border-[#EAC881] group-hover:text-[#EAC881]'}`}>
            <ChevronDown className={`w-5 h-5 transition-transform duration-500 ${isOpen ? 'rotate-180' : ''}`} />
         </span>
       </button>
-      <AnimatePresence>
+      
         {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <div>
             <div className="pb-8 font-serif text-lg text-[#1A2F2B]/80 font-light leading-relaxed pr-10">
               {answer}
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
+      
     </div>
   );
 };
@@ -276,11 +268,7 @@ export const FAQ = () => {
       />
       {/* Premium Hero Section */}
       <section className="relative px-4 sm:px-6 lg:px-10 max-w-5xl mx-auto text-center mb-24">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
+        <div>
           <h4 className="text-[10px] sm:text-xs font-bold font-sans uppercase tracking-[0.3em] text-[#EAC881] mb-6">Expert Knowledge & Clarity</h4>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-medium tracking-tight text-[#1A2F2B] mb-8 leading-[1.1]">
             Frequently Asked<br />
@@ -289,18 +277,12 @@ export const FAQ = () => {
           <p className="text-base sm:text-lg md:text-xl font-serif text-[#1A2F2B]/70 max-w-2xl mx-auto leading-relaxed font-light">
             Everything you need to know about our premium nutrition consultations, sustainable weight loss strategies, and expert-led holistic wellness pans.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* FAQ Accordion Section */}
       <section className="px-4 sm:px-6 lg:px-10 max-w-4xl mx-auto">
-        <motion.div 
-          className="bg-white rounded-[2rem] p-8 md:p-12 lg:p-16 shadow-[0_20px_60px_-15px_rgba(26,47,43,0.05)] border border-[#1A2F2B]/5"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-        >
+        <div className="bg-white rounded-[2rem] p-8 md:p-12 lg:p-16 shadow-[0_20px_60px_-15px_rgba(26,47,43,0.05)] border border-[#1A2F2B]/5">
           <div className="divide-y divide-[#1A2F2B]/10">
             {faqs.map((faq, index) => (
               <FAQItem 
@@ -326,16 +308,14 @@ export const FAQ = () => {
               <a 
                 href="https://wa.me/919990356350?text=Hi%20Ojasio%2C%20I%20would%20like%20to%20book%20a%20consultation." 
                 target="_blank" 
-                rel="noopener noreferrer"
-                className="flex-1 w-full inline-flex items-center justify-center gap-3 bg-[#EAC881] hover:bg-[#1A2F2B] text-[#1A2F2B] hover:text-white px-6 py-4 rounded-full font-sans text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300"
+                rel="noopener noreferrer" className="flex-1 w-full inline-flex items-center justify-center gap-3 bg-[#EAC881] hover:bg-[#1A2F2B] text-[#1A2F2B] hover:text-white px-6 py-4 rounded-full font-sans text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300"
               >
                 <Phone className="w-4 h-4" /> WhatsApp
               </a>
               <a 
                 href="mailto:hello@ojasio.com" 
                 target="_blank" 
-                rel="noopener noreferrer"
-                className="flex-1 w-full inline-flex items-center justify-center gap-3 bg-transparent border border-[#1A2F2B]/20 hover:border-[#1A2F2B] text-[#1A2F2B] px-6 py-4 rounded-full font-sans text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300"
+                rel="noopener noreferrer" className="flex-1 w-full inline-flex items-center justify-center gap-3 bg-transparent border border-[#1A2F2B]/20 hover:border-[#1A2F2B] text-[#1A2F2B] px-6 py-4 rounded-full font-sans text-xs uppercase tracking-[0.2em] font-bold transition-all duration-300"
               >
                 <Mail className="w-4 h-4" /> Email Us
               </a>
@@ -350,7 +330,7 @@ export const FAQ = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       <WhatsAppFloatingButton />

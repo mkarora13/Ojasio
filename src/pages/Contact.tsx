@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import { Send, Phone } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 
@@ -60,13 +59,10 @@ export const Contact: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4">
         
         <div className="text-center mb-16">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-display text-green-deep mb-4"
+          <h1 className="text-5xl font-display text-green-deep mb-4"
           >
             Initiate Your Clinical Assessment
-          </motion.h1>
+          </h1>
            <p className="text-xl text-green-deep/70 font-light max-w-2xl mx-auto">
              Secure your bespoke metabolic evaluation by completing the comprehensive intake dossier below, or engage our priority concierge team immediately via WhatsApp.
            </p>
@@ -75,11 +71,7 @@ export const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
           
           {/* Form */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-3 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-beige"
+          <div className="lg:col-span-3 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-beige"
           >
             {isSubmitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-20">
@@ -116,8 +108,7 @@ export const Contact: React.FC = () => {
                 <div>
                   <label className="block text-sm font-medium text-green-deep mb-2">Primary Goal</label>
                   <select 
-                    name="goal"
-                    className={inputClass}
+                    name="goal" className={inputClass}
                     value={primaryGoal}
                     onChange={(e) => setPrimaryGoal(e.target.value)}
                   >
@@ -138,22 +129,18 @@ export const Contact: React.FC = () => {
                 </div>
 
                 {primaryGoal === 'Other' && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: 'auto' }}
-                    className="pt-2"
+                  <div className="pt-2"
                   >
                     <label className="block text-sm font-medium text-green-deep mb-2">Please Specify</label>
                     <input 
                       required 
                       type="text" 
-                      name="other_goal"
-                      className={inputClass} 
+                      name="other_goal" className={inputClass} 
                       placeholder="Specify your primary goal..." 
                       value={otherGoal}
                       onChange={(e) => setOtherGoal(e.target.value)}
                     />
-                  </motion.div>
+                  </div>
                 )}
 
                 <div>
@@ -168,14 +155,10 @@ export const Contact: React.FC = () => {
                 </div>
               </form>
             )}
-          </motion.div>
+          </div>
 
           {/* Direct Contact */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-2 flex flex-col space-y-8"
+          <div className="lg:col-span-2 flex flex-col space-y-8"
           >
             <div className="bg-green-deep text-ivory p-10 rounded-3xl shadow-xl flex flex-col h-full justify-center">
                <h3 className="text-3xl font-display mb-4">Prefer a quick chat?</h3>
@@ -201,8 +184,7 @@ export const Contact: React.FC = () => {
                  <div className="flex items-center space-x-4">
                    <img loading="lazy" 
                     src="https://images.pexels.com/photos/37274943/pexels-photo-37274943.jpeg?auto=compress&cs=tinysrgb&w=800" 
-                    alt="Disha Arora" 
-                    className="w-16 h-16 rounded-full object-cover border-2 border-gold"
+                    alt="Disha Arora" className="w-16 h-16 rounded-full object-cover border-2 border-gold"
                    />
                    <div>
                      <p className="font-display text-xl text-gold-light">Disha Arora</p>
@@ -211,7 +193,7 @@ export const Contact: React.FC = () => {
                  </div>
                </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

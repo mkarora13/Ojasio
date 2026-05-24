@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { Star, MessageSquareQuote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '../components/ui/Button';
@@ -140,13 +139,10 @@ export const Reviews: React.FC = () => {
     <div className="w-full bg-ivory pt-10 pb-24 overflow-hidden">
       {/* Header */}
       <div className="text-center mb-16 px-4">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-6xl font-display text-green-deep mb-6 leading-tight"
+        <h1 className="text-5xl md:text-6xl font-display text-green-deep mb-6 leading-tight"
         >
           Trusted by Clients<br className="hidden md:block"/> Worldwide
-        </motion.h1>
+        </h1>
          <div className="w-20 h-1 bg-gold mx-auto" />
       </div>
 
@@ -159,17 +155,12 @@ export const Reviews: React.FC = () => {
             { value: "5000+", label: "People Educated" },
             { value: "50+", label: "Seminars Conducted" },
           ].map((stat, idx) => (
-             <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="flex flex-col"
+             <div 
+                key={idx} className="flex flex-col"
               >
                 <span className="text-6xl font-display font-semibold text-gold mb-3 drop-shadow-sm">{stat.value}</span>
                 <span className="uppercase tracking-[0.2em] text-sm text-ivory/80 font-medium">{stat.label}</span>
-              </motion.div>
+              </div>
           ))}
         </div>
       </section>
@@ -189,21 +180,15 @@ export const Reviews: React.FC = () => {
         <div className="relative flex items-center justify-center w-full">
             {/* Desktop Left Button */}
             <button 
-              onClick={prevSlide} 
-              className="hidden md:flex absolute -left-4 lg:-left-16 z-20 p-4 rounded-full border border-gold/30 text-gold bg-transparent hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 focus:outline-none"
+              onClick={prevSlide} className="hidden md:flex absolute -left-4 lg:-left-16 z-20 p-4 rounded-full border border-gold/30 text-gold bg-transparent hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 focus:outline-none"
             >
                <ChevronLeft size={28} strokeWidth={1} />
             </button>
 
             <div className="w-full relative px-0">
-               <AnimatePresence mode="wait">
-                  <motion.div
-                     key={currentIndex}
-                     initial={{ opacity: 0, scale: 0.98 }}
-                     animate={{ opacity: 1, scale: 1 }}
-                     exit={{ opacity: 0, scale: 0.98 }}
-                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                     className="w-full py-4"
+               
+                  <div
+                     key={currentIndex} className="w-full py-4"
                   >
                      <div className="bg-[#FAF9F6] px-8 py-12 md:px-16 md:py-16 relative flex flex-col items-center text-center shadow-[0_15px_40px_-15px_rgba(26,54,43,0.08)] border border-gold/10">
                         <MessageSquareQuote className="absolute top-6 left-6 md:top-10 md:left-10 text-gold/5 h-16 w-16 md:h-24 md:w-24 transform -scale-x-100 z-0 stroke-[0.5]" />
@@ -224,14 +209,13 @@ export const Reviews: React.FC = () => {
                           </div>
                         </div>
                      </div>
-                  </motion.div>
-               </AnimatePresence>
+                  </div>
+               
             </div>
 
             {/* Desktop Right Button */}
             <button 
-              onClick={nextSlide} 
-              className="hidden md:flex absolute -right-4 lg:-right-16 z-20 p-4 rounded-full border border-gold/30 text-gold bg-transparent hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 focus:outline-none"
+              onClick={nextSlide} className="hidden md:flex absolute -right-4 lg:-right-16 z-20 p-4 rounded-full border border-gold/30 text-gold bg-transparent hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 focus:outline-none"
             >
                <ChevronRight size={28} strokeWidth={1} />
             </button>
@@ -241,14 +225,12 @@ export const Reviews: React.FC = () => {
         <div className="flex flex-col justify-center items-center mt-12 w-full relative z-20">
           <div className="flex md:hidden items-center justify-center gap-8 mb-6">
             <button 
-              onClick={prevSlide} 
-              className="p-3 rounded-full border border-gold/30 text-gold bg-transparent hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none"
+              onClick={prevSlide} className="p-3 rounded-full border border-gold/30 text-gold bg-transparent hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none"
             >
                <ChevronLeft size={20} strokeWidth={1} />
             </button>
             <button 
-              onClick={nextSlide} 
-              className="p-3 rounded-full border border-gold/30 text-gold bg-transparent hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none"
+              onClick={nextSlide} className="p-3 rounded-full border border-gold/30 text-gold bg-transparent hover:bg-gold hover:text-white transition-all duration-300 focus:outline-none"
             >
                <ChevronRight size={20} strokeWidth={1} />
             </button>
@@ -257,8 +239,7 @@ export const Reviews: React.FC = () => {
             {testimonials.map((_, idx) => (
               <button 
                 key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`w-2 h-2 rounded-full transition-all duration-500 ${currentIndex === idx ? 'bg-gold w-8' : 'bg-gold/30 hover:bg-gold/60'}`}
+                onClick={() => setCurrentIndex(idx)} className={`w-2 h-2 rounded-full transition-all duration-500 ${currentIndex === idx ? 'bg-gold w-8' : 'bg-gold/30 hover:bg-gold/60'}`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
@@ -267,12 +248,7 @@ export const Reviews: React.FC = () => {
       </div>
 
       {/* Submit Review Form */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto mb-32 bg-white p-10 md:p-16 rounded-[2.5rem] shadow-2xl shadow-green-deep/5 border border-gold/20"
+      <div className="max-w-4xl mx-auto mb-32 bg-white p-10 md:p-16 rounded-[2.5rem] shadow-2xl shadow-green-deep/5 border border-gold/20"
       >
         {!submitted ? (
           <>
@@ -296,8 +272,7 @@ export const Reviews: React.FC = () => {
                   <input 
                     required 
                     type="text" 
-                    name="first_name"
-                    className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
+                    name="first_name" className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
                     placeholder="Enter your first name" 
                     value={firstName} 
                     onChange={(e) => setFirstName(e.target.value)} 
@@ -308,8 +283,7 @@ export const Reviews: React.FC = () => {
                   <input 
                     required 
                     type="text" 
-                    name="last_name"
-                    className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
+                    name="last_name" className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
                     placeholder="Enter your last name" 
                     value={lastName} 
                     onChange={(e) => setLastName(e.target.value)} 
@@ -322,8 +296,7 @@ export const Reviews: React.FC = () => {
                 <input 
                   required 
                   type="email" 
-                  name="email"
-                  className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
+                  name="email" className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 bg-ivory/50" 
                   placeholder="Enter your email address" 
                   value={email} 
                   onChange={(e) => setEmail(e.target.value)} 
@@ -338,8 +311,7 @@ export const Reviews: React.FC = () => {
                   {[...Array(5)].map((_, i) => (
                     <button 
                       type="button" 
-                      key={i} 
-                      className={`${(hoverRating || rating) > i ? 'text-gold fill-gold' : 'text-gray-300'} hover:text-gold transition-colors focus:outline-none`}
+                      key={i} className={`${(hoverRating || rating) > i ? 'text-gold fill-gold' : 'text-gray-300'} hover:text-gold transition-colors focus:outline-none`}
                       onMouseEnter={() => setHoverRating(i + 1)}
                       onMouseLeave={() => setHoverRating(0)}
                       onClick={() => setRating(i + 1)}
@@ -356,8 +328,7 @@ export const Reviews: React.FC = () => {
                 </label>
                 <textarea 
                   name="review"
-                  rows={4}
-                  className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 resize-none bg-ivory/50"
+                  rows={4} className="w-full border border-beige rounded-xl p-4 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 resize-none bg-ivory/50"
                   placeholder="Tell us what you loved..."
                   value={reviewText}
                   onChange={(e) => setReviewText(e.target.value)}
@@ -380,14 +351,10 @@ export const Reviews: React.FC = () => {
             </p>
           </div>
         )}
-      </motion.div>
+      </div>
 
       {/* Net Promoter */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        className="max-w-3xl mx-auto text-center bg-beige-light p-12 rounded-3xl"
+      <div className="max-w-3xl mx-auto text-center bg-beige-light p-12 rounded-3xl"
       >
         <h3 className="text-3xl font-display text-green-deep mb-4">Ready to start?</h3>
         <p className="text-lg font-light text-green-deep/70 mb-10">
@@ -396,7 +363,7 @@ export const Reviews: React.FC = () => {
         <Button size="lg" onClick={() => navigate('/contact')}>
           Start Your Transformation Today
         </Button>
-      </motion.div>
+      </div>
     </div>
   );
 };

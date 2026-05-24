@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { Diamond, CheckCircle, Leaf, Target, ShieldCheck, Heart } from 'lucide-react';
@@ -28,11 +27,7 @@ export const About: React.FC = () => {
     <div className="w-full bg-ivory pt-20 pb-32">
       {/* Hero & Brand Story */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8 }}
-           className="text-center mb-20"
+        <div className="text-center mb-20"
         >
           <div className="flex justify-center mb-6">
             <Diamond className="w-8 h-8 text-gold" />
@@ -43,14 +38,9 @@ export const About: React.FC = () => {
           <p className="text-xl md:text-3xl font-display italic text-gold max-w-3xl mx-auto leading-snug">
             "Ojasio is not just a nutrition platform — it is a movement towards a more conscious, balanced, and empowered way of living."
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl shadow-green-deep/5 border border-gold/20 mb-32"
+        <div className="bg-white rounded-[2.5rem] p-10 md:p-16 shadow-2xl shadow-green-deep/5 border border-gold/20 mb-32"
         >
           <div className="space-y-8 text-lg md:text-xl text-green-deep/80 font-light leading-relaxed">
             <p>
@@ -63,7 +53,7 @@ export const About: React.FC = () => {
               Operating globally, we empower a discerning clientele to seize absolute control of their vitality. Whether your objective involves overcoming profound insulin resistance, navigating complex hormonal imbalances such as PCOS, or orchestrating a seamless clinical weight management journey, Ojasio delivers an unparalleled caliber of consultative excellence.
             </p>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Differentiators */}
@@ -76,19 +66,14 @@ export const About: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {differentiators.map((text, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-ivory/10 backdrop-blur-sm border border-gold/20 p-8 rounded-2xl flex flex-col items-center text-center"
+              <div 
+                key={i} className="bg-ivory/10 backdrop-blur-sm border border-gold/20 p-8 rounded-2xl flex flex-col items-center text-center"
               >
                 <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mb-6 text-gold">
                   <Diamond size={20} />
                 </div>
                 <p className="text-ivory font-light text-lg">{text}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -110,12 +95,7 @@ export const About: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 relative z-10">
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="flex flex-col relative"
+              <div className="flex flex-col relative"
               >
                 <h3 className="text-sm md:text-base font-bold font-sans uppercase tracking-[0.25em] text-gold mb-6 flex items-center gap-4">
                   <span className="w-8 h-px bg-gold"></span>
@@ -127,14 +107,9 @@ export const About: React.FC = () => {
                 <p className="text-lg md:text-xl font-light text-green-deep/80 text-justify leading-relaxed font-serif pt-2 tracking-wide">
                   At Ojasio, our core directive is the profound restoration of human vitality via scientifically rigorous, meticulously tailored nutritional engineering. We equip ambitious individuals to effortlessly conquer systemic weight challenges, actively reverse lifestyle-driven endocrine disorders like PCOS, and establish unshakeable physiological resilience. By dissolving the barriers between advanced clinical nutrition and real-world culinary enjoyment, we guarantee enduring health transformations.
                 </p>
-              </motion.div>
+              </div>
               
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex flex-col relative"
+              <div className="flex flex-col relative"
               >
                 <div className="absolute -left-8 lg:-left-12 top-0 bottom-0 w-px bg-gold/30 hidden md:block"></div>
                 <h3 className="text-sm md:text-base font-bold font-sans uppercase tracking-[0.25em] text-gold mb-6 flex items-center gap-4">
@@ -147,7 +122,7 @@ export const About: React.FC = () => {
                 <p className="text-lg md:text-xl font-light text-green-deep/80 text-justify leading-relaxed font-serif pt-2 tracking-wide">
                   We envision Ojasio as the world’s most trusted premium wellness brand, completely elevating the modern experience of therapeutic nutrition. We see a future where bespoke dietary guidance grants every client absolute metabolic dominance, mental clarity, and boundless energy—creating a balanced, sophisticated lifestyle that perfectly complements their highest personal and professional ambitions.
                 </p>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -162,37 +137,27 @@ export const About: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
           {values.map((value, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="flex flex-col text-center items-center group"
+            <div 
+              key={i} className="flex flex-col text-center items-center group"
             >
               <div className="w-16 h-16 rounded-full bg-beige flex items-center justify-center text-gold mb-6 group-hover:scale-110 group-hover:bg-gold group-hover:text-white transition-all duration-300">
                 {value.icon}
               </div>
               <h4 className="text-xl font-bold font-display text-green-deep mb-3">{value.title}</h4>
               <p className="font-light text-green-deep/70">{value.desc}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <motion.div
-         initial={{ opacity: 0, y: 20 }}
-         whileInView={{ opacity: 1, y: 0 }}
-         viewport={{ once: true }}
-         transition={{ duration: 0.7 }}
-         className="text-center mt-32 max-w-2xl mx-auto px-4"
+      <div className="text-center mt-32 max-w-2xl mx-auto px-4"
       >
          <h2 className="text-3xl md:text-4xl font-display text-green-deep mb-8">Ready to begin your journey?</h2>
          <Button size="lg" onClick={() => navigate('/contact')} className="w-full sm:w-auto px-12 py-5 text-sm tracking-[0.2em]">
             START YOUR TRANSFORMATION
           </Button>
-      </motion.div>
+      </div>
     </div>
   );
 };

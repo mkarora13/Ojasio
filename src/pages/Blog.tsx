@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
 import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2, Moon, Plane, BookOpen, Briefcase, Check, FileText } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
@@ -450,14 +449,9 @@ const LocalReviewsSlider = ({ reviews }: { reviews: any[] }) => {
           </div>
         </div>
         
-        <AnimatePresence mode="wait">
-          <motion.div 
-            key={currentIndex}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5 }}
-            className="grid md:grid-cols-2 gap-16 items-center"
+        
+          <div 
+            key={currentIndex} className="grid md:grid-cols-2 gap-16 items-center"
           >
             <div>
               <p className="text-xl md:text-2xl font-light italic leading-relaxed text-white mb-10 font-serif">
@@ -487,8 +481,8 @@ const LocalReviewsSlider = ({ reviews }: { reviews: any[] }) => {
                 ))}
               </div>
             </div>
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        
       </div>
     </div>
   );
@@ -527,11 +521,7 @@ export const DietPlanModal = ({ countryCode, onClose }: { countryCode: string, o
 
   return (
     <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 bg-[#1A2F2B]/60 backdrop-blur-sm" onClick={onClose}>
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        className="bg-white rounded-[2rem] w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
+      <div className="bg-white rounded-[2rem] w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
         onClick={e => e.stopPropagation()}
       >
         <div className="p-6 md:p-8 bg-[#1A2F2B] text-white relative shrink-0">
@@ -573,7 +563,7 @@ export const DietPlanModal = ({ countryCode, onClose }: { countryCode: string, o
             </button>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -912,8 +902,7 @@ const BLOG_POSTS = [
                 </ul>
             </div>
             <button 
-              onClick={() => openDietPlanModal("Indian Vegetarian")}
-              className="relative z-10 shrink-0 flex items-center justify-center gap-3 bg-[#1A2F2B] text-white px-8 py-5 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-all duration-300 shadow-[0_10px_30px_rgba(26,47,43,0.15)] hover:shadow-[0_15px_40px_rgba(234,200,129,0.3)] hover:-translate-y-1"
+              onClick={() => openDietPlanModal("Indian Vegetarian")} className="relative z-10 shrink-0 flex items-center justify-center gap-3 bg-[#1A2F2B] text-white px-8 py-5 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-all duration-300 shadow-[0_10px_30px_rgba(26,47,43,0.15)] hover:shadow-[0_15px_40px_rgba(234,200,129,0.3)] hover:-translate-y-1"
             >
               <ArrowRight size={18} /> View & Share Plan
             </button>
@@ -945,8 +934,7 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => openDietPlanModal("Canada")}
-                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                onClick={() => openDietPlanModal("Canada")} className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <ArrowRight size={14} /> View Plan
               </button>
@@ -962,8 +950,7 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => openDietPlanModal("USA")}
-                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                onClick={() => openDietPlanModal("USA")} className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <ArrowRight size={14} /> View Plan
               </button>
@@ -979,8 +966,7 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => openDietPlanModal("UK")}
-                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                onClick={() => openDietPlanModal("UK")} className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <ArrowRight size={14} /> View Plan
               </button>
@@ -996,8 +982,7 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => openDietPlanModal("Australia")}
-                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                onClick={() => openDietPlanModal("Australia")} className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <ArrowRight size={14} /> View Plan
               </button>
@@ -1013,8 +998,7 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => openDietPlanModal("Spain")}
-                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                onClick={() => openDietPlanModal("Spain")} className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <ArrowRight size={14} /> View Plan
               </button>
@@ -1030,8 +1014,7 @@ const BLOG_POSTS = [
                 </ul>
               </div>
               <button 
-                onClick={() => openDietPlanModal("Japan")}
-                className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
+                onClick={() => openDietPlanModal("Japan")} className="shrink-0 flex items-center justify-center gap-2 bg-white border border-[#1A2F2B]/10 text-[#1A2F2B] px-6 py-3 rounded-xl text-[10px] uppercase tracking-widest font-bold hover:bg-[#1A2F2B] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <ArrowRight size={14} /> View Plan
               </button>
@@ -2000,20 +1983,13 @@ export const Blog: React.FC = () => {
 
       <main className="px-6 lg:px-12 max-w-7xl mx-auto pb-24">
         
-        <AnimatePresence mode="popLayout" initial={false}>
+        
         {/* TILE GRID POSTS */}
         {filteredPosts.length > 0 && (
-          <motion.div key="regular-posts-grid" layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <AnimatePresence mode="popLayout" initial={false}>
+          <div key="regular-posts-grid" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
             {filteredPosts.map((post, idx) => (
-              <motion.article 
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.5 }}
-                key={post.id}
-                className="group cursor-pointer flex flex-col h-full bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_-15px_rgba(26,47,43,0.15)] border border-[#EAC881]/20 transition-all hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(26,47,43,0.2)]"
+              <article key={post.id} className="group cursor-pointer flex flex-col h-full bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_-15px_rgba(26,47,43,0.15)] border border-[#EAC881]/20 transition-all hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(26,47,43,0.2)]"
                 
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -2022,8 +1998,7 @@ export const Blog: React.FC = () => {
                   </div>
                   <img loading="lazy" 
                     src={post.image} 
-                    alt={post.title} 
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    alt={post.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F2B]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 </div>
@@ -2051,12 +2026,12 @@ export const Blog: React.FC = () => {
                     </button>
                   </div>
                 </div>
-              </motion.article>
+              </article>
             ))}
-            </AnimatePresence>
-          </motion.div>
+            
+          </div>
         )}
-        </AnimatePresence>
+        
       </main>
 
       {/* LEAD CAPTURE / NEWSLETTER */}
@@ -2084,20 +2059,14 @@ export const Blog: React.FC = () => {
       </section>
 
       {/* FULL-SCREEN BLOG READING MODAL OVERLAY */}
-      <AnimatePresence initial={false}>
+      
         {selectedPost && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[100] bg-white overflow-y-auto"
+          <div className="fixed inset-0 z-[100] bg-white overflow-y-auto"
           >
             {/* Modal Header Actions */}
             <div className="sticky top-0 left-0 right-0 h-20 bg-white/80 backdrop-blur-md z-50 border-b border-[#1A2F2B]/5 px-6 lg:px-12 flex items-center justify-between">
               <button 
-                onClick={() => setSelectedPost(null)}
-                className="flex items-center gap-2 text-[#1A2F2B] hover:text-[#EAC881] transition-colors font-sans text-xs font-bold uppercase tracking-widest hidden sm:flex"
+                onClick={() => setSelectedPost(null)} className="flex items-center gap-2 text-[#1A2F2B] hover:text-[#EAC881] transition-colors font-sans text-xs font-bold uppercase tracking-widest hidden sm:flex"
               >
                 <ArrowRight size={16} className="transform rotate-180" /> Back to Journal
               </button>
@@ -2111,8 +2080,7 @@ export const Blog: React.FC = () => {
               
               <div className="flex gap-4 shrink-0">
                  <button 
-                  onClick={() => setSelectedPost(null)}
-                  className="w-10 h-10 rounded-full bg-[#1A2F2B]/5 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all"
+                  onClick={() => setSelectedPost(null)} className="w-10 h-10 rounded-full bg-[#1A2F2B]/5 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all"
                  >
                    <X size={20} />
                  </button>
@@ -2123,17 +2091,12 @@ export const Blog: React.FC = () => {
             <div className="relative w-full min-h-[60vh] md:min-h-[60vh] lg:min-h-[70vh] flex flex-col justify-end">
               <img loading="lazy" 
                 src={selectedPost.coverImage || selectedPost.image} 
-                alt={selectedPost.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                alt={selectedPost.title} className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A2F2B] via-[#1A2F2B]/60 to-transparent"></div>
               
               <div className="relative z-10 px-6 lg:px-12 pb-12 lg:pb-20 pt-32 max-w-5xl mx-auto w-full">
-                <motion.div 
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                >
+                <div>
                   <span className="bg-[#EAC881] text-[#1A2F2B] px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest inline-block mb-6 shadow-lg">
                     {selectedPost.category}
                   </span>
@@ -2152,7 +2115,7 @@ export const Blog: React.FC = () => {
                       <span>{selectedPost.readTime}</span>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
 
@@ -2160,13 +2123,9 @@ export const Blog: React.FC = () => {
             <div className="bg-[#FAF9F6] relative">
               <WhatsAppFloatingButton />
               <div className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.6 }}
-                >
+                <div>
                   {selectedPost.content}
-                </motion.div>
+                </div>
 
                 {/* Article Footer CTA inside Modal */}
                 <div className="mt-20 pt-16 border-t border-[#1A2F2B]/10 text-center">
@@ -2178,8 +2137,8 @@ export const Blog: React.FC = () => {
                      onClick={() => {
                         const message = encodeURIComponent(`Hi Ojasio, I read your article "${selectedPost.title}" and would like to book a free 20 minute consultation.`);
                         window.open(`https://wa.me/919990356350?text=${message}`, '_blank');
-                     }} 
-                     className="bg-[#1A2F2B] text-white px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-all duration-300 shadow-[0_10px_30px_rgba(26,47,43,0.2)]"
+                      }}
+                      className="bg-[#1A2F2B] text-white px-8 py-4 rounded-xl font-sans text-sm tracking-widest uppercase font-bold hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-all duration-300 shadow-[0_10px_30px_rgba(26,47,43,0.2)]"
                    >
                      Book Your Free 20 Minutes Consultation
                    </button>
@@ -2187,15 +2146,15 @@ export const Blog: React.FC = () => {
               </div>
             </div>
 
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
+      
 
-      <AnimatePresence>
+      
         {dietPlanCountry && (
           <DietPlanModal countryCode={dietPlanCountry} onClose={() => setDietPlanCountry(null)} />
         )}
-      </AnimatePresence>
+      
 
     </div>
   );
