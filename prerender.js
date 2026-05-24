@@ -259,6 +259,7 @@ async function run() {
       <meta name="twitter:title" content="${route.title}" />
       <meta name="twitter:description" content="${route.description}" />
       ${route.image ? `<meta name="twitter:image" content="${route.image}" />` : ''}
+      ${route.image ? `<link rel="preload" href="${route.image}" as="image" fetchpriority="high" />` : ''}
 
       <!-- Schemas -->
       ${route.schema && Object.keys(route.schema).length > 0 ? `<script type="application/ld+json">${JSON.stringify(route.schema)}</script>` : ''}

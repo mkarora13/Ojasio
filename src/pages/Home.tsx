@@ -48,12 +48,7 @@ export const Home: React.FC = () => {
           
           {/* Top text section */}
           <div className="w-full flex flex-col items-center md:items-start justify-center mb-16 gap-4 text-center md:text-left">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="max-w-4xl"
-            >
+            <div className="max-w-4xl animate-fade-in-up">
               <h3 className="text-gold uppercase tracking-[0.4em] text-xs font-sans font-bold mb-6">PREMIUM WELLNESS</h3>
               <h1 className="text-5xl lg:text-7xl xl:text-[5.5rem] font-display text-green-deep mb-6 leading-[1.0] flex flex-col gap-2">
                 <span>Modern Nutrition</span>
@@ -64,17 +59,11 @@ export const Home: React.FC = () => {
                   Personalised diet plans combining modern science with holistic nutrition to deliver sustainable results for a global community.
                 </p>
               </div>
-
-            </motion.div>
+            </div>
           </div>
 
           {/* Large image grid spread across */}
-          <motion.div
-             initial={{ opacity: 0, y: 40 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
-             className="w-full grid grid-cols-1 md:grid-cols-12 gap-4 h-[50vh] md:h-[60vh]"
-          >
+          <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-4 h-[50vh] md:h-[60vh] animate-fade-in-up animation-delay-400">
              {/* Main large image */}
              <div className="md:col-span-8 rounded-2xl md:rounded-tl-[4rem] md:rounded-br-[4rem] overflow-hidden shadow-2xl relative group">
                 <div className="absolute inset-0 bg-green-deep/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
@@ -111,7 +100,7 @@ export const Home: React.FC = () => {
                    />
                 </div>
              </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

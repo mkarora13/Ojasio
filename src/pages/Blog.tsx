@@ -1966,12 +1966,7 @@ export const Blog: React.FC = () => {
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#EAC881]/10 rounded-full blur-[120px] -z-10 translate-x-1/3 -translate-y-1/4"></div>
         <div className="absolute top-40 left-0 w-[300px] h-[300px] bg-[#1A2F2B]/5 rounded-full blur-[100px] -z-10 -translate-x-1/3"></div>
         
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl"
-        >
+        <div className="max-w-3xl animate-fade-in-up">
           <span className="text-[#EAC881] text-[10px] font-bold uppercase tracking-[0.3em] block mb-6">Editorial</span>
           <h1 className="text-4xl md:text-5xl font-display text-[#1A2F2B] leading-[1.1] mb-6">
             The Wellness <span className="italic font-serif text-[#1A2F2B]/80">Journal</span>
@@ -1979,15 +1974,10 @@ export const Blog: React.FC = () => {
           <p className="text-lg md:text-xl text-[#1A2F2B]/60 font-light leading-relaxed max-w-2xl mx-auto">
             Clinical insights, science-backed nutrition, and transformative protocols for a deeply nourished life.
           </p>
-        </motion.div>
+        </div>
 
         {/* Category Pills */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mt-12"
-        >
+        <div className="flex flex-wrap justify-center gap-3 mt-12 animate-fade-in-up animation-delay-200">
           {CATEGORIES.map(category => (
             <button
               key={category}
@@ -2005,16 +1995,16 @@ export const Blog: React.FC = () => {
               {category}
             </button>
           ))}
-        </motion.div>
+        </div>
       </section>
 
       <main className="px-6 lg:px-12 max-w-7xl mx-auto pb-24">
         
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="popLayout" initial={false}>
         {/* TILE GRID POSTS */}
         {filteredPosts.length > 0 && (
           <motion.div key="regular-posts-grid" layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="popLayout" initial={false}>
             {filteredPosts.map((post, idx) => (
               <motion.article 
                 layout
@@ -2094,7 +2084,7 @@ export const Blog: React.FC = () => {
       </section>
 
       {/* FULL-SCREEN BLOG READING MODAL OVERLAY */}
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {selectedPost && (
           <motion.div 
             initial={{ opacity: 0 }}
