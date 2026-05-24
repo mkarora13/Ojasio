@@ -24,13 +24,29 @@ const generateSitemap = () => {
     '/programs/diet-plan-for-working-professionals',
   ];
 
-  // Dynamically read blog files
-  const blogsDir = path.join(process.cwd(), 'src/data/blogs');
-  let blogFileNames = [];
-  if (fs.existsSync(blogsDir)) {
-    blogFileNames = fs.readdirSync(blogsDir)
-      .filter(f => f.endsWith('.tsx') || f.endsWith('.ts'))
-      .map(f => f.replace(/.tsx?$/, ''));
+  
+  // Dynamically extract all true blog slugs
+  let blogSlugs = [];
+  const BLOG_ARTICLES = fs.readdirSync(path.join(process.cwd(), 'src/data/blogs')).filter(f => f.endsWith('.tsx')).map(f => {
+    const content = fs.readFileSync(path.join(process.cwd(), 'src/data/blogs/', f), 'utf8');
+    const idMatch = content.match(/id:\s*['"]([^'"]+)['"]/);
+    if (idMatch) {
+      return { slug: idMatch[1] };
+    }
+    return null;
+  }).filter(Boolean);
+
+  BLOG_ARTICLES.forEach(a => blogSlugs.push(a.slug));
+
+  const blogTsxContent = fs.readFileSync(path.join(process.cwd(), 'src/pages/Blog.tsx'), 'utf8');
+  const blocks = blogTsxContent.split(/id:\s*['"]/);
+  for (let i = 1; i < blocks.length; i++) {
+     const slugMatch = blocks[i].match(/^([^'"]+)['"]/);
+     if (slugMatch) {
+        if (!blogSlugs.includes(slugMatch[1])) {
+           blogSlugs.push(slugMatch[1]);
+        }
+     }
   }
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -59,7 +75,7 @@ const generateSitemap = () => {
   });
 
   // Add blog routes
-  blogFileNames.forEach(slug => {
+  blogSlugs.forEach(slug => {
     xml += `
   <url>
     <loc>${baseUrl}/blog/${slug}</loc>

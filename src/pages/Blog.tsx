@@ -578,7 +578,7 @@ export const DietPlanModal = ({ countryCode, onClose }: { countryCode: string, o
   );
 };
 
-import { article4 } from '../data/blogs/best-diet-plan-working-women';
+import { article4 } from '../data/blogs/best-diet-plan-for-working-women';
 import { articleHealthyWeight } from '../data/blogs/healthy-weight-management';
 import { articleNutritionalAdviceFamilies } from '../data/blogs/nutritional-advice-for-families';
 import { articleHealthyDietFitness } from '../data/blogs/healthy-diet-for-fitness';
@@ -602,7 +602,7 @@ const BLOG_POSTS = [
   articlePostPregnancyDiet,
   articleIntermittentFasting,
   {
-    id: "diabetes-blood-pressure-management",
+    id: "complete-guide-to-managing-diabetes-and-high-blood-pressure-naturally",
     featured: true,
     title: "Complete Guide to Managing Diabetes and High Blood Pressure Naturally",
     subtitle: "How Nutrition and Lifestyle Can Support Healthy Blood Sugar and Blood Pressure Levels",
@@ -861,7 +861,7 @@ const BLOG_POSTS = [
     )
   },
   {
-    id: "pcos-diet-plan",
+    id: "the-ultimate-7-day-pcos-diet-plan",
     featured: true,
     title: "The Ultimate 7-Day PCOS Diet Plan: Indian & Global Nutrition Guide",
     subtitle: "For Hormonal Balance & Healing From Within",
@@ -1077,7 +1077,7 @@ const BLOG_POSTS = [
     )
   },
   {
-    id: "lose-weight-without-starving",
+    id: "how-to-lose-weight-without-starving",
     featured: false,
     title: "How to Lose Weight Without Starving: A Sustainable, Science-Backed Approach to Fat Loss",
     subtitle: "The Ultimate Guide to Sustainable Fat Loss",
@@ -1405,7 +1405,7 @@ const BLOG_POSTS = [
     )
   },
   {
-    id: "lifestyle-guide-busy-professionals",
+    id: "complete-lifestyle-guide-for-busy-professionals-night-shift-workers-and-budget-friendly-healthy-living",
     title: "Complete Lifestyle Guide for Busy Professionals, Night Shift Workers, and Budget-Friendly Healthy Living",
     subtitle: "Realistic, actionable wellness for the real world.",
     category: "Lifestyle",
@@ -1601,7 +1601,7 @@ const BLOG_POSTS = [
     )
   },
   {
-    id: "best-indian-breakfast-weight-loss",
+    id: "best-indian-breakfast-for-weight-loss",
     title: "Best Indian Breakfast for Weight Loss: High-Protein & Quick",
     subtitle: "Fuel your morning and boost your metabolism without comprising on authentic taste.",
     category: "Healthy Breakfasts",
@@ -2024,7 +2024,7 @@ export const Blog: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 key={post.id}
                 className="group cursor-pointer flex flex-col h-full bg-white rounded-[2rem] overflow-hidden shadow-[0_10px_30px_-15px_rgba(26,47,43,0.15)] border border-[#EAC881]/20 transition-all hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(26,47,43,0.2)]"
-                onClick={() => setSelectedPost(post)}
+                
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <div className="absolute top-4 left-4 z-20 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#1A2F2B]">
@@ -2040,11 +2040,16 @@ export const Blog: React.FC = () => {
                 
                 <div className="flex flex-col flex-grow p-6 lg:p-8">
                   <h3 className="text-xl md:text-2xl font-display text-[#1A2F2B] leading-tight mb-3 group-hover:text-[#EAC881] transition-colors duration-300">
-                    {post.title}
+                    <Link to={`/blog/${post.id}`}>{post.title}</Link>
                   </h3>
                   <p className="text-[#1A2F2B]/60 font-light leading-relaxed mb-6 flex-grow text-sm">
                     {post.excerpt}
                   </p>
+                  <div className="mt-auto">
+                    <Link to={`/blog/${post.id}`} className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#EAC881] group-hover:text-[#1A2F2B] transition-colors">
+                      Read More <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                   
                   <div className="mt-auto flex items-center justify-between border-t border-[#1A2F2B]/10 pt-5">
                     <div className="flex items-center gap-2 text-[10px] text-[#1A2F2B]/50 font-semibold tracking-widest uppercase">

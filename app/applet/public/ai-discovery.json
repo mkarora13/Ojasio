@@ -1,0 +1,14 @@
+{
+  "name": "Ojasio Nutrition",
+  "description": "Premium online nutrition consultation and clinically backed diet plans.",
+  "endpoints": [
+    {
+      "type": "knowledge_base",
+      "url": "https://www.ojasio.com/llms.txt"
+    },
+    {
+      "type": "sitemap",
+      "url": "https://www.ojasio.com/sitemap.xml"
+    }
+  ]
+}

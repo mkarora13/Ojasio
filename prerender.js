@@ -5,22 +5,38 @@ const distPath = path.resolve('dist/client');
 
 const today = new Date().toISOString().split('T')[0];
 
+
 const BLOG_ARTICLES = fs.readdirSync('./src/data/blogs').filter(f => f.endsWith('.tsx')).map(f => {
   const content = fs.readFileSync('./src/data/blogs/' + f, 'utf8');
   const idMatch = content.match(/id:\s*['"]([^'"]+)['"]/);
   const titleMatch = content.match(/title:\s*['"]([^'"]+)['"]/);
-  const descMatch = content.match(/excerpt:\s*['"]([^'"]+)['"]/); // Assuming excerpt acts as description
+  const descMatch = content.match(/excerpt:\s*['"]([^'"]+)['"]/);
   if (idMatch && titleMatch && descMatch) {
     return { slug: idMatch[1], title: titleMatch[1], desc: descMatch[1] };
   }
   return null;
 }).filter(Boolean);
-// We also want to include the 'diabetes-blood-pressure-management' one which is defined inline in Blog.tsx
-BLOG_ARTICLES.push({
-  slug: 'diabetes-blood-pressure-management',
-  title: 'Complete Guide to Managing Diabetes and High Blood Pressure Naturally',
-  desc: 'Discover daily habits and foods that may help support healthy blood sugar and blood pressure levels. Learn how natural nutrition and proper wellness habits can contribute to your metabolic health.'
-});
+
+// Extract inline articles from Blog.tsx
+const blogTsxContent = fs.readFileSync('./src/pages/Blog.tsx', 'utf8');
+// Splitting by 'id: "' to effectively capture each article block
+const blocks = blogTsxContent.split(/id:\s*['"]/);
+for (let i = 1; i < blocks.length; i++) {
+   const block = blocks[i];
+   const slugMatch = block.match(/^([^'"]+)['"]/);
+   const titleMatch = block.match(/title:\s*['"]([^'"]+)['"]/);
+   const descMatch = block.match(/excerpt:\s*['"]([^'"]+)['"]/);
+   if (slugMatch && titleMatch && descMatch) {
+      if (!BLOG_ARTICLES.find(a => a.slug === slugMatch[1])) {
+         BLOG_ARTICLES.push({
+           slug: slugMatch[1],
+           title: titleMatch[1],
+           desc: descMatch[1]
+         });
+      }
+   }
+}
+
 
 
 const routes = [
