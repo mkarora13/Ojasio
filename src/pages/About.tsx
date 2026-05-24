@@ -57,11 +57,11 @@ export const About: React.FC = () => {
       </section>
 
       {/* Differentiators */}
-      <section className="bg-green-deep py-24 mb-32 relative overflow-hidden">
+      <section aria-labelledby="differentiators-heading" className="bg-green-deep py-24 mb-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-display text-gold mb-4">What Makes Ojasio Different</h2>
+            <h2 id="differentiators-heading" className="text-3xl md:text-5xl font-display text-gold mb-4">What Makes Ojasio Different</h2>
             <div className="w-16 h-px bg-gold/30 mx-auto" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -69,7 +69,7 @@ export const About: React.FC = () => {
               <div 
                 key={i} className="bg-ivory/10 backdrop-blur-sm border border-gold/20 p-8 rounded-2xl flex flex-col items-center text-center"
               >
-                <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mb-6 text-gold">
+                <div className="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center mb-6 text-gold" aria-hidden="true">
                   <Diamond size={20} />
                 </div>
                 <p className="text-ivory font-light text-lg">{text}</p>
@@ -80,30 +80,30 @@ export const About: React.FC = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
+      <section aria-labelledby="mission-vision-heading" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
         <div className="bg-beige rounded-[3rem] p-10 md:p-16 lg:p-24 shadow-2xl shadow-green-deep/5 border border-gold/20 relative overflow-hidden">
           {/* Decorative luxury elements */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[80px]"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-[80px]"></div>
-          <div className="absolute top-8 left-8 w-16 h-16 border-t border-l border-gold/30 hidden md:block"></div>
-          <div className="absolute bottom-8 right-8 w-16 h-16 border-b border-r border-gold/30 hidden md:block"></div>
+          <div aria-hidden="true" className="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-[80px]"></div>
+          <div aria-hidden="true" className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-[80px]"></div>
+          <div aria-hidden="true" className="absolute top-8 left-8 w-16 h-16 border-t border-l border-gold/30 hidden md:block"></div>
+          <div aria-hidden="true" className="absolute bottom-8 right-8 w-16 h-16 border-b border-r border-gold/30 hidden md:block"></div>
           
           <div className="flex flex-col relative z-10">
             <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl lg:text-5xl font-display text-green-deep mb-6">Driving Global Wellness</h2>
+              <h2 id="mission-vision-heading" className="text-4xl md:text-5xl lg:text-5xl font-display text-green-deep mb-6">Driving Global Wellness</h2>
               <div className="w-16 h-px bg-gold mx-auto" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 relative z-10">
               <div className="flex flex-col relative"
               >
-                <h3 className="text-sm md:text-base font-bold font-sans uppercase tracking-[0.25em] text-gold mb-6 flex items-center gap-4">
+                <p className="text-sm md:text-base font-bold font-sans uppercase tracking-[0.25em] text-gold mb-6 flex items-center gap-4">
                   <span className="w-8 h-px bg-gold"></span>
                   Our Mission
-                </h3>
-                <h4 className="text-2xl md:text-3xl font-display text-green-deep mb-6 leading-snug">
+                </p>
+                <h3 className="text-2xl md:text-3xl font-display text-green-deep mb-6 leading-snug">
                   Precision Nutrition for Lifelong Vitality
-                </h4>
+                </h3>
                 <p className="text-lg md:text-xl font-light text-green-deep/80 text-justify leading-relaxed font-serif pt-2 tracking-wide">
                   At Ojasio, our core directive is the profound restoration of human vitality via scientifically rigorous, meticulously tailored nutritional engineering. We equip ambitious individuals to effortlessly conquer systemic weight challenges, actively reverse lifestyle-driven endocrine disorders like PCOS, and establish unshakeable physiological resilience. By dissolving the barriers between advanced clinical nutrition and real-world culinary enjoyment, we guarantee enduring health transformations.
                 </p>
@@ -111,14 +111,14 @@ export const About: React.FC = () => {
               
               <div className="flex flex-col relative"
               >
-                <div className="absolute -left-8 lg:-left-12 top-0 bottom-0 w-px bg-gold/30 hidden md:block"></div>
-                <h3 className="text-sm md:text-base font-bold font-sans uppercase tracking-[0.25em] text-gold mb-6 flex items-center gap-4">
+                <div aria-hidden="true" className="absolute -left-8 lg:-left-12 top-0 bottom-0 w-px bg-gold/30 hidden md:block"></div>
+                <p className="text-sm md:text-base font-bold font-sans uppercase tracking-[0.25em] text-gold mb-6 flex items-center gap-4">
                   <span className="w-8 h-px bg-gold"></span>
                   Our Vision
-                </h3>
-                <h4 className="text-2xl md:text-3xl font-display text-green-deep mb-6 leading-snug">
+                </p>
+                <h3 className="text-2xl md:text-3xl font-display text-green-deep mb-6 leading-snug">
                   Redefining Luxury Integrative Health
-                </h4>
+                </h3>
                 <p className="text-lg md:text-xl font-light text-green-deep/80 text-justify leading-relaxed font-serif pt-2 tracking-wide">
                   We envision Ojasio as the world’s most trusted premium wellness brand, completely elevating the modern experience of therapeutic nutrition. We see a future where bespoke dietary guidance grants every client absolute metabolic dominance, mental clarity, and boundless energy—creating a balanced, sophisticated lifestyle that perfectly complements their highest personal and professional ambitions.
                 </p>
@@ -129,9 +129,9 @@ export const About: React.FC = () => {
       </section>
 
       {/* Core Values */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section aria-labelledby="core-values-heading" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-display text-green-deep mb-4">Core Values of Ojasio</h2>
+          <h2 id="core-values-heading" className="text-3xl md:text-5xl font-display text-green-deep mb-4">Core Values of Ojasio</h2>
           <div className="w-16 h-px bg-gold mx-auto" />
         </div>
         
@@ -140,10 +140,10 @@ export const About: React.FC = () => {
             <div 
               key={i} className="flex flex-col text-center items-center group"
             >
-              <div className="w-16 h-16 rounded-full bg-beige flex items-center justify-center text-gold mb-6 group-hover:scale-110 group-hover:bg-gold group-hover:text-white transition-all duration-300">
+              <div className="w-16 h-16 rounded-full bg-beige flex items-center justify-center text-gold mb-6 group-hover:scale-110 group-hover:bg-gold group-hover:text-white transition-all duration-300" aria-hidden="true">
                 {value.icon}
               </div>
-              <h4 className="text-xl font-bold font-display text-green-deep mb-3">{value.title}</h4>
+              <h3 className="text-xl font-bold font-display text-green-deep mb-3">{value.title}</h3>
               <p className="font-light text-green-deep/70">{value.desc}</p>
             </div>
           ))}
@@ -151,13 +151,13 @@ export const About: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <div className="text-center mt-32 max-w-2xl mx-auto px-4"
+      <section aria-labelledby="cta-heading" className="text-center mt-32 max-w-2xl mx-auto px-4"
       >
-         <h2 className="text-3xl md:text-4xl font-display text-green-deep mb-8">Ready to begin your journey?</h2>
+         <h2 id="cta-heading" className="text-3xl md:text-4xl font-display text-green-deep mb-8">Ready to begin your journey?</h2>
          <Button size="lg" onClick={() => navigate('/contact')} className="w-full sm:w-auto px-12 py-5 text-sm tracking-[0.2em]">
             START YOUR TRANSFORMATION
           </Button>
-      </div>
+      </section>
     </div>
   );
 };

@@ -99,34 +99,38 @@ export const Footer: React.FC = () => {
           
           {/* Quick Links Column */}
           <div className="lg:col-span-2 lg:pl-4">
-            <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block">Navigation</h3>
-            <ul className="space-y-2 font-sans text-[14px]">
-              <li><NavLink to="/" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Home</NavLink></li>
-              <li><NavLink to="/about" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>About</NavLink></li>
-              <li><NavLink to="/founder" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Founder</NavLink></li>
-              <li><NavLink to="/reviews" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Reviews</NavLink></li>
-              <li><NavLink to="/blog" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Journal</NavLink></li>
-              <li><NavLink to="/faq" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>FAQ</NavLink></li>
-              <li><NavLink to="/contact" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Contact</NavLink></li>
-            </ul>
+            <h2 id="footer-nav" className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block">Navigation</h2>
+            <nav aria-labelledby="footer-nav">
+              <ul className="space-y-2 font-sans text-[14px]">
+                <li><NavLink to="/" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Home</NavLink></li>
+                <li><NavLink to="/about" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>About</NavLink></li>
+                <li><NavLink to="/founder" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Founder</NavLink></li>
+                <li><NavLink to="/reviews" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Reviews</NavLink></li>
+                <li><NavLink to="/blog" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Journal</NavLink></li>
+                <li><NavLink to="/faq" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>FAQ</NavLink></li>
+                <li><NavLink to="/contact" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Contact</NavLink></li>
+              </ul>
+            </nav>
           </div>
           
           {/* Programs Column */}
           <div className="lg:col-span-3 lg:pl-2">
-            <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block">Signature Protocols</h3>
-            <ul className="space-y-2 font-sans text-[14px]">
-              <li><NavLink to="/programs/pcos-diet-plan" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>PCOS Reversal Protocol</NavLink></li>
-              <li><NavLink to="/programs/weight-loss-diet-plan" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Metabolic Weight Loss</NavLink></li>
-              <li><NavLink to="/programs/thyroid-diet-plan" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Thyroid Optimization</NavLink></li>
-              <li><NavLink to="/programs/hormonal-imbalance-diet" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Hormonal Equilibrium</NavLink></li>
-              <li><NavLink to="/programs/diet-plan-for-working-professionals" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Executive Wellness</NavLink></li>
-            </ul>
+            <h2 id="footer-programs" className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block">Signature Protocols</h2>
+            <nav aria-labelledby="footer-programs">
+              <ul className="space-y-2 font-sans text-[14px]">
+                <li><NavLink to="/programs/pcos-diet-plan" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>PCOS Reversal Protocol</NavLink></li>
+                <li><NavLink to="/programs/weight-loss-diet-plan" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Metabolic Weight Loss</NavLink></li>
+                <li><NavLink to="/programs/thyroid-diet-plan" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Thyroid Optimization</NavLink></li>
+                <li><NavLink to="/programs/hormonal-imbalance-diet" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Hormonal Equilibrium</NavLink></li>
+                <li><NavLink to="/programs/diet-plan-for-working-professionals" className="text-[#1A2F2B]/70 hover:text-[#1A2F2B] transition-all duration-300 font-medium inline-flex items-center group"><span className="w-0 h-px bg-[#C5A059] mr-0 group-hover:w-3 group-hover:mr-2 transition-all duration-300 ease-out"></span>Executive Wellness</NavLink></li>
+              </ul>
+            </nav>
           </div>
           
           {/* Connect & QR Column */}
           <div className="lg:col-span-3 flex flex-col sm:flex-row lg:flex-col lg:items-end sm:justify-between lg:justify-start">
             <div className="mb-5 lg:text-right">
-              <h3 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block lg:mr-0 pl-1">Concierge</h3>
+              <h2 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block lg:mr-0 pl-1">Concierge</h2>
               <p className="font-sans text-[13px] text-[#1A2F2B]/60 mb-1.5 font-light hidden lg:block">
                 Direct inquiries:
               </p>
@@ -137,7 +141,7 @@ export const Footer: React.FC = () => {
               </a>
             </div>
 
-            <div className="flex flex-col items-start sm:items-end lg:items-end justify-start group cursor-pointer" onClick={(e) => { e.preventDefault(); setIsQRModalOpen(true); }}>
+            <button type="button" aria-label="Share Profile QR Code" className="flex flex-col items-start sm:items-end lg:items-end justify-start group cursor-pointer" onClick={(e) => { e.preventDefault(); setIsQRModalOpen(true); }}>
               <div className="relative bg-white/70 p-2.5 rounded-[1.25rem] border border-[#1A2F2B]/10 flex flex-col items-center justify-center hover:bg-white transition-all duration-500 overflow-hidden shadow-[0_4px_15px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#EAC881]/5 via-[#EAC881]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div ref={qrRef} className="bg-white rounded-xl overflow-hidden p-2 relative z-10 border border-[#1A2F2B]/5">
@@ -153,7 +157,7 @@ export const Footer: React.FC = () => {
                 <span className="text-[9px] font-sans uppercase tracking-[0.2em] font-bold">Share Profile</span>
                 <div className="w-0 h-[1px] bg-current transition-all duration-500 group-hover:w-6 opacity-0 group-hover:opacity-100"></div>
               </div>
-            </div>
+            </button>
           </div>
           
         </div>
@@ -165,15 +169,15 @@ export const Footer: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center">
-             <div className="flex items-center gap-2 bg-white/60 px-4 py-1.5 rounded-full border border-[#1A2F2B]/10 shadow-[0_2px_10px_rgb(0,0,0,0.02)] backdrop-blur-sm hover:bg-white transition-all duration-300 cursor-default">
-                 <div className="flex gap-[1px] text-[#C5A059]">
+             <div aria-label="Rated 4.9 out of 5" title="Rated 4.9 out of 5" className="flex items-center gap-2 bg-white/60 px-4 py-1.5 rounded-full border border-[#1A2F2B]/10 shadow-[0_2px_10px_rgb(0,0,0,0.02)] backdrop-blur-sm hover:bg-white transition-all duration-300 cursor-default">
+                 <div className="flex gap-[1px] text-[#C5A059]" aria-hidden="true">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-[14px] h-[14px]"><path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" /></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-[14px] h-[14px]"><path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" /></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-[14px] h-[14px]"><path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" /></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-[14px] h-[14px]"><path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" /></svg>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-[14px] h-[14px]"><path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" /></svg>
                  </div>
-                 <span className="text-[#1A2F2B] text-[10px] tracking-[0.2em] font-sans font-bold uppercase mt-[1px]">4.9/5</span>
+                 <span aria-hidden="true" className="text-[#1A2F2B] text-[10px] tracking-[0.2em] font-sans font-bold uppercase mt-[1px]">4.9/5</span>
              </div>
              <span className="text-[10px] font-sans text-[#1A2F2B]/60 tracking-[0.1em] uppercase font-bold">© {new Date().getFullYear()} Ojasio. All rights reserved.</span>
           </div>
@@ -182,17 +186,17 @@ export const Footer: React.FC = () => {
 
       
         {isQRModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={() => setIsQRModalOpen(false)}>
+          <div role="dialog" aria-modal="true" aria-labelledby="qr-modal-title" className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={() => setIsQRModalOpen(false)}>
             <div className="bg-[#FAF9F6] outline outline-1 outline-[#EAC881]/30 p-8 pt-12 rounded-[2rem] flex flex-col items-center shadow-2xl relative max-w-sm w-full mx-4"
               onClick={e => e.stopPropagation()}
             >
               <button 
                 onClick={() => setIsQRModalOpen(false)} className="absolute top-6 right-6 text-[#1A2F2B]/50 hover:text-[#1A2F2B] transition-colors"
-                aria-label="Close"
+                aria-label="Close dialog"
               >
-                <X size={20} />
+                <X size={20} aria-hidden="true" />
               </button>
-              <h3 className="font-display text-4xl text-[#1A2F2B] mb-3 text-center tracking-tight">Connect</h3>
+              <h3 id="qr-modal-title" className="font-display text-4xl text-[#1A2F2B] mb-3 text-center tracking-tight">Connect</h3>
               <p className="text-xs font-sans text-[#1A2F2B]/70 mb-8 text-center px-4 font-light leading-relaxed">
                 Scan to access Ojasio from your mobile device.
               </p>
@@ -204,7 +208,7 @@ export const Footer: React.FC = () => {
                   bgColor="#ffffff" 
                 />
               </div>
-              <button 
+              <button type="button"
                 onClick={handleDownloadQR} className="w-full flex items-center justify-center gap-2 bg-[#EAC881] text-[#1A2F2B] px-6 py-3.5 rounded-xl font-sans text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-opacity-90 transition-all shadow-[0_8px_20px_rgba(234,200,129,0.3)] hover:-translate-y-0.5"
               >
                 Save to Device

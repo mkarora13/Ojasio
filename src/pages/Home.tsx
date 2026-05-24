@@ -48,7 +48,7 @@ export const Home: React.FC = () => {
           {/* Top text section */}
           <div className="w-full flex flex-col items-center md:items-start justify-center mb-16 gap-4 text-center md:text-left">
             <div className="max-w-4xl animate-fade-in-up">
-              <h3 className="text-gold uppercase tracking-[0.4em] text-xs font-sans font-bold mb-6">PREMIUM WELLNESS</h3>
+              <span className="block text-gold uppercase tracking-[0.4em] text-xs font-sans font-bold mb-6">PREMIUM WELLNESS</span>
               <h1 className="text-5xl lg:text-7xl xl:text-[5.5rem] font-display text-green-deep mb-6 leading-[1.0] flex flex-col gap-2">
                 <span>Modern Nutrition</span>
                 <span className="italic font-light text-gold text-4xl lg:text-6xl xl:text-7xl">Rooted in Vitality</span>
@@ -105,7 +105,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-green-deep text-ivory flex items-center justify-around min-h-[12rem] py-10 px-4">
+      <section aria-label="Our Impact" className="bg-green-deep text-ivory flex items-center justify-around min-h-[12rem] py-10 px-4">
         <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-around divide-y md:divide-y-0 md:divide-x divide-white/10 gap-8 md:gap-0">
           {stats.map((stat, idx) => (
             <div 
@@ -119,10 +119,10 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-ivory">
+      <section aria-labelledby="expertise-heading" className="py-24 bg-ivory">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-green-deep mb-4">Our Expertise</h2>
+            <h2 id="expertise-heading" className="text-4xl md:text-5xl lg:text-6xl font-display text-green-deep mb-4">Our Expertise</h2>
             <div className="w-16 h-px mx-auto md:mx-0 bg-gold/50" />
           </div>
           
@@ -131,17 +131,17 @@ export const Home: React.FC = () => {
                <div
                 key={idx} className="bg-ivory p-8 flex flex-col justify-start items-start text-left hover:bg-beige/30 transition-colors"
                >
-                <div className="mb-6 opacity-80">
+                <div className="mb-6 opacity-80" aria-hidden="true">
                   {service.icon}
                 </div>
-                <h5 className="text-xl md:text-2xl font-display font-bold text-green-deep mb-4">{service.title}</h5>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-green-deep mb-4">{service.title}</h3>
                 <p className="text-sm md:text-base font-sans text-green-deep/70 leading-relaxed font-light">{service.desc}</p>
               </div>
             ))}
             
             {/* Callout box to fill grid */}
             <div className="bg-ivory hover:bg-beige/30 transition-colors p-8 flex flex-col justify-start items-start text-left border-t border-gold/20 md:border-t-0">
-               <h5 className="font-bold text-xl md:text-2xl mb-4 font-display text-green-deep">Integrative Functional Healing</h5>
+               <h3 className="font-bold text-xl md:text-2xl mb-4 font-display text-green-deep">Integrative Functional Healing</h3>
                <p className="text-sm md:text-base font-sans text-green-deep/70 leading-relaxed font-light">Authentic physiological restoration extends far beyond restrictive caloric arithmetic. It demands a profound alignment of gut microbiome integrity, psychological resilience, and cellular nourishment. Through Ojasio’s meticulous methodologies, we synthesize the latest advancements in nutritional biochemistry with time-tested holistic practices to architect a resilient, disease-resistant physiological state, ultimately redefining your baseline of health.</p>
             </div>
           </div>
@@ -149,7 +149,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Trust Section */}
-      <section className="py-24 lg:py-32 bg-beige relative overflow-hidden border-y border-gold/20">
+      <section aria-labelledby="trust-heading" className="py-24 lg:py-32 bg-beige relative overflow-hidden border-y border-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             
@@ -157,19 +157,19 @@ export const Home: React.FC = () => {
             >
               <img 
                 src="https://images.pexels.com/photos/15319019/pexels-photo-15319019.jpeg" 
-                alt="Premium Wellness Experience" className="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-1000"
+                alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-1000"
                 loading="lazy"
                 decoding="async"
               />
               <div className="absolute inset-0 bg-green-deep/20 mix-blend-multiply transition-colors"></div>
-              <div className="absolute inset-4 sm:inset-6 md:inset-8 rounded-[1.5rem] border border-white/40 z-20 pointer-events-none"></div>
+              <div aria-hidden="true" className="absolute inset-4 sm:inset-6 md:inset-8 rounded-[1.5rem] border border-white/40 z-20 pointer-events-none"></div>
             </div>
 
             <div className="flex flex-col justify-center order-1 lg:order-2"
             >
               <div className="mb-12 md:mb-16 text-left">
                 <span className="text-xs md:text-sm font-sans font-bold uppercase tracking-[0.25em] text-gold mb-6 block">The Ojasio Paradigm</span>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-green-deep leading-[1.15] mb-8">
+                <h2 id="trust-heading" className="text-4xl md:text-5xl lg:text-6xl font-display text-green-deep leading-[1.15] mb-8">
                   Why Discerning Individuals Trust Clinical Precision
                 </h2>
                 <p className="text-lg md:text-xl text-green-deep/80 font-light leading-relaxed font-sans">

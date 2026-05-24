@@ -89,26 +89,26 @@ export const Contact: React.FC = () => {
                 <input type="hidden" name="_template" value="table" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-green-deep mb-2">Full Name</label>
-                    <input required type="text" name="name" className={inputClass} placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
+                    <label htmlFor="name" className="block text-sm font-medium text-green-deep mb-2">Full Name</label>
+                    <input id="name" required aria-required="true" type="text" name="name" className={inputClass} placeholder="Enter your name" value={name} onChange={(e) => setName(e.target.value)} />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-green-deep mb-2">WhatsApp Number</label>
-                    <input required type="tel" name="whatsapp" className={inputClass} placeholder="+123 456 7890" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
+                    <label htmlFor="whatsapp" className="block text-sm font-medium text-green-deep mb-2">WhatsApp Number</label>
+                    <input id="whatsapp" required aria-required="true" type="tel" name="whatsapp" className={inputClass} placeholder="+123 456 7890" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-green-deep mb-2">Email Address</label>
-                    <input required type="email" name="email" className={inputClass} placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <label htmlFor="email" className="block text-sm font-medium text-green-deep mb-2">Email Address</label>
+                    <input id="email" required aria-required="true" type="email" name="email" className={inputClass} placeholder="you@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-green-deep mb-2">Primary Goal</label>
+                  <label htmlFor="goal" className="block text-sm font-medium text-green-deep mb-2">Primary Goal</label>
                   <select 
-                    name="goal" className={inputClass}
+                    id="goal" name="goal" className={inputClass}
                     value={primaryGoal}
                     onChange={(e) => setPrimaryGoal(e.target.value)}
                   >
@@ -131,9 +131,11 @@ export const Contact: React.FC = () => {
                 {primaryGoal === 'Other' && (
                   <div className="pt-2"
                   >
-                    <label className="block text-sm font-medium text-green-deep mb-2">Please Specify</label>
+                    <label htmlFor="other_goal" className="block text-sm font-medium text-green-deep mb-2">Please Specify</label>
                     <input 
+                      id="other_goal"
                       required 
+                      aria-required="true"
                       type="text" 
                       name="other_goal" className={inputClass} 
                       placeholder="Specify your primary goal..." 
@@ -144,8 +146,8 @@ export const Contact: React.FC = () => {
                 )}
 
                 <div>
-                   <label className="block text-sm font-medium text-green-deep mb-2">Medical History & Condition Details</label>
-                   <textarea name="medical_history" rows={4} className={inputClass} placeholder="Please describe any medical conditions, current medications, or specific dietary restrictions..." value={medicalHistory} onChange={(e) => setMedicalHistory(e.target.value)}></textarea>
+                   <label htmlFor="medical_history" className="block text-sm font-medium text-green-deep mb-2">Medical History & Condition Details</label>
+                   <textarea id="medical_history" name="medical_history" rows={4} className={inputClass} placeholder="Please describe any medical conditions, current medications, or specific dietary restrictions..." value={medicalHistory} onChange={(e) => setMedicalHistory(e.target.value)}></textarea>
                 </div>
 
                 <div className="pt-4">
