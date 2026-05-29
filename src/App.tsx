@@ -12,15 +12,20 @@ import { Reviews } from './pages/Reviews';
 import { Contact } from './pages/Contact';
 import { Blog } from './pages/Blog';
 import { FAQ } from './pages/FAQ';
+import { Unsubscribe } from './pages/Unsubscribe';
 import { PCOSDietPlan } from './pages/programs/PCOSDietPlan';
 import { WeightLossDietPlan } from './pages/programs/WeightLossDietPlan';
 import { ThyroidDietPlan } from './pages/programs/ThyroidDietPlan';
 import { HormonalImbalanceDiet } from './pages/programs/HormonalImbalanceDiet';
 import { WorkingProfessionalsDiet } from './pages/programs/WorkingProfessionalsDiet';
 
+import { ExitIntentPopup } from './components/ui/ExitIntentPopup';
+
 export function AppRoutes() {
   return (
-    <Routes>
+    <>
+      <ExitIntentPopup />
+      <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
@@ -30,6 +35,7 @@ export function AppRoutes() {
         <Route path="blog/:id" element={<Blog />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="unsubscribe" element={<Unsubscribe />} />
         <Route path="programs/pcos-diet-plan" element={<PCOSDietPlan />} />
         <Route path="programs/weight-loss-diet-plan" element={<WeightLossDietPlan />} />
         <Route path="programs/thyroid-diet-plan" element={<ThyroidDietPlan />} />
@@ -37,6 +43,7 @@ export function AppRoutes() {
         <Route path="programs/diet-plan-for-working-professionals" element={<WorkingProfessionalsDiet />} />
       </Route>
     </Routes>
+    </>
   );
 }
 

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2, Moon, Plane, BookOpen, Briefcase, Check, FileText } from 'lucide-react';
+import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star, Download, Share2, Moon, Plane, BookOpen, Briefcase, Check, FileText, Link as LinkIcon, Facebook, Twitter, Linkedin as LinkedinIcon } from 'lucide-react';
 import { SEO } from '../components/seo/SEO';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
 import { ReviewsSlider } from '../components/ui/ReviewsSlider';
+import { NewsletterForm } from '../components/ui/NewsletterForm';
 import * as ReviewData from '../data/reviewsData';
 
 import { jsPDF } from 'jspdf';
@@ -1884,6 +1885,7 @@ const CATEGORIES = ["All", ...Array.from(new Set(BLOG_POSTS.map(post => post.cat
 
 export const Blog: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [scrollProgress, setScrollProgress] = useState(0);
   const { id } = useParams();
   const navigate = useNavigate();
   
@@ -2061,10 +2063,24 @@ export const Blog: React.FC = () => {
       {/* FULL-SCREEN BLOG READING MODAL OVERLAY */}
       
         {selectedPost && (
-          <div className="fixed inset-0 z-[100] bg-white overflow-y-auto"
+          <div 
+            className="fixed inset-0 z-[100] bg-white overflow-y-auto"
+            onScroll={(e) => {
+              const target = e.target as HTMLDivElement;
+              const scrollTop = target.scrollTop;
+              const scrollHeight = target.scrollHeight;
+              const clientHeight = target.clientHeight;
+              if (scrollHeight - clientHeight > 0) {
+                 setScrollProgress((scrollTop / (scrollHeight - clientHeight)) * 100);
+              }
+            }}
           >
             {/* Modal Header Actions */}
-            <div className="sticky top-0 left-0 right-0 h-20 bg-white/80 backdrop-blur-md z-50 border-b border-[#1A2F2B]/5 px-6 lg:px-12 flex items-center justify-between">
+            <div className="sticky top-0 left-0 right-0 h-20 bg-white/95 backdrop-blur-md z-50 border-b border-[#1A2F2B]/5 px-6 lg:px-12 flex items-center justify-between shadow-sm">
+              <div 
+                className="absolute bottom-0 left-0 h-[2px] bg-[#EAC881] transition-all duration-150 ease-out z-50" 
+                style={{ width: `${scrollProgress}%` }}
+              ></div>
               <button 
                 onClick={() => setSelectedPost(null)} className="flex items-center gap-2 text-[#1A2F2B] hover:text-[#EAC881] transition-colors font-sans text-xs font-bold uppercase tracking-widest hidden sm:flex"
               >
@@ -2125,6 +2141,39 @@ export const Blog: React.FC = () => {
               <div className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
                 <div>
                   {selectedPost.content}
+                </div>
+
+                {/* Article Tags and Social Sharing */}
+                <div className="mt-16 pt-10 border-t border-[#1A2F2B]/10 flex flex-col sm:flex-row items-center justify-between gap-6">
+                  <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
+                    <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#1A2F2B]/50 mr-2">Tags:</span>
+                    <span className="px-4 py-1.5 bg-[#FAF9F6] border border-[#1A2F2B]/10 rounded-full text-xs font-semibold text-[#1A2F2B] hover:bg-[#EAC881]/20 transition-colors cursor-pointer">{selectedPost.category}</span>
+                    <span className="px-4 py-1.5 bg-[#FAF9F6] border border-[#1A2F2B]/10 rounded-full text-xs font-semibold text-[#1A2F2B] hover:bg-[#EAC881]/20 transition-colors cursor-pointer">Wellness</span>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#1A2F2B]/50">Share:</span>
+                    <div className="flex gap-2">
+                       <button title="Share on Twitter" className="w-10 h-10 rounded-full bg-white border border-[#1A2F2B]/10 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all shadow-sm">
+                         <Twitter size={16} />
+                       </button>
+                       <button title="Share on LinkedIn" className="w-10 h-10 rounded-full bg-white border border-[#1A2F2B]/10 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all shadow-sm">
+                         <LinkedinIcon size={16} />
+                       </button>
+                       <button title="Copy Link" className="w-10 h-10 rounded-full bg-white border border-[#1A2F2B]/10 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all shadow-sm text-center">
+                         <LinkIcon size={16} />
+                       </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* In-Article Newsletter */}
+                <div className="my-16 bg-white p-8 md:p-12 rounded-3xl border border-[#EAC881]/30 shadow-lg text-center flex flex-col items-center">
+                  <div className="w-12 h-12 rounded-full bg-[#EAC881]/20 flex items-center justify-center text-[#EAC881] mb-6">
+                    <Mail size={24} />
+                  </div>
+                  <h3 className="font-display text-2xl md:text-3xl text-[#1A2F2B] mb-3">Join the private journal</h3>
+                  <p className="text-[#1A2F2B]/70 font-light mb-8 max-w-lg">Get evidence-based clinical nutrition insights and wellness protocols delivered straight to your inbox.</p>
+                  <NewsletterForm />
                 </div>
 
                 {/* Article Footer CTA inside Modal */}
