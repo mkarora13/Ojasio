@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Instagram, Linkedin, Mail, X } from 'lucide-react';
 import QRCodeModule from 'react-qr-code';
-import { NewsletterForm } from '../ui/NewsletterForm';
 const QRCode = (QRCodeModule as any).default || QRCodeModule;
 
 
@@ -60,20 +59,6 @@ export const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-10 lg:pt-16 pb-5 relative z-10">
         
-        {/* Newsletter Section */}
-        <div className="bg-[#FAF9F6]/80 backdrop-blur-md border border-[#EAC881]/30 rounded-3xl p-8 lg:p-12 mb-12 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#EAC881]/20 via-[#EAC881] to-[#EAC881]/20"></div>
-          <div className="flex-1 max-w-2xl text-center lg:text-left">
-            <h2 className="font-display text-3xl md:text-4xl text-[#1A2F2B] mb-3">Join the Ojasio Journal</h2>
-            <p className="font-serif text-[#1A2F2B]/70 text-lg leading-relaxed font-light">
-              Receive curated insights on clinical nutrition, metabolic science, and sustainable wellness protocols, delivered directly to your inbox.
-            </p>
-          </div>
-          <div className="w-full lg:w-auto lg:min-w-[400px]">
-            <NewsletterForm />
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6">
           
           {/* Brand Column */}

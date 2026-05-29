@@ -3,19 +3,10 @@ import compression from "compression";
 import { createServer as createViteServer } from "vite";
 import path from "path";
 import fs from "fs";
-// @ts-ignore - Importing the central handler
-import subscribeHandler from './api/subscribe.js';
-// @ts-ignore - Importing the central handler
-import unsubscribeHandler from './api/unsubscribe.js';
-// @ts-ignore - Importing the diagnostic handler
-import diagnosticHandler from './api/diagnostic.js';
 
 async function startServer() {
   console.log('----------------------------------------');
   console.log('[SYSTEM] Initializing Server');
-  console.log('[SYSTEM] Check ENV variables:');
-  console.log(`- RESEND_API_KEY: ${process.env.RESEND_API_KEY ? '✅ Configured' : '❌ MISSING (Emails will silently fail)'}`);
-  console.log(`- SUPABASE: ${process.env.NEXT_PUBLIC_SUPABASE_URL ? '✅ Configured' : '❌ MISSING'}`);
   console.log(`- NODE_ENV: ${process.env.NODE_ENV}`);
   console.log('----------------------------------------');
 
@@ -25,23 +16,6 @@ async function startServer() {
   // Add compression middleware to gzip responses (improves LCP/Performance)
   app.use(compression());
   app.use(express.json());
-
-  // Use the exact same Vercel Serverless Function to ensure 100% duplicate code removal
-  // and perfect production parity across deployment layers
-  app.post('/api/subscribe', async (req, res) => {
-     // @ts-ignore
-     await subscribeHandler(req, res);
-  });
-
-  app.post('/api/unsubscribe', async (req, res) => {
-     // @ts-ignore
-     await unsubscribeHandler(req, res);
-  });
-
-  app.get('/api/diagnostic', async (req, res) => {
-     // @ts-ignore
-     await diagnosticHandler(req, res);
-  });
 
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {

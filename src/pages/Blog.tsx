@@ -4,7 +4,6 @@ import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star,
 import { SEO } from '../components/seo/SEO';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
 import { ReviewsSlider } from '../components/ui/ReviewsSlider';
-import { NewsletterForm } from '../components/ui/NewsletterForm';
 import * as ReviewData from '../data/reviewsData';
 
 import { jsPDF } from 'jspdf';
@@ -2036,14 +2035,14 @@ export const Blog: React.FC = () => {
         
       </main>
 
-      {/* LEAD CAPTURE / NEWSLETTER */}
+      {/* CONSULTATION CTA */}
       <section className="bg-[#1A2F2B] py-24 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#EAC881] via-transparent to-transparent"></div>
         <div className="max-w-3xl mx-auto text-center relative z-10">
-          <Mail className="mx-auto text-[#EAC881] mb-6" size={40} strokeWidth={1} />
-          <h2 className="text-4xl md:text-5xl font-display text-white mb-6">Expert Nutrition, Delivered.</h2>
+          <BookOpen className="mx-auto text-[#EAC881] mb-6" size={40} strokeWidth={1} />
+          <h2 className="text-4xl md:text-5xl font-display text-white mb-6">Start your healing journey.</h2>
           <p className="text-white/70 font-light text-lg md:text-xl mb-10 max-w-xl mx-auto">
-            Join our private newsletter for clinical insights, hormone-balancing recipes, and evidence-based wellness protocols. 
+            Book a private consultation for clinical insights, personalized protocols, and evidence-based wellness guidance. 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto justify-center">
             <a href="https://wa.me/919990356350?text=Hi%20Ojasio%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
@@ -2164,16 +2163,6 @@ export const Blog: React.FC = () => {
                        </button>
                     </div>
                   </div>
-                </div>
-
-                {/* In-Article Newsletter */}
-                <div className="my-16 bg-white p-8 md:p-12 rounded-3xl border border-[#EAC881]/30 shadow-lg text-center flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-[#EAC881]/20 flex items-center justify-center text-[#EAC881] mb-6">
-                    <Mail size={24} />
-                  </div>
-                  <h3 className="font-display text-2xl md:text-3xl text-[#1A2F2B] mb-3">Join the private journal</h3>
-                  <p className="text-[#1A2F2B]/70 font-light mb-8 max-w-lg">Get evidence-based clinical nutrition insights and wellness protocols delivered straight to your inbox.</p>
-                  <NewsletterForm />
                 </div>
 
                 {/* Article Footer CTA inside Modal */}
