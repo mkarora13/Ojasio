@@ -42,8 +42,11 @@ async function startServer() {
   // Subscription API Endpoint (Newsletter system)
   app.post('/api/subscribe', async (req, res) => {
     try {
-      const { email } = req.body;
-      if (!email || !email.includes('@')) {
+      const email = req.body?.email;
+      const source = req.body?.source || 'Homepage Journal Section';
+      const userAgent = req.body?.userAgent || 'Unknown Device';
+
+      if (!email || typeof email !== 'string' || !email.includes('@')) {
         return res.status(400).json({ error: 'Invalid email address' });
       }
 
@@ -66,9 +69,12 @@ async function startServer() {
         return res.status(400).json({ error: 'Email already subscribed' });
       }
 
+      const timestamp = new Date().toISOString();
       subscribers.push({
         email,
-        subscribedAt: new Date().toISOString(),
+        source,
+        userAgent,
+        subscribedAt: timestamp,
         status: 'active'
       });
       
@@ -86,20 +92,29 @@ async function startServer() {
           const resend = new Resend(process.env.RESEND_API_KEY);
           
           // Notify admin
-          await resend.emails.send({
+          const adminResponse = await resend.emails.send({
             from: 'Ojasio System <hello@ojasio.com>',
             to: 'hello@ojasio.com',
             subject: 'New Subscription to Ojasio Journal',
-            html: `<p>A new user has subscribed to the Ojasio Journal.</p><p><strong>Email:</strong> ${email}</p>`,
+            html: `<h2>NEW OJASIO JOURNAL SUBSCRIBER</h2>
+<p><strong>Email:</strong> ${email}</p>
+<p><strong>Source:</strong> ${source}</p>
+<p><strong>Subscribed At:</strong> ${timestamp}</p>
+<p><strong>Device/Browser:</strong> ${userAgent}</p>
+<p><strong>Status:</strong> Active</p>`,
           });
+
+          if (adminResponse.error) {
+             console.error('Admin Email Resend API Error:', adminResponse.error);
+          }
 
           const token = encryptEmail(email);
 
           // Welcome Email for Subscriber
-          await resend.emails.send({
+          const welcomeResponse = await resend.emails.send({
           from: 'Ojasio <hello@ojasio.com>',
           to: email,
-          subject: 'Welcome to a new standard of wellness.',
+          subject: 'Welcome to the Ojasio Journal',
           html: `
 <!DOCTYPE html>
 <html lang="en">
@@ -275,7 +290,7 @@ async function startServer() {
           <p class="body-text">Welcome to the inner circle.</p>
 
           <div class="cta-container">
-            <a href="https://ojasio.com/blog" class="cta-button">Explore the Journal</a>
+            <a href="https://www.ojasio.com/blog" class="cta-button">Explore the Journal</a>
           </div>
         </td>
       </tr>
@@ -286,8 +301,8 @@ async function startServer() {
             Elevating human health through science and sustainability.
           </p>
           <div class="footer-links">
-            <a href="https://ojasio.com/unsubscribe?token=${token}">Unsubscribe</a> &nbsp;|&nbsp; 
-            <a href="https://ojasio.com">ojasio.com</a>
+            <a href="https://www.ojasio.com/unsubscribe?token=${token}">Unsubscribe</a> &nbsp;|&nbsp; 
+            <a href="https://www.ojasio.com">ojasio.com</a>
           </div>
         </td>
       </tr>
@@ -297,6 +312,10 @@ async function startServer() {
 </html>
           `,
           });
+
+          if (welcomeResponse.error) {
+             console.error('Welcome Email Resend API Error:', welcomeResponse.error);
+          }
         } catch (emailError: any) {
           console.error('Email sending failed Exception:', emailError.message || emailError);
           // Proceed to success response regardless of email failure

@@ -21,7 +21,11 @@ export const NewsletterForm: React.FC = () => {
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ 
+          email,
+          source: typeof window !== 'undefined' ? window.location.pathname : 'Unknown',
+          userAgent: typeof window !== 'undefined' ? window.navigator.userAgent : 'Unknown'
+        }),
       });
 
       const data = await response.json().catch(() => null);
