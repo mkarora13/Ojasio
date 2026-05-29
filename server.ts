@@ -69,6 +69,7 @@ async function startServer() {
         return res.status(400).json({ error: 'Email already subscribed' });
       }
 
+      // 1. Store email
       const timestamp = new Date().toISOString();
       subscribers.push({
         email,
@@ -82,10 +83,9 @@ async function startServer() {
         fs.writeFileSync(dbPath, JSON.stringify(subscribers, null, 2));
       } catch (err) {
         console.error('Error saving to subscribers db:', err);
-        // Continue anyway since we want to send the email notification
       }
 
-      // 2. Send email via Resend if API key is configured
+      // 2. Trigger email workflows safely in background
       if (process.env.RESEND_API_KEY) {
         try {
           const { Resend } = await import('resend');
@@ -318,16 +318,20 @@ async function startServer() {
           }
         } catch (emailError: any) {
           console.error('Email sending failed Exception:', emailError.message || emailError);
-          // Proceed to success response regardless of email failure
         }
       } else {
-         console.log(`RESEND_API_KEY not set. Mock subscribing ${email} and notifying hello@ojasio.com.`);
+         console.warn(`RESEND_API_KEY not set. Mock subscribing ${email} and notifying hello@ojasio.com.`);
       }
 
-      res.status(200).json({ success: true, message: 'Subscribed successfully' });
+      if (!res.headersSent) {
+        res.status(200).json({ success: true, message: 'Subscribed successfully' });
+      }
+
     } catch (error) {
       console.error('Subscription Endpoint Error:', error);
-      res.status(500).json({ error: 'Internal server error' });
+      if (!res.headersSent) {
+        res.status(500).json({ error: 'Internal server error' });
+      }
     }
   });
 

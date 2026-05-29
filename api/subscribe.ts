@@ -50,6 +50,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(400).json({ error: 'Email already subscribed' });
     }
 
+    // 1. Save subscriber
     const timestamp = new Date().toISOString();
     subscribers.push({
       email,
@@ -65,6 +66,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       console.error('Error saving to subscribers db:', err);
     }
 
+    // 3. Trigger email workflows safely
     if (process.env.RESEND_API_KEY) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
@@ -292,13 +294,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         }
       } catch (emailError: any) {
         console.error('Email sending failed Exception:', emailError.message || emailError);
-        // Continue even if email fails to avoid blocking the user
       }
+    } else {
+      console.warn('RESEND_API_KEY is not defined. Email automation skipped.');
     }
 
-    return res.status(200).json({ success: true, message: 'Subscribed successfully' });
+    if (!res.headersSent) {
+      return res.status(200).json({ success: true, message: 'Subscribed successfully' });
+    }
   } catch (error: any) {
     console.error('Subscription error:', error);
-    return res.status(500).json({ error: 'Internal server error', details: error.message, stack: error.stack });
+    // Only send 500 if headers haven't been sent yet
+    if (!res.headersSent) {
+      return res.status(500).json({ error: 'Internal server error', details: error.message, stack: error.stack });
+    }
   }
 }
