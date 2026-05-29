@@ -51,5 +51,12 @@
     "userAgent": "Unknown Device",
     "subscribedAt": "2026-05-29T01:43:01.011Z",
     "status": "active"
+  },
+  {
+    "email": "newer3@test.com",
+    "source": "Homepage Journal Section",
+    "userAgent": "Unknown Device",
+    "subscribedAt": "2026-05-29T11:48:56.894Z",
+    "status": "active"
   }
 ]
