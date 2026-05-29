@@ -37,5 +37,19 @@
     "userAgent": "Unknown Device",
     "subscribedAt": "2026-05-29T01:22:39.952Z",
     "status": "active"
+  },
+  {
+    "email": "newest2@test.com",
+    "source": "Homepage Journal Section",
+    "userAgent": "Unknown Device",
+    "subscribedAt": "2026-05-29T01:41:57.465Z",
+    "status": "active"
+  },
+  {
+    "email": "via-express@test.com",
+    "source": "Homepage Journal Section",
+    "userAgent": "Unknown Device",
+    "subscribedAt": "2026-05-29T01:43:01.011Z",
+    "status": "active"
   }
 ]
