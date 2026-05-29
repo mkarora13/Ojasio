@@ -18,6 +18,8 @@ function verifyToken(token: string): string | null {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  console.log(`[API /unsubscribe] Method: ${req.method}, Environment check: ENCRYPTION_KEY: ${!!process.env.ENCRYPTION_KEY}`);
+  
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }

@@ -9,8 +9,16 @@ import subscribeHandler from './api/subscribe.js';
 import unsubscribeHandler from './api/unsubscribe.js';
 
 async function startServer() {
+  console.log('----------------------------------------');
+  console.log('[SYSTEM] Initializing Server');
+  console.log('[SYSTEM] Check ENV variables:');
+  console.log(`- RESEND_API_KEY: ${process.env.RESEND_API_KEY ? '✅ Configured' : '❌ MISSING (Emails will silently fail)'}`);
+  console.log(`- ENCRYPTION_KEY: ${process.env.ENCRYPTION_KEY ? '✅ Configured' : '⚠️ Falling back to default'}`);
+  console.log(`- NODE_ENV: ${process.env.NODE_ENV}`);
+  console.log('----------------------------------------');
+
   const app = express();
-  const PORT = 3000;
+  const PORT = parseInt(process.env.PORT || "3000", 10);
 
   // Add compression middleware to gzip responses (improves LCP/Performance)
   app.use(compression());

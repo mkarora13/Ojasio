@@ -12,6 +12,8 @@ function generateToken(email: string): string {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  console.log(`[API /subscribe] Method: ${req.method}, Environment check: RESEND_KEY: ${!!process.env.RESEND_API_KEY}`);
+  
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }

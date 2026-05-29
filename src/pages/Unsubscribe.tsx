@@ -8,8 +8,12 @@ export const Unsubscribe: React.FC = () => {
   const token = searchParams.get('token');
   const email = searchParams.get('email'); // Fallback for old emails if any
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
+  const hasRun = React.useRef(false);
 
   useEffect(() => {
+    if (hasRun.current) return;
+    hasRun.current = true;
+
     if (!token && !email) {
       setStatus('error');
       return;
