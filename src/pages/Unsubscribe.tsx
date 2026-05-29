@@ -5,8 +5,7 @@ import { SEO } from '../components/seo/SEO';
 
 export const Unsubscribe: React.FC = () => {
   const [searchParams] = useSearchParams();
-  const token = searchParams.get('token');
-  const email = searchParams.get('email'); // Fallback for old emails if any
+  const email = searchParams.get('email') || searchParams.get('token'); // Keep token as fallback just in case old emails used it literally
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
   const hasRun = React.useRef(false);
 
@@ -14,7 +13,7 @@ export const Unsubscribe: React.FC = () => {
     if (hasRun.current) return;
     hasRun.current = true;
 
-    if (!token && !email) {
+    if (!email) {
       setStatus('error');
       return;
     }
@@ -24,7 +23,7 @@ export const Unsubscribe: React.FC = () => {
         const response = await fetch('/api/unsubscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ token, email }),
+          body: JSON.stringify({ email }),
         });
 
         if (!response.ok) {
@@ -39,7 +38,7 @@ export const Unsubscribe: React.FC = () => {
     };
 
     unsubscribe();
-  }, [token, email]);
+  }, [email]);
 
   return (
     <>

@@ -7,13 +7,15 @@ import fs from "fs";
 import subscribeHandler from './api/subscribe.js';
 // @ts-ignore - Importing the central handler
 import unsubscribeHandler from './api/unsubscribe.js';
+// @ts-ignore - Importing the diagnostic handler
+import diagnosticHandler from './api/diagnostic.js';
 
 async function startServer() {
   console.log('----------------------------------------');
   console.log('[SYSTEM] Initializing Server');
   console.log('[SYSTEM] Check ENV variables:');
   console.log(`- RESEND_API_KEY: ${process.env.RESEND_API_KEY ? '✅ Configured' : '❌ MISSING (Emails will silently fail)'}`);
-  console.log(`- ENCRYPTION_KEY: ${process.env.ENCRYPTION_KEY ? '✅ Configured' : '⚠️ Falling back to default'}`);
+  console.log(`- SUPABASE: ${process.env.NEXT_PUBLIC_SUPABASE_URL ? '✅ Configured' : '❌ MISSING'}`);
   console.log(`- NODE_ENV: ${process.env.NODE_ENV}`);
   console.log('----------------------------------------');
 
@@ -34,6 +36,11 @@ async function startServer() {
   app.post('/api/unsubscribe', async (req, res) => {
      // @ts-ignore
      await unsubscribeHandler(req, res);
+  });
+
+  app.get('/api/diagnostic', async (req, res) => {
+     // @ts-ignore
+     await diagnosticHandler(req, res);
   });
 
   // Vite middleware for development

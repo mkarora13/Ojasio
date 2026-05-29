@@ -1,198 +1,109 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import * as fs from 'fs';
-import * as path from 'path';
-import * as crypto from 'crypto';
 import { Resend } from 'resend';
+import { createClient } from '@supabase/supabase-js';
 
-function generateToken(email: string): string {
-  const secret = process.env.ENCRYPTION_KEY || 'ojasio-fallback-secret-key-32chars!!';
-  const data = Buffer.from(email).toString('base64url');
-  const signature = crypto.createHmac('sha256', secret).update(data).digest('base64url');
-  return `${data}.${signature}`;
+let supabase: ReturnType<typeof createClient> | null = null;
+
+function getSupabase() {
+  if (!supabase) {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error('Supabase configuration missing.');
+    }
+    supabase = createClient(supabaseUrl, supabaseKey);
+  }
+  return supabase;
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  console.log(`[API /subscribe] Method: ${req.method}, Environment check: RESEND_KEY: ${!!process.env.RESEND_API_KEY}`);
+  console.log(`[API /subscribe] Environment check - RESEND: ${!!process.env.RESEND_API_KEY}, SUPABASE: ${!!process.env.NEXT_PUBLIC_SUPABASE_URL}`);
   
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
-    const email = req.body?.email;
-    const source = req.body?.source || 'Homepage Journal Section';
-    const userAgent = req.body?.userAgent || 'Unknown Device';
+    const { email, source = 'Website', userAgent = 'Unknown' } = req.body || {};
 
     if (!email || typeof email !== 'string' || !email.includes('@')) {
-      return res.status(400).json({ error: 'Invalid email address' });
+      return res.status(400).json({ error: 'Valid email address required' });
     }
 
-    // 1. Check for duplicates
-    const dbPath = process.env.NODE_ENV === 'production' || process.env.VERCEL
-      ? path.join('/tmp', 'subscribers.json') 
-      : path.join(process.cwd(), 'subscribers.json');
-      
-    let subscribers: any[] = [];
+    let sb;
     try {
-      if (fs.existsSync(dbPath)) {
-        subscribers = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
-      }
-    } catch (err) {
-      console.error('[WARNING] Error reading subscribers db:', err);
-    }
-    
-    if (subscribers.find((s: any) => s.email === email)) {
-      return res.status(400).json({ error: 'Email already subscribed' });
+      sb = getSupabase();
+    } catch (e: any) {
+       console.error('[CRIT] Supabase keys are missing or invalid: ', e.message);
+       return res.status(500).json({ error: 'System Configuration Error' });
     }
 
-    // 2. Save subscriber
-    const timestamp = new Date().toISOString();
-    subscribers.push({
-      email,
-      source,
-      userAgent,
-      subscribedAt: timestamp,
-      status: 'active'
-    });
-    
-    try {
-      fs.writeFileSync(dbPath, JSON.stringify(subscribers, null, 2));
-      console.log(`[SUCCESS] Subscriber ${email} saved successfully.`);
-    } catch (err) {
-      console.error('[WARNING] Error saving to subscribers db:', err);
+    // 1. Check for duplicates / Save subscriber
+    const { data: existing, error: searchError } = await sb
+      .from('subscribers')
+      .select('email')
+      .eq('email', email)
+      .single();
+
+    if (existing) {
+       // if we found one, it might be unsubscribed, but for simplicity we just return already subscribed
+       return res.status(400).json({ error: 'Email already subscribed' });
     }
 
-    // 3. Email Infrastructure
-    if (!process.env.RESEND_API_KEY) {
-      console.warn('[WARNING] RESEND_API_KEY is not defined. Emails will NOT be sent. Returning success anyway.');
-    } else {
-      const resend = new Resend(process.env.RESEND_API_KEY);
-      const token = generateToken(email);
-
-      // Execute emails concurrently to reduce latency
-      await Promise.allSettled([
-        (async () => {
-          try {
-            console.log(`[SYS] Triggering admin email for ${email}...`);
-            const adminResponse = await resend.emails.send({
-              from: 'Ojasio System <hello@ojasio.com>', 
-              to: 'hello@ojasio.com',
-              subject: 'New Subscription to Ojasio Journal',
-              html: `<h2>NEW OJASIO JOURNAL SUBSCRIBER</h2>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Source:</strong> ${source}</p>
-      <p><strong>Subscribed At:</strong> ${timestamp}</p>
-      <p><strong>Device/Browser:</strong> ${userAgent}</p>
-      <p><strong>Status:</strong> Active</p>`,
-            });
-
-            if (adminResponse.error) {
-               console.error('[ERROR] Admin Email Resend API Error:', adminResponse.error);
-            } else {
-               console.log(`[SUCCESS] Admin notification sent to hello@ojasio.com for ${email}`);
-            }
-          } catch (adminError) {
-            console.error('[ERROR] Admin Email Execution Error:', adminError);
-          }
-        })(),
-        (async () => {
-          try {
-            console.log(`[SYS] Triggering welcome email for ${email}...`);
-            const welcomeResponse = await resend.emails.send({
-              from: 'Ojasio <hello@ojasio.com>',
-              to: email,
-              subject: 'Welcome to the Ojasio Journal',
-              html: `
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome to the Ojasio Journal</title>
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@1,400&display=swap');
-          body { margin: 0; padding: 0; background-color: #F8F8F8; -webkit-font-smoothing: antialiased; }
-          table { border-spacing: 0; border-collapse: collapse; margin: 0 auto; }
-          td { padding: 0; }
-          .wrapper { width: 100%; table-layout: fixed; background-color: #F8F8F8; padding: 60px 0; }
-          .main { background-color: #FFFFFF; margin: 0 auto; width: 100%; max-width: 600px; border: 1px solid #EAC881; border-radius: 8px; overflow: hidden; }
-          .header { padding: 56px 40px 48px 40px; text-align: center; background-color: #1A2F2B; }
-          .header-logo { font-family: 'Inter', -apple-system, sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: #EAC881; margin-bottom: 24px; }
-          .header-title { font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 400; line-height: 1.3; margin: 0; color: #FFFFFF; }
-          .content { padding: 48px 40px; background-color: #FFFFFF; }
-          .greeting { font-family: 'Inter', -apple-system, sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #1A2F2B; margin-bottom: 32px; opacity: 0.5; }
-          .body-text { font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; font-weight: 300; line-height: 1.8; color: #1A2F2B; margin-bottom: 24px; }
-          .body-text-emphasis { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-style: italic; color: #C5A059; margin: 40px 0; text-align: center; line-height: 1.4; }
-          .cta-container { text-align: center; margin-top: 48px; }
-          .cta-button { display: inline-block; background-color: #1A2F2B; color: #FFFFFF; font-family: 'Inter', -apple-system, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 18px 36px; text-decoration: none; border-radius: 4px; }
-          .footer { padding: 40px; background-color: #FAF9F6; border-top: 1px solid rgba(26, 47, 43, 0.05); text-align: center; }
-          .footer-text { font-family: 'Inter', -apple-system, sans-serif; font-size: 12px; font-weight: 300; line-height: 1.6; color: #1A2F2B; opacity: 0.6; margin-bottom: 16px; }
-          .footer-links { font-family: 'Inter', -apple-system, sans-serif; font-size: 11px; font-weight: 400; letter-spacing: 0.05em; color: #1A2F2B; opacity: 0.4; }
-          .footer-links a { color: #1A2F2B; text-decoration: underline; }
-        </style>
-      </head>
-      <body>
-        <div class="wrapper">
-          <table class="main" role="presentation">
-            <tr>
-              <td class="header">
-                <div class="header-logo">Ojasio</div>
-                <h1 class="header-title">The pursuit of<br>metabolic harmony.</h1>
-              </td>
-            </tr>
-            <tr>
-              <td class="content">
-                <div class="greeting">Read time: 1 minute</div>
-                <p class="body-text">Welcome to a space reserved for those who refuse to settle for baseline health.</p>
-                <p class="body-text">By joining the Ojasio Journal, you've taken a deliberate step away from the noise of diet culture and towards evidence-based, sustainable wellness. We believe that true vitality isn't found in extremes, but in the intelligent application of clinical nutrition and metabolic science.</p>
-                <div class="body-text-emphasis">
-                  "Health is not the absence of disease,<br>it is the presence of vitality."
-                </div>
-                <p class="body-text">In the coming weeks, you can expect curated insights delivered quietly to your inbox. We will decode complex nutritional science, share actionable protocols for working professionals, and explore the nuanced realities of achieving lasting metabolic balance.</p>
-                <p class="body-text">No spam. No overwhelming daily blasts. Just pure signal.</p>
-                <p class="body-text">Welcome to the inner circle.</p>
-                <div class="cta-container">
-                  <a href="https://www.ojasio.com/blog" class="cta-button">Explore the Journal</a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="footer">
-                <p class="footer-text">
-                  Ojasio Wellness<br>
-                  Elevating human health through science and sustainability.
-                </p>
-                <div class="footer-links">
-                  <a href="https://www.ojasio.com/unsubscribe?token=${token}">Unsubscribe</a> &nbsp;|&nbsp; 
-                  <a href="https://www.ojasio.com">ojasio.com</a>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </body>
-      </html>
-              `,
-            });
-
-            if (welcomeResponse.error) {
-               console.error('[ERROR] Welcome Email Resend API Error:', welcomeResponse.error);
-            } else {
-               console.log(`[SUCCESS] Welcome email successfully sent to ${email}`);
-            }
-          } catch (welcomeError) {
-            console.error('[ERROR] Welcome Email Execution Error:', welcomeError);
-          }
-        })()
+    // No exact existing active subscriber found, proceed to insert
+    const { error: insertError } = await sb
+      .from('subscribers')
+      .insert([
+        {
+          email,
+          source,
+          user_agent: userAgent,
+          status: 'active',
+          subscribed_at: new Date().toISOString()
+        }
       ]);
+
+    if (insertError) {
+      console.error('[ERROR] Database insert failed:', insertError);
+      return res.status(500).json({ error: 'Could not save subscriber data' });
     }
-    
-    // 4. Return frontend success cleanly
+
+    console.log(`[SUCCESS] Subscriber ${email} saved to database.`);
+
+    // 2. Email Infrastructure
+    if (!process.env.RESEND_API_KEY) {
+      console.warn('[WARNING] RESEND_API_KEY missing. Skipping emails.');
+      return res.status(200).json({ success: true, message: 'Subscribed successfully (Emails disabled)' });
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    try {
+      // Welcome Email
+      await resend.emails.send({
+        from: 'Ojasio <hello@ojasio.com>',
+        to: email,
+        subject: 'Welcome to the Ojasio Journal',
+        html: `<h2>Welcome to the Ojasio Journal</h2><p>You have successfully subscribed.</p><p><a href="https://www.ojasio.com/unsubscribe?email=${encodeURIComponent(email)}">Unsubscribe</a></p>`
+      });
+      
+      // Admin Lead Notification
+      await resend.emails.send({
+        from: 'Ojasio System <hello@ojasio.com>',
+        to: 'hello@ojasio.com',
+        subject: 'New Subscription to Ojasio Journal',
+        html: `<p>New subscriber: ${email}</p><p>Source: ${source}</p>`
+      });
+
+      console.log(`[SUCCESS] Emails sent for ${email}`);
+    } catch (emailError) {
+      console.error('[ERROR] Resend execution failed:', emailError);
+      // We don't fail the request if emails fail, as db save succeeded.
+    }
+
     return res.status(200).json({ success: true, message: 'Subscribed successfully' });
-  } catch (error: any) {
-    console.error('[ERROR] Unhandled Subscription Error:', error);
-    if (!res.headersSent) {
-      return res.status(500).json({ error: 'Internal server error', details: error.message, stack: error.stack });
-    }
+  } catch (err: any) {
+    console.error('[ERROR] Unhandled exception in subscribe handler:', err);
+    return res.status(500).json({ error: 'Internal server error' });
   }
 }
