@@ -22,10 +22,17 @@ async function startServer() {
 
       // 1. Store email in a lightweight local database (JSON format)
       // In production, sync this table via Supabase or Firebase
-      const dbPath = path.join(process.cwd(), 'subscribers.json');
-      let subscribers = [];
-      if (fs.existsSync(dbPath)) {
-        subscribers = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+      const dbPath = process.env.NODE_ENV === 'production' 
+        ? path.join('/tmp', 'subscribers.json') 
+        : path.join(process.cwd(), 'subscribers.json');
+        
+      let subscribers: any[] = [];
+      try {
+        if (fs.existsSync(dbPath)) {
+          subscribers = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+        }
+      } catch (err) {
+        console.error('Error reading subscribers db:', err);
       }
       
       if (subscribers.find((s: any) => s.email === email)) {
@@ -37,7 +44,13 @@ async function startServer() {
         subscribedAt: new Date().toISOString(),
         status: 'active'
       });
-      fs.writeFileSync(dbPath, JSON.stringify(subscribers, null, 2));
+      
+      try {
+        fs.writeFileSync(dbPath, JSON.stringify(subscribers, null, 2));
+      } catch (err) {
+        console.error('Error saving to subscribers db:', err);
+        // Continue anyway since we want to send the email notification
+      }
 
       // 2. Send email via Resend if API key is configured
       if (process.env.RESEND_API_KEY) {
@@ -88,17 +101,28 @@ async function startServer() {
         return res.status(400).json({ error: 'Invalid email address' });
       }
 
-      const dbPath = path.join(process.cwd(), 'subscribers.json');
-      let subscribers = [];
-      if (fs.existsSync(dbPath)) {
-        subscribers = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+      const dbPath = process.env.NODE_ENV === 'production' 
+        ? path.join('/tmp', 'subscribers.json') 
+        : path.join(process.cwd(), 'subscribers.json');
+        
+      let subscribers: any[] = [];
+      try {
+        if (fs.existsSync(dbPath)) {
+          subscribers = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
+        }
+      } catch (err) {
+        console.error('Error reading subscribers db:', err);
       }
       
       const subscriberIndex = subscribers.findIndex((s: any) => s.email === email);
       if (subscriberIndex !== -1) {
         subscribers[subscriberIndex].status = 'unsubscribed';
         subscribers[subscriberIndex].unsubscribedAt = new Date().toISOString();
-        fs.writeFileSync(dbPath, JSON.stringify(subscribers, null, 2));
+        try {
+          fs.writeFileSync(dbPath, JSON.stringify(subscribers, null, 2));
+        } catch (err) {
+          console.error('Error saving updated subscribers db:', err);
+        }
       }
       
       res.status(200).json({ success: true, message: 'Unsubscribed successfully' });

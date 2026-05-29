@@ -4,12 +4,18 @@ import { Mail, CheckCircle2 } from 'lucide-react';
 export const NewsletterForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || !email.includes('@')) {
+      setStatus('error');
+      setErrorMessage('Please enter a valid email address.');
+      return;
+    }
     
     setStatus('loading');
+    setErrorMessage('');
     
     try {
       const response = await fetch('/api/subscribe', {
@@ -18,8 +24,10 @@ export const NewsletterForm: React.FC = () => {
         body: JSON.stringify({ email }),
       });
 
+      const data = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error('Failed to subscribe');
+        throw new Error(data?.error || 'Failed to subscribe. Please try again.');
       }
 
       setStatus('success');
@@ -29,9 +37,10 @@ export const NewsletterForm: React.FC = () => {
       setTimeout(() => {
         setStatus('idle');
       }, 5000);
-    } catch (err) {
+    } catch (err: any) {
       console.error('Subscription error:', err);
       setStatus('error');
+      setErrorMessage(err.message || 'Please enter a valid email address.');
     }
   };
 
@@ -52,7 +61,7 @@ export const NewsletterForm: React.FC = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              placeholder="Email address for luxury wellness newsletter"
               required
               aria-required="true"
               disabled={status === 'loading'}
@@ -73,11 +82,11 @@ export const NewsletterForm: React.FC = () => {
                 Joining...
               </>
             ) : (
-              'Subscribe to Journal'
+              'SUBSCRIBE TO JOURNAL'
             )}
           </button>
-          {status === 'error' && (
-            <p className="text-red-500 text-xs font-sans mt-1" role="alert">Please enter a valid email address.</p>
+          {status === 'error' && errorMessage && (
+            <p className="text-red-500 text-xs font-sans mt-1 animate-fade-in-up" role="alert">{errorMessage}</p>
           )}
         </form>
       )}
