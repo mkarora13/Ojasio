@@ -40,6 +40,34 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(400).json({ error: 'Invalid unsubscribe request.' });
     }
 
+    const { existsSync, readFileSync, writeFileSync } = await import('fs');
+    const { join } = await import('path');
+    
+    // Check for development/production file path
+    const dbPath = process.env.NODE_ENV === 'production' || process.env.VERCEL
+      ? join('/tmp', 'subscribers.json') 
+      : join(process.cwd(), 'subscribers.json');
+      
+    let subscribers: any[] = [];
+    try {
+      if (existsSync(dbPath)) {
+        subscribers = JSON.parse(readFileSync(dbPath, 'utf-8'));
+      }
+    } catch (err) {
+      console.error('Error reading subscribers db:', err);
+    }
+    
+    const subscriberIndex = subscribers.findIndex((s: any) => s.email === email);
+    if (subscriberIndex !== -1) {
+      subscribers[subscriberIndex].status = 'unsubscribed';
+      subscribers[subscriberIndex].unsubscribedAt = new Date().toISOString();
+      try {
+        writeFileSync(dbPath, JSON.stringify(subscribers, null, 2));
+      } catch (err) {
+        console.error('Error saving updated subscribers db:', err);
+      }
+    }
+
     return res.status(200).json({ success: true, message: 'Unsubscribed successfully' });
   } catch (error) {
     return res.status(500).json({ error: 'Internal server error' });

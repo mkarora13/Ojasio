@@ -27,22 +27,56 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(400).json({ error: 'Invalid email address' });
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
     const token = encryptEmail(email);
 
-    if (process.env.RESEND_API_KEY) {
-      await resend.emails.send({
-        from: 'Ojasio System <noreply@ojasio.com>',
-        to: 'hello@ojasio.com',
-        subject: 'New Subscription to Ojasio Journal',
-        html: `<p>A new user has subscribed to the Ojasio Journal.</p><p><strong>Email:</strong> ${email}</p>`,
-      });
+    // Store email in local JSON DB (simulating real DB for Vercel demo)
+    const { existsSync, readFileSync, writeFileSync } = await import('fs');
+    const { join } = await import('path');
+    const dbPath = process.env.NODE_ENV === 'production' || process.env.VERCEL
+      ? join('/tmp', 'subscribers.json') 
+      : join(process.cwd(), 'subscribers.json');
       
-      await resend.emails.send({
-        from: 'Ojasio <hello@ojasio.com>',
-        to: email,
-        subject: 'Welcome to a new standard of wellness.',
-        html: `
+    let subscribers: any[] = [];
+    try {
+      if (existsSync(dbPath)) {
+        subscribers = JSON.parse(readFileSync(dbPath, 'utf-8'));
+      }
+    } catch (err) {
+      console.error('Error reading subscribers db:', err);
+    }
+    
+    if (subscribers.find((s: any) => s.email === email)) {
+      return res.status(400).json({ error: 'Email already subscribed' });
+    }
+
+    subscribers.push({
+      email,
+      subscribedAt: new Date().toISOString(),
+      status: 'active'
+    });
+    
+    try {
+      writeFileSync(dbPath, JSON.stringify(subscribers, null, 2));
+    } catch (err) {
+      console.error('Error saving to subscribers db:', err);
+    }
+
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        
+        await resend.emails.send({
+          from: 'Ojasio System <noreply@ojasio.com>',
+          to: 'hello@ojasio.com',
+          subject: 'New Subscription to Ojasio Journal',
+          html: `<p>A new user has subscribed to the Ojasio Journal.</p><p><strong>Email:</strong> ${email}</p>`,
+        });
+        
+        await resend.emails.send({
+          from: 'Ojasio <hello@ojasio.com>',
+          to: email,
+          subject: 'Welcome to a new standard of wellness.',
+          html: `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,19 +86,31 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     h1 { color: #1A2F2B; font-weight: 300; }
     p { color: #1A2F2B; line-height: 1.6; }
     a { color: #1A2F2B; text-decoration: underline; }
+    .btn { display: inline-block; background: #1A2F2B; color: #fff; text-decoration: none; padding: 16px 32px; border-radius: 4px; letter-spacing: 0.2em; text-transform: uppercase; font-size: 12px; font-weight: 500; margin-top: 30px; }
+    .footer { margin-top: 40px; font-size: 11px; opacity: 0.6; }
   </style>
 </head>
 <body>
   <div class="main">
-    <h1>Welcome to Ojasio</h1>
-    <p>Thank you for subscribing.</p>
-    <br><br>
-    <a href="https://ojasio.com/unsubscribe?token=${token}">Unsubscribe</a>
+    <div style="color: #EAC881; letter-spacing: 0.3em; text-transform: uppercase; font-size: 14px; margin-bottom: 24px;">Ojasio</div>
+    <h1>The pursuit of<br>metabolic harmony.</h1>
+    <p>By joining the Ojasio Journal, you've taken a deliberate step away from the noise of diet culture and towards evidence-based, sustainable wellness. We believe that true vitality isn't found in extremes, but in the intelligent application of clinical nutrition and metabolic science.</p>
+    <br>
+    <a href="https://www.ojasio.com/blog" class="btn">Explore the Journal</a>
+    
+    <div class="footer">
+      <p>Elevating human health through science and sustainability.</p>
+      <a href="https://www.ojasio.com/unsubscribe?token=${token}">Unsubscribe</a> | <a href="https://www.ojasio.com">ojasio.com</a>
+    </div>
   </div>
 </body>
 </html>
         `,
-      });
+        });
+      } catch (emailError) {
+        console.error('Email sending failed:', emailError);
+        // Continue even if email fails to avoid blocking the user
+      }
     }
 
     return res.status(200).json({ success: true, message: 'Subscribed successfully' });
