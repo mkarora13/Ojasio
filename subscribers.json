@@ -58,5 +58,19 @@
     "userAgent": "Unknown Device",
     "subscribedAt": "2026-05-29T11:48:56.894Z",
     "status": "active"
+  },
+  {
+    "email": "vkcrzzcrvt@lnovic.com",
+    "source": "/",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Safari/605.1.15",
+    "subscribedAt": "2026-05-29T11:51:17.345Z",
+    "status": "active"
+  },
+  {
+    "email": "newer5@test.com",
+    "source": "Homepage Journal Section",
+    "userAgent": "Unknown Device",
+    "subscribedAt": "2026-05-29T12:02:28.605Z",
+    "status": "active"
   }
 ]

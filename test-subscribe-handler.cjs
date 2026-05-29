@@ -2,7 +2,7 @@ const handler = require('./api/subscribe.ts').default;
 
 const req = {
   method: 'POST',
-  body: { email: 'newer3@test.com' }
+  body: { email: 'newer5@test.com' }
 };
 
 const res = {

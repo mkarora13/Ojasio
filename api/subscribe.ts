@@ -4,15 +4,11 @@ import * as path from 'path';
 import * as crypto from 'crypto';
 import { Resend } from 'resend';
 
-const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY || 'ojasio-fallback-secret-key-32chars!!'; 
-const IV_LENGTH = 16;
-
-function encryptEmail(email: string): string {
-  const iv = crypto.randomBytes(IV_LENGTH);
-  const cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(ENCRYPTION_KEY.padEnd(32, '!').slice(0, 32)), iv);
-  let encrypted = cipher.update(email, 'utf8', 'hex');
-  encrypted += cipher.final('hex');
-  return iv.toString('hex') + ':' + encrypted;
+function generateToken(email: string): string {
+  const secret = process.env.ENCRYPTION_KEY || 'ojasio-fallback-secret-key-32chars!!';
+  const data = Buffer.from(email).toString('base64url');
+  const signature = crypto.createHmac('sha256', secret).update(data).digest('base64url');
+  return `${data}.${signature}`;
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -69,7 +65,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       console.warn('[WARNING] RESEND_API_KEY is not defined. Emails will NOT be sent. Returning success anyway.');
     } else {
       const resend = new Resend(process.env.RESEND_API_KEY);
-      const token = encryptEmail(email);
+      const token = generateToken(email);
 
       // Execute emails concurrently to reduce latency
       await Promise.allSettled([

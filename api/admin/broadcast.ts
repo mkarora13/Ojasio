@@ -4,15 +4,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as crypto from 'crypto';
 
-const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY || 'ojasio-fallback-secret-key-32chars!!'; 
-const IV_LENGTH = 16;
-
-function encryptEmail(email: string): string {
-  const iv = crypto.randomBytes(IV_LENGTH);
-  const cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(ENCRYPTION_KEY.padEnd(32, '!').slice(0, 32)), iv);
-  let encrypted = cipher.update(email, 'utf8', 'hex');
-  encrypted += cipher.final('hex');
-  return iv.toString('hex') + ':' + encrypted;
+function generateToken(email: string): string {
+  const secret = process.env.ENCRYPTION_KEY || 'ojasio-fallback-secret-key-32chars!!';
+  const data = Buffer.from(email).toString('base64url');
+  const signature = crypto.createHmac('sha256', secret).update(data).digest('base64url');
+  return `${data}.${signature}`;
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -50,7 +46,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       
       const batch = emails.map(email => {
-        const token = encryptEmail(email);
+        const token = generateToken(email);
         return {
           from: 'Ojasio Journal <hello@ojasio.com>',
           to: email,
@@ -88,7 +84,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         };
       });
 
-      await resend.emails.sendBatch(batch);
+      await resend.batch.send(batch);
     } catch (err) {
       console.error('Broadcast failed', err);
       return res.status(500).json({ error: 'Broadcast failed due to email service error.' });

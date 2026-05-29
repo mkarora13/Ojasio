@@ -85,12 +85,12 @@ export const Unsubscribe: React.FC = () => {
 
           {status === 'error' && (
             <div className="flex flex-col items-center animate-fade-in-up">
-              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center text-red-500 mb-8 border border-red-100">
-                <XCircle size={28} />
+              <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center text-[#1A2F2B] mb-8 border border-red-100 shadow-sm">
+                <XCircle size={28} className="text-[#1A2F2B]" />
               </div>
-              <h1 className="text-3xl font-display text-[#1A2F2B] mb-4">Link Expired or Invalid</h1>
-              <p className="text-[#1A2F2B]/70 font-sans font-light leading-relaxed mb-10">
-                For your security, this unsubscribe link is invalid or has expired. If you’re trying to unsubscribe, please contact us directly.
+              <h1 className="text-3xl font-display text-[#1A2F2B] mb-4">This unsubscribe link has expired</h1>
+              <p className="text-[#1A2F2B]/70 font-sans font-light leading-relaxed mb-10 max-w-sm mx-auto">
+                For your security, this unsubscribe link is invalid or has expired. If you’re trying to unsubscribe, please contact us directly below, or reply to any of our emails to be manually removed.
               </p>
               <Link to="/contact" className="inline-block bg-[#1A2F2B] text-white px-8 py-3.5 rounded-md font-sans text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-[#1A2F2B]/90 transition-all shadow-sm">
                 Contact Support

@@ -1,18 +1,18 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import * as crypto from 'crypto';
 
-const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY || 'ojasio-fallback-secret-key-32chars!!';
-
-function decryptToken(token: string): string | null {
+function verifyToken(token: string): string | null {
   try {
-    const textParts = token.split(':');
-    const iv = Buffer.from(textParts.shift()!, 'hex');
-    const encryptedText = Buffer.from(textParts.join(':'), 'hex');
-    const decipher = crypto.createDecipheriv('aes-256-cbc', Buffer.from(ENCRYPTION_KEY.padEnd(32, '!').slice(0, 32)), iv);
-    let decrypted = decipher.update(encryptedText);
-    decrypted = Buffer.concat([decrypted, decipher.final()]);
-    return decrypted.toString('utf8');
+    const [data, signature] = token.split('.');
+    if (!data || !signature) return null;
+    const secret = process.env.ENCRYPTION_KEY || 'ojasio-fallback-secret-key-32chars!!';
+    const expectedSignature = crypto.createHmac('sha256', secret).update(data).digest('base64url');
+    if (signature === expectedSignature) {
+      return Buffer.from(data, 'base64url').toString('utf8');
+    }
+    return null;
   } catch (err) {
+    console.error('Token verification error:', err);
     return null;
   }
 }
@@ -28,10 +28,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     let email = fallbackEmail;
     
     if (token) {
-      const decodedEmail = decryptToken(token);
+      const decodedEmail = verifyToken(token);
       if (decodedEmail) {
         email = decodedEmail;
       } else {
+        console.warn(`[WARNING] Invalid or expired unsubscribe token used.`);
         return res.status(400).json({ error: 'Invalid or expired unsubscribe token.' });
       }
     }
