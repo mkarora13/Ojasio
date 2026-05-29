@@ -81,21 +81,22 @@ async function startServer() {
 
       // 2. Send email via Resend if API key is configured
       if (process.env.RESEND_API_KEY) {
-        const { Resend } = await import('resend');
-        const resend = new Resend(process.env.RESEND_API_KEY);
-        
-        // Notify admin
-        await resend.emails.send({
-          from: 'Ojasio System <noreply@ojasio.com>',
-          to: 'hello@ojasio.com',
-          subject: 'New Subscription to Ojasio Journal',
-          html: `<p>A new user has subscribed to the Ojasio Journal.</p><p><strong>Email:</strong> ${email}</p>`,
-        });
+        try {
+          const { Resend } = await import('resend');
+          const resend = new Resend(process.env.RESEND_API_KEY);
+          
+          // Notify admin
+          await resend.emails.send({
+            from: 'Ojasio System <hello@ojasio.com>',
+            to: 'hello@ojasio.com',
+            subject: 'New Subscription to Ojasio Journal',
+            html: `<p>A new user has subscribed to the Ojasio Journal.</p><p><strong>Email:</strong> ${email}</p>`,
+          });
 
-        const token = encryptEmail(email);
+          const token = encryptEmail(email);
 
-        // Welcome Email for Subscriber
-        await resend.emails.send({
+          // Welcome Email for Subscriber
+          await resend.emails.send({
           from: 'Ojasio <hello@ojasio.com>',
           to: email,
           subject: 'Welcome to a new standard of wellness.',
@@ -295,7 +296,11 @@ async function startServer() {
 </body>
 </html>
           `,
-        });
+          });
+        } catch (emailError: any) {
+          console.error('Email sending failed Exception:', emailError.message || emailError);
+          // Proceed to success response regardless of email failure
+        }
       } else {
          console.log(`RESEND_API_KEY not set. Mock subscribing ${email} and notifying hello@ojasio.com.`);
       }

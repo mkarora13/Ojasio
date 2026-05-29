@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
-import { existsSync, readFileSync } from 'fs';
-import { join } from 'path';
-import crypto from 'crypto';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as crypto from 'crypto';
 
 const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY || 'ojasio-fallback-secret-key-32chars!!'; 
 const IV_LENGTH = 16;
@@ -26,13 +26,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const dbPath = process.env.NODE_ENV === 'production' || process.env.VERCEL
-    ? join('/tmp', 'subscribers.json') 
-    : join(process.cwd(), 'subscribers.json');
+    ? path.join('/tmp', 'subscribers.json') 
+    : path.join(process.cwd(), 'subscribers.json');
 
   let subscribers: any[] = [];
   try {
-    if (existsSync(dbPath)) {
-      subscribers = JSON.parse(readFileSync(dbPath, 'utf-8'));
+    if (fs.existsSync(dbPath)) {
+      subscribers = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
     }
   } catch (err) {
     console.error('Error reading subscribers db:', err);

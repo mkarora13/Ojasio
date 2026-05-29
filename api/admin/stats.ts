@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { existsSync, readFileSync } from 'fs';
-import { join } from 'path';
+import * as fs from 'fs';
+import * as path from 'path';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET') {
@@ -14,13 +14,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const dbPath = process.env.NODE_ENV === 'production' || process.env.VERCEL
-    ? join('/tmp', 'subscribers.json') 
-    : join(process.cwd(), 'subscribers.json');
+    ? path.join('/tmp', 'subscribers.json') 
+    : path.join(process.cwd(), 'subscribers.json');
 
   let subscribers: any[] = [];
   try {
-    if (existsSync(dbPath)) {
-      subscribers = JSON.parse(readFileSync(dbPath, 'utf-8'));
+    if (fs.existsSync(dbPath)) {
+      subscribers = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
     }
   } catch (err) {
     console.error('Error reading subscribers db:', err);

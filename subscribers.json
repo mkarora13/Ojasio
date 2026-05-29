@@ -1,0 +1,27 @@
+[
+  {
+    "email": "mayankarora612@gmail.com",
+    "subscribedAt": "2026-05-29T00:16:38.314Z",
+    "status": "active"
+  },
+  {
+    "email": "a_mayank@aol.com",
+    "subscribedAt": "2026-05-29T00:22:51.196Z",
+    "status": "active"
+  },
+  {
+    "email": "whomayankarora@gmail.com",
+    "subscribedAt": "2026-05-29T00:30:05.720Z",
+    "status": "active"
+  },
+  {
+    "email": "test@example.com",
+    "subscribedAt": "2026-05-29T00:49:00.455Z",
+    "status": "active"
+  },
+  {
+    "email": "test2@test.com",
+    "subscribedAt": "2026-05-29T00:51:35.038Z",
+    "status": "active"
+  }
+]

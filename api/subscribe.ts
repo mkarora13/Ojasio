@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import fs from 'fs';
-import path from 'path';
-import crypto from 'crypto';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as crypto from 'crypto';
 import { Resend } from 'resend';
 
 // Simple encryption for the token
@@ -22,24 +22,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { email } = req.body;
-    if (!email || !email.includes('@')) {
+    const email = req.body?.email;
+    if (!email || typeof email !== 'string' || !email.includes('@')) {
       return res.status(400).json({ error: 'Invalid email address' });
     }
 
     const token = encryptEmail(email);
 
     // Store email in local JSON DB (simulating real DB for Vercel demo)
-    const { existsSync, readFileSync, writeFileSync } = await import('fs');
-    const { join } = await import('path');
     const dbPath = process.env.NODE_ENV === 'production' || process.env.VERCEL
-      ? join('/tmp', 'subscribers.json') 
-      : join(process.cwd(), 'subscribers.json');
+      ? path.join('/tmp', 'subscribers.json') 
+      : path.join(process.cwd(), 'subscribers.json');
       
     let subscribers: any[] = [];
     try {
-      if (existsSync(dbPath)) {
-        subscribers = JSON.parse(readFileSync(dbPath, 'utf-8'));
+      if (fs.existsSync(dbPath)) {
+        subscribers = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
       }
     } catch (err) {
       console.error('Error reading subscribers db:', err);
@@ -56,7 +54,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
     
     try {
-      writeFileSync(dbPath, JSON.stringify(subscribers, null, 2));
+      fs.writeFileSync(dbPath, JSON.stringify(subscribers, null, 2));
     } catch (err) {
       console.error('Error saving to subscribers db:', err);
     }
@@ -65,14 +63,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
         
-        await resend.emails.send({
-          from: 'Ojasio System <noreply@ojasio.com>',
+        const adminResponse = await resend.emails.send({
+          from: 'Ojasio System <hello@ojasio.com>', // Modified from noreply@ to avoid bounce if unverified domain
           to: 'hello@ojasio.com',
           subject: 'New Subscription to Ojasio Journal',
           html: `<p>A new user has subscribed to the Ojasio Journal.</p><p><strong>Email:</strong> ${email}</p>`,
         });
+
+        if (adminResponse.error) {
+           console.error('Admin Email Resend API Error:', adminResponse.error);
+        }
         
-        await resend.emails.send({
+        const welcomeResponse = await resend.emails.send({
           from: 'Ojasio <hello@ojasio.com>',
           to: email,
           subject: 'Welcome to a new standard of wellness.',
@@ -107,14 +109,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 </html>
         `,
         });
-      } catch (emailError) {
-        console.error('Email sending failed:', emailError);
+
+        if (welcomeResponse.error) {
+           console.error('Welcome Email Resend API Error:', welcomeResponse.error);
+        }
+      } catch (emailError: any) {
+        console.error('Email sending failed Exception:', emailError.message || emailError);
         // Continue even if email fails to avoid blocking the user
       }
     }
 
     return res.status(200).json({ success: true, message: 'Subscribed successfully' });
-  } catch (error) {
-    return res.status(500).json({ error: 'Internal server error' });
+  } catch (error: any) {
+    console.error('Subscription error:', error);
+    return res.status(500).json({ error: 'Internal server error', details: error.message, stack: error.stack });
   }
 }
