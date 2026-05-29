@@ -144,20 +144,23 @@ export const Footer: React.FC = () => {
           </div>
           
           {/* Connect & QR Column */}
-          <div className="lg:col-span-3 flex flex-col sm:flex-row lg:flex-col lg:items-end sm:justify-between lg:justify-start">
-            <div className="mb-5 lg:text-right">
-              <h2 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block lg:mr-0 pl-1">Concierge</h2>
-              <p className="font-sans text-[13px] text-[#1A2F2B]/60 mb-1.5 font-light hidden lg:block">
-                Direct inquiries:
-              </p>
+          <div className="lg:col-span-3 lg:pl-2 flex flex-col sm:flex-row lg:flex-col items-start justify-between sm:justify-start gap-10 sm:gap-8 pt-6 lg:pt-0 border-t border-[#1A2F2B]/10 lg:border-t-0 mt-8 lg:mt-0">
+            <div className="flex flex-col items-start w-full">
+              <h2 className="font-sans text-[11px] font-bold tracking-[0.2em] uppercase mb-3 text-[#1A2F2B] border-b border-[#1A2F2B]/10 pb-2 inline-block">
+                Wellness Concierge
+              </h2>
               <a 
-                href="mailto:hello@ojasio.com" className="font-serif text-[18px] text-[#1A2F2B] italic hover:text-[#C5A059] transition-all duration-300 inline-block border-b border-transparent hover:border-[#C5A059]/40 pb-0.5"
+                href="mailto:hello@ojasio.com" 
+                className="group inline-flex flex-col py-1"
               >
-                hello@ojasio.com
+                <span className="font-sans text-[14px] font-medium text-[#1A2F2B]/70 group-hover:text-[#1A2F2B] transition-colors duration-300">
+                  hello@ojasio.com
+                </span>
+                <span className="h-[1px] w-0 bg-[#C5A059] block mt-0.5 group-hover:w-full transition-all duration-300 ease-out"></span>
               </a>
             </div>
 
-            <button type="button" aria-label="Share Profile QR Code" className="flex flex-col items-start sm:items-end lg:items-end justify-start group cursor-pointer" onClick={(e) => { e.preventDefault(); setIsQRModalOpen(true); }}>
+            <button type="button" aria-label="Share Profile QR Code" className="flex flex-col items-start justify-start group cursor-pointer" onClick={(e) => { e.preventDefault(); setIsQRModalOpen(true); }}>
               <div className="relative bg-white/70 p-2.5 rounded-[1.25rem] border border-[#1A2F2B]/10 flex flex-col items-center justify-center hover:bg-white transition-all duration-500 overflow-hidden shadow-[0_4px_15px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#EAC881]/5 via-[#EAC881]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div ref={qrRef} className="bg-white rounded-xl overflow-hidden p-2 relative z-10 border border-[#1A2F2B]/5">

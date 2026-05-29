@@ -98,6 +98,13 @@ const routes = [
     noscript: "<h1>Client Reviews</h1><p>Real success stories from our global clients.</p>"
   },
   {
+    path: '/unsubscribe',
+    title: 'Unsubscribe | Ojasio',
+    description: 'Unsubscribe from Ojasio Journal.',
+    schema: {},
+    noscript: "<h1>Unsubscribe from Ojasio</h1>"
+  },
+  {
     path: '/faq',
     title: 'Frequently Asked Questions | Ojasio Nutrition',
     description: 'Find answers to common questions about Ojasio\'s premium nutrition programs, booking process, and how we help you achieve your health goals.',
