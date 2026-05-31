@@ -247,6 +247,89 @@ export const Reviews: React.FC = () => {
         </div>
       </div>
 
+      {/* Client Progress Metrics Table */}
+      <div className="max-w-5xl mx-auto px-4 mb-32">
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-[1px] w-12 bg-gold/50"></div>
+            <span className="uppercase tracking-[0.3em] font-sans text-xs text-gold font-bold">Proven Results</span>
+            <div className="h-[1px] w-12 bg-gold/50"></div>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-display text-green-deep">Client Progress Metrics</h2>
+        </div>
+        
+        <div className="bg-white rounded-2xl shadow-xl shadow-green-deep/5 border border-gold/20 overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-green-deep text-ivory">
+                  <th className="p-6 font-display text-lg font-medium tracking-wide">Client Focus</th>
+                  <th className="p-6 font-display text-lg font-medium tracking-wide">Primary Metric</th>
+                  <th className="p-6 font-display text-lg font-medium tracking-wide">Duration</th>
+                  <th className="p-6 font-display text-lg font-medium tracking-wide">Outcome Achieved</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-beige">
+                <tr className="hover:bg-ivory/50 transition-colors">
+                  <td className="p-6 font-medium text-green-deep">Executive Fat Loss</td>
+                  <td className="p-6 text-green-deep/80">Visceral Fat Reduction</td>
+                  <td className="p-6 text-green-deep/80">16 Weeks</td>
+                  <td className="p-6 text-green-deep/80 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-gold"></span>
+                    Restored metabolic function & high energy
+                  </td>
+                </tr>
+                <tr className="hover:bg-ivory/50 transition-colors bg-beige-light/30">
+                  <td className="p-6 font-medium text-green-deep">Systemic PCOS</td>
+                  <td className="p-6 text-green-deep/80">Cycle Regularity & Skin</td>
+                  <td className="p-6 text-green-deep/80">12 Weeks</td>
+                  <td className="p-6 text-green-deep/80 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-gold"></span>
+                    Hormonal balance & 6kg organic weight loss
+                  </td>
+                </tr>
+                <tr className="hover:bg-ivory/50 transition-colors">
+                  <td className="p-6 font-medium text-green-deep">Advanced Glycemic Control</td>
+                  <td className="p-6 text-green-deep/80">HbA1c Levels</td>
+                  <td className="p-6 text-green-deep/80">24 Weeks</td>
+                  <td className="p-6 text-green-deep/80 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-gold"></span>
+                    Returned to healthy baseline & stabilized
+                  </td>
+                </tr>
+                <tr className="hover:bg-ivory/50 transition-colors bg-beige-light/30">
+                  <td className="p-6 font-medium text-green-deep">Hypertension & Stress</td>
+                  <td className="p-6 text-green-deep/80">Blood Pressure & Sleep</td>
+                  <td className="p-6 text-green-deep/80">16 Weeks</td>
+                  <td className="p-6 text-green-deep/80 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-gold"></span>
+                    Normalized pressure & restored deep sleep
+                  </td>
+                </tr>
+                <tr className="hover:bg-ivory/50 transition-colors">
+                  <td className="p-6 font-medium text-green-deep">Gut Health Restoration</td>
+                  <td className="p-6 text-green-deep/80">Digestion & Inflammation</td>
+                  <td className="p-6 text-green-deep/80">8 Weeks</td>
+                  <td className="p-6 text-green-deep/80 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-gold"></span>
+                    Eliminated bloating & afternoon lethargy
+                  </td>
+                </tr>
+                <tr className="hover:bg-ivory/50 transition-colors bg-beige-light/30">
+                  <td className="p-6 font-medium text-green-deep">Hypertrophic Lean Mass</td>
+                  <td className="p-6 text-green-deep/80">Muscle Accumulation</td>
+                  <td className="p-6 text-green-deep/80">20 Weeks</td>
+                  <td className="p-6 text-green-deep/80 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-gold"></span>
+                    8kg solid lean mass gained & strength increased
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
       {/* Submit Review Form */}
       <div className="max-w-4xl mx-auto mb-32 bg-white p-10 md:p-16 rounded-[2.5rem] shadow-2xl shadow-green-deep/5 border border-gold/20"
       >

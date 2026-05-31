@@ -57,11 +57,9 @@ async function subscribeUser(name, email, sourceElementId) {
   // Now send emails via EmailJS
   try {
     // Welcome Email
-    {
-  to_email: email,
-  first_name: name.split(' ')[0],
-  unsubscribe_token: token
-}
+    await emailjs.send(
+      EMAILJS_CONFIG.serviceId,
+      EMAILJS_CONFIG.welcomeTemplateId,
       {
         to_email: email,
         first_name: name.split(' ')[0],
@@ -88,9 +86,8 @@ async function subscribeUser(name, email, sourceElementId) {
     localStorage.setItem('ojasio_subscribed', 'true');
     return true;
   } catch (error) {
-  console.log("FULL EMAILJS ERROR:", error);
-  alert("Email sending failed. Check console.");
-}
+    console.error("EmailJS Error:", error);
+    throw new Error('Could not send welcome email. Please try again.');
   }
 }
 
@@ -98,7 +95,7 @@ async function subscribeUser(name, email, sourceElementId) {
  * Widget Setup
  */
 document.addEventListener("DOMContentLoaded", function() {
-  emailjs.init(EMAILJS_CONFIG.publicKey || "YOUR_PUBLIC_KEY_HERE");
+  emailjs.init(EMAILJS_CONFIG.publicKey);
 
   const hasSubscribed = localStorage.getItem('ojasio_subscribed');
 

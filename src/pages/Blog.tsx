@@ -2148,28 +2148,8 @@ export const Blog: React.FC = () => {
                   {selectedPost.content}
                 </div>
 
-                {/* Article Tags and Social Sharing */}
-                <div className="mt-16 pt-10 border-t border-[#1A2F2B]/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-                  <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
-                    <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#1A2F2B]/50 mr-2">Tags:</span>
-                    <span className="px-4 py-1.5 bg-[#FAF9F6] border border-[#1A2F2B]/10 rounded-full text-xs font-semibold text-[#1A2F2B] hover:bg-[#EAC881]/20 transition-colors cursor-pointer">{selectedPost.category}</span>
-                    <span className="px-4 py-1.5 bg-[#FAF9F6] border border-[#1A2F2B]/10 rounded-full text-xs font-semibold text-[#1A2F2B] hover:bg-[#EAC881]/20 transition-colors cursor-pointer">Wellness</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#1A2F2B]/50">Share:</span>
-                    <div className="flex gap-2">
-                       <button title="Share on Twitter" className="w-10 h-10 rounded-full bg-white border border-[#1A2F2B]/10 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all shadow-sm">
-                         <Twitter size={16} />
-                       </button>
-                       <button title="Share on LinkedIn" className="w-10 h-10 rounded-full bg-white border border-[#1A2F2B]/10 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all shadow-sm">
-                         <LinkedinIcon size={16} />
-                       </button>
-                       <button title="Copy Link" className="w-10 h-10 rounded-full bg-white border border-[#1A2F2B]/10 flex items-center justify-center text-[#1A2F2B] hover:bg-[#1A2F2B] hover:text-white transition-all shadow-sm text-center">
-                         <LinkIcon size={16} />
-                       </button>
-                    </div>
-                  </div>
-                </div>
+                {/* Article Tags and Social Sharing removed as per request */}
+
 
                 <ArticleSubscribeCard />
 
