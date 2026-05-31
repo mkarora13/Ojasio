@@ -25,63 +25,62 @@ export async function subscribeUser(name: string | undefined | null, email: stri
   if (DEBUG_MODE) console.log('[DEBUG] Validation Passed');
 
   // Validate Configuration
-  console.log("PUBLIC_KEY:", !!import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-  console.log("SERVICE_ID:", !!import.meta.env.VITE_EMAILJS_SERVICE_ID);
-  console.log("OWNER_TEMPLATE_ID:", !!import.meta.env.VITE_EMAILJS_OWNER_TEMPLATE_ID);
+  console.log("[EmailJS Diagnostic] PUBLIC_KEY:", !!EMAILJS_CONFIG.publicKey);
+  console.log("[EmailJS Diagnostic] SERVICE_ID:", !!EMAILJS_CONFIG.serviceId);
+  console.log("[EmailJS Diagnostic] OWNER_TEMPLATE_ID:", !!EMAILJS_CONFIG.ownerTemplateId);
   
   if (!EMAILJS_CONFIG.publicKey || !EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.ownerTemplateId) {
-    if (DEBUG_MODE) console.error('[DEBUG] EmailJS Configuration missing.', EMAILJS_CONFIG);
-    throw new Error('Subscription service is temporarily unavailable.');
+    console.error('[EmailJS Diagnostic] EmailJS Configuration missing.', EMAILJS_CONFIG);
+    throw new Error('EmailJS Configuration is missing. Please check Vercel environment variables.');
   }
 
-  // Send Emails via EmailJS
-  if (DEBUG_MODE) console.log('[DEBUG] Initializing EmailJS...');
-  emailjs.init(EMAILJS_CONFIG.publicKey);
-  
-  // Welcome Email (Optional if welcomeTemplateId is provided)
-  if (EMAILJS_CONFIG.welcomeTemplateId) {
-    try {
-      await emailjs.send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.welcomeTemplateId,
-        {
-          to_email: email,
-          first_name: subscriberName.split(' ')[0]
-        },
-        { publicKey: EMAILJS_CONFIG.publicKey }
-      );
-      if (DEBUG_MODE) console.log('[DEBUG] Welcome Email Sent successfully.');
-    } catch (err) {
-      console.error('[EmailJS Error] Welcome Email Failed:', err);
-    }
-  }
+  // Exact template parameters - mapping both standard and potentially expected fields
+  const templateParams = {
+    user_name: subscriberName,
+    user_email: email,
+    to_name: "Ojasio Admin",
+    reply_to: email,
+    subscriber_name: subscriberName,
+    subscriber_email: email,
+    to_email: email,
+    first_name: subscriberName.split(' ')[0],
+    message: "New newsletter subscription from the website",
+    subscribe_date: new Date().toLocaleString(),
+    page_url: window.location.href,
+    total_count: "Subscribed via Website"
+  };
 
   // Owner Notification
   try {
     const ownerResult = await emailjs.send(
       EMAILJS_CONFIG.serviceId,
       EMAILJS_CONFIG.ownerTemplateId,
-      {
-        subscriber_name: subscriberName,
-        subscriber_email: email,
-        user_name: subscriberName,
-        user_email: email,
-        message: "New newsletter subscription from the website",
-        subscribe_date: new Date().toLocaleString(),
-        page_url: window.location.href,
-        total_count: "Subscribed via Website"
-      },
-      { publicKey: EMAILJS_CONFIG.publicKey }
+      templateParams,
+      EMAILJS_CONFIG.publicKey
     );
-    if (DEBUG_MODE) console.log('[DEBUG] Owner Notification Sent successfully.');
-  } catch (err) {
+    console.log('[EmailJS Diagnostic] Owner Notification Sent successfully.', ownerResult);
+  } catch (err: any) {
     console.error('[EmailJS Error] Owner Notification Failed:', err);
-    throw new Error("We couldn't process your subscription right now. Please try again later.");
+    throw new Error(err?.text || err?.message || 'EmailJS failed to send owner email. Please try again later.');
+  }
+
+  // Welcome Email (Optional)
+  if (EMAILJS_CONFIG.welcomeTemplateId) {
+    try {
+      const welcomeResult = await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.welcomeTemplateId,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      );
+      console.log('[EmailJS Diagnostic] Welcome Email Sent successfully.', welcomeResult);
+    } catch (err: any) {
+      console.error('[EmailJS Error] Welcome Email Failed:', err);
+    }
   }
 
   localStorage.setItem('ojasio_subscribed', 'true');
-
-  console.log(`Subscription succeeded for ${email}`);
+  console.log(`[EmailJS Diagnostic] Subscription succeeded for ${email}`);
 
   return { 
     success: true, 
