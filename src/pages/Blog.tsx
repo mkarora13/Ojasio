@@ -6,9 +6,6 @@ import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton'
 import { ReviewsSlider } from '../components/ui/ReviewsSlider';
 import * as ReviewData from '../data/reviewsData';
 
-import { jsPDF } from 'jspdf';
-import QRCode from 'qrcode';
-
 // Content Data Structure
 
 const DIET_PLANS: Record<string, any> = {
@@ -109,6 +106,7 @@ const downloadDietPlanPDF = async (countryCode: string) => {
   const planInfo = DIET_PLANS[countryCode];
   if (!planInfo) return;
 
+  const { jsPDF } = await import('jspdf');
   const doc = new jsPDF();
   
   // Fetch Logo
@@ -220,6 +218,7 @@ const downloadDietPlanPDF = async (countryCode: string) => {
       y = 20;
     }
     y += 15;
+    const QRCode = (await import('qrcode')).default;
     const qrDataUrl = await QRCode.toDataURL('https://ojasio.com', {
       margin: 1,
       color: { dark: '#1A2F2B', light: '#FFFFFF' }
