@@ -18,14 +18,9 @@ import { ThyroidDietPlan } from './pages/programs/ThyroidDietPlan';
 import { HormonalImbalanceDiet } from './pages/programs/HormonalImbalanceDiet';
 import { WorkingProfessionalsDiet } from './pages/programs/WorkingProfessionalsDiet';
 
-import { ExitIntentPopup } from './components/newsletter/ExitIntentPopup';
-import { FloatingSubscribe } from './components/newsletter/FloatingSubscribe';
-
 export function AppRoutes() {
   return (
     <>
-      <ExitIntentPopup />
-      <FloatingSubscribe />
       <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
