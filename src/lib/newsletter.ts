@@ -31,7 +31,8 @@ export async function subscribeUser(name: string | undefined | null, email: stri
   console.log("[EmailJS Diagnostic] OWNER_TEMPLATE_ID:", !!EMAILJS_CONFIG.ownerTemplateId);
   
   if (!EMAILJS_CONFIG.publicKey || !EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.ownerTemplateId) {
-    console.warn('[EmailJS Diagnostic] EmailJS Configuration missing. It may fail to send if variables are not provided.');
+    console.error('[EmailJS Diagnostic] EmailJS Configuration missing.');
+    throw new Error('EmailJS Error: Missing Vercel Environment Variables (PUBLIC_KEY, SERVICE_ID, or OWNER_TEMPLATE_ID). Please add them to Vercel and redeploy.');
   }
 
   // Exact template parameters - mapping both standard and potentially expected fields
@@ -50,18 +51,24 @@ export async function subscribeUser(name: string | undefined | null, email: stri
     total_count: "Subscribed via Website"
   };
 
+  // Send Emails via EmailJS
+  emailjs.init({
+    publicKey: EMAILJS_CONFIG.publicKey,
+    // blockHeadless: true
+  });
+
   // Owner Notification
   try {
     const ownerResult = await emailjs.send(
       EMAILJS_CONFIG.serviceId,
       EMAILJS_CONFIG.ownerTemplateId,
-      templateParams,
-      EMAILJS_CONFIG.publicKey
+      templateParams
     );
     console.log('[EmailJS Diagnostic] Owner Notification Sent successfully.', ownerResult);
   } catch (err: any) {
     console.error('[EmailJS Error] Owner Notification Failed:', err);
-    throw new Error(err?.text || err?.message || 'EmailJS failed to send owner email. Please try again later.');
+    const errorDetails = err?.text || err?.message || JSON.stringify(err);
+    throw new Error(`EmailJS Error: ${errorDetails}. Please try again later.`);
   }
 
   // Welcome Email (Optional)
@@ -70,8 +77,7 @@ export async function subscribeUser(name: string | undefined | null, email: stri
       const welcomeResult = await emailjs.send(
         EMAILJS_CONFIG.serviceId,
         EMAILJS_CONFIG.welcomeTemplateId,
-        templateParams,
-        EMAILJS_CONFIG.publicKey
+        templateParams
       );
       console.log('[EmailJS Diagnostic] Welcome Email Sent successfully.', welcomeResult);
     } catch (err: any) {

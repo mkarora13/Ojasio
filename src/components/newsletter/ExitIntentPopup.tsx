@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check, AlertCircle } from 'lucide-react';
 import { subscribeUser } from '../../lib/newsletter';
 
 export const ExitIntentPopup: React.FC = () => {
@@ -10,6 +10,13 @@ export const ExitIntentPopup: React.FC = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => setError(''), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
 
   useEffect(() => {
     const hasSubscribed = localStorage.getItem('ojasio_subscribed') === 'true';
@@ -99,8 +106,6 @@ export const ExitIntentPopup: React.FC = () => {
                 required
               />
             </div>
-
-            {error && <p className="text-red-500 text-sm font-sans">{error}</p>}
             
             <button 
               type="submit" 
@@ -123,6 +128,17 @@ export const ExitIntentPopup: React.FC = () => {
             </div>
         )}
       </div>
+
+      {/* Non-blocking Error Toast */}
+      {error && (
+        <div className="fixed top-6 left-1/2 -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-full shadow-2xl z-[10000] flex items-center gap-3 animate-fade-in-up">
+          <AlertCircle size={18} />
+          <span className="font-sans text-sm font-medium">{error}</span>
+          <button onClick={() => setError('')} className="ml-2 hover:bg-red-600 p-1 rounded-full transition-colors" aria-label="Close error">
+            <X size={14} />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

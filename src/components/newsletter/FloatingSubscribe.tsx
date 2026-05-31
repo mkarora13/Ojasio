@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Bell, X, Check } from 'lucide-react';
+import { Bell, X, Check, AlertCircle } from 'lucide-react';
 import { subscribeUser } from '../../lib/newsletter';
 
 export const FloatingSubscribe: React.FC = () => {
@@ -10,6 +10,13 @@ export const FloatingSubscribe: React.FC = () => {
   const [success, setSuccess] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
   const [hidden, setHidden] = useState(false);
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => setError(''), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
 
   useEffect(() => {
     if (localStorage.getItem('ojasio_subscribed') === 'true') {
@@ -74,8 +81,6 @@ export const FloatingSubscribe: React.FC = () => {
                 className="w-full bg-white border border-[#1c1c1e]/10 rounded-xl px-4 py-3 font-sans text-sm outline-none focus:border-[#c9973f] transition-colors"
                 required
               />
-
-              {error && <p className="text-red-500 text-xs font-sans">{error}</p>}
               
               <button 
                 type="submit" 
@@ -93,6 +98,17 @@ export const FloatingSubscribe: React.FC = () => {
               <p className="font-sans text-sm text-[#1c1c1e]">{successMessage}</p>
             </div>
           )}
+        </div>
+      )}
+
+      {/* Non-blocking Error Toast */}
+      {error && (
+        <div className="fixed top-6 left-1/2 -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-full shadow-2xl z-[10000] flex items-center gap-3 animate-fade-in-up">
+          <AlertCircle size={18} />
+          <span className="font-sans text-sm font-medium">{error}</span>
+          <button onClick={() => setError('')} className="ml-2 hover:bg-red-600 p-1 rounded-full transition-colors" aria-label="Close error">
+            <X size={14} />
+          </button>
         </div>
       )}
     </>
