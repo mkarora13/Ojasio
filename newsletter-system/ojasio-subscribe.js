@@ -57,9 +57,11 @@ async function subscribeUser(name, email, sourceElementId) {
   // Now send emails via EmailJS
   try {
     // Welcome Email
-    await emailjs.send(
-      EMAILJS_CONFIG.serviceId,
-      EMAILJS_CONFIG.welcomeTemplateId,
+    {
+  to_email: email,
+  first_name: name.split(' ')[0],
+  unsubscribe_token: token
+}
       {
         to_email: email,
         first_name: name.split(' ')[0],
