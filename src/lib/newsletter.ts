@@ -25,6 +25,10 @@ export async function subscribeUser(name: string | undefined | null, email: stri
   if (DEBUG_MODE) console.log('[DEBUG] Validation Passed');
 
   // Validate Configuration
+  console.log("PUBLIC_KEY:", !!import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+  console.log("SERVICE_ID:", !!import.meta.env.VITE_EMAILJS_SERVICE_ID);
+  console.log("OWNER_TEMPLATE_ID:", !!import.meta.env.VITE_EMAILJS_OWNER_TEMPLATE_ID);
+  
   if (!EMAILJS_CONFIG.publicKey || !EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.ownerTemplateId) {
     if (DEBUG_MODE) console.error('[DEBUG] EmailJS Configuration missing.', EMAILJS_CONFIG);
     throw new Error('Subscription service is temporarily unavailable.');
@@ -47,7 +51,7 @@ export async function subscribeUser(name: string | undefined | null, email: stri
       );
       if (DEBUG_MODE) console.log('[DEBUG] Welcome Email Sent successfully.');
     } catch (err) {
-      if (DEBUG_MODE) console.error('[DEBUG] Welcome Email Failed:', err);
+      console.error('[EmailJS Error] Welcome Email Failed:', err);
     }
   }
 
@@ -66,11 +70,13 @@ export async function subscribeUser(name: string | undefined | null, email: stri
     );
     if (DEBUG_MODE) console.log('[DEBUG] Owner Notification Sent successfully.');
   } catch (err) {
-    if (DEBUG_MODE) console.error('[DEBUG] Owner Notification Failed:', err);
-    throw new Error('Subscription service is temporarily unavailable.');
+    console.error('[EmailJS Error] Owner Notification Failed:', err);
+    throw new Error("We couldn't process your subscription right now. Please try again later.");
   }
 
   localStorage.setItem('ojasio_subscribed', 'true');
+
+  console.log(`Subscription succeeded for ${email}`);
 
   return { 
     success: true, 
