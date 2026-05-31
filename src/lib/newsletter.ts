@@ -64,6 +64,9 @@ export async function subscribeUser(name: string | undefined | null, email: stri
       {
         subscriber_name: subscriberName,
         subscriber_email: email,
+        user_name: subscriberName,
+        user_email: email,
+        message: "New newsletter subscription from the website",
         subscribe_date: new Date().toLocaleString(),
         page_url: window.location.href,
         total_count: "Subscribed via Website"
