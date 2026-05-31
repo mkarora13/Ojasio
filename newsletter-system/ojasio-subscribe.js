@@ -88,8 +88,9 @@ async function subscribeUser(name, email, sourceElementId) {
     localStorage.setItem('ojasio_subscribed', 'true');
     return true;
   } catch (error) {
-    console.error("EmailJS Error:", error);
-    throw new Error('Could not send welcome email. Please try again.');
+  console.log("FULL EMAILJS ERROR:", error);
+  alert("Email sending failed. Check console.");
+}
   }
 }
 
