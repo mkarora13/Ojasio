@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import emailjs from '@emailjs/browser';
 
 const DEBUG_MODE = process.env.NODE_ENV !== 'production';
@@ -30,8 +31,7 @@ export async function subscribeUser(name: string | undefined | null, email: stri
   console.log("[EmailJS Diagnostic] OWNER_TEMPLATE_ID:", !!EMAILJS_CONFIG.ownerTemplateId);
   
   if (!EMAILJS_CONFIG.publicKey || !EMAILJS_CONFIG.serviceId || !EMAILJS_CONFIG.ownerTemplateId) {
-    console.error('[EmailJS Diagnostic] EmailJS Configuration missing.', EMAILJS_CONFIG);
-    throw new Error('EmailJS Configuration is missing. Please check Vercel environment variables.');
+    console.warn('[EmailJS Diagnostic] EmailJS Configuration missing. It may fail to send if variables are not provided.');
   }
 
   // Exact template parameters - mapping both standard and potentially expected fields
