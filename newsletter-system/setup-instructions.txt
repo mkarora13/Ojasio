@@ -1,0 +1,46 @@
+OJASIO NEWSLETTER SYSTEM - SETUP INSTRUCTIONS
+
+--- PART 1: GOOGLE SHEETS DATABASE ---
+1. Open Google Sheets (sheets.google.com) and create a new blank spreadsheet.
+2. Name it "Ojasio Newsletter System".
+3. In the top menu, click Extensions > Apps Script.
+4. Rename the project to "Ojasio Subscriber API".
+5. Delete all existing code and paste the exact contents of "google-apps-script.gs".
+6. Click the Save icon (floppy disk).
+7. In the top right, click "Deploy" > "New deployment".
+8. Click the gear icon next to "Select type" and choose "Web app".
+9. Set "Description" to "Version 1".
+10. Set "Execute as" to "Me (hello@ojasio.com)".
+11. Set "Who has access" to "Anyone".
+12. Click "Deploy". (You will need to authorize the application - click Authorize Access, choose your account, click Advanced, and click 'Go to Ojasio Subscriber API').
+13. COPY THE WEB APP URL. You will need this for the JavaScript configuration.
+
+
+--- PART 2: EMAILJS SETUP ---
+1. Go to emailjs.com and sign up for a free account.
+2. In the dashboard, click "Add New Service".
+3. Select Gmail, click "Connect Account", and login with hello@ojasio.com. Note your "Service ID" (e.g., service_abc123).
+4. Go to "Email Templates" and create three new templates using the instructions in "emailjs-templates.txt".
+   Note the Template IDs for all three (e.g., template_xyz789).
+5. Go to "Account" (in the top right drop-down menu) > "API Keys" and copy your "Public Key".
+
+
+--- PART 3: WEBSITE INTEGRATION ---
+1. Open your website codebase (or ojasio-subscribe.js).
+2. Find the EMAILJS_CONFIG object at the top.
+3. Replace the placeholder values with your actual Public Key, Service ID, and 3 Template IDs from EmailJS.
+4. Find the GOOGLE_SCRIPT_URL variable and paste the Web App URL from Part 1.
+5. In your website HTML heads, link the CSS file:
+   <link rel="stylesheet" href="ojasio-subscribe.css">
+
+6. Put this just before the closing </body> tag:
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+   <script src="ojasio-subscribe.js"></script>
+
+7. Place the Floating Button anywhere in your body:
+   <div id="ojasio-floating-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      Get Updates
+   </div>
+
+8. Done. Test the subscription.

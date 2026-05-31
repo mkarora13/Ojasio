@@ -4,6 +4,8 @@ import { X, ArrowRight, CheckCircle2, ChevronRight, Mail, Calendar, Clock, Star,
 import { SEO } from '../components/seo/SEO';
 import { WhatsAppFloatingButton } from '../components/ui/WhatsAppFloatingButton';
 import { ReviewsSlider } from '../components/ui/ReviewsSlider';
+import { BlogInlineSubscribe } from '../components/newsletter/BlogSubscribeBanner';
+import { ArticleSubscribeCard } from '../components/newsletter/ArticleSubscribeCard';
 import * as ReviewData from '../data/reviewsData';
 
 import { jsPDF } from 'jspdf';
@@ -2032,6 +2034,10 @@ export const Blog: React.FC = () => {
             
           </div>
         )}
+
+        <div className="mt-12 px-2 md:px-0">
+          <BlogInlineSubscribe />
+        </div>
         
       </main>
 
@@ -2164,6 +2170,8 @@ export const Blog: React.FC = () => {
                     </div>
                   </div>
                 </div>
+
+                <ArticleSubscribeCard />
 
                 {/* Article Footer CTA inside Modal */}
                 <div className="mt-20 pt-16 border-t border-[#1A2F2B]/10 text-center">

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Subscriber Notification</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #faf8f4; font-family: 'DM Sans', -apple-system, sans-serif; -webkit-font-smoothing: antialiased;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="100%" maxWidth="500" border="0" cellspacing="0" cellpadding="0" style="max-width: 500px; background-color: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid rgba(28,28,30,0.1);">
+          
+          <!-- Header -->
+          <tr>
+            <td style="padding: 24px 32px; background-color: #1c1c1e; color: #ffffff;">
+              <h1 style="margin: 0; font-size: 18px; font-weight: 500;">🎉 New Subscriber Alert</h1>
+            </td>
+          </tr>
+          
+          <!-- Body -->
+          <tr>
+            <td style="padding: 32px;">
+              <p style="margin-top: 0; margin-bottom: 24px; font-size: 16px; color: #1c1c1e;">A new user has joined the Ojasio journal.</p>
+              
+              <table width="100%" border="1" cellspacing="0" cellpadding="12" style="border-collapse: collapse; border-color: rgba(28,28,30,0.1); margin-bottom: 24px; font-size: 14px;">
+                <tr>
+                  <td width="30%" style="color: rgba(28,28,30,0.6); font-weight: 500;">Name</td>
+                  <td style="color: #1c1c1e;">{{subscriber_name}}</td>
+                </tr>
+                <tr>
+                  <td style="color: rgba(28,28,30,0.6); font-weight: 500;">Email</td>
+                  <td style="color: #1c1c1e;">{{subscriber_email}}</td>
+                </tr>
+                <tr>
+                  <td style="color: rgba(28,28,30,0.6); font-weight: 500;">Date</td>
+                  <td style="color: #1c1c1e;">{{subscribe_date}}</td>
+                </tr>
+                <tr>
+                  <td style="color: rgba(28,28,30,0.6); font-weight: 500;">Source Page</td>
+                  <td style="color: #1c1c1e;"><a href="{{page_url}}" style="color: #4a7c59;">{{page_url}}</a></td>
+                </tr>
+              </table>
+              
+              <p style="font-size: 14px; color: rgba(28,28,30,0.6); margin-bottom: 24px;">Subscriber count: {{total_count}}</p>
+              
+              <div align="center">
+                <a href="https://docs.google.com/spreadsheets/" style="background-color: #4a7c59; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-size: 14px; font-weight: 500; display: inline-block;">View in Google Sheets</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,286 @@
+/* Ojasio Brand Colors
+   Sage Green: #4a7c59
+   Gold: #c9973f
+   Cream: #faf8f4
+   Charcoal: #1c1c1e
+*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+.ojasio-newsletter-wrapper {
+  font-family: 'DM Sans', sans-serif;
+  color: #1c1c1e;
+}
+
+.ojasio-newsletter-wrapper h2, 
+.ojasio-newsletter-wrapper h3, 
+.ojasio-newsletter-wrapper h4 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Base Form Elements */
+.ojasio-subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.ojasio-form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.ojasio-input {
+  flex: 1;
+  padding: 14px 18px;
+  border: 1px solid rgba(28, 28, 30, 0.1);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.ojasio-input:focus {
+  border-color: #c9973f;
+}
+
+.ojasio-submit-btn {
+  background-color: #4a7c59;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'DM Sans', sans-serif;
+  white-space: nowrap;
+}
+
+.ojasio-submit-btn:hover {
+  background-color: #3b6448;
+  transform: translateY(-1px);
+}
+
+.ojasio-message {
+  color: #d32f2f;
+  font-size: 13px;
+  display: none;
+  margin-top: 8px;
+}
+
+.ojasio-success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 20px;
+  animation: fade-in 0.5s ease;
+}
+
+.ojasio-check {
+  width: 32px;
+  height: 32px;
+  color: #4a7c59;
+}
+
+/* Location A: Floating Button */
+#ojasio-floating-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background-color: #4a7c59;
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(74, 124, 89, 0.3);
+  z-index: 9998;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+#ojasio-floating-btn:hover {
+  transform: translateY(-2px);
+}
+
+#ojasio-floating-modal {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  left: 24px;
+  width: 320px;
+  background-color: #faf8f4;
+  border: 1px solid rgba(201, 151, 63, 0.3);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+/* Location B: Blog Inline Banner */
+.ojasio-inline-banner {
+  background-color: #1c1c1e;
+  border-radius: 24px;
+  padding: 48px;
+  text-align: center;
+  color: #faf8f4;
+  margin: 40px 0;
+  border-top: 4px solid #c9973f;
+}
+
+.ojasio-inline-banner h2 {
+  font-size: 36px;
+  color: #faf8f4;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.ojasio-inline-banner p {
+  color: rgba(250, 248, 244, 0.8);
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+  line-height: 1.6;
+}
+
+.ojasio-inline-banner .ojasio-form-row {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 6px;
+}
+
+.ojasio-inline-banner .ojasio-input {
+  border: none;
+  background: transparent;
+  padding: 14px 20px;
+}
+
+.ojasio-inline-banner .ojasio-submit-btn {
+  border-radius: 50px;
+  background-color: #c9973f;
+  color: #1c1c1e;
+}
+
+.ojasio-inline-banner .ojasio-submit-btn:hover {
+  background-color: #e5b358;
+}
+
+.ojasio-social-proof {
+  font-size: 13px;
+  color: rgba(250, 248, 244, 0.5);
+  margin-top: 16px;
+  display: block;
+}
+
+/* Location C: Article Card */
+.ojasio-article-card {
+  background: linear-gradient(135deg, #faf8f4 0%, rgba(74, 124, 89, 0.05) 100%);
+  border: 1px solid rgba(74, 124, 89, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.ojasio-article-card h3 {
+  font-size: 28px;
+  color: #1c1c1e;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.ojasio-article-card p {
+  font-size: 15px;
+  color: rgba(28, 28, 30, 0.7);
+  margin-bottom: 24px;
+}
+
+/* Location D: Exit Intent Popup */
+#ojasio-exit-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(28, 28, 30, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.ojasio-popup-content {
+  background-color: #faf8f4;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 480px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border-top: 6px solid #4a7c59;
+}
+
+.ojasio-popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgba(28, 28, 30, 0.5);
+}
+
+.ojasio-popup-content h2 {
+  font-size: 32px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #1c1c1e;
+}
+
+.ojasio-popup-content p {
+  color: rgba(28, 28, 30, 0.7);
+  font-size: 16px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.ojasio-disclaimer {
+  font-size: 12px;
+  color: rgba(28, 28, 30, 0.5);
+  text-align: center;
+  margin-top: 16px;
+  display: block;
+}
+
+/* Animations */
+.fade-in { animation: fade-in 0.4s ease forwards; }
+.slide-up { animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .ojasio-form-row { flex-direction: column; }
+  .ojasio-inline-banner .ojasio-form-row { border-radius: 12px; padding: 12px; }
+  .ojasio-inline-banner .ojasio-submit-btn { border-radius: 8px; }
+  .ojasio-inline-banner { padding: 32px 20px; text-align: left; }
+  .ojasio-inline-banner h2 { font-size: 28px; }
+}

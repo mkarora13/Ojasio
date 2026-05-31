@@ -1,0 +1,23 @@
+EMAILJS TEMPLATES
+
+Please create 3 templates in your EmailJS dashboard using the code below. Copy the HTML from the generated HTML files and paste them into the code editor of the EmailJS builder.
+
+--- TEMPLATE 1: WELCOME EMAIL ---
+Name: Welcome Email
+Subject: Welcome to Ojasio, {{first_name}} — Your journey to lasting wellness starts now ✨
+Template Content: 
+(Copy the code from welcome-email.html and paste it using the source code < > view in EmailJS)
+
+
+--- TEMPLATE 2: NEW ARTICLE NOTIFICATION ---
+Name: Article Notification
+Subject: New from Ojasio: {{ARTICLE_TITLE}}
+Template Content: 
+(Copy the code from article-notification-email.html and paste it using the source code < > view in EmailJS)
+
+
+--- TEMPLATE 3: OWNER NOTIFICATION ---
+Name: Admin Notification
+Subject: 🎉 New Ojasio Subscriber — {{subscriber_name}} just joined
+Template Content: 
+(Copy the code from owner-notification-email.html and paste it using the source code < > view in EmailJS)
