@@ -95,7 +95,7 @@ async function subscribeUser(name, email, sourceElementId) {
  * Widget Setup
  */
 document.addEventListener("DOMContentLoaded", function() {
-  emailjs.init(EMAILJS_CONFIG.publicKey);
+  emailjs.init(EMAILJS_CONFIG.publicKey || "YOUR_PUBLIC_KEY_HERE");
 
   const hasSubscribed = localStorage.getItem('ojasio_subscribed');
 
