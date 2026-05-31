@@ -47,7 +47,8 @@ export async function subscribeUser(name: string | undefined | null, email: stri
         {
           to_email: email,
           first_name: subscriberName.split(' ')[0]
-        }
+        },
+        { publicKey: EMAILJS_CONFIG.publicKey }
       );
       if (DEBUG_MODE) console.log('[DEBUG] Welcome Email Sent successfully.');
     } catch (err) {
@@ -57,7 +58,7 @@ export async function subscribeUser(name: string | undefined | null, email: stri
 
   // Owner Notification
   try {
-    await emailjs.send(
+    const ownerResult = await emailjs.send(
       EMAILJS_CONFIG.serviceId,
       EMAILJS_CONFIG.ownerTemplateId,
       {
@@ -66,7 +67,8 @@ export async function subscribeUser(name: string | undefined | null, email: stri
         subscribe_date: new Date().toLocaleString(),
         page_url: window.location.href,
         total_count: "Subscribed via Website"
-      }
+      },
+      { publicKey: EMAILJS_CONFIG.publicKey }
     );
     if (DEBUG_MODE) console.log('[DEBUG] Owner Notification Sent successfully.');
   } catch (err) {
