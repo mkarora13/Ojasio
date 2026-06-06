@@ -7,7 +7,7 @@ interface SEOProps {
   image?: string;
   type?: string;
   canonicalUrl?: string;
-  jsonLdSchema?: Record<string, any>;
+  jsonLdSchema?: Record<string, any> | Record<string, any>[];
 }
 
 export function SEO({

@@ -11,6 +11,7 @@ export const Navbar: React.FC = () => {
     { name: 'Founder', path: '/founder' },
     { name: 'Reviews', path: '/reviews' },
     { name: 'Blog', path: '/blog' },
+    { name: 'BMI Calc', path: '/bmi-calculator' },
     { name: 'FAQ', path: '/faq' },
     { name: 'Contact', path: '/contact' },
   ];

@@ -578,8 +578,10 @@ import { articleDiabeticDiet } from '../data/blogs/diabetic-diet';
 import { articlePcosDietPlan } from '../data/blogs/pcos-diet-plan-to-lose-weight';
 import { articlePostPregnancyDiet } from '../data/blogs/post-pregnancy-diet';
 import { articleIntermittentFasting } from '../data/blogs/intermittent-fasting-for-weight-loss';
+import { articleBmiCalculator } from '../data/blogs/bmi-calculator';
 
 const BLOG_POSTS = [
+  articleBmiCalculator,
   articleHealthyWeight,
   articleNutritionalAdviceFamilies,
   articleHealthyDietFitness,
@@ -1933,14 +1935,22 @@ export const Blog: React.FC = () => {
           "headline": selectedPost.title,
           "description": selectedPost.excerpt,
           "image": selectedPost.coverImage,
-                    "publisher": {
+          "url": `https://www.ojasio.com/blog/${selectedPost.id}`,
+          "author": {
+            "@type": "Person",
+            "name": "Disha Arora",
+            "url": "https://www.ojasio.com/founder"
+          },
+          "publisher": {
             "@type": "Organization",
-            "name": "Ojasio",
+            "name": "Ojasio - Clinical Nutrition",
             "logo": {
               "@type": "ImageObject",
               "url": "https://www.ojasio.com/logo.png"
             }
-          }
+          },
+          "datePublished": "2024-01-01T08:00:00+08:00",
+          "dateModified": new Date().toISOString()
         } : undefined}
       />
       

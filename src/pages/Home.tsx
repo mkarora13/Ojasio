@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Activity, Droplets, Target, Utensils, Heart } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { SEO } from '../components/seo/SEO';
+import { BMICalculator } from '../components/ui/BMICalculator';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -24,22 +25,33 @@ export const Home: React.FC = () => {
   return (
     <div className="w-full">
       <SEO 
-        title="Ojasio | Premium Nutrition & Diet Consultation by Disha Arora"
-        description="Book your 1-on-1 nutrition consultation with Disha Arora. Specializing in weight loss, PCOS, diabetes, and sustainable diet plans for busy professionals."
+        title="Ojasio | Premium Nutrition & Free Online BMI Calculator"
+        description="Calculate your BMI instantly with our free online BMI calculator. Ojasio offers premium nutrition consultation, weight loss plans, reporting, and sustainable diet plans by Disha Arora."
         url="https://www.ojasio.com"
-        jsonLdSchema={{
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "Ojasio",
-          "image": "https://www.ojasio.com/logo.png",
-          "url": "https://www.ojasio.com",
-          "telephone": "+91-XXXXXXXXXX",
-          "description": "Premium nutrition and wellness consultations by certified nutritionist Disha Arora.",
-          "founder": {
-            "@type": "Person",
-            "name": "Disha Arora"
+        jsonLdSchema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Ojasio",
+            "image": "https://www.ojasio.com/logo.png",
+            "url": "https://www.ojasio.com",
+            "telephone": "+91-9990356350",
+            "description": "Premium nutrition and wellness consultations by certified nutritionist Disha Arora.",
+            "founder": {
+              "@type": "Person",
+              "name": "Disha Arora"
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Ojasio BMI Calculator",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "All",
+            "url": "https://www.ojasio.com",
+            "description": "Calculate your Body Mass Index (BMI) easily and accurately. Provides instant metabolic insight to help tailor optimal diet plans."
           }
-        }}
+        ]}
       />
       {/* Hero Section */}
       <section className="relative w-full min-h-screen flex items-center bg-ivory overflow-hidden border-b border-gold/20 pt-28 pb-16">
@@ -148,6 +160,15 @@ export const Home: React.FC = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* BMI Calculator Lead Magnet Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+          <BMICalculator />
+        </div>
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#EAC881]/10 rounded-full blur-3xl rounded-full mix-blend-multiply opacity-50 z-0"></div>
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-[#1A2F2B]/5 rounded-full blur-3xl opacity-50 z-0"></div>
       </section>
 
       {/* Trust Section */}

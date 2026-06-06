@@ -15,6 +15,7 @@ const Reviews = React.lazy(() => import('./pages/Reviews').then(module => ({ def
 const Contact = React.lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
 const Blog = React.lazy(() => import('./pages/Blog').then(module => ({ default: module.Blog })));
 const FAQ = React.lazy(() => import('./pages/FAQ').then(module => ({ default: module.FAQ })));
+const BMICalculatorPage = React.lazy(() => import('./pages/BMICalculatorPage').then(module => ({ default: module.BMICalculatorPage })));
 
 // Programs lazy loaded
 const PCOSDietPlan = React.lazy(() => import('./pages/programs/PCOSDietPlan').then(module => ({ default: module.PCOSDietPlan })));
@@ -42,6 +43,7 @@ export function AppRoutes() {
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:id" element={<Blog />} />
             <Route path="faq" element={<FAQ />} />
+            <Route path="bmi-calculator" element={<BMICalculatorPage />} />
             <Route path="contact" element={<Contact />} />
             <Route path="programs/pcos-diet-plan" element={<PCOSDietPlan />} />
             <Route path="programs/weight-loss-diet-plan" element={<WeightLossDietPlan />} />
