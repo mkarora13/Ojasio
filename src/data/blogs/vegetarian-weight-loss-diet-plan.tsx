@@ -9,8 +9,8 @@ export const article3 = {
   subtitle: "The Science of Building a High-Protein, Plant-Powered Diet That Torches Body Fat",
   category: "Diet Plans",
   readTime: "10 Min Read",
-  image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=800",
-  coverImage: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "The biggest mistake vegetarians make is undereating protein and overeating carbohydrates. Discover the exact vegetarian weight loss diet plan that balances your macros and permanently drops the weight.",
   content: (
     <>
@@ -22,7 +22,7 @@ export const article3 = {
         <meta property="og:description" content="Struggling to lose weight as a vegetarian? Discover our 7-day high-protein vegetarian weight loss diet plan. Burn belly fat effectively while eating delicious foods." />
         <meta property="og:url" content="https://ojasio.com/blog/vegetarian-weight-loss-diet-plan" />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=1200" />
+        <meta property="og:image" content="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Vegetarian Weight Loss Diet Plan: Lose Fat Without Meat | Ojasio" />
         <meta name="twitter:description" content="Struggling to lose weight as a vegetarian? Discover our 7-day high-protein vegetarian weight loss diet plan." />
@@ -222,7 +222,7 @@ export const article3 = {
           <h2 className="text-3xl font-display text-[#1A2F2B] mt-0 mb-8 border-b border-[#EAC881]/30 pb-4">From Struggle to Strength: A Real Ojasio Client Story</h2>
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="w-full md:w-1/3">
-               <img loading="lazy" src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sustainable Weight Loss Client UAE Ojasio" className="rounded-2xl object-cover w-full h-[300px] shadow-lg" />
+               <img loading="lazy" src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Sustainable Weight Loss Client UAE Ojasio" className="rounded-2xl object-cover w-full h-[300px] shadow-lg" />
             </div>
             <div className="w-full md:w-2/3">
               <p className="font-light text-lg leading-relaxed text-[#1A2F2B]/80 mb-6">

@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
                 <div className="absolute inset-0 rounded-full bg-[#EAC881] opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-700"></div>
                 <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border border-[#1A2F2B]/10 shadow-[0_4px_20px_rgb(0,0,0,0.03)] bg-white">
                   <img loading="lazy" 
-                    src="https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?_gl=1*i3glqi*_ga*NTM3MzUwNTMxLjE3NzcyMjg2OTI.*_ga_8JE65Q40S6*czE3NzcyMjg2OTEkbzEkZzEkdDE3NzcyMzEzMjQkajQ4JGwwJGgw" 
+                    src="https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?auto=compress&cs=tinysrgb&q=60&w=800" 
                     alt="Ojasio Logo" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>

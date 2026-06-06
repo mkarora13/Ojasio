@@ -8,8 +8,8 @@ export const articlePostPregnancyDiet = {
   subtitle: "Heal your core, replenish your deep nutritional reserves, and safely drop the baby weight without ever compromising milk supply or energy.",
   category: "Women's Health",
   readTime: "8 Min Read",
-  image: "https://images.pexels.com/photos/20899183/pexels-photo-20899183.jpeg",
-  coverImage: "https://images.pexels.com/photos/10935456/pexels-photo-10935456.jpeg",
+  image: "https://images.pexels.com/photos/20899183/pexels-photo-20899183.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/10935456/pexels-photo-10935456.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "Navigating postpartum? Ojasio's clinical post pregnancy diet teaches you precisely how to eat to rebuild iron, boost lactation, and safely shift the weight.",
   content: (
     <>

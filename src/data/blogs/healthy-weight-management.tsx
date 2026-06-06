@@ -10,8 +10,8 @@ export const articleHealthyWeight = {
   subtitle: "A comprehensive, science-backed approach to sustainable weight loss and vibrant energy without starvation or fads.",
   category: "Weight Management",
   readTime: "10 Min Read",
-  image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=800",
-  coverImage: "https://images.pexels.com/photos/5622219/pexels-photo-5622219.jpeg",
+  image: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/5622219/pexels-photo-5622219.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "Master healthy weight management with Ojasio's complete guide. Learn how to balance hormones, eat deliciously, and lose weight sustainably—whether you're in Bengaluru or Birmingham.",
   content: (
     <>
@@ -380,7 +380,7 @@ export const articleHealthyWeight = {
           <meta property="og:description" content="Master healthy weight management with Ojasio's complete guide..."/>
           <meta property="og:url" content="https://ojasio.com/blog/healthy-weight-management-complete-guide"/>
           <meta property="og:type" content="article"/>
-          <meta property="og:image" content="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg"/>
+          <meta property="og:image" content="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&q=60&w=800"/>
 
           CANONICAL TAG:
           <link rel="canonical" href="https://ojasio.com/blog/healthy-weight-management-complete-guide"/>

@@ -64,11 +64,13 @@ export const Home: React.FC = () => {
           {/* Large image grid spread across */}
           <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-4 h-[50vh] md:h-[60vh] animate-fade-in-up animation-delay-400">
              {/* Main large image */}
-             <div className="md:col-span-8 rounded-2xl md:rounded-tl-[4rem] md:rounded-br-[4rem] overflow-hidden shadow-2xl relative group">
+              <div className="md:col-span-8 rounded-2xl md:rounded-tl-[4rem] md:rounded-br-[4rem] overflow-hidden shadow-2xl relative group">
                 <div className="absolute inset-0 bg-green-deep/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
                 <picture>
-                  <source media="(max-width: 768px)" srcSet="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800&fm=webp 1x, https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1200&fm=webp 2x" />
-                  <source media="(min-width: 769px)" srcSet="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600&fm=webp 1x, https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=2400&fm=webp 2x" />
+                  <source type="image/avif" media="(max-width: 768px)" srcSet="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=60&w=800&fm=avif 1x, https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=60&w=1200&fm=avif 2x" />
+                  <source type="image/webp" media="(max-width: 768px)" srcSet="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800&fm=webp 1x, https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1200&fm=webp 2x" />
+                  <source type="image/avif" media="(min-width: 769px)" srcSet="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=60&w=1600&fm=avif 1x, https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=60&w=2400&fm=avif 2x" />
+                  <source type="image/webp" media="(min-width: 769px)" srcSet="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600&fm=webp 1x, https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=2400&fm=webp 2x" />
                   <img 
                     src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1600&fm=webp" 
                     alt="Healthy gourmet food" className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" 
@@ -84,19 +86,19 @@ export const Home: React.FC = () => {
                 <div className="flex-1 rounded-tr-[3rem] rounded-bl-[2rem] overflow-hidden shadow-xl relative group">
                    <div className="absolute inset-0 bg-gold/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
                    <img 
-                     src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800&fm=webp" 
+                     src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=60&w=800&fm=avif" 
                      alt="Yoga and wellbeing" className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 object-top" 
-                     loading="eager"
-                     decoding="sync"
+                     loading="lazy"
+                     decoding="async"
                    />
                 </div>
                 <div className="flex-1 rounded-br-[3rem] rounded-tl-[2rem] overflow-hidden shadow-xl relative group">
                    <div className="absolute inset-0 bg-green-deep/20 group-hover:bg-transparent transition-colors duration-700 z-10" />
                    <img 
-                     src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800&fm=webp" 
+                     src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=60&w=800&fm=avif" 
                      alt="Workout and fitness" className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" 
-                     loading="eager"
-                     decoding="sync"
+                     loading="lazy"
+                     decoding="async"
                    />
                 </div>
              </div>
@@ -156,8 +158,8 @@ export const Home: React.FC = () => {
             <div className="relative h-[450px] sm:h-[550px] lg:h-full lg:min-h-[800px] w-full rounded-[2rem] overflow-hidden shadow-xl order-2 lg:order-1"
             >
               <img 
-                src="https://images.pexels.com/photos/15319019/pexels-photo-15319019.jpeg" 
-                alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-1000"
+                src="https://images.pexels.com/photos/15319019/pexels-photo-15319019.jpeg?auto=compress&cs=tinysrgb&w=800&q=60" 
+                alt="Professional clinical nutritional consultation" className="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-1000"
                 loading="lazy"
                 decoding="async"
               />

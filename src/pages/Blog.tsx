@@ -112,7 +112,7 @@ const downloadDietPlanPDF = async (countryCode: string) => {
   // Fetch Logo
   let logoBase64 = null;
   try {
-     const logoUrl = 'https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?auto=compress&cs=tinysrgb&w=150';
+     const logoUrl = 'https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?auto=compress&cs=tinysrgb&q=60&w=800';
      const response = await fetch(logoUrl);
      const blob = await response.blob();
      const reader = new FileReader();
@@ -597,8 +597,8 @@ const BLOG_POSTS = [
     subtitle: "How Nutrition and Lifestyle Can Support Healthy Blood Sugar and Blood Pressure Levels",
     category: "Metabolic Health",
     readTime: "8 Min Read",
-    image: "https://images.pexels.com/photos/8155155/pexels-photo-8155155.jpeg?auto=compress&cs=tinysrgb&w=800",
-    coverImage: "https://images.pexels.com/photos/8155155/pexels-photo-8155155.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    image: "https://images.pexels.com/photos/8155155/pexels-photo-8155155.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+    coverImage: "https://images.pexels.com/photos/8155155/pexels-photo-8155155.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
     excerpt: "Discover daily habits and foods that may help support healthy blood sugar and blood pressure levels. Learn how natural nutrition and proper wellness habits can contribute to your metabolic health.",
     content: (
       <>
@@ -616,7 +616,7 @@ const BLOG_POSTS = [
             Early prevention and proactive care matter. There is a profound, clinically proven link between chronic stress, modern processed food habits, an insidious lack of quality restorative sleep, and long-term metabolic disruption. Making thoughtful, expert-led adjustments to your daily routine can help support healthier lifestyle habits, reverse metabolic sluggishness, and significantly elevate your overall wellness trajectory over the coming decades.
           </p>
           <figure className="my-10">
-            <img loading="lazy" src="https://images.pexels.com/photos/105028/pexels-photo-105028.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Premium lifestyle wellness and healthy habits" className="w-full rounded-2xl object-cover shadow-lg aspect-[21/9]" />
+            <img loading="lazy" src="https://images.pexels.com/photos/105028/pexels-photo-105028.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Premium lifestyle wellness and healthy habits" className="w-full rounded-2xl object-cover shadow-lg aspect-[21/9]" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50 mt-2">Nourishing the body and mind through mindful daily habits.</figcaption>
           </figure>
 
@@ -740,7 +740,7 @@ const BLOG_POSTS = [
             <figure className="order-first md:order-last">
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-[#1A2F2B]/5 aspect-[4/5] sm:aspect-square md:aspect-[3/4] lg:aspect-[4/5] max-w-md mx-auto md:max-w-none">
                 <div className="absolute inset-0 bg-[#1A2F2B]/10 mix-blend-overlay z-10 pointer-events-none"></div>
-                <img loading="lazy" src="https://images.pexels.com/photos/4803920/pexels-photo-4803920.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mental wellness and stress management" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 ease-in-out block" />
+                <img loading="lazy" src="https://images.pexels.com/photos/4803920/pexels-photo-4803920.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Mental wellness and stress management" className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 ease-in-out block" />
               </div>
               <figcaption className="text-sm font-light text-center text-[#1A2F2B]/60 mt-6 tracking-wide uppercase">Mindful routines support healthy metabolism.</figcaption>
             </figure>
@@ -856,8 +856,8 @@ const BLOG_POSTS = [
     subtitle: "For Hormonal Balance & Healing From Within",
     category: "PCOS & Hormones",
     readTime: "9 Min Read",
-    image: "https://images.pexels.com/photos/37409098/pexels-photo-37409098.png",
-    coverImage: "https://images.pexels.com/photos/4394022/pexels-photo-4394022.jpeg",
+    image: "https://images.pexels.com/photos/37409098/pexels-photo-37409098.png?auto=compress&cs=tinysrgb&q=60&w=800",
+    coverImage: "https://images.pexels.com/photos/4394022/pexels-photo-4394022.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
     excerpt: "Discover a premium, science-backed 7-day Indian vegetarian diet plan for PCOS along with global eating variations. Learn how to manage weight, balance hormones naturally, and feel energetic.",
     content: (
       <>
@@ -878,7 +878,7 @@ const BLOG_POSTS = [
             Healing begins not with starvation diets, but with strategic, deeply nourishing food that acts as medicine for your cells.
           </p>
 
-          <img loading="lazy" src="https://images.pexels.com/photos/5622182/pexels-photo-5622182.jpeg" alt="Preparing healthy food" className="w-full rounded-2xl my-12 object-cover aspect-[21/9] shadow-lg" />
+          <img loading="lazy" src="https://images.pexels.com/photos/5622182/pexels-photo-5622182.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Preparing healthy food" className="w-full rounded-2xl my-12 object-cover aspect-[21/9] shadow-lg" />
 
           <h2>The 7-Day Indian Vegetarian PCOS Diet Plan</h2>
           
@@ -1065,8 +1065,8 @@ const BLOG_POSTS = [
     subtitle: "The Ultimate Guide to Sustainable Fat Loss",
     category: "Weight Loss",
     readTime: "8 Min Read",
-    image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=2070&auto=format&fit=crop",
-    coverImage: "https://images.pexels.com/photos/8436499/pexels-photo-8436499.jpeg",
+    image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=60&w=800&fm=avif",
+    coverImage: "https://images.pexels.com/photos/8436499/pexels-photo-8436499.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
     excerpt: "Learn how to lose weight without starving using a sustainable diet plan, home remedies, yoga, and workouts. Healthy fat loss made simple and effective.",
     content: (
       <>
@@ -1097,10 +1097,10 @@ const BLOG_POSTS = [
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 my-16 not-prose">
-            <img loading="lazy" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=1000" alt="Workout" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
-            <img loading="lazy" src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&q=80&w=1000" alt="Cooking Ingredients" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
-            <img loading="lazy" src="https://images.pexels.com/photos/6246497/pexels-photo-6246497.jpeg?auto=format&fit=crop&q=80&w=1000" alt="Yoga Lifestyle" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
-            <img loading="lazy" src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=80&w=1000" alt="Running" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=60&w=800&fm=avif" alt="Workout" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&q=60&w=800&fm=avif" alt="Cooking Ingredients" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
+            <img loading="lazy" src="https://images.pexels.com/photos/6246497/pexels-photo-6246497.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Yoga Lifestyle" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&q=60&w=800&fm=avif" alt="Running" className="w-full h-full object-cover rounded-[2rem] aspect-[4/3] shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] border border-[#EAC881]/20" />
           </div>
 
           <h2>What to Eat for Healthy Weight Loss</h2>
@@ -1267,8 +1267,8 @@ const BLOG_POSTS = [
     subtitle: "A Clinical Nutritionist's Guide to Healing",
     category: "Gut Health & Wellness",
     readTime: "5 Min Read",
-    image: "https://images.pexels.com/photos/6632286/pexels-photo-6632286.jpeg?auto=compress&cs=tinysrgb&w=800",
-    coverImage: "https://images.pexels.com/photos/6632286/pexels-photo-6632286.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    image: "https://images.pexels.com/photos/6632286/pexels-photo-6632286.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+    coverImage: "https://images.pexels.com/photos/6632286/pexels-photo-6632286.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
     excerpt: "Your hormones dictate everything from your mood to your metabolism. Explore the best foods to include in your daily routine to balance them naturally.",
     content: (
       <>
@@ -1281,7 +1281,7 @@ const BLOG_POSTS = [
           </p>
 
           <figure className="my-12">
-            <img loading="lazy" src="https://images.pexels.com/photos/5214957/pexels-photo-5214957.jpeg" alt="Hormonal balance and wellness" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/5214957/pexels-photo-5214957.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Hormonal balance and wellness" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Balancing your hormones naturally through proper nutrition and lifestyle.</figcaption>
           </figure>
 
@@ -1297,7 +1297,7 @@ const BLOG_POSTS = [
           </ul>
 
           <figure className="my-12">
-            <img loading="lazy" src="https://images.pexels.com/photos/6608542/pexels-photo-6608542.jpeg?auto=format&fit=crop&q=80&w=1600" alt="Healthy balanced lifestyle" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/6608542/pexels-photo-6608542.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Healthy balanced lifestyle" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Understanding your body's signals is the first step toward profound healing.</figcaption>
           </figure>
 
@@ -1336,7 +1336,7 @@ const BLOG_POSTS = [
           </div>
 
           <figure className="my-12">
-            <img loading="lazy" src="https://images.pexels.com/photos/1161547/pexels-photo-1161547.jpeg?auto=format&fit=crop&q=80&w=1600" alt="Nutritional ingredients" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/1161547/pexels-photo-1161547.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Nutritional ingredients" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
           </figure>
 
           <h2>Foods to Strictly Avoid</h2>
@@ -1392,8 +1392,8 @@ const BLOG_POSTS = [
     subtitle: "Realistic, actionable wellness for the real world.",
     category: "Lifestyle",
     readTime: "12 Min Read",
-    image: "https://images.pexels.com/photos/8547566/pexels-photo-8547566.jpeg?auto=compress&cs=tinysrgb&w=800",
-    coverImage: "https://images.pexels.com/photos/8547566/pexels-photo-8547566.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    image: "https://images.pexels.com/photos/8547566/pexels-photo-8547566.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+    coverImage: "https://images.pexels.com/photos/8547566/pexels-photo-8547566.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
     excerpt: "Learn how to maintain a healthy lifestyle despite corporate jobs, night shifts, limited budgets, and lack of time. Practical, realistic, and actionable guidance for the modern worker.",
     content: (
       <>
@@ -1423,7 +1423,7 @@ const BLOG_POSTS = [
           </p>
 
           <figure className="my-12">
-            <img loading="lazy" src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Professional working" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Professional working" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Adapting your health journey to fit your real, everyday life.</figcaption>
           </figure>
 
@@ -1494,7 +1494,7 @@ const BLOG_POSTS = [
           </ul>
 
           <figure className="my-12">
-            <img loading="lazy" src="https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Night shift and planning" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/3771097/pexels-photo-3771097.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Night shift and planning" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Structured habits make unconventional schedules manageable.</figcaption>
           </figure>
 
@@ -1527,7 +1527,7 @@ const BLOG_POSTS = [
           </div>
 
           <figure className="my-12">
-            <img loading="lazy" src="https://images.pexels.com/photos/4099238/pexels-photo-4099238.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Budget friendly healthy living" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/4099238/pexels-photo-4099238.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Budget friendly healthy living" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Affordable, accessible local foods are the foundation of good health.</figcaption>
           </figure>
 
@@ -1588,8 +1588,8 @@ const BLOG_POSTS = [
     subtitle: "Fuel your morning and boost your metabolism without comprising on authentic taste.",
     category: "Healthy Breakfasts",
     readTime: "7 Min Read",
-    image: "https://images.pexels.com/photos/35351659/pexels-photo-35351659.jpeg",
-    coverImage: "https://images.pexels.com/photos/35539315/pexels-photo-35539315.jpeg",
+    image: "https://images.pexels.com/photos/35351659/pexels-photo-35351659.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+    coverImage: "https://images.pexels.com/photos/35539315/pexels-photo-35539315.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
     excerpt: "Discover the most effective, nutrient-dense traditional Indian breakfast options meticulously designed to stabilize blood sugar, burn fat, and keep you energized.",
     content: (
       <>
@@ -1623,7 +1623,7 @@ const BLOG_POSTS = [
 
           <h4 className="font-bold text-[#1A2F2B] mb-2 mt-10 text-xl">1. High-Protein Moong Dal Chilla</h4>
           <figure className="my-8">
-            <img loading="lazy" src="https://images.pexels.com/photos/33379362/pexels-photo-33379362.jpeg" alt="High-Protein Moong Dal Chilla" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/33379362/pexels-photo-33379362.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="High-Protein Moong Dal Chilla" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Vegetarian • Complex Carbohydrates • Plant Protein</figcaption>
           </figure>
           <p>Instead of carb-heavy flour, use soaked and blended green gram (moong dal) to create a savory, crepe-like dish that serves as an excellent blend of complex carbohydrates and plant protein.</p>
@@ -1634,7 +1634,7 @@ const BLOG_POSTS = [
 
           <h4 className="font-bold text-[#1A2F2B] mb-2 mt-10 text-xl">2. Savory Oats with Lentils (Oats Khichdi)</h4>
           <figure className="my-8">
-            <img loading="lazy" src="https://images.pexels.com/photos/6363499/pexels-photo-6363499.jpeg" alt="Savory Oats with Lentils" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/6363499/pexels-photo-6363499.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Savory Oats with Lentils" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Vegetarian • Beta-Glucan Fiber</figcaption>
           </figure>
           <p>Avoid sugary, highly processed instant oats. Instead, slow-cook rolled oats with yellow lentils, turmeric, and Indian spices to create a comforting, balanced morning meal.</p>
@@ -1645,7 +1645,7 @@ const BLOG_POSTS = [
 
           <h4 className="font-bold text-[#1A2F2B] mb-2 mt-10 text-xl">3. Almond & Seed Embedded Besan Chilla</h4>
           <figure className="my-8">
-            <img loading="lazy" src="https://images.pexels.com/photos/22698518/pexels-photo-22698518.jpeg" alt="Besan Chilla" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/22698518/pexels-photo-22698518.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Besan Chilla" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Vegetarian • Low Glycemic Index</figcaption>
           </figure>
           <p>Gram flour (besan) possesses a notably lower glycemic index compared to refined white wheat flour. It is naturally gluten-free and highly nutrient-dense.</p>
@@ -1656,7 +1656,7 @@ const BLOG_POSTS = [
 
           <h4 className="font-bold text-[#1A2F2B] mb-2 mt-10 text-xl">4. Ragi Malt with Nuts</h4>
           <figure className="my-8">
-            <img loading="lazy" src="https://images.pexels.com/photos/30308595/pexels-photo-30308595.jpeg" alt="Ragi Malt" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/30308595/pexels-photo-30308595.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Ragi Malt" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Vegetarian • High Calcium • Iron</figcaption>
           </figure>
           <p>Ragi is an exquisite ancestral source of calcium, iron, and complex carbs. To optimize it for fat loss, it must be balanced with protein.</p>
@@ -1667,7 +1667,7 @@ const BLOG_POSTS = [
 
           <h4 className="font-bold text-[#1A2F2B] mb-2 mt-10 text-xl">5. Masala Egg Bhurji</h4>
           <figure className="my-8">
-            <img loading="lazy" src="https://images.pexels.com/photos/7393351/pexels-photo-7393351.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Egg Scramble" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
+            <img loading="lazy" src="https://images.pexels.com/photos/7393351/pexels-photo-7393351.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Egg Scramble" className="w-full rounded-2xl object-cover aspect-video shadow-lg mb-4" />
             <figcaption className="text-xs text-center text-[#1A2F2B]/50">Non-Vegetarian • Complete Amino Acids</figcaption>
           </figure>
           <p>For immediate, high-yield biological protein, non-vegetarian Indian options like an egg bhurji (scramble) or leftover grilled chicken wrap are unparalleled for pure fat loss.</p>
@@ -1748,7 +1748,7 @@ const BLOG_POSTS = [
           </div>
 
           <div className="my-24 relative rounded-[3rem] overflow-hidden not-prose group">
-            <img loading="lazy" src="https://images.pexels.com/photos/4056015/pexels-photo-4056015.jpeg" alt="Intermittent Fasting" className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
+            <img loading="lazy" src="https://images.pexels.com/photos/4056015/pexels-photo-4056015.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Intermittent Fasting" className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#1A2F2B]/95 to-[#1A2F2B]/70 backdrop-blur-sm"></div>
             <div className="relative p-10 md:p-16 lg:p-20 z-10 text-white flex flex-col md:flex-row gap-12 items-center">
               <div className="w-full md:w-1/2">
@@ -1781,7 +1781,7 @@ const BLOG_POSTS = [
           <div className="my-24 flex flex-col md:flex-row-reverse gap-12 md:gap-20 items-stretch not-prose">
             <div className="w-full md:w-1/2 relative group">
                <div className="absolute -inset-4 bg-[#EAC881]/20 rounded-[3rem] blur-xl transition-all duration-700 group-hover:bg-[#EAC881]/30"></div>
-               <img loading="lazy" src="https://images.pexels.com/photos/1552108/pexels-photo-1552108.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Workout & Movement Integration" className="relative w-full h-full min-h-[400px] rounded-[2.5rem] shadow-[0_20px_50px_rgba(26,47,43,0.15)] object-cover border border-white/50 transform group-hover:scale-[1.02] transition-transform duration-700" />
+               <img loading="lazy" src="https://images.pexels.com/photos/1552108/pexels-photo-1552108.jpeg?auto=compress&cs=tinysrgb&q=60&w=800" alt="Workout & Movement Integration" className="relative w-full h-full min-h-[400px] rounded-[2.5rem] shadow-[0_20px_50px_rgba(26,47,43,0.15)] object-cover border border-white/50 transform group-hover:scale-[1.02] transition-transform duration-700" />
             </div>
             <div className="w-full md:w-1/2">
               <h3 className="text-xs font-bold font-sans uppercase tracking-[0.2em] text-[#EAC881] mb-4">The Intersection</h3>
@@ -1925,7 +1925,7 @@ export const Blog: React.FC = () => {
         title={selectedPost ? selectedPost.title : "Nutrition & Wellness Insights"}
         description={selectedPost ? selectedPost.excerpt : "Expert insights, practical health tips, and science-backed nutrition advice for your lifestyle."}
         type={selectedPost ? "article" : "website"}
-        image={selectedPost ? selectedPost.coverImage : "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg"}
+        image={selectedPost ? selectedPost.coverImage : "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&q=60&w=800"}
         url={selectedPost ? `https://www.ojasio.com/blog/${selectedPost.id}` : "https://www.ojasio.com/blog"}
         jsonLdSchema={selectedPost ? {
           "@context": "https://schema.org",

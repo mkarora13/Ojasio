@@ -25,8 +25,10 @@ export const Navbar: React.FC = () => {
           <div className="flex-shrink-0 flex items-center pr-4">
             <NavLink to="/" aria-label="Ojasio Home" className="flex items-center gap-4 group">
               <img loading="lazy" 
-                src="https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?_gl=1*i3glqi*_ga*NTM3MzUwNTMxLjE3NzcyMjg2OTI.*_ga_8JE65Q40S6*czE3NzcyMjg2OTEkbzEkZzEkdDE3NzcyMzEzMjQkajQ4JGwwJGgw" 
-                alt="" aria-hidden="true" className="w-14 h-14 object-cover rounded-full border border-gold/30 transform group-hover:scale-105 transition-transform duration-300 shadow-sm"
+                src="https://images.pexels.com/photos/37275150/pexels-photo-37275150.png?auto=compress&cs=tinysrgb&q=60&w=800" 
+                alt="Ojasio Logo" className="w-14 h-14 object-cover rounded-full border border-gold/30 transform group-hover:scale-105 transition-transform duration-300 shadow-sm"
+                width="56"
+                height="56"
               />
               <div className="flex flex-col justify-center">
                 <span className="font-display text-3xl font-semibold tracking-wide text-green-deep leading-none">
@@ -49,7 +51,6 @@ export const Navbar: React.FC = () => {
                     isActive ? 'text-gold after:w-full text-shadow-sm' : ''
                   }`
                 }
-                aria-current={({ isActive }) => (isActive ? 'page' : undefined)}
               >
                 {link.name}
               </NavLink>
@@ -88,7 +89,6 @@ export const Navbar: React.FC = () => {
                     : 'text-green-deep hover:text-gold hover:translate-x-2 opacity-80'
                 }`
               }
-              aria-current={({ isActive }) => (isActive ? 'page' : undefined)}
             >
               {link.name}
             </NavLink>

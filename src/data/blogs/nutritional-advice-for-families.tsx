@@ -8,8 +8,8 @@ export const articleNutritionalAdviceFamilies = {
   subtitle: "Transform your family's health with sustainable, culturally rich, and incredibly delicious eating habits that work for every age.",
   category: "Family Nutrition",
   readTime: "11 Min Read",
-  image: "https://images.pexels.com/photos/4259707/pexels-photo-4259707.jpeg?auto=compress&cs=tinysrgb&w=800",
-  coverImage: "https://images.pexels.com/photos/4617309/pexels-photo-4617309.jpeg",
+  image: "https://images.pexels.com/photos/4259707/pexels-photo-4259707.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/4617309/pexels-photo-4617309.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "Discover the most practical nutritional advice for families. Learn how to construct meals that satisfy growing children, professional parents, and elders—all at the same table.",
   content: (
     <>
@@ -378,7 +378,7 @@ export const articleNutritionalAdviceFamilies = {
           <meta property="og:description" content="Get expert nutritional advice for families from Ojasio. Learn to plan healthy meals that everyone loves..."/>
           <meta property="og:url" content="https://ojasio.com/blog/nutritional-advice-for-families"/>
           <meta property="og:type" content="article"/>
-          <meta property="og:image" content="https://images.pexels.com/photos/4259707/pexels-photo-4259707.jpeg"/>
+          <meta property="og:image" content="https://images.pexels.com/photos/4259707/pexels-photo-4259707.jpeg?auto=compress&cs=tinysrgb&q=60&w=800"/>
 
           CANONICAL TAG:
           <link rel="canonical" href="https://ojasio.com/blog/nutritional-advice-for-families"/>

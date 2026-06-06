@@ -8,8 +8,8 @@ export const articleHowToLoseBellyFat = {
   subtitle: "Destroy stubborn visceral fat, optimize your testosterone levels, and reclaim your midsection with clinical precision, designed specifically for men.",
   category: "Men's Health",
   readTime: "10 Min Read",
-  image: "https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=800",
-  coverImage: "https://images.pexels.com/photos/6551127/pexels-photo-6551127.jpeg",
+  image: "https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/6551127/pexels-photo-6551127.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "A clinical, no-nonsense strategy for men on how to lose belly fat forever. Discover the foods that trigger visceral fat storage and exactly how to reverse it.",
   content: (
     <>
@@ -378,7 +378,7 @@ export const articleHowToLoseBellyFat = {
           <meta property="og:description" content="Learn exactly how to lose belly fat with this clinical guide for men..."/>
           <meta property="og:url" content="https://ojasio.com/blog/how-to-lose-belly-fat"/>
           <meta property="og:type" content="article"/>
-          <meta property="og:image" content="https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg"/>
+          <meta property="og:image" content="https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&q=60&w=800"/>
 
           CANONICAL TAG:
           <link rel="canonical" href="https://ojasio.com/blog/how-to-lose-belly-fat"/>

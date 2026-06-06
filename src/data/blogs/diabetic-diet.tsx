@@ -8,8 +8,8 @@ export const articleDiabeticDiet = {
   subtitle: "Control your blood sugar, protect your cardiovascular health, and rediscover the profound joy of eating with precision metabolic nutrition.",
   category: "Diabetes Management",
   readTime: "11 Min Read",
-  image: "https://images.pexels.com/photos/6942066/pexels-photo-6942066.jpeg",
-  coverImage: "https://images.pexels.com/photos/8965137/pexels-photo-8965137.jpeg",
+  image: "https://images.pexels.com/photos/6942066/pexels-photo-6942066.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/8965137/pexels-photo-8965137.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "A clinical, life-changing diabetic diet guide. Discover how to balance blood sugar naturally and optimize insulin resistance without giving up traditional foods.",
   content: (
     <>
@@ -378,7 +378,7 @@ export const articleDiabeticDiet = {
           <meta property="og:description" content="Master your blood sugar with Ojasio's clinical diabetic diet guide..."/>
           <meta property="og:url" content="https://ojasio.com/blog/diabetic-diet-complete-guide"/>
           <meta property="og:type" content="article"/>
-          <meta property="og:image" content="https://images.pexels.com/photos/5963953/pexels-photo-5963953.jpeg"/>
+          <meta property="og:image" content="https://images.pexels.com/photos/5963953/pexels-photo-5963953.jpeg?auto=compress&cs=tinysrgb&q=60&w=800"/>
 
           CANONICAL TAG:
           <link rel="canonical" href="https://ojasio.com/blog/diabetic-diet-complete-guide"/>

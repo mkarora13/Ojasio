@@ -8,8 +8,8 @@ export const articleIntermittentFasting = {
   subtitle: "Optimize your testosterone, decimate visceral fat, and skyrocket your mental clarity using advanced fasting protocols engineered for busy men.",
   category: "Men's Health",
   readTime: "9 Min Read",
-  image: "https://images.pexels.com/photos/5910773/pexels-photo-5910773.jpeg",
-  coverImage: "https://images.pexels.com/photos/5842228/pexels-photo-5842228.jpeg",
+  image: "https://images.pexels.com/photos/5910773/pexels-photo-5910773.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/5842228/pexels-photo-5842228.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "The ultimate guide to intermittent fasting for weight loss. Learn exactly how men can leverage fasting to incinerate fat without risking muscle tissue.",
   content: (
     <>

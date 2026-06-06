@@ -8,8 +8,8 @@ export const articleHowToLoseWeightFast = {
   subtitle: "A no-nonsense, clinical guide to dropping body fat rapidly and safely by upgrading your metabolic engine, without starvation.",
   category: "Rapid Weight Loss",
   readTime: "9 Min Read",
-  image: "https://images.pexels.com/photos/7991928/pexels-photo-7991928.jpeg",
-  coverImage: "https://images.pexels.com/photos/5714350/pexels-photo-5714350.jpeg",
+  image: "https://images.pexels.com/photos/7991928/pexels-photo-7991928.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/5714350/pexels-photo-5714350.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "Discover how to lose weight fast with Ojasio. Cut through the internet noise and learn the genuine science of rapid fat loss and lasting physical transformation.",
   content: (
     <>
@@ -378,7 +378,7 @@ export const articleHowToLoseWeightFast = {
           <meta property="og:description" content="Learn exactly how to lose weight fast with science-backed nutrition strategies. Stop starving and start burning fat..."/>
           <meta property="og:url" content="https://ojasio.com/blog/how-to-lose-weight-fast-guide"/>
           <meta property="og:type" content="article"/>
-          <meta property="og:image" content="https://images.pexels.com/photos/11228220/pexels-photo-11228220.jpeg"/>
+          <meta property="og:image" content="https://images.pexels.com/photos/11228220/pexels-photo-11228220.jpeg?auto=compress&cs=tinysrgb&q=60&w=800"/>
 
           CANONICAL TAG:
           <link rel="canonical" href="https://ojasio.com/blog/how-to-lose-weight-fast-guide"/>

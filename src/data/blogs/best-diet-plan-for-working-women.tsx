@@ -10,8 +10,8 @@ export const article4 = {
   subtitle: "A highly practical, realistic nutrition framework built to help busy professionals control their hormones, boost daily energy levels, and drop stubborn weight without enduring hours of kitchen prep.",
   category: "Metabolic Health",
   readTime: "12 Min Read",
-  image: "https://images.pexels.com/photos/37621071/pexels-photo-37621071.png?auto=compress&cs=tinysrgb&w=800",
-  coverImage: "https://images.pexels.com/photos/12499374/pexels-photo-12499374.jpeg?auto=compress&cs=tinysrgb&w=2000",
+  image: "https://images.pexels.com/photos/37621071/pexels-photo-37621071.png?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/12499374/pexels-photo-12499374.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "The modern professional's roadmap to sustainable health. Learn to effectively manage PCOS, combat insulin resistance, and maintain a vibrant metabolism despite a demanding, high-stress career.",
   content: (
     <>

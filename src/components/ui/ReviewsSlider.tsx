@@ -122,12 +122,14 @@ export const ReviewsSlider: React.FC<ReviewsSliderProps> = ({ reviews = REVIEWS 
 
       <button 
         onClick={prevSlide} className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-colors z-20"
+        aria-label="Previous review"
       >
         <ChevronLeft size={20} />
       </button>
       
       <button 
         onClick={nextSlide} className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#EAC881] hover:text-[#1A2F2B] transition-colors z-20"
+        aria-label="Next review"
       >
         <ChevronRight size={20} />
       </button>
@@ -137,6 +139,7 @@ export const ReviewsSlider: React.FC<ReviewsSliderProps> = ({ reviews = REVIEWS 
           <button
             key={idx}
             onClick={() => setCurrentIndex(idx)} className={`h-1.5 rounded-full transition-all duration-300 ${idx === safeIndex ? 'w-8 bg-[#EAC881]' : 'w-2 bg-white/20'}`}
+            aria-label={`Go to review ${idx + 1}`}
           />
         ))}
       </div>

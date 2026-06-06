@@ -8,8 +8,8 @@ export const articlePcosDietPlan = {
   subtitle: "Reverse insulin resistance, balance your hormones naturally, and finally drop the stubborn weight without relying entirely on birth control pills.",
   category: "Women's Health",
   readTime: "10 Min Read",
-  image: "https://images.pexels.com/photos/5938356/pexels-photo-5938356.jpeg?auto=compress&cs=tinysrgb&w=800",
-  coverImage: "https://images.pexels.com/photos/5714337/pexels-photo-5714337.jpeg",
+  image: "https://images.pexels.com/photos/5938356/pexels-photo-5938356.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/5714337/pexels-photo-5714337.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "The ultimate PCOS diet plan to lose weight effectively. Discover why traditional diets fail PCOS and learn exactly how to eat to lower testosterone.",
   content: (
     <>

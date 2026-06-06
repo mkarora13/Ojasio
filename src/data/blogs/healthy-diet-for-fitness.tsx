@@ -8,8 +8,8 @@ export const articleHealthyDietFitness = {
   subtitle: "Optimize your muscular recovery, ignite your stamina, and sculpt your physique with precision sports nutrition designed for the everyday athlete.",
   category: "Fitness & Muscle",
   readTime: "9 Min Read",
-  image: "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=800",
-  coverImage: "https://images.pexels.com/photos/4853730/pexels-photo-4853730.jpeg",
+  image: "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
+  coverImage: "https://images.pexels.com/photos/4853730/pexels-photo-4853730.jpeg?auto=compress&cs=tinysrgb&q=60&w=800",
   excerpt: "Build muscle and shred fat with Ojasio's definitive healthy diet for fitness guide. Learn exactly what to eat before and after training for maximum athletic results.",
   content: (
     <>
@@ -378,7 +378,7 @@ export const articleHealthyDietFitness = {
           <meta property="og:description" content="Achieve elite results with a balanced healthy diet for fitness. Build muscle..."/>
           <meta property="og:url" content="https://ojasio.com/blog/healthy-diet-for-fitness"/>
           <meta property="og:type" content="article"/>
-          <meta property="og:image" content="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg"/>
+          <meta property="og:image" content="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&q=60&w=800"/>
 
           CANONICAL TAG:
           <link rel="canonical" href="https://ojasio.com/blog/healthy-diet-for-fitness"/>
